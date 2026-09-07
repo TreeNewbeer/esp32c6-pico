@@ -1,0 +1,110 @@
+{
+  "checks": [
+    {
+      "check": "Every PCB copper pad matches the schematic netlist",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "Schematic and PCB component references match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Assigned footprint IDs match",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "No signal routing on L2 GND",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "RF, crystal and main USB nets stay on front copper",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "At least nine ground vias under the MCU EPAD",
+      "passed": true,
+      "detail": 9
+    },
+    {
+      "check": "Antenna open termination is not grounded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "No vias in the 18 x 9 mm antenna clearance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "KiCad ERC has no errors or warnings",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "KiCad DRC has no violations",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "KiCad PCB has no unconnected items",
+      "passed": true,
+      "detail": 0
+    }
+  ],
+  "all_passed": true,
+  "footprints": 65,
+  "populated": 59,
+  "tracks": 777,
+  "vias": 140,
+  "via_in_pad_entries": 27,
+  "dimensions_mm": [
+    18,
+    39
+  ],
+  "nominal_thickness_mm": 0.8,
+  "copper_layers": 4,
+  "usb_path_lengths": {
+    "A": {
+      "D+_mm": 26.0086,
+      "D-_mm": 25.0536,
+      "skew_mm": 0.955
+    },
+    "B": {
+      "D+_mm": 23.0986,
+      "D-_mm": 24.0536,
+      "skew_mm": 0.955
+    }
+  },
+  "fabrication_rules": {
+    "max_error": 0.005,
+    "min_clearance": 0.1,
+    "min_connection": 0.0,
+    "min_copper_edge_clearance": 0.25,
+    "min_groove_width": 0.0,
+    "min_hole_clearance": 0.18,
+    "min_hole_to_hole": 0.2,
+    "min_microvia_diameter": 0.2,
+    "min_microvia_drill": 0.1,
+    "min_resolved_spokes": 2,
+    "min_silk_clearance": 0.1,
+    "min_text_height": 0.6,
+    "min_text_thickness": 0.1,
+    "min_through_hole_diameter": 0.15,
+    "min_track_width": 0.1,
+    "min_via_annular_width": 0.075,
+    "min_via_diameter": 0.3,
+    "solder_mask_to_copper_clearance": 0.0,
+    "use_height_for_length_calcs": true
+  },
+  "board_sha256": "6ce10a2e793519b62210bb35e12700532086b435b2643907ed5830e55f17ae24",
+  "limitations": [
+    "RF matching values and antenna efficiency require hardware tuning",
+    "Nominal RF/USB impedance requires manufacturer stackup confirmation",
+    "VIPPO and dual-sided SMT assembly required; no physical power or thermal tests performed"
+  ]
+}

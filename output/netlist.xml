@@ -1,0 +1,2723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>D:\Colin\projects\pcbs\esp32-c6-pico\esp32-c6-pico\esp32-c6-pico.kicad_sch</source>
+    <date>2026-09-06T17:05:10</date>
+    <tool>Eeschema 10.0.4</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>ESP32-C6 PICO - prototype Rev A</title>
+        <company>KZL</company>
+        <rev>A</rev>
+        <date>2026-09-06</date>
+        <source>esp32-c6-pico.kicad_sch</source>
+        <comment number="1" value="RF and thermal validation required before production"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/">
+      <title_block>
+        <title>ESP32-C6 PICO - prototype Rev A</title>
+        <company>KZL</company>
+        <rev>A</rev>
+        <date>2026-09-06</date>
+        <source>power-io.kicad_sch</source>
+        <comment number="1" value="RF and thermal validation required before production"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="AE1">
+      <value>RFANT5220110A0T</value>
+      <footprint>Walsin_Antenna:RFANT5220110A0T</footprint>
+      <datasheet>ASC_RFANT5220110A0T_V13</datasheet>
+      <fields>
+        <field name="MPN">RFANT5220110A0T</field>
+        <field name="AssemblyNote">Pad 2 has open tuning copper, never connect to ground; 18x9 mm RF clearance</field>
+        <field name="Footprint">Walsin_Antenna:RFANT5220110A0T</field>
+        <field name="Datasheet">ASC_RFANT5220110A0T_V13</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Walsin_Antenna__RFANT5220110A0T" description="Walsin multilayer ceramic chip antenna, 2.4GHz ISM band (2.4-2.5GHz), 5.2x2.0x1.15mm SMD, 2dBi typ., 50ohm, VSWR&lt;=2"/>
+      <property name="MPN" value="RFANT5220110A0T"/>
+      <property name="AssemblyNote" value="Pad 2 has open tuning copper, never connect to ground; 18x9 mm RF clearance"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="antenna 2.4GHz chip ceramic ISM Bluetooth WiFi BLE Zigbee Walsin"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c5287210-ef13-4efd-9e37-7930fcdc1c66</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>1.5pF</value>
+      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">1.5pF</field>
+        <field name="AssemblyNote">C0G; RF initial value</field>
+        <field name="Footprint">Capacitor_SMD:C_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="1.5pF"/>
+      <property name="AssemblyNote" value="C0G; RF initial value"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7f30056b-9efd-43fd-bb94-ca5fdf4946cb</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C3">
+      <value>1.5pF</value>
+      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">1.5pF</field>
+        <field name="AssemblyNote">C0G; RF initial value, VNA tuning required</field>
+        <field name="Footprint">Capacitor_SMD:C_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="1.5pF"/>
+      <property name="AssemblyNote" value="C0G; RF initial value, VNA tuning required"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fe121819-547b-448b-b270-9feb496d187d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C4">
+      <value>12pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">12pF</field>
+        <field name="AssemblyNote">C0G; assumes about 2 pF stray; trim frequency on hardware</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="12pF"/>
+      <property name="AssemblyNote" value="C0G; assumes about 2 pF stray; trim frequency on hardware"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4832c35a-0426-47fa-95bf-9ea99299fa9d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C5">
+      <value>12pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">12pF</field>
+        <field name="AssemblyNote">C0G; crystal load tuning</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="12pF"/>
+      <property name="AssemblyNote" value="C0G; crystal load tuning"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f2663418-c785-4313-b74b-e0529cb49584</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100nF</field>
+        <field name="AssemblyNote">At flash VCC</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="100nF"/>
+      <property name="AssemblyNote" value="At flash VCC"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c1419592-f638-4f08-b060-66bd08918164</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C7">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">1uF</field>
+        <field name="AssemblyNote">At U1 VDD_SPI pin</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="1uF"/>
+      <property name="AssemblyNote" value="At U1 VDD_SPI pin"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>36834f2e-b00b-4ab5-a075-c721b8ccbe80</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C8">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">10uF</field>
+        <field name="AssemblyNote">Main bulk; X7R 10 V minimum</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="10uF"/>
+      <property name="AssemblyNote" value="Main bulk; X7R 10 V minimum"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>81884599-b362-4a44-aea5-7101f7ab1632</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C9">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">1uF</field>
+        <field name="AssemblyNote">Main bulk; X7R 10 V minimum</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="1uF"/>
+      <property name="AssemblyNote" value="Main bulk; X7R 10 V minimum"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27daa0f7-5cf0-45b9-8762-7fef5c0ae202</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C10">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100nF</field>
+        <field name="AssemblyNote">Main HF; X7R 10 V minimum</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="100nF"/>
+      <property name="AssemblyNote" value="Main HF; X7R 10 V minimum"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>09362add-1a4b-46ac-ba69-1a06f856de30</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C11">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">1uF</field>
+        <field name="AssemblyNote">U1 pins 2/3 local bypass</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="1uF"/>
+      <property name="AssemblyNote" value="U1 pins 2/3 local bypass"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ef2fcd15-2db6-49ca-9618-330dd3d40460</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C12">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100nF</field>
+        <field name="AssemblyNote">U1 pin 5; X7R 10 V minimum</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="100nF"/>
+      <property name="AssemblyNote" value="U1 pin 5; X7R 10 V minimum"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3cf2fc15-0e92-4730-a26e-584e479fd513</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C13">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100nF</field>
+        <field name="AssemblyNote">U1 pin 28; X7R 10 V minimum</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="100nF"/>
+      <property name="AssemblyNote" value="U1 pin 28; X7R 10 V minimum"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e6b7d767-38dd-4919-be00-cc69ea782971</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C14">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100nF</field>
+        <field name="AssemblyNote">U1 pin 37; X7R 10 V minimum</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="100nF"/>
+      <property name="AssemblyNote" value="U1 pin 37; X7R 10 V minimum"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a8736ec6-a534-4855-b837-41c9b266e288</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C15">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100nF</field>
+        <field name="AssemblyNote">U1 pin 40; X7R 10 V minimum</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="100nF"/>
+      <property name="AssemblyNote" value="U1 pin 40; X7R 10 V minimum"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cdc0c944-2bd7-4bd8-8ebc-d4058327db04</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C16">
+      <value>10pF</value>
+      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">10pF</field>
+        <field name="AssemblyNote">C0G DC-block / tuning initial value</field>
+        <field name="Footprint">Capacitor_SMD:C_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="10pF"/>
+      <property name="AssemblyNote" value="C0G DC-block / tuning initial value"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>84124424-6010-5b9d-8cec-178d711252f1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C17">
+      <value>DNP</value>
+      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">DNP</field>
+        <field name="AssemblyNote">Antenna pi input shunt</field>
+        <field name="Footprint">Capacitor_SMD:C_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="DNP"/>
+      <property name="AssemblyNote" value="Antenna pi input shunt"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d1ce8f36-868c-5224-a80b-d422c4519e04</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C18">
+      <value>DNP</value>
+      <footprint>Capacitor_SMD:C_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">DNP</field>
+        <field name="AssemblyNote">Antenna pi output shunt</field>
+        <field name="Footprint">Capacitor_SMD:C_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="DNP"/>
+      <property name="AssemblyNote" value="Antenna pi output shunt"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>87b7d10c-5209-5776-94b2-3d36798fe884</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C19">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">10uF</field>
+        <field name="AssemblyNote">U1 pin 2 local bulk</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="10uF"/>
+      <property name="AssemblyNote" value="U1 pin 2 local bulk"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3160761b-f329-5e8e-b190-11fa959c0a52</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C20">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">10uF</field>
+        <field name="AssemblyNote">U1 pin 3 local bulk</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="10uF"/>
+      <property name="AssemblyNote" value="U1 pin 3 local bulk"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>be7b7ca8-433a-5d62-a564-8483e1467361</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D1">
+      <value>PESD5V0F1BL-Q</value>
+      <footprint>Diode_SMD:D_SOD-882</footprint>
+      <datasheet>https://assets.nexperia.com/documents/data-sheet/PESD5V0F1BL-Q.pdf</datasheet>
+      <fields>
+        <field name="MPN">PESD5V0F1BL-Q</field>
+        <field name="AssemblyNote">0.4 pF antenna ESD option; original 15 pF ESD9B is unsuitable</field>
+        <field name="Footprint">Diode_SMD:D_SOD-882</field>
+        <field name="Datasheet">https://assets.nexperia.com/documents/data-sheet/PESD5V0F1BL-Q.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Diode__ESD9B5.0ST5G" description="ESD protection diode, 5.0Vrwm, SOD-923"/>
+      <property name="MPN" value="PESD5V0F1BL-Q"/>
+      <property name="AssemblyNote" value="0.4 pF antenna ESD option; original 15 pF ESD9B is unsuitable"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="diode TVS ESD"/>
+      <property name="ki_fp_filters" value="D*SOD?923*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>17c190a4-f267-4adb-8e04-a4241b21f050</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L1">
+      <value>2.4nH</value>
+      <footprint>Inductor_SMD:L_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">2.4nH</field>
+        <field name="AssemblyNote">High-Q RF; initial value</field>
+        <field name="Footprint">Inductor_SMD:L_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__L_Small" description="Inductor, small symbol"/>
+      <property name="MPN" value="2.4nH"/>
+      <property name="AssemblyNote" value="High-Q RF; initial value"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b6c23b7f-0edd-4e17-8966-43735c804a0c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L2">
+      <value>2.0nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">2.0nH</field>
+        <field name="AssemblyNote">RF supply filter; Irated &gt;= 500 mA, low DCR</field>
+        <field name="Footprint">Inductor_SMD:L_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__L_Small" description="Inductor, small symbol"/>
+      <property name="MPN" value="2.0nH"/>
+      <property name="AssemblyNote" value="RF supply filter; Irated &gt;= 500 mA, low DCR"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4bb8e07f-80b3-4fa0-926f-599a49652bbc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L3">
+      <value>DNP</value>
+      <footprint>Inductor_SMD:L_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">DNP</field>
+        <field name="AssemblyNote">Shunt RF tuning option</field>
+        <field name="Footprint">Inductor_SMD:L_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__L_Small" description="Inductor, small symbol"/>
+      <property name="MPN" value="DNP"/>
+      <property name="AssemblyNote" value="Shunt RF tuning option"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>16b4735e-9cc3-5c28-a006-b7cd199ae095</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="L4">
+      <value>24nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">24nH</field>
+        <field name="AssemblyNote">Crystal harmonic suppression; initial value</field>
+        <field name="Footprint">Inductor_SMD:L_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__L_Small" description="Inductor, small symbol"/>
+      <property name="MPN" value="24nH"/>
+      <property name="AssemblyNote" value="Crystal harmonic suppression; initial value"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
+      <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f0cb3350-2c2f-5ce3-99ca-b77f21e1be56</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">0R</field>
+        <field name="AssemblyNote">Place at U1; SPI clock defaults to 40 MHz for bring-up</field>
+        <field name="Footprint">Resistor_SMD:R_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="0R"/>
+      <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9868171c-e3dd-411d-b982-a15aedcb9c96</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">0R</field>
+        <field name="AssemblyNote">Place at U1; SPI clock defaults to 40 MHz for bring-up</field>
+        <field name="Footprint">Resistor_SMD:R_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="0R"/>
+      <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d5ef5f06-562e-4f5d-ae98-c67c05631d82</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">0R</field>
+        <field name="AssemblyNote">Place at U1; SPI clock defaults to 40 MHz for bring-up</field>
+        <field name="Footprint">Resistor_SMD:R_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="0R"/>
+      <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8dd25ad6-208e-41e1-86fe-b46c01c36e0f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">0R</field>
+        <field name="AssemblyNote">Place at U1; SPI clock defaults to 40 MHz for bring-up</field>
+        <field name="Footprint">Resistor_SMD:R_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="0R"/>
+      <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>87dab85c-99f6-4dd6-ade7-ad710ba00316</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">0R</field>
+        <field name="AssemblyNote">Place at U1; SPI clock defaults to 40 MHz for bring-up</field>
+        <field name="Footprint">Resistor_SMD:R_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="0R"/>
+      <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f94147b5-6e1c-4abb-ab17-b16c4ee88e99</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">0R</field>
+        <field name="AssemblyNote">Antenna pi series tuning option</field>
+        <field name="Footprint">Resistor_SMD:R_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="0R"/>
+      <property name="AssemblyNote" value="Antenna pi series tuning option"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ff9193e3-87b0-5eee-b954-ba650a3012f8</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R17">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0201_0603Metric</footprint>
+      <fields>
+        <field name="MPN">0R</field>
+        <field name="AssemblyNote">Place at U1; SPI clock defaults to 40 MHz for bring-up</field>
+        <field name="Footprint">Resistor_SMD:R_0201_0603Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="0R"/>
+      <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9361a14c-2d3f-59dd-9486-ee25e7ccccc1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>ESP32-C6</value>
+      <footprint>Pico:QFN40_ESP32_C6_Compact</footprint>
+      <datasheet>https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf</datasheet>
+      <fields>
+        <field name="MPN">ESP32-C6</field>
+        <field name="AssemblyNote">QFN40, NOT the pin-incompatible C6FH4 QFN32</field>
+        <field name="Footprint">Pico:QFN40_ESP32_C6_Compact</field>
+        <field name="Datasheet">https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="espressif-kicad-addon__ESP32-C6" description="ESP32C6,ultra-low-power SoC with RISC-V single-core microprocessor,2.4 GHz Wi-Fi 6 (802.11 ax), Bluetooth 5 (LE), Zigbee and Thread (802.15.4),QFN-40"/>
+      <property name="MPN" value="ESP32-C6"/>
+      <property name="AssemblyNote" value="QFN40, NOT the pin-incompatible C6FH4 QFN32"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="esp32c6 riscv wifi bluetooth zigbee thread"/>
+      <property name="ki_fp_filters" value="QFN*W5mm*P0.4mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8bf8607d-e3f7-46ac-9ee3-499b7bbbb17e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="4"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="38"/>
+            <pin num="39"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+            <pin num="13"/>
+            <pin num="20"/>
+            <pin num="21"/>
+            <pin num="22"/>
+            <pin num="23"/>
+            <pin num="24"/>
+            <pin num="25"/>
+            <pin num="26"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="28"/>
+            <pin num="41"/>
+            <pin num="37"/>
+            <pin num="40"/>
+            <pin num="29"/>
+            <pin num="30"/>
+            <pin num="19"/>
+            <pin num="18"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="14"/>
+            <pin num="15"/>
+            <pin num="16"/>
+            <pin num="17"/>
+            <pin num="27"/>
+            <pin num="31"/>
+            <pin num="32"/>
+            <pin num="33"/>
+            <pin num="34"/>
+            <pin num="35"/>
+            <pin num="36"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U3">
+      <value>W25Q32JVZPIQ</value>
+      <footprint>Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm</footprint>
+      <datasheet>http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf</datasheet>
+      <fields>
+        <field name="MPN">W25Q32JVZPIQ</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm</field>
+        <field name="Datasheet">http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Memory_Flash__W25Q32JVZP" description="32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8"/>
+      <property name="MPN" value="W25Q32JVZPIQ"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="flash memory SPI"/>
+      <property name="ki_fp_filters" value="WSON*1EP*6x5mm*P1.27mm*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>11dd3793-e446-4d3b-bb90-c7cfe42ad248</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="6"/>
+            <pin num="5"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="4"/>
+            <pin num="9"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="Y1">
+      <value>40MHz / CL=8pF</value>
+      <footprint>Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm</footprint>
+      <datasheet>https://www.eaton.com/content/dam/eaton/products/electronic-components/resources/data-sheet/eaton-e9x-crystal-resonator-mhz-data-sheet-elx1389-en.pdf</datasheet>
+      <fields>
+        <field name="MPN">E9X400081G08</field>
+        <field name="AssemblyNote">Eaton E9X; 40 MHz, CL 8 pF, initial tolerance 10 ppm, ESR &lt;=50 ohm; verify assembled frequency</field>
+        <field name="Footprint">Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm</field>
+        <field name="Datasheet">https://www.eaton.com/content/dam/eaton/products/electronic-components/resources/data-sheet/eaton-e9x-crystal-resonator-mhz-data-sheet-elx1389-en.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__Crystal_GND24_Small" description="Four pin crystal, GND on pins 2 and 4, small symbol"/>
+      <property name="MPN" value="E9X400081G08"/>
+      <property name="AssemblyNote" value="Eaton E9X; 40 MHz, CL 8 pF, initial tolerance 10 ppm, ESR &lt;=50 ohm; verify assembled frequency"/>
+      <property name="Sheetname" value="esp32-c6-pico"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="quartz ceramic resonator oscillator"/>
+      <property name="ki_fp_filters" value="Crystal*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3414b06f-7c01-4540-8c85-87146061a56c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C21">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">1uF</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="1uF"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>a2a528cb-4490-5ea3-ac7a-fb0ac1600e55</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C22">
+      <value>10uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">10uF</field>
+        <field name="AssemblyNote">10 V X7R; regulator input</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="10uF"/>
+      <property name="AssemblyNote" value="10 V X7R; regulator input"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>e38c553c-5d45-5b31-b6f8-4f85036bdb43</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C23">
+      <value>22uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="MPN">22uF</field>
+        <field name="AssemblyNote">10 V X5R/X7R; verify DC-bias effective capacitance</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="22uF"/>
+      <property name="AssemblyNote" value="10 V X5R/X7R; verify DC-bias effective capacitance"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>2c26ada8-78ca-5cd9-b3b2-b1e3fd5cdcfe</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C24">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100nF</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="100nF"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>af366a2a-d733-5bb2-8355-67ec7bd114ab</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C25">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">1uF</field>
+        <field name="AssemblyNote">At RGB VDD</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="1uF"/>
+      <property name="AssemblyNote" value="At RGB VDD"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>8a5913d4-7a06-5baa-bca2-7ea3c1f567ba</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C26">
+      <value>100nF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100nF</field>
+        <field name="AssemblyNote">At LV1T125 VCC</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="100nF"/>
+      <property name="AssemblyNote" value="At LV1T125 VCC"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>854ec2fe-458a-51d2-affa-b00ab81672ce</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C27">
+      <value>DNP</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">DNP</field>
+        <field name="AssemblyNote">EMI tuning option; leave open</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="DNP"/>
+      <property name="AssemblyNote" value="EMI tuning option; leave open"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>e4a651e4-1d7b-55be-8b4f-981a7a4f9ed3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C28">
+      <value>DNP</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">DNP</field>
+        <field name="AssemblyNote">EMI tuning option; leave open</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="MPN" value="DNP"/>
+      <property name="AssemblyNote" value="EMI tuning option; leave open"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>40d08fed-b48a-5115-baf8-61cd6784dbdd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>WS2812B-2020</value>
+      <footprint>Pico:WS2812B_2020_Compact</footprint>
+      <datasheet>https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf</datasheet>
+      <fields>
+        <field name="MPN">WS2812B-2020</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Pico:WS2812B_2020_Compact</field>
+        <field name="Datasheet">https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="LED__WS2812B-2020" description="RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"/>
+      <property name="MPN" value="WS2812B-2020"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="RGB LED NeoPixel Nano addressable"/>
+      <property name="ki_fp_filters" value="LED*WS2812*-2020_PLCC4*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>f8e3faca-c211-41df-b6a4-850553b50ce5</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="2"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D3">
+      <value>ESD9B5.0ST5G</value>
+      <footprint>Diode_SMD:D_SOD-923</footprint>
+      <datasheet>https://www.onsemi.com/pub/Collateral/ESD9B-D.PDF</datasheet>
+      <fields>
+        <field name="MPN">ESD9B5.0ST5G</field>
+        <field name="AssemblyNote">Move original 15 pF TVS to USB power rail</field>
+        <field name="Footprint">Diode_SMD:D_SOD-923</field>
+        <field name="Datasheet">https://www.onsemi.com/pub/Collateral/ESD9B-D.PDF</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Diode__ESD9B5.0ST5G" description="ESD protection diode, 5.0Vrwm, SOD-923"/>
+      <property name="MPN" value="ESD9B5.0ST5G"/>
+      <property name="AssemblyNote" value="Move original 15 pF TVS to USB power rail"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="diode TVS ESD"/>
+      <property name="ki_fp_filters" value="D*SOD?923*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>af8ff58f-2621-5a2e-a686-5d1cc6df2cfc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D4">
+      <value>USBLC6-2SC6</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <datasheet>https://www.st.com/resource/en/datasheet/usblc6-2.pdf</datasheet>
+      <fields>
+        <field name="MPN">USBLC6-2SC6</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet">https://www.st.com/resource/en/datasheet/usblc6-2.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Power_Protection__USBLC6-2SC6" description="Very low capacitance ESD protection diode, 2 data-line, SOT-23-6"/>
+      <property name="MPN" value="USBLC6-2SC6"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="usb ethernet video"/>
+      <property name="ki_fp_filters" value="SOT?23*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>e23770ad-4d35-5758-8c0a-51e9669daa67</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="2"/>
+            <pin num="6"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D5">
+      <value>SS14FL</value>
+      <footprint>Diode_SMD:D_SOD-123F</footprint>
+      <datasheet>https://www.onsemi.com/download/data-sheet/pdf/ss14fl-d.pdf</datasheet>
+      <fields>
+        <field name="MPN">SS14FL</field>
+        <field name="AssemblyNote">Blocks USB backfeed; +5V is about VBUS minus diode drop</field>
+        <field name="Footprint">Diode_SMD:D_SOD-123F</field>
+        <field name="Datasheet">https://www.onsemi.com/download/data-sheet/pdf/ss14fl-d.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__D_Schottky" description="Schottky diode"/>
+      <property name="MPN" value="SS14FL"/>
+      <property name="AssemblyNote" value="Blocks USB backfeed; +5V is about VBUS minus diode drop"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="diode Schottky"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>506f9a74-e380-5367-9605-0b307764d30d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="F1">
+      <value>0.75A hold</value>
+      <footprint>Fuse:Fuse_1206_3216Metric</footprint>
+      <fields>
+        <field name="MPN">1206L075/6</field>
+        <field name="AssemblyNote">Check thermal derating; input source &gt;=500 mA</field>
+        <field name="Footprint">Fuse:Fuse_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__Polyfuse_Small" description="Resettable fuse, polymeric positive temperature coefficient, small symbol"/>
+      <property name="MPN" value="1206L075/6"/>
+      <property name="AssemblyNote" value="Check thermal derating; input source &gt;=500 mA"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="resettable fuse PTC PPTC polyfuse polyswitch"/>
+      <property name="ki_fp_filters" value="*polyfuse* *PTC*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>ce620ea1-349a-57d8-9858-4ead1de4dba4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>USB4105-GF-A</value>
+      <footprint>Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal</footprint>
+      <datasheet>https://www.usb.org/sites/default/files/documents/usb_type-c.zip</datasheet>
+      <fields>
+        <field name="MPN">USB4105-GF-A</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal</field>
+        <field name="Datasheet">https://www.usb.org/sites/default/files/documents/usb_type-c.zip</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Connector__USB_C_Receptacle_USB2.0_16P" description="USB 2.0-only 16P Type-C Receptacle connector"/>
+      <property name="MPN" value="USB4105-GF-A"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="usb universal serial bus type-C USB2.0"/>
+      <property name="ki_fp_filters" value="USB*C*Receptacle*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>02b232a8-807d-5357-be68-6944a72beadc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="SH"/>
+            <pin num="A1"/>
+            <pin num="A12"/>
+            <pin num="B1"/>
+            <pin num="B12"/>
+            <pin num="A4"/>
+            <pin num="A9"/>
+            <pin num="B4"/>
+            <pin num="B9"/>
+            <pin num="A5"/>
+            <pin num="B5"/>
+            <pin num="A7"/>
+            <pin num="B7"/>
+            <pin num="A6"/>
+            <pin num="B6"/>
+            <pin num="A8"/>
+            <pin num="B8"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>J2 GPIO / 2.00mm</value>
+      <footprint>Pico:PinHeader_1x12_P2.00mm_Compact</footprint>
+      <fields>
+        <field name="MPN">1x12 P2.00 vertical header</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Pico:PinHeader_1x12_P2.00mm_Compact</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Connector_Generic__Conn_01x12" description="Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="MPN" value="1x12 P2.00 vertical header"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>c2c23966-6c97-5604-ad42-9652a8e0d317</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J3">
+      <value>J3 GPIO / 2.00mm</value>
+      <footprint>Pico:PinHeader_1x12_P2.00mm_Compact</footprint>
+      <fields>
+        <field name="MPN">1x12 P2.00 vertical header</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Pico:PinHeader_1x12_P2.00mm_Compact</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Connector_Generic__Conn_01x12" description="Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="MPN" value="1x12 P2.00 vertical header"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="connector"/>
+      <property name="ki_fp_filters" value="Connector*:*_1x??_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>216401e0-be0f-5c4d-9e01-62c6185429aa</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="10"/>
+            <pin num="11"/>
+            <pin num="12"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">10k</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="10k"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>0da5498e-25e4-5a1f-a2ec-8e7d4a71fd50</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R8">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">10k</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="10k"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>0049f830-36b4-5830-9ca0-886d561a5954</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R9">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">10k</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="10k"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>bd326c40-bf59-5fe6-860e-3e68009e8c6a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R10">
+      <value>5.1k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">5.1k</field>
+        <field name="AssemblyNote">1%; one Rd per CC pin</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="5.1k"/>
+      <property name="AssemblyNote" value="1%; one Rd per CC pin"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>d6afc9fe-166b-5fd7-a2ab-eea10f88ffc7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R11">
+      <value>5.1k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">5.1k</field>
+        <field name="AssemblyNote">1%; USB-C sink, no PD</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="5.1k"/>
+      <property name="AssemblyNote" value="1%; USB-C sink, no PD"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>3200b8bc-f450-5836-90ad-8129b5dd712a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R12">
+      <value>22R</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">22R</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="22R"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>22f2e7a6-60f8-57ba-acb8-8e0fca233bdd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R13">
+      <value>22R</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">22R</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="22R"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>a5281d7b-6202-5c99-896a-fb973c2bfb9e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R14">
+      <value>499R</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">499R</field>
+        <field name="AssemblyNote">UART0 harmonic damping at U1</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="499R"/>
+      <property name="AssemblyNote" value="UART0 harmonic damping at U1"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>4191c86d-c261-50dd-a34a-10aa9a0e1adc</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R15">
+      <value>330R</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">330R</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="330R"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>7a09205f-ce48-5673-8685-91667730c61e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R16">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">100k</field>
+        <field name="AssemblyNote">Keep LED data low at reset</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="100k"/>
+      <property name="AssemblyNote" value="Keep LED data low at reset"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>8baddcbc-e99f-5241-bf04-490b6cf56b14</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW1">
+      <value>RESET</value>
+      <footprint>Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2</footprint>
+      <fields>
+        <field name="MPN">KMR221GLFS</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Switch__SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="MPN" value="KMR221GLFS"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>a7491cc9-fa88-5f19-be12-9b3e71b01cfa</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="SW2">
+      <value>BOOT</value>
+      <footprint>Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2</footprint>
+      <fields>
+        <field name="MPN">KMR221GLFS</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Switch__SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="MPN" value="KMR221GLFS"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>01117767-438d-56d6-82f5-c0f687f75905</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>AP2112K-3.3</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <datasheet>https://www.diodes.com/assets/Datasheets/AP2112.pdf</datasheet>
+      <fields>
+        <field name="MPN">AP2112K-3.3TRG1</field>
+        <field name="AssemblyNote">600 mA peak rating; continuous load limited by SOT25 dissipation</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP2112.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Regulator_Linear__AP2112K-3.3" description="600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5"/>
+      <property name="MPN" value="AP2112K-3.3TRG1"/>
+      <property name="AssemblyNote" value="600 mA peak rating; continuous load limited by SOT25 dissipation"/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="linear regulator ldo fixed positive"/>
+      <property name="ki_fp_filters" value="SOT?23?5*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>1eabb228-a751-58d2-8ac5-c9a3915703d3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U4">
+      <value>SN74LV1T125</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</datasheet>
+      <fields>
+        <field name="MPN">SN74LV1T125DBVR</field>
+        <field name="AssemblyNote"/>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Pico_Custom__SN74LV1T125" description="Single-supply logic-level translating buffer, active-low OE, 1.6-5.5 V supply"/>
+      <property name="MPN" value="SN74LV1T125DBVR"/>
+      <property name="AssemblyNote" value=""/>
+      <property name="Sheetname" value="Power, USB and interfaces"/>
+      <property name="Sheetfile" value="power-io.kicad_sch"/>
+      <property name="ki_keywords" value="Single Gate Buff Tri-State LVC CMOS"/>
+      <property name="ki_fp_filters" value="SOT* SG-*"/>
+      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
+      <tstamps>70f0be28-5501-5c4a-8311-5ff86561bd4a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="5"/>
+            <pin num="3"/>
+            <pin num="1"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Pico_Design" part="Connector_Generic__Conn_01x12">
+      <description>Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x12</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Generic connector, single row, 01x12, script generated (kicad-library-utils/schlib/autogen/connector/)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Connector__USB_C_Receptacle_USB2.0_16P">
+      <description>USB 2.0-only 16P Type-C Receptacle connector</description>
+      <docs>https://www.usb.org/sites/default/files/documents/usb_type-c.zip</docs>
+      <footprints>
+        <fp>USB*C*Receptacle*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">USB_C_Receptacle_USB2.0_16P</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">https://www.usb.org/sites/default/files/documents/usb_type-c.zip</field>
+        <field name="Description">USB 2.0-only 16P Type-C Receptacle connector</field>
+      </fields>
+      <pins>
+        <pin num="A1" name="GND" type="passive"/>
+        <pin num="A4" name="VBUS" type="passive"/>
+        <pin num="A5" name="CC1" type="bidirectional"/>
+        <pin num="A6" name="D+" type="bidirectional"/>
+        <pin num="A7" name="D-" type="bidirectional"/>
+        <pin num="A8" name="SBU1" type="bidirectional"/>
+        <pin num="A9" name="VBUS" type="passive"/>
+        <pin num="A12" name="GND" type="passive"/>
+        <pin num="B1" name="GND" type="passive"/>
+        <pin num="B4" name="VBUS" type="passive"/>
+        <pin num="B5" name="CC2" type="bidirectional"/>
+        <pin num="B6" name="D+" type="bidirectional"/>
+        <pin num="B7" name="D-" type="bidirectional"/>
+        <pin num="B8" name="SBU2" type="bidirectional"/>
+        <pin num="B9" name="VBUS" type="passive"/>
+        <pin num="B12" name="GND" type="passive"/>
+        <pin num="SH" name="SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Device__C_Small">
+      <description>Unpolarized capacitor, small symbol</description>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Unpolarized capacitor, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Device__Crystal_GND24_Small">
+      <description>Four pin crystal, GND on pins 2 and 4, small symbol</description>
+      <footprints>
+        <fp>Crystal*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">Crystal_GND24_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Four pin crystal, GND on pins 2 and 4, small symbol</field>
+        <field name="KLC_S3.3">The rectangle is not a symbol body but a graphical element</field>
+        <field name="KLC_S4.1">Some pins are on 50mil grid to make the symbol small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="G" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="G" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Device__D_Schottky">
+      <description>Schottky diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Schottky</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Schottky diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Device__L_Small">
+      <description>Inductor, small symbol</description>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Inductor, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Device__Polyfuse_Small">
+      <description>Resettable fuse, polymeric positive temperature coefficient, small symbol</description>
+      <footprints>
+        <fp>*polyfuse*</fp>
+        <fp>*PTC*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Polyfuse_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resettable fuse, polymeric positive temperature coefficient, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Device__R_Small">
+      <description>Resistor, small symbol</description>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Resistor, small symbol</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Diode__ESD9B5.0ST5G">
+      <description>ESD protection diode, 5.0Vrwm, SOD-923</description>
+      <docs>https://www.onsemi.com/pub/Collateral/ESD9B-D.PDF</docs>
+      <footprints>
+        <fp>D*SOD?923*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">ESD9B5.0ST5G</field>
+        <field name="Footprint">Diode_SMD:D_SOD-923</field>
+        <field name="Datasheet">https://www.onsemi.com/pub/Collateral/ESD9B-D.PDF</field>
+        <field name="Description">ESD protection diode, 5.0Vrwm, SOD-923</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A1" type="passive"/>
+        <pin num="2" name="A2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="LED__WS2812B-2020">
+      <description>RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA</description>
+      <docs>https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf</docs>
+      <footprints>
+        <fp>LED*WS2812*-2020_PLCC4*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WS2812B-2020</field>
+        <field name="Footprint">LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm</field>
+        <field name="Datasheet">https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf</field>
+        <field name="Description">RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DOUT" type="output"/>
+        <pin num="2" name="VSS" type="power_in"/>
+        <pin num="3" name="DIN" type="input"/>
+        <pin num="4" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Memory_Flash__W25Q32JVZP">
+      <description>32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8</description>
+      <docs>http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf</docs>
+      <footprints>
+        <fp>WSON*1EP*6x5mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">W25Q32JVZP</field>
+        <field name="Footprint">Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm</field>
+        <field name="Datasheet">http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf</field>
+        <field name="Description">32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~{CS}" type="input"/>
+        <pin num="2" name="DO/IO_{1}" type="bidirectional"/>
+        <pin num="3" name="~{WP}/IO_{2}" type="bidirectional"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="DI/IO_{0}" type="bidirectional"/>
+        <pin num="6" name="CLK" type="input"/>
+        <pin num="7" name="~{HOLD}/~{RESET}/IO_{3}" type="bidirectional"/>
+        <pin num="8" name="VCC" type="power_in"/>
+        <pin num="9" name="EP" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Pico_Custom__SN74LV1T125">
+      <description>Single-supply logic-level translating buffer, active-low OE, 1.6-5.5 V supply</description>
+      <docs>https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</docs>
+      <footprints>
+        <fp>SOT*</fp>
+        <fp>SG-*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74LV1T125</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</field>
+        <field name="Description">Single-supply logic-level translating buffer, active-low OE, 1.6-5.5 V supply</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="input"/>
+        <pin num="2" name="" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="" type="tri_state"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Power_Protection__USBLC6-2SC6">
+      <description>Very low capacitance ESD protection diode, 2 data-line, SOT-23-6</description>
+      <docs>https://www.st.com/resource/en/datasheet/usblc6-2.pdf</docs>
+      <footprints>
+        <fp>SOT?23*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">USBLC6-2SC6</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet">https://www.st.com/resource/en/datasheet/usblc6-2.pdf</field>
+        <field name="Description">Very low capacitance ESD protection diode, 2 data-line, SOT-23-6</field>
+      </fields>
+      <pins>
+        <pin num="1" name="I/O1" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="I/O2" type="passive"/>
+        <pin num="4" name="I/O2" type="passive"/>
+        <pin num="5" name="VBUS" type="passive"/>
+        <pin num="6" name="I/O1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Regulator_Linear__AP2112K-3.3">
+      <description>600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5</description>
+      <docs>https://www.diodes.com/assets/Datasheets/AP2112.pdf</docs>
+      <footprints>
+        <fp>SOT?23?5*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AP2112K-3.3</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP2112.pdf</field>
+        <field name="Description">600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="NC" type="no_connect"/>
+        <pin num="5" name="VOUT" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Switch__SW_Push">
+      <description>Push button switch, generic, two pins</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_Push</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Push button switch, generic, two pins</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="Walsin_Antenna__RFANT5220110A0T">
+      <description>Walsin multilayer ceramic chip antenna, 2.4GHz ISM band (2.4-2.5GHz), 5.2x2.0x1.15mm SMD, 2dBi typ., 50ohm, VSWR&lt;=2</description>
+      <docs>ASC_RFANT5220110A0T_V13</docs>
+      <fields>
+        <field name="Reference">AE</field>
+        <field name="Value">RFANT5220110A0T</field>
+        <field name="Footprint">Walsin_Antenna:RFANT5220110A0T</field>
+        <field name="Datasheet">ASC_RFANT5220110A0T_V13</field>
+        <field name="Description">Walsin multilayer ceramic chip antenna, 2.4GHz ISM band (2.4-2.5GHz), 5.2x2.0x1.15mm SMD, 2dBi typ., 50ohm, VSWR&lt;=2</field>
+        <field name="Manufacturer">Walsin Technology Corporation</field>
+        <field name="MPN">RFANT5220110A0T</field>
+      </fields>
+      <pins>
+        <pin num="1" name="FEED" type="passive"/>
+        <pin num="2" name="SOLDER" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Pico_Design" part="espressif-kicad-addon__ESP32-C6">
+      <description>ESP32C6,ultra-low-power SoC with RISC-V single-core microprocessor,2.4 GHz Wi-Fi 6 (802.11 ax), Bluetooth 5 (LE), Zigbee and Thread (802.15.4),QFN-40</description>
+      <docs>https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf</docs>
+      <footprints>
+        <fp>QFN*W5mm*P0.4mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESP32-C6</field>
+        <field name="Footprint">Package_DFN_QFN:QFN-40-1EP_5x5mm_P0.4mm_EP3.6x3.6mm</field>
+        <field name="Datasheet">https://www.espressif.com/sites/default/files/documentation/esp32-c6_datasheet_en.pdf</field>
+        <field name="Description">ESP32C6,ultra-low-power SoC with RISC-V single-core microprocessor,2.4 GHz Wi-Fi 6 (802.11 ax), Bluetooth 5 (LE), Zigbee and Thread (802.15.4),QFN-40</field>
+      </fields>
+      <pins>
+        <pin num="1" name="ANT" type="bidirectional"/>
+        <pin num="2" name="VDDA3P3" type="power_in"/>
+        <pin num="3" name="VDDA3P3" type="passive"/>
+        <pin num="4" name="CHIP_PU" type="input"/>
+        <pin num="5" name="VDDPST1" type="power_in"/>
+        <pin num="6" name="GPIO0/XTAL_32K_P/ADC1_CH0" type="bidirectional"/>
+        <pin num="7" name="GPIO1/XTAL_32K_N/ADC1_CH1" type="bidirectional"/>
+        <pin num="8" name="GPIO2/FSPIQ/ADC1_CH2" type="bidirectional"/>
+        <pin num="9" name="GPIO3/ADC1_CH3" type="bidirectional"/>
+        <pin num="10" name="MTMS/GPIO4/FSPIHD/ADC1_CH4" type="bidirectional"/>
+        <pin num="11" name="MTDI/GPIO5/FSPIWP/ADC1_CH5" type="bidirectional"/>
+        <pin num="12" name="MTCK/GPIO6/FSPICLK/ADC1_CH6" type="bidirectional"/>
+        <pin num="13" name="MTDO/GPIO7/FSPID" type="bidirectional"/>
+        <pin num="14" name="GPIO8" type="bidirectional"/>
+        <pin num="15" name="GPIO9" type="bidirectional"/>
+        <pin num="16" name="GPIO10" type="bidirectional"/>
+        <pin num="17" name="GPIO11" type="bidirectional"/>
+        <pin num="18" name="GPIO12/USB_D-" type="bidirectional"/>
+        <pin num="19" name="GPIO13/USB_D+" type="bidirectional"/>
+        <pin num="20" name="SPICS0/GPIO24" type="bidirectional"/>
+        <pin num="21" name="SPIQ/GPIO25" type="bidirectional"/>
+        <pin num="22" name="SPIWP/GPIO26" type="bidirectional"/>
+        <pin num="23" name="VDD_SPI" type="power_out"/>
+        <pin num="24" name="SPIHD/GPIO28" type="bidirectional"/>
+        <pin num="25" name="SPICLK/GPIO29" type="bidirectional"/>
+        <pin num="26" name="SPID/GPIO30" type="bidirectional"/>
+        <pin num="27" name="GPIO15" type="bidirectional"/>
+        <pin num="28" name="VDDPST2" type="power_in"/>
+        <pin num="29" name="U0TXD/GPIO16/FSPICS0" type="bidirectional"/>
+        <pin num="30" name="U0RXD/GPIO17/FSPICS1" type="bidirectional"/>
+        <pin num="31" name="GPIO18/SDIO_CMD/FSPICS2" type="bidirectional"/>
+        <pin num="32" name="GPIO19/SDIO_CLK/FSPICS3" type="bidirectional"/>
+        <pin num="33" name="GPIO20/SDIO_DATA0/FSPICS4" type="bidirectional"/>
+        <pin num="34" name="GPIO21/SDIO_DATA1/FSPICS5" type="bidirectional"/>
+        <pin num="35" name="GPIO22/SDIO_DATA2" type="bidirectional"/>
+        <pin num="36" name="GPIO23/SDIO_DATA3" type="bidirectional"/>
+        <pin num="37" name="VDDA1" type="power_in"/>
+        <pin num="38" name="XTAL_N" type="output"/>
+        <pin num="39" name="XTAL_P" type="input"/>
+        <pin num="40" name="VDDA2" type="power_in"/>
+        <pin num="41" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Pico_Design">
+      <uri>${KIPRJMOD}/libs/Pico_Design.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="C23" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="L2" pin="1" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U1" pin="28" pinfunction="VDDPST2_28" pintype="power_in"/>
+      <node ref="U1" pin="37" pinfunction="VDDA1_37" pintype="power_in"/>
+      <node ref="U1" pin="40" pinfunction="VDDA2_40" pintype="power_in"/>
+      <node ref="U1" pin="5" pinfunction="VDDPST1_5" pintype="power_in"/>
+      <node ref="U2" pin="5" pinfunction="VOUT_5" pintype="power_out"/>
+    </net>
+    <net code="2" name="+5V" class="Default">
+      <node ref="C22" pin="1" pintype="passive"/>
+      <node ref="D5" pin="1" pinfunction="K_1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="VIN_1" pintype="power_in"/>
+      <node ref="U2" pin="3" pinfunction="EN_3" pintype="input"/>
+    </net>
+    <net code="3" name="ANT_FEED" class="Default">
+      <node ref="AE1" pin="1" pinfunction="FEED_1" pintype="passive"/>
+      <node ref="C18" pin="1" pintype="passive"/>
+      <node ref="D1" pin="2" pinfunction="A2_2" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+    </net>
+    <net code="4" name="CC1" class="Default">
+      <node ref="J1" pin="A5" pinfunction="CC1_A5" pintype="bidirectional"/>
+      <node ref="R10" pin="1" pintype="passive"/>
+    </net>
+    <net code="5" name="CC2" class="Default">
+      <node ref="J1" pin="B5" pinfunction="CC2_B5" pintype="bidirectional"/>
+      <node ref="R11" pin="1" pintype="passive"/>
+    </net>
+    <net code="6" name="CHIP_EN" class="Default">
+      <node ref="C21" pin="1" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="CHIP_PU_4" pintype="input"/>
+    </net>
+    <net code="7" name="GND" class="Default">
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C18" pin="2" pintype="passive"/>
+      <node ref="C19" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C20" pin="2" pintype="passive"/>
+      <node ref="C21" pin="2" pintype="passive"/>
+      <node ref="C22" pin="2" pintype="passive"/>
+      <node ref="C23" pin="2" pintype="passive"/>
+      <node ref="C24" pin="2" pintype="passive"/>
+      <node ref="C25" pin="2" pintype="passive"/>
+      <node ref="C26" pin="2" pintype="passive"/>
+      <node ref="C27" pin="2" pintype="passive"/>
+      <node ref="C28" pin="2" pintype="passive"/>
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="D1" pin="1" pinfunction="A1_1" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="VSS_2" pintype="power_in"/>
+      <node ref="D3" pin="1" pinfunction="A1_1" pintype="passive"/>
+      <node ref="D4" pin="2" pinfunction="GND_2" pintype="passive"/>
+      <node ref="J1" pin="A1" pinfunction="GND_A1" pintype="passive"/>
+      <node ref="J1" pin="A12" pinfunction="GND_A12" pintype="passive"/>
+      <node ref="J1" pin="B1" pinfunction="GND_B1" pintype="passive"/>
+      <node ref="J1" pin="B12" pinfunction="GND_B12" pintype="passive"/>
+      <node ref="J1" pin="SH" pinfunction="SHIELD_SH" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="L3" pin="2" pintype="passive"/>
+      <node ref="R10" pin="2" pintype="passive"/>
+      <node ref="R11" pin="2" pintype="passive"/>
+      <node ref="R16" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="SW2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="41" pinfunction="GND_41" pintype="power_in"/>
+      <node ref="U2" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="U3" pin="4" pinfunction="GND_4" pintype="power_in"/>
+      <node ref="U3" pin="9" pinfunction="EP_9" pintype="passive"/>
+      <node ref="U4" pin="1" pintype="input"/>
+      <node ref="U4" pin="3" pinfunction="GND_3" pintype="power_in"/>
+      <node ref="Y1" pin="2" pinfunction="G_2" pintype="passive"/>
+      <node ref="Y1" pin="4" pinfunction="G_4" pintype="passive"/>
+    </net>
+    <net code="8" name="GPIO0" class="Default">
+      <node ref="J2" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="GPIO0/XTAL_32K_P/ADC1_CH0_6" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="GPIO1" class="Default">
+      <node ref="J2" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="GPIO1/XTAL_32K_N/ADC1_CH1_7" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="GPIO2" class="Default">
+      <node ref="J2" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="GPIO2/FSPIQ/ADC1_CH2_8" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="GPIO3" class="Default">
+      <node ref="J2" pin="6" pinfunction="Pin_6_6" pintype="passive"/>
+      <node ref="U1" pin="9" pinfunction="GPIO3/ADC1_CH3_9" pintype="bidirectional"/>
+    </net>
+    <net code="12" name="GPIO4" class="Default">
+      <node ref="J2" pin="7" pinfunction="Pin_7_7" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="MTMS/GPIO4/FSPIHD/ADC1_CH4_10" pintype="bidirectional"/>
+    </net>
+    <net code="13" name="GPIO5" class="Default">
+      <node ref="J2" pin="8" pinfunction="Pin_8_8" pintype="passive"/>
+      <node ref="U1" pin="11" pinfunction="MTDI/GPIO5/FSPIWP/ADC1_CH5_11" pintype="bidirectional"/>
+    </net>
+    <net code="14" name="GPIO6" class="Default">
+      <node ref="J2" pin="9" pinfunction="Pin_9_9" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="MTCK/GPIO6/FSPICLK/ADC1_CH6_12" pintype="bidirectional"/>
+    </net>
+    <net code="15" name="GPIO7" class="Default">
+      <node ref="J2" pin="10" pinfunction="Pin_10_10" pintype="passive"/>
+      <node ref="U1" pin="13" pinfunction="MTDO/GPIO7/FSPID_13" pintype="bidirectional"/>
+    </net>
+    <net code="16" name="GPIO8" class="Default">
+      <node ref="J2" pin="11" pinfunction="Pin_11_11" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="U1" pin="14" pinfunction="GPIO8_14" pintype="bidirectional"/>
+    </net>
+    <net code="17" name="GPIO9_BOOT" class="Default">
+      <node ref="J2" pin="12" pinfunction="Pin_12_12" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="SW2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="15" pinfunction="GPIO9_15" pintype="bidirectional"/>
+    </net>
+    <net code="18" name="GPIO10" class="Default">
+      <node ref="J3" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="GPIO10_16" pintype="bidirectional"/>
+    </net>
+    <net code="19" name="GPIO11" class="Default">
+      <node ref="J3" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="GPIO11_17" pintype="bidirectional"/>
+    </net>
+    <net code="20" name="GPIO15" class="Default">
+      <node ref="J3" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
+      <node ref="U1" pin="27" pinfunction="GPIO15_27" pintype="bidirectional"/>
+    </net>
+    <net code="21" name="GPIO18" class="Default">
+      <node ref="J3" pin="8" pinfunction="Pin_8_8" pintype="passive"/>
+      <node ref="U1" pin="31" pinfunction="GPIO18/SDIO_CMD/FSPICS2_31" pintype="bidirectional"/>
+    </net>
+    <net code="22" name="GPIO19" class="Default">
+      <node ref="J3" pin="9" pinfunction="Pin_9_9" pintype="passive"/>
+      <node ref="U1" pin="32" pinfunction="GPIO19/SDIO_CLK/FSPICS3_32" pintype="bidirectional"/>
+    </net>
+    <net code="23" name="GPIO20" class="Default">
+      <node ref="J3" pin="10" pinfunction="Pin_10_10" pintype="passive"/>
+      <node ref="U1" pin="33" pinfunction="GPIO20/SDIO_DATA0/FSPICS4_33" pintype="bidirectional"/>
+    </net>
+    <net code="24" name="GPIO21_LED" class="Default">
+      <node ref="R16" pin="1" pintype="passive"/>
+      <node ref="U1" pin="34" pinfunction="GPIO21/SDIO_DATA1/FSPICS5_34" pintype="bidirectional"/>
+      <node ref="U4" pin="2" pintype="input"/>
+    </net>
+    <net code="25" name="GPIO22" class="Default">
+      <node ref="J3" pin="11" pinfunction="Pin_11_11" pintype="passive"/>
+      <node ref="U1" pin="35" pinfunction="GPIO22/SDIO_DATA2_35" pintype="bidirectional"/>
+    </net>
+    <net code="26" name="GPIO23" class="Default">
+      <node ref="J3" pin="12" pinfunction="Pin_12_12" pintype="passive"/>
+      <node ref="U1" pin="36" pinfunction="GPIO23/SDIO_DATA3_36" pintype="bidirectional"/>
+    </net>
+    <net code="27" name="LED_DATA_5V" class="Default">
+      <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="U4" pin="4" pintype="tri_state"/>
+    </net>
+    <net code="28" name="LED_DIN" class="Default">
+      <node ref="D2" pin="3" pinfunction="DIN_3" pintype="input"/>
+      <node ref="R15" pin="2" pintype="passive"/>
+    </net>
+    <net code="29" name="RF_50" class="Default">
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="L3" pin="1" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
+    </net>
+    <net code="30" name="RF_CHIP" class="Default">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="L1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="ANT_1" pintype="bidirectional"/>
+    </net>
+    <net code="31" name="RF_MID" class="Default">
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="L1" pin="2" pintype="passive"/>
+    </net>
+    <net code="32" name="SPI_CLK" class="Default">
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="CLK_6" pintype="input"/>
+    </net>
+    <net code="33" name="SPI_CLK_MCU" class="Default">
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="U1" pin="25" pinfunction="SPICLK/GPIO29_25" pintype="bidirectional"/>
+    </net>
+    <net code="34" name="SPI_CS" class="Default">
+      <node ref="R17" pin="2" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="~{CS}_1" pintype="input"/>
+    </net>
+    <net code="35" name="SPI_CS_MCU" class="Default">
+      <node ref="R17" pin="1" pintype="passive"/>
+      <node ref="U1" pin="20" pinfunction="SPICS0/GPIO24_20" pintype="bidirectional"/>
+    </net>
+    <net code="36" name="SPI_D" class="Default">
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="DI/IO_{0}_5" pintype="bidirectional"/>
+    </net>
+    <net code="37" name="SPI_D_MCU" class="Default">
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="U1" pin="26" pinfunction="SPID/GPIO30_26" pintype="bidirectional"/>
+    </net>
+    <net code="38" name="SPI_HD" class="Default">
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="U3" pin="7" pinfunction="~{HOLD}/~{RESET}/IO_{3}_7" pintype="bidirectional"/>
+    </net>
+    <net code="39" name="SPI_HD_MCU" class="Default">
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="24" pinfunction="SPIHD/GPIO28_24" pintype="bidirectional"/>
+    </net>
+    <net code="40" name="SPI_Q" class="Default">
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="DO/IO_{1}_2" pintype="bidirectional"/>
+    </net>
+    <net code="41" name="SPI_Q_MCU" class="Default">
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="21" pinfunction="SPIQ/GPIO25_21" pintype="bidirectional"/>
+    </net>
+    <net code="42" name="SPI_WP" class="Default">
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="~{WP}/IO_{2}_3" pintype="bidirectional"/>
+    </net>
+    <net code="43" name="SPI_WP_MCU" class="Default">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="22" pinfunction="SPIWP/GPIO26_22" pintype="bidirectional"/>
+    </net>
+    <net code="44" name="U0RXD" class="Default">
+      <node ref="J3" pin="7" pinfunction="Pin_7_7" pintype="passive"/>
+      <node ref="U1" pin="30" pinfunction="U0RXD/GPIO17/FSPICS1_30" pintype="bidirectional"/>
+    </net>
+    <net code="45" name="U0TXD" class="Default">
+      <node ref="J3" pin="6" pinfunction="Pin_6_6" pintype="passive"/>
+      <node ref="R14" pin="2" pintype="passive"/>
+    </net>
+    <net code="46" name="U0TXD_MCU" class="Default">
+      <node ref="R14" pin="1" pintype="passive"/>
+      <node ref="U1" pin="29" pinfunction="U0TXD/GPIO16/FSPICS0_29" pintype="bidirectional"/>
+    </net>
+    <net code="47" name="USB_D+" class="Default">
+      <node ref="D4" pin="1" pinfunction="I/O1_1" pintype="passive"/>
+      <node ref="D4" pin="6" pinfunction="I/O1_6" pintype="passive"/>
+      <node ref="J1" pin="A6" pinfunction="D+_A6" pintype="bidirectional"/>
+      <node ref="J1" pin="B6" pinfunction="D+_B6" pintype="bidirectional"/>
+      <node ref="R13" pin="1" pintype="passive"/>
+    </net>
+    <net code="48" name="USB_D-" class="Default">
+      <node ref="D4" pin="3" pinfunction="I/O2_3" pintype="passive"/>
+      <node ref="D4" pin="4" pinfunction="I/O2_4" pintype="passive"/>
+      <node ref="J1" pin="A7" pinfunction="D-_A7" pintype="bidirectional"/>
+      <node ref="J1" pin="B7" pinfunction="D-_B7" pintype="bidirectional"/>
+      <node ref="R12" pin="1" pintype="passive"/>
+    </net>
+    <net code="49" name="USB_MCU_D+" class="Default">
+      <node ref="C28" pin="1" pintype="passive"/>
+      <node ref="R13" pin="2" pintype="passive"/>
+      <node ref="U1" pin="19" pinfunction="GPIO13/USB_D+_19" pintype="bidirectional"/>
+    </net>
+    <net code="50" name="USB_MCU_D-" class="Default">
+      <node ref="C27" pin="1" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
+      <node ref="U1" pin="18" pinfunction="GPIO12/USB_D-_18" pintype="bidirectional"/>
+    </net>
+    <net code="51" name="V3A" class="Default">
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C19" pin="1" pintype="passive"/>
+      <node ref="C20" pin="1" pintype="passive"/>
+      <node ref="L2" pin="2" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="VDDA3P3_2" pintype="power_in"/>
+      <node ref="U1" pin="3" pinfunction="VDDA3P3_3" pintype="passive"/>
+    </net>
+    <net code="52" name="VBUS_FUSED" class="Default">
+      <node ref="D5" pin="2" pinfunction="A_2" pintype="passive"/>
+      <node ref="F1" pin="2" pintype="passive"/>
+    </net>
+    <net code="53" name="VBUS_USB" class="Default">
+      <node ref="C24" pin="1" pintype="passive"/>
+      <node ref="C25" pin="1" pintype="passive"/>
+      <node ref="C26" pin="1" pintype="passive"/>
+      <node ref="D2" pin="4" pinfunction="VDD_4" pintype="power_in"/>
+      <node ref="D3" pin="2" pinfunction="A2_2" pintype="passive"/>
+      <node ref="D4" pin="5" pinfunction="VBUS_5" pintype="passive"/>
+      <node ref="F1" pin="1" pintype="passive"/>
+      <node ref="J1" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
+      <node ref="J1" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
+      <node ref="J1" pin="B4" pinfunction="VBUS_B4" pintype="passive"/>
+      <node ref="J1" pin="B9" pinfunction="VBUS_B9" pintype="passive"/>
+      <node ref="U4" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+    </net>
+    <net code="54" name="VDD_SPI" class="Default">
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="U1" pin="23" pinfunction="VDD_SPI_23" pintype="power_out"/>
+      <node ref="U3" pin="8" pinfunction="VCC_8" pintype="power_in"/>
+    </net>
+    <net code="55" name="XTAL_LOAD_P" class="Default">
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="L4" pin="2" pintype="passive"/>
+      <node ref="Y1" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="56" name="XTAL_N" class="Default">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="U1" pin="38" pinfunction="XTAL_N_38" pintype="output"/>
+      <node ref="Y1" pin="3" pinfunction="3_3" pintype="passive"/>
+    </net>
+    <net code="57" name="XTAL_P" class="Default">
+      <node ref="L4" pin="1" pintype="passive"/>
+      <node ref="U1" pin="39" pinfunction="XTAL_P_39" pintype="input"/>
+    </net>
+    <net code="58" name="unconnected-(AE1-SOLDER-Pad2)" class="Default">
+      <node ref="AE1" pin="2" pinfunction="SOLDER_2" pintype="passive+no_connect"/>
+    </net>
+    <net code="59" name="unconnected-(D2-DOUT-Pad1)" class="Default">
+      <node ref="D2" pin="1" pinfunction="DOUT_1" pintype="output+no_connect"/>
+    </net>
+    <net code="60" name="unconnected-(J1-SBU1-PadA8)" class="Default">
+      <node ref="J1" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="61" name="unconnected-(J1-SBU2-PadB8)" class="Default">
+      <node ref="J1" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="62" name="unconnected-(U2-NC-Pad4)" class="Default">
+      <node ref="U2" pin="4" pinfunction="NC_4" pintype="no_connect"/>
+    </net>
+  </nets>
+</export>

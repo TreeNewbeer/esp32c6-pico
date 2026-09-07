@@ -1,0 +1,30 @@
+# KiCad local state, locks, autosaves, and backups
+*.kicad_prl
+*.lck
+*.bak
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*-backups/
+_autosave-*
+~*
+
+# Local design history and downloaded tools
+/backups/
+/tmp/
+/.history/
+/.claude/
+/en/
+*.log
+
+# Python and operating-system caches
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local credentials
+.env
+.env.*
+!.env.example
+!.env.sample

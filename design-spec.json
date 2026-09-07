@@ -1,0 +1,1072 @@
+[
+  {
+    "ref": "U1",
+    "value": "ESP32-C6",
+    "footprint": "Pico:QFN40_ESP32_C6_Compact",
+    "nets": {
+      "1": "RF_CHIP",
+      "2": "V3A",
+      "3": "V3A",
+      "4": "CHIP_EN",
+      "5": "+3V3",
+      "6": "GPIO0",
+      "7": "GPIO1",
+      "8": "GPIO2",
+      "9": "GPIO3",
+      "10": "GPIO4",
+      "11": "GPIO5",
+      "12": "GPIO6",
+      "13": "GPIO7",
+      "14": "GPIO8",
+      "15": "GPIO9_BOOT",
+      "16": "GPIO10",
+      "17": "GPIO11",
+      "18": "USB_MCU_D-",
+      "19": "USB_MCU_D+",
+      "20": "SPI_CS_MCU",
+      "21": "SPI_Q_MCU",
+      "22": "SPI_WP_MCU",
+      "23": "VDD_SPI",
+      "24": "SPI_HD_MCU",
+      "25": "SPI_CLK_MCU",
+      "26": "SPI_D_MCU",
+      "27": "GPIO15",
+      "28": "+3V3",
+      "29": "U0TXD_MCU",
+      "30": "U0RXD",
+      "31": "GPIO18",
+      "32": "GPIO19",
+      "33": "GPIO20",
+      "34": "GPIO21_LED",
+      "35": "GPIO22",
+      "36": "GPIO23",
+      "37": "+3V3",
+      "38": "XTAL_N",
+      "39": "XTAL_P",
+      "40": "+3V3",
+      "41": "GND"
+    },
+    "uuid": "8bf8607d-e3f7-46ac-9ee3-499b7bbbb17e",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/8bf8607d-e3f7-46ac-9ee3-499b7bbbb17e",
+    "dnp": false,
+    "mpn": "ESP32-C6",
+    "note": "QFN40, NOT the pin-incompatible C6FH4 QFN32"
+  },
+  {
+    "ref": "C3",
+    "value": "1.5pF",
+    "footprint": "Capacitor_SMD:C_0201_0603Metric",
+    "nets": {
+      "1": "RF_CHIP",
+      "2": "GND"
+    },
+    "uuid": "fe121819-547b-448b-b270-9feb496d187d",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/fe121819-547b-448b-b270-9feb496d187d",
+    "dnp": false,
+    "mpn": "1.5pF",
+    "note": "C0G; RF initial value, VNA tuning required"
+  },
+  {
+    "ref": "L1",
+    "value": "2.4nH",
+    "footprint": "Inductor_SMD:L_0201_0603Metric",
+    "nets": {
+      "1": "RF_CHIP",
+      "2": "RF_MID"
+    },
+    "uuid": "b6c23b7f-0edd-4e17-8966-43735c804a0c",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/b6c23b7f-0edd-4e17-8966-43735c804a0c",
+    "dnp": false,
+    "mpn": "2.4nH",
+    "note": "High-Q RF; initial value"
+  },
+  {
+    "ref": "C2",
+    "value": "1.5pF",
+    "footprint": "Capacitor_SMD:C_0201_0603Metric",
+    "nets": {
+      "1": "RF_MID",
+      "2": "GND"
+    },
+    "uuid": "7f30056b-9efd-43fd-bb94-ca5fdf4946cb",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/7f30056b-9efd-43fd-bb94-ca5fdf4946cb",
+    "dnp": false,
+    "mpn": "1.5pF",
+    "note": "C0G; RF initial value"
+  },
+  {
+    "ref": "C16",
+    "value": "10pF",
+    "footprint": "Capacitor_SMD:C_0201_0603Metric",
+    "nets": {
+      "1": "RF_MID",
+      "2": "RF_50"
+    },
+    "uuid": "84124424-6010-5b9d-8cec-178d711252f1",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/84124424-6010-5b9d-8cec-178d711252f1",
+    "dnp": false,
+    "mpn": "10pF",
+    "note": "C0G DC-block / tuning initial value"
+  },
+  {
+    "ref": "L3",
+    "value": "DNP",
+    "footprint": "Inductor_SMD:L_0201_0603Metric",
+    "nets": {
+      "1": "RF_50",
+      "2": "GND"
+    },
+    "uuid": "16b4735e-9cc3-5c28-a006-b7cd199ae095",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/16b4735e-9cc3-5c28-a006-b7cd199ae095",
+    "dnp": true,
+    "mpn": "DNP",
+    "note": "Shunt RF tuning option"
+  },
+  {
+    "ref": "C17",
+    "value": "DNP",
+    "footprint": "Capacitor_SMD:C_0201_0603Metric",
+    "nets": {
+      "1": "RF_50",
+      "2": "GND"
+    },
+    "uuid": "d1ce8f36-868c-5224-a80b-d422c4519e04",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/d1ce8f36-868c-5224-a80b-d422c4519e04",
+    "dnp": true,
+    "mpn": "DNP",
+    "note": "Antenna pi input shunt"
+  },
+  {
+    "ref": "R6",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0201_0603Metric",
+    "nets": {
+      "1": "RF_50",
+      "2": "ANT_FEED"
+    },
+    "uuid": "ff9193e3-87b0-5eee-b954-ba650a3012f8",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/ff9193e3-87b0-5eee-b954-ba650a3012f8",
+    "dnp": false,
+    "mpn": "0R",
+    "note": "Antenna pi series tuning option"
+  },
+  {
+    "ref": "C18",
+    "value": "DNP",
+    "footprint": "Capacitor_SMD:C_0201_0603Metric",
+    "nets": {
+      "1": "ANT_FEED",
+      "2": "GND"
+    },
+    "uuid": "87b7d10c-5209-5776-94b2-3d36798fe884",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/87b7d10c-5209-5776-94b2-3d36798fe884",
+    "dnp": true,
+    "mpn": "DNP",
+    "note": "Antenna pi output shunt"
+  },
+  {
+    "ref": "AE1",
+    "value": "RFANT5220110A0T",
+    "footprint": "Walsin_Antenna:RFANT5220110A0T",
+    "nets": {
+      "1": "ANT_FEED",
+      "2": null
+    },
+    "uuid": "c5287210-ef13-4efd-9e37-7930fcdc1c66",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/c5287210-ef13-4efd-9e37-7930fcdc1c66",
+    "dnp": false,
+    "mpn": "RFANT5220110A0T",
+    "note": "Pad 2 has open tuning copper, never connect to ground; 18x9 mm RF clearance"
+  },
+  {
+    "ref": "D1",
+    "value": "PESD5V0F1BL-Q",
+    "footprint": "Diode_SMD:D_SOD-882",
+    "nets": {
+      "1": "GND",
+      "2": "ANT_FEED"
+    },
+    "uuid": "17c190a4-f267-4adb-8e04-a4241b21f050",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/17c190a4-f267-4adb-8e04-a4241b21f050",
+    "dnp": true,
+    "mpn": "PESD5V0F1BL-Q",
+    "note": "0.4 pF antenna ESD option; original 15 pF ESD9B is unsuitable"
+  },
+  {
+    "ref": "C8",
+    "value": "10uF",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "uuid": "81884599-b362-4a44-aea5-7101f7ab1632",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/81884599-b362-4a44-aea5-7101f7ab1632",
+    "dnp": false,
+    "mpn": "10uF",
+    "note": "Main bulk; X7R 10 V minimum"
+  },
+  {
+    "ref": "C9",
+    "value": "1uF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "uuid": "27daa0f7-5cf0-45b9-8762-7fef5c0ae202",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/27daa0f7-5cf0-45b9-8762-7fef5c0ae202",
+    "dnp": false,
+    "mpn": "1uF",
+    "note": "Main bulk; X7R 10 V minimum"
+  },
+  {
+    "ref": "C10",
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "uuid": "09362add-1a4b-46ac-ba69-1a06f856de30",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/09362add-1a4b-46ac-ba69-1a06f856de30",
+    "dnp": false,
+    "mpn": "100nF",
+    "note": "Main HF; X7R 10 V minimum"
+  },
+  {
+    "ref": "C12",
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "uuid": "3cf2fc15-0e92-4730-a26e-584e479fd513",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/3cf2fc15-0e92-4730-a26e-584e479fd513",
+    "dnp": false,
+    "mpn": "100nF",
+    "note": "U1 pin 5; X7R 10 V minimum"
+  },
+  {
+    "ref": "C13",
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "uuid": "e6b7d767-38dd-4919-be00-cc69ea782971",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/e6b7d767-38dd-4919-be00-cc69ea782971",
+    "dnp": false,
+    "mpn": "100nF",
+    "note": "U1 pin 28; X7R 10 V minimum"
+  },
+  {
+    "ref": "C14",
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "uuid": "a8736ec6-a534-4855-b837-41c9b266e288",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/a8736ec6-a534-4855-b837-41c9b266e288",
+    "dnp": false,
+    "mpn": "100nF",
+    "note": "U1 pin 37; X7R 10 V minimum"
+  },
+  {
+    "ref": "C15",
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "uuid": "cdc0c944-2bd7-4bd8-8ebc-d4058327db04",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/cdc0c944-2bd7-4bd8-8ebc-d4058327db04",
+    "dnp": false,
+    "mpn": "100nF",
+    "note": "U1 pin 40; X7R 10 V minimum"
+  },
+  {
+    "ref": "L2",
+    "value": "2.0nH",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "V3A"
+    },
+    "uuid": "4bb8e07f-80b3-4fa0-926f-599a49652bbc",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/4bb8e07f-80b3-4fa0-926f-599a49652bbc",
+    "dnp": false,
+    "mpn": "2.0nH",
+    "note": "RF supply filter; Irated >= 500 mA, low DCR"
+  },
+  {
+    "ref": "C11",
+    "value": "1uF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "V3A",
+      "2": "GND"
+    },
+    "uuid": "ef2fcd15-2db6-49ca-9618-330dd3d40460",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/ef2fcd15-2db6-49ca-9618-330dd3d40460",
+    "dnp": false,
+    "mpn": "1uF",
+    "note": "U1 pins 2/3 local bypass"
+  },
+  {
+    "ref": "C19",
+    "value": "10uF",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "nets": {
+      "1": "V3A",
+      "2": "GND"
+    },
+    "uuid": "3160761b-f329-5e8e-b190-11fa959c0a52",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/3160761b-f329-5e8e-b190-11fa959c0a52",
+    "dnp": false,
+    "mpn": "10uF",
+    "note": "U1 pin 2 local bulk"
+  },
+  {
+    "ref": "C20",
+    "value": "10uF",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "nets": {
+      "1": "V3A",
+      "2": "GND"
+    },
+    "uuid": "be7b7ca8-433a-5d62-a564-8483e1467361",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/be7b7ca8-433a-5d62-a564-8483e1467361",
+    "dnp": false,
+    "mpn": "10uF",
+    "note": "U1 pin 3 local bulk"
+  },
+  {
+    "ref": "U3",
+    "value": "W25Q32JVZPIQ",
+    "footprint": "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm",
+    "nets": {
+      "1": "SPI_CS",
+      "2": "SPI_Q",
+      "3": "SPI_WP",
+      "4": "GND",
+      "5": "SPI_D",
+      "6": "SPI_CLK",
+      "7": "SPI_HD",
+      "8": "VDD_SPI",
+      "9": "GND"
+    },
+    "uuid": "11dd3793-e446-4d3b-bb90-c7cfe42ad248",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/11dd3793-e446-4d3b-bb90-c7cfe42ad248",
+    "dnp": false,
+    "mpn": "W25Q32JVZPIQ",
+    "note": ""
+  },
+  {
+    "ref": "R17",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0201_0603Metric",
+    "nets": {
+      "1": "SPI_CS_MCU",
+      "2": "SPI_CS"
+    },
+    "uuid": "9361a14c-2d3f-59dd-9486-ee25e7ccccc1",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/9361a14c-2d3f-59dd-9486-ee25e7ccccc1",
+    "dnp": false,
+    "mpn": "0R",
+    "note": "Place at U1; SPI clock defaults to 40 MHz for bring-up"
+  },
+  {
+    "ref": "R1",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0201_0603Metric",
+    "nets": {
+      "1": "SPI_Q_MCU",
+      "2": "SPI_Q"
+    },
+    "uuid": "9868171c-e3dd-411d-b982-a15aedcb9c96",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/9868171c-e3dd-411d-b982-a15aedcb9c96",
+    "dnp": false,
+    "mpn": "0R",
+    "note": "Place at U1; SPI clock defaults to 40 MHz for bring-up"
+  },
+  {
+    "ref": "R2",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0201_0603Metric",
+    "nets": {
+      "1": "SPI_WP_MCU",
+      "2": "SPI_WP"
+    },
+    "uuid": "d5ef5f06-562e-4f5d-ae98-c67c05631d82",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/d5ef5f06-562e-4f5d-ae98-c67c05631d82",
+    "dnp": false,
+    "mpn": "0R",
+    "note": "Place at U1; SPI clock defaults to 40 MHz for bring-up"
+  },
+  {
+    "ref": "R3",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0201_0603Metric",
+    "nets": {
+      "1": "SPI_HD_MCU",
+      "2": "SPI_HD"
+    },
+    "uuid": "8dd25ad6-208e-41e1-86fe-b46c01c36e0f",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/8dd25ad6-208e-41e1-86fe-b46c01c36e0f",
+    "dnp": false,
+    "mpn": "0R",
+    "note": "Place at U1; SPI clock defaults to 40 MHz for bring-up"
+  },
+  {
+    "ref": "R4",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0201_0603Metric",
+    "nets": {
+      "1": "SPI_CLK_MCU",
+      "2": "SPI_CLK"
+    },
+    "uuid": "87dab85c-99f6-4dd6-ade7-ad710ba00316",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/87dab85c-99f6-4dd6-ade7-ad710ba00316",
+    "dnp": false,
+    "mpn": "0R",
+    "note": "Place at U1; SPI clock defaults to 40 MHz for bring-up"
+  },
+  {
+    "ref": "R5",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0201_0603Metric",
+    "nets": {
+      "1": "SPI_D_MCU",
+      "2": "SPI_D"
+    },
+    "uuid": "f94147b5-6e1c-4abb-ab17-b16c4ee88e99",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/f94147b5-6e1c-4abb-ab17-b16c4ee88e99",
+    "dnp": false,
+    "mpn": "0R",
+    "note": "Place at U1; SPI clock defaults to 40 MHz for bring-up"
+  },
+  {
+    "ref": "C6",
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "VDD_SPI",
+      "2": "GND"
+    },
+    "uuid": "c1419592-f638-4f08-b060-66bd08918164",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/c1419592-f638-4f08-b060-66bd08918164",
+    "dnp": false,
+    "mpn": "100nF",
+    "note": "At flash VCC"
+  },
+  {
+    "ref": "C7",
+    "value": "1uF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "VDD_SPI",
+      "2": "GND"
+    },
+    "uuid": "36834f2e-b00b-4ab5-a075-c721b8ccbe80",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/36834f2e-b00b-4ab5-a075-c721b8ccbe80",
+    "dnp": false,
+    "mpn": "1uF",
+    "note": "At U1 VDD_SPI pin"
+  },
+  {
+    "ref": "L4",
+    "value": "24nH",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "nets": {
+      "1": "XTAL_P",
+      "2": "XTAL_LOAD_P"
+    },
+    "uuid": "f0cb3350-2c2f-5ce3-99ca-b77f21e1be56",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/f0cb3350-2c2f-5ce3-99ca-b77f21e1be56",
+    "dnp": false,
+    "mpn": "24nH",
+    "note": "Crystal harmonic suppression; initial value"
+  },
+  {
+    "ref": "Y1",
+    "value": "40MHz / CL=8pF",
+    "footprint": "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm",
+    "nets": {
+      "1": "XTAL_LOAD_P",
+      "2": "GND",
+      "3": "XTAL_N",
+      "4": "GND"
+    },
+    "uuid": "3414b06f-7c01-4540-8c85-87146061a56c",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/3414b06f-7c01-4540-8c85-87146061a56c",
+    "dnp": false,
+    "mpn": "E9X400081G08",
+    "note": "Eaton E9X; 40 MHz, CL 8 pF, initial tolerance 10 ppm, ESR <=50 ohm; verify assembled frequency"
+  },
+  {
+    "ref": "C4",
+    "value": "12pF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "XTAL_LOAD_P",
+      "2": "GND"
+    },
+    "uuid": "4832c35a-0426-47fa-95bf-9ea99299fa9d",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/4832c35a-0426-47fa-95bf-9ea99299fa9d",
+    "dnp": false,
+    "mpn": "12pF",
+    "note": "C0G; assumes about 2 pF stray; trim frequency on hardware"
+  },
+  {
+    "ref": "C5",
+    "value": "12pF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "XTAL_N",
+      "2": "GND"
+    },
+    "uuid": "f2663418-c785-4313-b74b-e0529cb49584",
+    "sheet": "core",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/f2663418-c785-4313-b74b-e0529cb49584",
+    "dnp": false,
+    "mpn": "12pF",
+    "note": "C0G; crystal load tuning"
+  },
+  {
+    "ref": "J1",
+    "value": "USB4105-GF-A",
+    "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
+    "nets": {
+      "A4": "VBUS_USB",
+      "A9": "VBUS_USB",
+      "B4": "VBUS_USB",
+      "B9": "VBUS_USB",
+      "A1": "GND",
+      "A12": "GND",
+      "B1": "GND",
+      "B12": "GND",
+      "SH": "GND",
+      "A5": "CC1",
+      "B5": "CC2",
+      "A6": "USB_D+",
+      "B6": "USB_D+",
+      "A7": "USB_D-",
+      "B7": "USB_D-",
+      "A8": null,
+      "B8": null
+    },
+    "uuid": "02b232a8-807d-5357-be68-6944a72beadc",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/02b232a8-807d-5357-be68-6944a72beadc",
+    "dnp": false,
+    "mpn": "USB4105-GF-A",
+    "note": ""
+  },
+  {
+    "ref": "R10",
+    "value": "5.1k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "CC1",
+      "2": "GND"
+    },
+    "uuid": "d6afc9fe-166b-5fd7-a2ab-eea10f88ffc7",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/d6afc9fe-166b-5fd7-a2ab-eea10f88ffc7",
+    "dnp": false,
+    "mpn": "5.1k",
+    "note": "1%; one Rd per CC pin"
+  },
+  {
+    "ref": "R11",
+    "value": "5.1k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "CC2",
+      "2": "GND"
+    },
+    "uuid": "3200b8bc-f450-5836-90ad-8129b5dd712a",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/3200b8bc-f450-5836-90ad-8129b5dd712a",
+    "dnp": false,
+    "mpn": "5.1k",
+    "note": "1%; USB-C sink, no PD"
+  },
+  {
+    "ref": "D4",
+    "value": "USBLC6-2SC6",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+    "nets": {
+      "1": "USB_D+",
+      "2": "GND",
+      "3": "USB_D-",
+      "4": "USB_D-",
+      "5": "VBUS_USB",
+      "6": "USB_D+"
+    },
+    "uuid": "e23770ad-4d35-5758-8c0a-51e9669daa67",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/e23770ad-4d35-5758-8c0a-51e9669daa67",
+    "dnp": false,
+    "mpn": "USBLC6-2SC6",
+    "note": ""
+  },
+  {
+    "ref": "R12",
+    "value": "22R",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "USB_D-",
+      "2": "USB_MCU_D-"
+    },
+    "uuid": "22f2e7a6-60f8-57ba-acb8-8e0fca233bdd",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/22f2e7a6-60f8-57ba-acb8-8e0fca233bdd",
+    "dnp": false,
+    "mpn": "22R",
+    "note": ""
+  },
+  {
+    "ref": "R13",
+    "value": "22R",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "USB_D+",
+      "2": "USB_MCU_D+"
+    },
+    "uuid": "a5281d7b-6202-5c99-896a-fb973c2bfb9e",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/a5281d7b-6202-5c99-896a-fb973c2bfb9e",
+    "dnp": false,
+    "mpn": "22R",
+    "note": ""
+  },
+  {
+    "ref": "C27",
+    "value": "DNP",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "USB_MCU_D-",
+      "2": "GND"
+    },
+    "uuid": "e4a651e4-1d7b-55be-8b4f-981a7a4f9ed3",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/e4a651e4-1d7b-55be-8b4f-981a7a4f9ed3",
+    "dnp": true,
+    "mpn": "DNP",
+    "note": "EMI tuning option; leave open"
+  },
+  {
+    "ref": "C28",
+    "value": "DNP",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "USB_MCU_D+",
+      "2": "GND"
+    },
+    "uuid": "40d08fed-b48a-5115-baf8-61cd6784dbdd",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/40d08fed-b48a-5115-baf8-61cd6784dbdd",
+    "dnp": true,
+    "mpn": "DNP",
+    "note": "EMI tuning option; leave open"
+  },
+  {
+    "ref": "F1",
+    "value": "0.75A hold",
+    "footprint": "Fuse:Fuse_1206_3216Metric",
+    "nets": {
+      "1": "VBUS_USB",
+      "2": "VBUS_FUSED"
+    },
+    "uuid": "ce620ea1-349a-57d8-9858-4ead1de4dba4",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/ce620ea1-349a-57d8-9858-4ead1de4dba4",
+    "dnp": false,
+    "mpn": "1206L075/6",
+    "note": "Check thermal derating; input source >=500 mA"
+  },
+  {
+    "ref": "D3",
+    "value": "ESD9B5.0ST5G",
+    "footprint": "Diode_SMD:D_SOD-923",
+    "nets": {
+      "1": "GND",
+      "2": "VBUS_USB"
+    },
+    "uuid": "af8ff58f-2621-5a2e-a686-5d1cc6df2cfc",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/af8ff58f-2621-5a2e-a686-5d1cc6df2cfc",
+    "dnp": false,
+    "mpn": "ESD9B5.0ST5G",
+    "note": "Move original 15 pF TVS to USB power rail"
+  },
+  {
+    "ref": "D5",
+    "value": "SS14FL",
+    "footprint": "Diode_SMD:D_SOD-123F",
+    "nets": {
+      "1": "+5V",
+      "2": "VBUS_FUSED"
+    },
+    "uuid": "506f9a74-e380-5367-9605-0b307764d30d",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/506f9a74-e380-5367-9605-0b307764d30d",
+    "dnp": false,
+    "mpn": "SS14FL",
+    "note": "Blocks USB backfeed; +5V is about VBUS minus diode drop"
+  },
+  {
+    "ref": "U2",
+    "value": "AP2112K-3.3",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "nets": {
+      "1": "+5V",
+      "2": "GND",
+      "3": "+5V",
+      "4": null,
+      "5": "+3V3"
+    },
+    "uuid": "1eabb228-a751-58d2-8ac5-c9a3915703d3",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/1eabb228-a751-58d2-8ac5-c9a3915703d3",
+    "dnp": false,
+    "mpn": "AP2112K-3.3TRG1",
+    "note": "600 mA peak rating; continuous load limited by SOT25 dissipation"
+  },
+  {
+    "ref": "C22",
+    "value": "10uF",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "nets": {
+      "1": "+5V",
+      "2": "GND"
+    },
+    "uuid": "e38c553c-5d45-5b31-b6f8-4f85036bdb43",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/e38c553c-5d45-5b31-b6f8-4f85036bdb43",
+    "dnp": false,
+    "mpn": "10uF",
+    "note": "10 V X7R; regulator input"
+  },
+  {
+    "ref": "C23",
+    "value": "22uF",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "uuid": "2c26ada8-78ca-5cd9-b3b2-b1e3fd5cdcfe",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/2c26ada8-78ca-5cd9-b3b2-b1e3fd5cdcfe",
+    "dnp": false,
+    "mpn": "22uF",
+    "note": "10 V X5R/X7R; verify DC-bias effective capacitance"
+  },
+  {
+    "ref": "C24",
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "VBUS_USB",
+      "2": "GND"
+    },
+    "uuid": "af366a2a-d733-5bb2-8355-67ec7bd114ab",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/af366a2a-d733-5bb2-8355-67ec7bd114ab",
+    "dnp": false,
+    "mpn": "100nF",
+    "note": ""
+  },
+  {
+    "ref": "R7",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "CHIP_EN"
+    },
+    "uuid": "0da5498e-25e4-5a1f-a2ec-8e7d4a71fd50",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/0da5498e-25e4-5a1f-a2ec-8e7d4a71fd50",
+    "dnp": false,
+    "mpn": "10k",
+    "note": ""
+  },
+  {
+    "ref": "C21",
+    "value": "1uF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "CHIP_EN",
+      "2": "GND"
+    },
+    "uuid": "a2a528cb-4490-5ea3-ac7a-fb0ac1600e55",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/a2a528cb-4490-5ea3-ac7a-fb0ac1600e55",
+    "dnp": false,
+    "mpn": "1uF",
+    "note": ""
+  },
+  {
+    "ref": "SW1",
+    "value": "RESET",
+    "footprint": "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2",
+    "nets": {
+      "1": "CHIP_EN",
+      "2": "GND"
+    },
+    "uuid": "a7491cc9-fa88-5f19-be12-9b3e71b01cfa",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/a7491cc9-fa88-5f19-be12-9b3e71b01cfa",
+    "dnp": false,
+    "mpn": "KMR221GLFS",
+    "note": ""
+  },
+  {
+    "ref": "R8",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GPIO9_BOOT"
+    },
+    "uuid": "0049f830-36b4-5830-9ca0-886d561a5954",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/0049f830-36b4-5830-9ca0-886d561a5954",
+    "dnp": false,
+    "mpn": "10k",
+    "note": ""
+  },
+  {
+    "ref": "SW2",
+    "value": "BOOT",
+    "footprint": "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2",
+    "nets": {
+      "1": "GPIO9_BOOT",
+      "2": "GND"
+    },
+    "uuid": "01117767-438d-56d6-82f5-c0f687f75905",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/01117767-438d-56d6-82f5-c0f687f75905",
+    "dnp": false,
+    "mpn": "KMR221GLFS",
+    "note": ""
+  },
+  {
+    "ref": "R9",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "+3V3",
+      "2": "GPIO8"
+    },
+    "uuid": "bd326c40-bf59-5fe6-860e-3e68009e8c6a",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/bd326c40-bf59-5fe6-860e-3e68009e8c6a",
+    "dnp": false,
+    "mpn": "10k",
+    "note": ""
+  },
+  {
+    "ref": "R14",
+    "value": "499R",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "U0TXD_MCU",
+      "2": "U0TXD"
+    },
+    "uuid": "4191c86d-c261-50dd-a34a-10aa9a0e1adc",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/4191c86d-c261-50dd-a34a-10aa9a0e1adc",
+    "dnp": false,
+    "mpn": "499R",
+    "note": "UART0 harmonic damping at U1"
+  },
+  {
+    "ref": "J2",
+    "value": "J2 GPIO / 2.00mm",
+    "footprint": "Pico:PinHeader_1x12_P2.00mm_Compact",
+    "nets": {
+      "1": "GND",
+      "2": "+3V3",
+      "3": "GPIO0",
+      "4": "GPIO1",
+      "5": "GPIO2",
+      "6": "GPIO3",
+      "7": "GPIO4",
+      "8": "GPIO5",
+      "9": "GPIO6",
+      "10": "GPIO7",
+      "11": "GPIO8",
+      "12": "GPIO9_BOOT"
+    },
+    "uuid": "c2c23966-6c97-5604-ad42-9652a8e0d317",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/c2c23966-6c97-5604-ad42-9652a8e0d317",
+    "dnp": false,
+    "mpn": "1x12 P2.00 vertical header",
+    "note": ""
+  },
+  {
+    "ref": "J3",
+    "value": "J3 GPIO / 2.00mm",
+    "footprint": "Pico:PinHeader_1x12_P2.00mm_Compact",
+    "nets": {
+      "1": "+5V",
+      "2": "GND",
+      "3": "GPIO10",
+      "4": "GPIO11",
+      "5": "GPIO15",
+      "6": "U0TXD",
+      "7": "U0RXD",
+      "8": "GPIO18",
+      "9": "GPIO19",
+      "10": "GPIO20",
+      "11": "GPIO22",
+      "12": "GPIO23"
+    },
+    "uuid": "216401e0-be0f-5c4d-9e01-62c6185429aa",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/216401e0-be0f-5c4d-9e01-62c6185429aa",
+    "dnp": false,
+    "mpn": "1x12 P2.00 vertical header",
+    "note": ""
+  },
+  {
+    "ref": "U4",
+    "value": "SN74LV1T125",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "nets": {
+      "1": "GND",
+      "2": "GPIO21_LED",
+      "3": "GND",
+      "4": "LED_DATA_5V",
+      "5": "VBUS_USB"
+    },
+    "uuid": "70f0be28-5501-5c4a-8311-5ff86561bd4a",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/70f0be28-5501-5c4a-8311-5ff86561bd4a",
+    "dnp": false,
+    "mpn": "SN74LV1T125DBVR",
+    "note": ""
+  },
+  {
+    "ref": "R16",
+    "value": "100k",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "GPIO21_LED",
+      "2": "GND"
+    },
+    "uuid": "8baddcbc-e99f-5241-bf04-490b6cf56b14",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/8baddcbc-e99f-5241-bf04-490b6cf56b14",
+    "dnp": false,
+    "mpn": "100k",
+    "note": "Keep LED data low at reset"
+  },
+  {
+    "ref": "R15",
+    "value": "330R",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
+    "nets": {
+      "1": "LED_DATA_5V",
+      "2": "LED_DIN"
+    },
+    "uuid": "7a09205f-ce48-5673-8685-91667730c61e",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/7a09205f-ce48-5673-8685-91667730c61e",
+    "dnp": false,
+    "mpn": "330R",
+    "note": ""
+  },
+  {
+    "ref": "D2",
+    "value": "WS2812B-2020",
+    "footprint": "Pico:WS2812B_2020_Compact",
+    "nets": {
+      "1": null,
+      "2": "GND",
+      "3": "LED_DIN",
+      "4": "VBUS_USB"
+    },
+    "uuid": "f8e3faca-c211-41df-b6a4-850553b50ce5",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/f8e3faca-c211-41df-b6a4-850553b50ce5",
+    "dnp": false,
+    "mpn": "WS2812B-2020",
+    "note": ""
+  },
+  {
+    "ref": "C25",
+    "value": "1uF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "VBUS_USB",
+      "2": "GND"
+    },
+    "uuid": "8a5913d4-7a06-5baa-bca2-7ea3c1f567ba",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/8a5913d4-7a06-5baa-bca2-7ea3c1f567ba",
+    "dnp": false,
+    "mpn": "1uF",
+    "note": "At RGB VDD"
+  },
+  {
+    "ref": "C26",
+    "value": "100nF",
+    "footprint": "Capacitor_SMD:C_0402_1005Metric",
+    "nets": {
+      "1": "VBUS_USB",
+      "2": "GND"
+    },
+    "uuid": "854ec2fe-458a-51d2-affa-b00ab81672ce",
+    "sheet": "io",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/854ec2fe-458a-51d2-affa-b00ab81672ce",
+    "dnp": false,
+    "mpn": "100nF",
+    "note": "At LV1T125 VCC"
+  }
+]

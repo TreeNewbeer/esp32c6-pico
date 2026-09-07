@@ -1,0 +1,66 @@
+﻿Reference,Value,MPN,Footprint,Populate,Note
+U1,ESP32-C6,ESP32-C6,Pico:QFN40_ESP32_C6_Compact,YES,"QFN40, NOT the pin-incompatible C6FH4 QFN32"
+C3,1.5pF,1.5pF,Capacitor_SMD:C_0201_0603Metric,YES,"C0G; RF initial value, VNA tuning required"
+L1,2.4nH,2.4nH,Inductor_SMD:L_0201_0603Metric,YES,High-Q RF; initial value
+C2,1.5pF,1.5pF,Capacitor_SMD:C_0201_0603Metric,YES,C0G; RF initial value
+C16,10pF,10pF,Capacitor_SMD:C_0201_0603Metric,YES,C0G DC-block / tuning initial value
+L3,DNP,DNP,Inductor_SMD:L_0201_0603Metric,NO,Shunt RF tuning option
+C17,DNP,DNP,Capacitor_SMD:C_0201_0603Metric,NO,Antenna pi input shunt
+R6,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Antenna pi series tuning option
+C18,DNP,DNP,Capacitor_SMD:C_0201_0603Metric,NO,Antenna pi output shunt
+AE1,RFANT5220110A0T,RFANT5220110A0T,Walsin_Antenna:RFANT5220110A0T,YES,"Pad 2 has open tuning copper, never connect to ground; 18x9 mm RF clearance"
+D1,PESD5V0F1BL-Q,PESD5V0F1BL-Q,Diode_SMD:D_SOD-882,NO,0.4 pF antenna ESD option; original 15 pF ESD9B is unsuitable
+C8,10uF,10uF,Capacitor_SMD:C_0603_1608Metric,YES,Main bulk; X7R 10 V minimum
+C9,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,Main bulk; X7R 10 V minimum
+C10,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,Main HF; X7R 10 V minimum
+C12,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pin 5; X7R 10 V minimum
+C13,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pin 28; X7R 10 V minimum
+C14,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pin 37; X7R 10 V minimum
+C15,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pin 40; X7R 10 V minimum
+L2,2.0nH,2.0nH,Inductor_SMD:L_0402_1005Metric,YES,"RF supply filter; Irated >= 500 mA, low DCR"
+C11,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pins 2/3 local bypass
+C19,10uF,10uF,Capacitor_SMD:C_0603_1608Metric,YES,U1 pin 2 local bulk
+C20,10uF,10uF,Capacitor_SMD:C_0603_1608Metric,YES,U1 pin 3 local bulk
+U3,W25Q32JVZPIQ,W25Q32JVZPIQ,Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm,YES,
+R17,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R1,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R2,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R3,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R4,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R5,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+C6,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,At flash VCC
+C7,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,At U1 VDD_SPI pin
+L4,24nH,24nH,Inductor_SMD:L_0402_1005Metric,YES,Crystal harmonic suppression; initial value
+Y1,40MHz / CL=8pF,E9X400081G08,Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm,YES,"Eaton E9X; 40 MHz, CL 8 pF, initial tolerance 10 ppm, ESR <=50 ohm; verify assembled frequency"
+C4,12pF,12pF,Capacitor_SMD:C_0402_1005Metric,YES,C0G; assumes about 2 pF stray; trim frequency on hardware
+C5,12pF,12pF,Capacitor_SMD:C_0402_1005Metric,YES,C0G; crystal load tuning
+J1,USB4105-GF-A,USB4105-GF-A,Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal,YES,
+R10,5.1k,5.1k,Resistor_SMD:R_0402_1005Metric,YES,1%; one Rd per CC pin
+R11,5.1k,5.1k,Resistor_SMD:R_0402_1005Metric,YES,"1%; USB-C sink, no PD"
+D4,USBLC6-2SC6,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,YES,
+R12,22R,22R,Resistor_SMD:R_0402_1005Metric,YES,
+R13,22R,22R,Resistor_SMD:R_0402_1005Metric,YES,
+C27,DNP,DNP,Capacitor_SMD:C_0402_1005Metric,NO,EMI tuning option; leave open
+C28,DNP,DNP,Capacitor_SMD:C_0402_1005Metric,NO,EMI tuning option; leave open
+F1,0.75A hold,1206L075/6,Fuse:Fuse_1206_3216Metric,YES,Check thermal derating; input source >=500 mA
+D3,ESD9B5.0ST5G,ESD9B5.0ST5G,Diode_SMD:D_SOD-923,YES,Move original 15 pF TVS to USB power rail
+D5,SS14FL,SS14FL,Diode_SMD:D_SOD-123F,YES,Blocks USB backfeed; +5V is about VBUS minus diode drop
+U2,AP2112K-3.3,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,YES,600 mA peak rating; continuous load limited by SOT25 dissipation
+C22,10uF,10uF,Capacitor_SMD:C_0603_1608Metric,YES,10 V X7R; regulator input
+C23,22uF,22uF,Capacitor_SMD:C_0603_1608Metric,YES,10 V X5R/X7R; verify DC-bias effective capacitance
+C24,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,
+R7,10k,10k,Resistor_SMD:R_0402_1005Metric,YES,
+C21,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,
+SW1,RESET,KMR221GLFS,Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2,YES,
+R8,10k,10k,Resistor_SMD:R_0402_1005Metric,YES,
+SW2,BOOT,KMR221GLFS,Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2,YES,
+R9,10k,10k,Resistor_SMD:R_0402_1005Metric,YES,
+R14,499R,499R,Resistor_SMD:R_0402_1005Metric,YES,UART0 harmonic damping at U1
+J2,J2 GPIO / 2.00mm,1x12 P2.00 vertical header,Pico:PinHeader_1x12_P2.00mm_Compact,YES,
+J3,J3 GPIO / 2.00mm,1x12 P2.00 vertical header,Pico:PinHeader_1x12_P2.00mm_Compact,YES,
+U4,SN74LV1T125,SN74LV1T125DBVR,Package_TO_SOT_SMD:SOT-23-5,YES,
+R16,100k,100k,Resistor_SMD:R_0402_1005Metric,YES,Keep LED data low at reset
+R15,330R,330R,Resistor_SMD:R_0402_1005Metric,YES,
+D2,WS2812B-2020,WS2812B-2020,Pico:WS2812B_2020_Compact,YES,
+C25,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,At RGB VDD
+C26,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,At LV1T125 VCC

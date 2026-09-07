@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "Pico")(type "KiCad")(uri "${KIPRJMOD}/libs/Pico.pretty")(options "")(descr "Compact project footprints"))
+	(lib (name "Walsin_Antenna")(type "KiCad")(uri "${KIPRJMOD}/libs/Walsin_Antenna.pretty")(options "")(descr "Walsin ceramic chip antennas"))
+)
