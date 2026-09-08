@@ -59,7 +59,7 @@ def draw_track(draw,t,extra,color):
 def route_one(ref,num,width=.1,fanout=False):
     source=next(p for p in fps[ref].Pads() if p.GetNumber()==str(num))
     name=source.GetNetname();net=source.GetNet();start_xy=point(source.GetPosition())
-    start=(*cell(start_xy),LAYERS.index(source.GetLayer()))
+    start=(*cell(start_xy),LAYERS.index(source.GetParent().GetLayer()))
     obstacles=[Image.new('1',(NX,NY),0) for _ in LAYERS]
     own=[Image.new('1',(NX,NY),0) for _ in LAYERS]
     via_block=Image.new('1',(NX,NY),0)
@@ -74,7 +74,11 @@ def route_one(ref,num,width=.1,fanout=False):
                 continue
             same=pd.GetNetname()==name
             # Do not drill into an SMT solderable land, even when it is this net.
-            draw_pad(vd,pd,.10 if same else .15+(.19 if npth else .115),1)
+            via_margin=.10 if same else .15+(.19 if npth else .115)
+            if pd.GetAttribute()==pcb.PAD_ATTRIB_SMD:
+                mask=pcb.ToMM(pd.GetSolderMaskExpansion(f.GetLayer()))
+                via_margin=max(via_margin,.075+.10+mask+.02)
+            draw_pad(vd,pd,via_margin,1)
             for li,layer in enumerate(LAYERS):
                 if not pd.IsOnLayer(layer):
                     continue

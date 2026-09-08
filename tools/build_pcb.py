@@ -18,6 +18,7 @@ FPLIB = Path('C:/Program Files/KiCad/10.0/share/kicad/footprints')
 OUTPUT = ROOT/'output'
 BOARD_FILE = ROOT/'esp32-c6-pico.kicad_pcb'
 MM = pcb.FromMM
+POWER_NETS = frozenset(['+3V3', '+5V', 'V3A', 'VBUS_FUSED', 'VBUS_USB', 'VDD_SPI'])
 
 
 def xy(x, y):
@@ -30,41 +31,41 @@ def point(p):
 
 # Absolute mm; F/B is the component side. Angles are KiCad board rotations.
 PLACEMENT = {
-    'AE1':(109,104.8,180,'F'), 'U1':(109,117,270,'F'),
-    'U3':(109.5,124.3,0,'F'), 'J1':(109,135.725,0,'F'),
-    'J2':(101.2,114,0,'F'), 'J3':(116.8,114,0,'F'),
+    'AE1':(109,107,270,'F'), 'U1':(109,117,270,'F'),
+    'U3':(107.8,125,0,'B'), 'J1':(109,134.225,0,'F'),
+    'J2':(99.95,114,180,'B'), 'J3':(118.05,114,180,'B'),
     'C3':(111.12,113.4,0,'F'), 'L1':(110.8,112.3,90,'F'),
-    'C2':(110.48,111.15,180,'F'), 'C16':(110.8,110.0,90,'F'),
-    'L3':(111.9,109.6,0,'F'), 'C17':(109.05,110.7,180,'F'),
-    'R6':(109.4,109.95,180,'F'), 'C18':(108.68,109.25,180,'F'),
-    'D1':(107.0,109.4,0,'F'),
+    'C2':(110.48,111.15,180,'F'), 'C16':(111.7,111.4,90,'F'),
+    'L3':(112.85,111,0,'F'), 'C17':(110.5,110.3,180,'F'),
+    'R6':(111.7,109.8,90,'F'), 'C18':(110.5,109.35,180,'F'),
+    'D1':(112.85,109.7,90,'F'),
     'L2':(104.4,109.9,0,'F'), 'C19':(106.8,111.25,180,'F'),
-    'C20':(106.8,112.85,180,'F'), 'C11':(109.3,113.25,180,'F'),
-    'C8':(104.0,113.8,0,'B'), 'C9':(103.8,115.2,90,'F'),
-    'C10':(105.0,115.2,90,'F'), 'C12':(108.8,115.0,180,'B'),
-    'C13':(110.7,122.0,270,'B'), 'C14':(113.15,117.9,0,'F'),
-    'C15':(113.2,114.3,0,'F'), 'C6':(114.5,121.2,90,'F'),
-    'C7':(108.0,120.9,90,'B'),
-    'Y1':(114.9,111.2,0,'F'), 'L4':(113.1,115.6,0,'F'),
-    'C4':(112.75,112.7,270,'F'), 'C5':(114.8,109.3,0,'F'),
-    'R17':(106.2,120.8,270,'F'), 'R1':(106.9,120.8,270,'F'),
-    'R2':(107.6,120.8,270,'F'), 'R3':(108.3,120.8,270,'F'),
-    'R4':(109.0,120.8,270,'F'), 'R5':(110.1,121.0,0,'F'),
+    'C20':(106.8,112.85,180,'F'), 'C11':(109.3,113.15,180,'F'),
+    'C8':(104,113.8,0,'B'), 'C9':(103.8,115.2,90,'F'),
+    'C10':(105,115.2,90,'F'), 'C12':(108.8,115,180,'B'),
+    'C13':(111.35,121.2,-90,'F'), 'C14':(113.15,117.9,0,'F'),
+    'C15':(113.2,114.3,0,'F'), 'C6':(111.7,126.2,90,'B'),
+    'C7':(108.45,121,0,'F'),
+    'Y1':(115.65,116.9,180,'F'), 'L4':(113.1,115.6,0,'F'),
+    'C4':(115.65,114.6,180,'F'), 'C5':(115.65,119,0,'F'),
+    'R17':(104.95,121.2,-90,'B'), 'R1':(106.15,121.2,-90,'B'),
+    'R2':(107.35,121.2,-90,'B'), 'R3':(108.55,121.2,-90,'B'),
+    'R4':(109.75,121.2,-90,'B'), 'R5':(110.95,121.2,-90,'B'),
     'R12':(104.75,117.8,0,'F'), 'R13':(104.75,118.85,0,'F'),
-    'C27':(105.15,117.8,180,'B'), 'C28':(105.15,119.2,180,'B'),
-    'D4':(109,129.0,0,'F'), 'R10':(105.65,130.5,0,'F'),
-    'R11':(113.8,130.2,0,'F'), 'D3':(115.0,134.4,90,'B'),
-    'C24':(114.1,130.0,90,'B'),
-    'U2':(108.9,130.1,90,'B'), 'D5':(109.4,134.7,0,'B'),
-    'F1':(109,137.3,0,'B'), 'C22':(111.6,130.0,90,'B'),
-    'C23':(106.3,130.0,90,'B'),
-    'SW1':(104.8,125.8,0,'B'), 'SW2':(112.1,125.8,0,'B'),
-    'R7':(106.2,114.8,90,'B'), 'C21':(104.2,116.5,0,'B'),
-    'R8':(103.9,120.8,0,'B'), 'R9':(103.9,122.2,0,'B'),
-    'R14':(112.1,123.5,0,'B'),
-    'D2':(113.65,128.4,0,'F'), 'U4':(113.3,120.5,0,'B'),
-    'C25':(114.3,123.1,0,'B'), 'C26':(114.4,117.6,0,'B'),
-    'R15':(114.1,125.9,90,'F'), 'R16':(104.4,123.4,0,'B'),
+    'C27':(104.75,117.8,180,'B'), 'C28':(103.2,119.3,180,'B'),
+    'D4':(108.8,129.949999,90,'B'), 'R10':(105.5,128.5,0,'F'),
+    'R11':(107.7,128.5,0,'F'), 'D3':(115,132.9,90,'B'),
+    'C24':(111.2,129.1,270,'B'),
+    'U2':(114,125.5,90,'B'), 'D5':(109.4,133.2,0,'B'),
+    'F1':(109,135.8,0,'B'), 'C22':(114,128.5,0,'B'),
+    'C23':(113.7,128.5,0,'F'),
+    'SW1':(106.65,125.1,0,'F'), 'SW2':(112.35,125.1,0,'F'),
+    'R7':(106.95,115.4,180,'B'), 'C21':(104.2,116.5,0,'B'),
+    'R8':(103.15,121.8,0,'B'), 'R9':(104.8,121.7,0,'F'),
+    'R14':(111.95,123.25,90,'B'),
+    'D2':(113.5,121.8,0,'F'), 'U4':(113.55,120.5,0,'B'),
+    'C25':(114.8,122.8,0,'B'), 'C26':(115.65,120.7,90,'F'),
+    'R15':(111,122.75,180,'F'), 'R16':(113.45,119.45,0,'F'),
 }
 
 
@@ -73,6 +74,7 @@ def load_board():
     board.SetCopperLayerCount(4)
     board.GetDesignSettings().SetBoardThickness(MM(.8))
     ds = board.GetDesignSettings()
+    ds.SetAuxOrigin(xy(98.75,137.5))
     ds.m_MinClearance=MM(.1)
     ds.m_TrackMinWidth=MM(.1)
     ds.m_ViasMinSize=MM(.4)
@@ -87,7 +89,7 @@ def load_board():
     nc=ds.m_NetSettings.GetDefaultNetclass()
     nc.SetClearance(MM(.1));nc.SetTrackWidth(MM(.15))
     nc.SetViaDiameter(MM(.45));nc.SetViaDrill(MM(.2))
-    nc.SetDiffPairWidth(MM(.14));nc.SetDiffPairGap(MM(.15))
+    nc.SetDiffPairWidth(MM(.15));nc.SetDiffPairGap(MM(.15))
     ds.m_HoleClearance=MM(.18)
     doc = ET.parse(OUTPUT/'netlist.xml').getroot()
     net_map, pad_net, pad_function = {}, {}, {}
@@ -136,6 +138,9 @@ def load_board():
 def segment(board,net,p,q,width=.15,layer=pcb.F_Cu,locked=True):
     if math.dist(p,q)<1e-6:
         return
+    # Keep generated signal and supply traces consistent with the project rules.
+    if net.GetNetname()!='GND':
+        width=.2 if net.GetNetname() in POWER_NETS else .15
     t=pcb.PCB_TRACK(board)
     t.SetStart(xy(*p));t.SetEnd(xy(*q));t.SetWidth(MM(width));t.SetLayer(layer);t.SetNet(net)
     t.SetLocked(locked)
@@ -198,82 +203,85 @@ def main():
         return point(pad(ref,num).GetPosition())
     def route(net,points,width=.15,layer=pcb.F_Cu):
         trace(board,nets[net],points,width,layer)
-    # 18 x 39 mm board, USB shell protrudes slightly past the lower edge.
-    for a,b in [((100,100),(118,100)),((118,100),(118,139)),((118,139),(100,139)),((100,139),(100,100))]:
+    # Bottom-mounted headers provide front-side room for the crystal beside the MCU.
+    for a,b in [((98.75,105.5),(119.25,105.5)),((119.25,105.5),(119.25,137.5)),((119.25,137.5),(98.75,137.5)),((98.75,137.5),(98.75,105.5))]:
         edge=pcb.PCB_SHAPE(board);edge.SetShape(pcb.SHAPE_T_SEGMENT)
         edge.SetStart(xy(*a));edge.SetEnd(xy(*b));edge.SetLayer(pcb.Edge_Cuts);edge.SetWidth(MM(.05));board.Add(edge)
     allcu=[pcb.F_Cu,pcb.In1_Cu,pcb.In2_Cu,pcb.B_Cu]
-    box_zone(board,'ANTENNA_NO_COPPER',None,100,100,118,109,allcu,True)
+    box_zone(board,'ANTENNA_NO_COPPER',None,98.75,105.5,119.25,109,allcu,True)
     # Reject signal routing in the antenna clearance except the dedicated feed.
-    for name,rect in [('ANT_LEFT',(100,100,108.4,109)),('ANT_RIGHT',(109.6,100,118,109)),('ANT_TIP',(108.4,100,109.6,106.8))]:
+    for name,rect in [('ANT_LEFT',(98.75,105.5,110.65,109)),('ANT_RIGHT',(112.45,105.5,119.25,109)),('ANT_TIP',(110.65,105.5,112.45,105.9))]:
         z=box_zone(board,name,None,*rect,allcu,True)
         z.SetDoNotAllowTracks(True)
     for layer in allcu:
-        box_zone(board,'GND_'+board.GetLayerName(layer),nets['GND'],100.25,109,117.75,138.75,[layer])
+        box_zone(board,'GND_'+board.GetLayerName(layer),nets['GND'],99,109,119,137.25,[layer])
     # No autorouted digital tracks under the crystal or RF matching chain.
-    for name,rect in [('RF_REFERENCE',(110.5,109,112.4,114.25)),('ANT_REFERENCE',(108.5,109,110.5,111.6)),('XTAL_REFERENCE',(112.8,109,116.4,112.6))]:
+    for name,rect in [('RF_REFERENCE',(110.4,109,113.4,114.25)),('ANT_REFERENCE',(110.0,109,112.4,111.6)),('XTAL_REFERENCE',(114.45,115.65,116.85,118.15))]:
         z=box_zone(board,name,None,*rect,[pcb.In1_Cu,pcb.In2_Cu,pcb.B_Cu],True)
         z.SetDoNotAllowTracks(True);z.SetDoNotAllowVias(False);z.SetDoNotAllowZoneFills(False)
+        if name=='XTAL_REFERENCE':z.SetDoNotAllowPads(True)
 
     # RF chip CLCCL and antenna pi network; no layer changes in the RF signal.
     route('RF_CHIP',[p('U1',1),p('C3',1),p('L1',1)])
-    route('RF_MID',[p('L1',2),p('C2',1),p('C16',1)])
-    route('RF_50',[p('C16',2),(110.88,109.6),p('L3',1)])
-    route('RF_50',[p('C16',2),(110.53,109.95),p('R6',1)])
-    route('RF_50',[p('R6',1),(109.72,110.35),p('C17',1)])
-    route('ANT_FEED',[p('R6',2),(109,109.87),(109,109.25),p('C18',1),(109,108.0),p('AE1',1)])
-    route('ANT_FEED',[p('C18',1),(109,109.8),(108.1,109.8),p('D1',2)])
+    route('RF_MID',[p('L1',2),(111.1,111.98),(111.36,111.72),p('C16',1)])
+    route('RF_MID',[p('L1',2),p('C2',1)])
+    route('RF_50',[p('C16',2),p('R6',1)])
+    route('RF_50',[(111.7,111.08),(112.45,111.08),p('L3',1)])
+    route('RF_50',[p('C17',1),(111.4,110.3),(111.7,110.6)])
+    route('ANT_FEED',[p('R6',2),p('AE1',1)])
+    route('ANT_FEED',[p('C18',1),(111.57,109.35),p('R6',2)])
+    route('ANT_FEED',[p('R6',2),(112.77,109.48),p('D1',2)])
     # Crystal: every signal stays on the front copper.
-    route('XTAL_P',[p('U1',39),p('L4',1)],.125)
-    route('XTAL_LOAD_P',[p('L4',2),(114.3,114.91),(114.3,111.85),p('Y1',1)],.125)
-    route('XTAL_LOAD_P',[p('Y1',1),(113.77,111.75),(113.30,112.22),p('C4',1)],.125)
-    route('XTAL_N',[p('U1',38),(112.2,116),(113.0,116.8),(114.4,116.8),(115.0,116.2),(115.0,114.0),
-                    (116.55,112.45),(116.55,111.1),(116.1,110.65),p('Y1',3)],.125)
-    route('XTAL_N',[p('Y1',3),(115.6,109.9),(114.32,109.9),p('C5',1)],.125)
+    route('XTAL_P',[p('U1',39),p('L4',1)],.15)
+    route('XTAL_LOAD_P',[p('L4',2),(115.6,115.6),p('Y1',1)],.15)
+    route('XTAL_LOAD_P',[p('Y1',1),(116.13,116.13),p('C4',1)],.15)
+    route('XTAL_N',[p('U1',38),(112.225,116),(112.675,116.45),(113.675,116.45),(114.675,117.45),p('Y1',3)],.15)
+    route('XTAL_N',[p('Y1',3),(115.17,117.67),p('C5',1)],.15)
 
     # RF supply pins get a shared short wide branch after the LC filter.
-    route('V3A',[p('U1',2),(110.4,114.05),(110.0,114.05),p('U1',3)],.25)
-    route('V3A',[(110.0,114.05),p('C11',1)],.25)
+    route('V3A',[p('U1',2),(110.4,114.05),(110.0,114.05),p('U1',3)],.2)
+    route('V3A',[(110.0,114.05),p('C11',1)],.2)
     # Exposed-pad thermal / ground vias, arranged away from the paste windows.
     for dx in [-1.0,0,1.0]:
         for dy in [-1.0,0,1.0]:
             via(board,nets['GND'],(109+dx,117+dy),.45,.2)
 
     # USB series resistors close to the MCU.
-    route('USB_MCU_D-',[p('U1',18),(106.0,118),(105.8,117.8),p('R12',2)],.14)
-    route('USB_MCU_D+',[p('U1',19),(106.0,118.4),(105.55,118.85),p('R13',2)],.14)
+    route('USB_MCU_D-',[p('U1',18),(106.0,118),(105.8,117.8),p('R12',2)],.15)
+    route('USB_MCU_D+',[p('U1',19),(106.0,118.4),(105.55,118.85),p('R13',2)],.15)
     # Short DNP EMI-cap branches terminate beside the series resistors on B.Cu.
     for cap,res in [('C27','R12'),('C28','R13')]:
         target=(105.65,p(res,2)[1])
         net=pad(res,2).GetNet()
-        trace(board,net,[p(res,2),target],.14)
+        trace(board,net,[p(res,2),target],.15)
         via(board,net,target)
-        trace(board,net,[target,p(cap,1)],.14,pcb.B_Cu)
-    route('USB_D-', [p('R12',1),(103.75,117.8),(103.35,118.2),(103.35,124.64),(106.65,127.94),
-                    (106.85,127.94),(106.85,129.95),p('D4',3),p('D4',4)],.14)
-    route('USB_D+', [p('R13',1),(104.04,118.85),(103.64,119.25),(103.64,124.47),(106.82,127.65),
-                    (107.8625,127.65),p('D4',1),p('D4',6)],.14)
-    # USB-C reversibility: connect both D+ pins and both D- pins with short loops.
-    route('USB_D+',[p('D4',6),(111.2,128.05),(111.2,131.0),(111.0,131.2),(109.75,131.2),p('J1','B6')],.14)
-    route('USB_D+',[p('J1','B6'),(109.75,133.0),(108.75,133.0),p('J1','A6')],.14)
-    route('USB_D-',[p('D4',3),(107.8625,130.8125),(108.25,131.2),p('J1','B7')],.14)
-    route('USB_D-',[p('J1','B7'),(108.25,131.2),(109.25,131.2),p('J1','A7')],.14)
+        trace(board,net,[target,p(cap,1)],.15,pcb.B_Cu)
+    # Two front/back transitions per line; no length-matching meanders.
+    route('USB_D-',[p('R12',1),(103.75,117.8),(103.35,118.2),(103.35,121.9),(103.15,122.1)],.15)
+    route('USB_D+',[p('R13',1),(104.04,118.85),(103.64,119.25),(103.64,122.6)],.15)
+    for net,locations in [('USB_D-',[(103.15,122.1),(108.2,130.7)]),('USB_D+',[(103.64,122.6),(109.75,130.7)])]:
+        for location in locations:via(board,nets[net],location,.3,.15)
+    route('USB_D-',[(103.15,122.1),(103.15,126.9),(103.85,127.6),(107.85,127.6),p('D4',4),p('D4',3),(108.2,130.7)],.15,pcb.B_Cu)
+    route('USB_D+',[(103.64,122.6),(103.64,126.61),(104.18,127.15),(109.75,127.15),p('D4',6),p('D4',1),(109.75,130.7)],.15,pcb.B_Cu)
+    route('USB_D-',[(108.2,130.7),p('J1','B7'),(108.25,129.2),(109.25,129.2),p('J1','A7')],.15)
+    route('USB_D+',[(109.75,130.7),p('J1','B6')],.15)
+    route('USB_D+',[(109.75,130.7),(109.75,131.5),(108.75,131.5),p('J1','A6')],.15)
 
     # Label the accessible controls and connector pinout on the back silkscreen.
-    text(board,'C6 PICO',105.0,119.4,pcb.B_SilkS,.85)
-    text(board,'REV A',109,138.7,pcb.B_SilkS,.6)
-    text(board,'RST',104.8,128.2,pcb.B_SilkS,.65)
-    text(board,'BOOT',112.1,128.2,pcb.B_SilkS,.65)
-    text(board,'2.4 GHz',104.0,105.3,pcb.F_SilkS,.7)
-    text(board,'NO COPPER',114.0,105.3,pcb.F_SilkS,.6)
-    text(board,'RFANT5220110A0T: 18 x 9 mm clearance. Tune antenna on final assembly.',109,97.8,pcb.Dwgs_User,.8)
-    text(board,'18 x 39 mm | 4 layers | 0.8 mm nominal | 0.20 mm drilled vias',109,141.5,pcb.Dwgs_User,.8)
+    text(board,'C6 PICO',109,116.8,pcb.B_SilkS,.85)
+    text(board,'REV A',109,110.3,pcb.B_SilkS,.6)
+    text(board,'RST',106.65,127.35,pcb.F_SilkS,.6)
+    text(board,'BOOT',112.35,127.35,pcb.F_SilkS,.6)
+    # Final silkscreen logos are editable board groups; see docs/logo/README.md.
+    text(board,'RFANT5220110A0T: axial end copper, 20.5 x 3.5 mm prototype clearance; RF validation required.',109,102.8,pcb.Dwgs_User,.8)
+    text(board,'20.5 x 32 mm | 4 layers | 0.8 mm nominal | 0.20 mm drilled vias',109,141.5,pcb.Dwgs_User,.8)
     text(board,'L1 signal / L2 solid GND / L3 power+GND / L4 signal+GND. Fab to confirm 50R RF / 90R USB.',109,143.0,pcb.Dwgs_User,.8)
     for ref,labels in [('J2',['G','3V3','0','1','2','3','4','5','6','7','8','9']),
                        ('J3',['5V','G','10','11','15','TX','RX','18','19','20','22','23'])]:
-        x=102.65 if ref=='J2' else 115.7
         for i,lab in enumerate(labels):
-            text(board,lab,x,114+i*2,pcb.F_SilkS,.6)
+            if ref=='J2':
+                text(board,lab,101.75,114+i*2,pcb.B_SilkS,.6)
+            else:text(board,lab,116.25,114+i*2,pcb.B_SilkS,.6,90)
 
     board.BuildConnectivity()
     pcb.SaveBoard(str(BOARD_FILE),board)

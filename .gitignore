@@ -1,15 +1,24 @@
-# KiCad local state, locks, autosaves, and backups
+# KiCad local state, locks, autosaves, and backups (Windows and Linux)
 *.kicad_prl
 *.lck
 *.bak
 *.kicad_sch-bak
 *.kicad_pcb-bak
-*-backups/
+*.kicad_pro-bak
+*.sch-bak
+*.brd-bak
+*.pro-bak
+*.kicad_sch~
+*.kicad_pcb~
+*.kicad_pro~
+# Match backup directories at any depth, including mixed-case Windows names.
+*-[Bb][Aa][Cc][Kk][Uu][Pp][Ss]/
 _autosave-*
 ~*
 
 # Local design history and downloaded tools
-/backups/
+/[Bb][Aa][Cc][Kk][Uu][Pp]/
+/[Bb][Aa][Cc][Kk][Uu][Pp][Ss]/
 /tmp/
 /.history/
 /.claude/

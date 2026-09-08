@@ -15,6 +15,9 @@ from pathlib import Path
 
 from kicad_sexpr import Atom as A, child, children, dumps, parse, prop, read, symbol_from_library
 
+if __name__ == '__main__':
+    raise SystemExit('Historical generator disabled. Edit the KiCad schematic, or run tools/redraw_schematic.py on a backed-up project and re-export its netlist/ERC.')
+
 ROOT = Path(__file__).resolve().parents[1]
 LIB = Path('C:/Program Files/KiCad/10.0/share/kicad/symbols')
 BASE = ROOT / 'backups/before-foundation-20260906/esp32-c6-pico.kicad_sch'
@@ -189,13 +192,13 @@ def build():
     passive('C18','DNP','ANT_FEED','GND',312,65,fp=C0201,dnp=True,note='Antenna pi output shunt')
     part('AE1','Walsin_Antenna:RFANT5220110A0T','RFANT5220110A0T',
          'Walsin_Antenna:RFANT5220110A0T',{1:'ANT_FEED',2:None},360,54,
-         detail='Pad 2 has open tuning copper, never connect to ground; 18x9 mm RF clearance')
+         detail='Pad 2 stays open with axial end copper; horizontal prototype, 20.5x3.5 mm all-layer clearance; RF validation required')
     part('D1','Diode:ESD9B5.0ST5G','PESD5V0F1BL-Q','Diode_SMD:D_SOD-882',
          {1:'GND',2:'ANT_FEED'},341,77,90,dnp=True,detail='0.4 pF antenna ESD option; original 15 pF ESD9B is unsuitable',
          datasheet='https://assets.nexperia.com/documents/data-sheet/PESD5V0F1BL-Q.pdf')
     note('core','RF values are starting points only. Tune with the assembled PCB and final enclosure.\n0201 RF filter; 50 ohm feed referenced to L2 GND. Keep all layers clear in antenna area.',163,92)
     note('core','03  Power decoupling - fit at the named pins',162,111,1.8)
-    caps = [('C8','10uF','+3V3',C0603,'Main bulk'),('C9','1uF','+3V3',C0402,'Main bulk'),
+    caps = [('C8','10uF','+3V3',C0402,'Main bulk'),('C9','1uF','+3V3',C0402,'Main bulk'),
             ('C10','100nF','+3V3',C0402,'Main HF'),('C12','100nF','+3V3',C0402,'U1 pin 5'),
             ('C13','100nF','+3V3',C0402,'U1 pin 28'),('C14','100nF','+3V3',C0402,'U1 pin 37'),
             ('C15','100nF','+3V3',C0402,'U1 pin 40')]
@@ -203,14 +206,14 @@ def build():
         passive(ref,val,net,'GND',171+i*30,132,fp=fp,note=msg+'; X7R 10 V minimum')
     passive('L2','2.0nH','+3V3','V3A',177,166,angle=90,fp='Inductor_SMD:L_0402_1005Metric',note='RF supply filter; Irated >= 500 mA, low DCR')
     passive('C11','1uF','V3A','GND',214,166,note='U1 pins 2/3 local bypass')
-    passive('C19','10uF','V3A','GND',246,166,fp=C0603,note='U1 pin 2 local bulk')
-    passive('C20','10uF','V3A','GND',278,166,fp=C0603,note='U1 pin 3 local bulk')
+    passive('C19','10uF','V3A','GND',246,166,fp=C0402,note='U1 pin 2 local bulk')
+    passive('C20','10uF','V3A','GND',278,166,fp=C0402,note='U1 pin 3 local bulk')
     note('core','04  Quad-SPI flash, powered from U1 VDD_SPI',20,158,1.8)
     flashnets={1:'SPI_CS',2:'SPI_Q',3:'SPI_WP',4:'GND',5:'SPI_D',6:'SPI_CLK',7:'SPI_HD',8:'VDD_SPI'}
     flashnets[9]='GND'
     part('U3','Memory_Flash:W25Q32JVZP','W25Q32JVZPIQ','Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm',flashnets,106.68,209.55)
     for i,(ref,key) in enumerate([('R17','CS'),('R1','Q'),('R2','WP'),('R3','HD'),('R4','CLK'),('R5','D')]):
-        passive(ref,'0R','SPI_'+key+'_MCU','SPI_'+key,44,178+i*13,angle=90,fp=R0201,note='Place at U1; SPI clock defaults to 40 MHz for bring-up')
+        passive(ref,'0R','SPI_'+key+'_MCU','SPI_'+key,44,178+i*13,angle=90,fp=R0402,note='Place at U1; SPI clock defaults to 40 MHz for bring-up')
     passive('C6','100nF','VDD_SPI','GND',127,198,note='At flash VCC')
     passive('C7','1uF','VDD_SPI','GND',147,198,note='At U1 VDD_SPI pin')
     note('core','05  40 MHz crystal',170,199,1.8)
@@ -258,8 +261,8 @@ def build():
     part('U2','Regulator_Linear:AP2112K-3.3','AP2112K-3.3','Package_TO_SOT_SMD:SOT-23-5',
          {1:'+5V',2:'GND',3:'+5V',4:None,5:'+3V3'},331,77,sheet='io',mpn='AP2112K-3.3TRG1',
          detail='600 mA peak rating; continuous load limited by SOT25 dissipation')
-    passive('C22','10uF','+5V','GND',282,92,sheet='io',fp=C0603,note='10 V X7R; regulator input')
-    passive('C23','22uF','+3V3','GND',374,82,sheet='io',fp=C0603,note='10 V X5R/X7R; verify DC-bias effective capacitance')
+    passive('C22','10uF','+5V','GND',282,92,sheet='io',fp=C0402,note='10 V X7R; regulator input')
+    passive('C23','22uF','+3V3','GND',374,82,sheet='io',fp=C0402,note='10 V X5R/X7R; verify DC-bias effective capacitance')
     passive('C24','100nF','VBUS_USB','GND',375,113,sheet='io')
     note('io','USB supplies the board. 3V3 / 5V headers are outputs.\nDo not power 3V3 externally while USB is attached.\nRegulator current rating is NOT an external load budget.\nValidate 3V3 droop and LDO temperature during Wi-Fi TX.',235,139)
 

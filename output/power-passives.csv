@@ -1,0 +1,24 @@
+﻿Reference,Value,Nets,BeforeFootprint,Footprint,Changed,Note
+C8,10uF,+3V3 / GND,Capacitor_SMD:C_0603_1608Metric,Capacitor_SMD:C_0402_1005Metric,YES,"Main bulk; 0402, 10 V minimum; X5R reference; verify effective capacitance under DC bias"
+C9,1uF,+3V3 / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,Main bulk; X7R 10 V minimum
+C10,100nF,+3V3 / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,Main HF; X7R 10 V minimum
+C12,100nF,+3V3 / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,U1 pin 5; X7R 10 V minimum
+C13,100nF,+3V3 / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,U1 pin 28; X7R 10 V minimum
+C14,100nF,+3V3 / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,U1 pin 37; X7R 10 V minimum
+C15,100nF,+3V3 / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,U1 pin 40; X7R 10 V minimum
+C11,1uF,V3A / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,U1 pins 2/3 local bypass
+C19,10uF,V3A / GND,Capacitor_SMD:C_0603_1608Metric,Capacitor_SMD:C_0402_1005Metric,YES,"U1 pin 2 local bulk; 0402, 10 V minimum; verify effective capacitance under DC bias"
+C20,10uF,V3A / GND,Capacitor_SMD:C_0603_1608Metric,Capacitor_SMD:C_0402_1005Metric,YES,"U1 pin 3 local bulk; 0402, 10 V minimum; verify effective capacitance under DC bias"
+C6,100nF,VDD_SPI / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,At flash VCC
+C7,1uF,VDD_SPI / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,At U1 VDD_SPI pin
+R10,5.1k,CC1 / GND,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,1%; one Rd per CC pin
+R11,5.1k,CC2 / GND,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,"1%; USB-C sink, no PD"
+C22,10uF,+5V / GND,Capacitor_SMD:C_0603_1608Metric,Capacitor_SMD:C_0402_1005Metric,YES,"Regulator input; 0402, 10 V minimum; X5R reference; verify effective capacitance under DC bias"
+C23,22uF,+3V3 / GND,Capacitor_SMD:C_0603_1608Metric,Capacitor_SMD:C_0402_1005Metric,YES,"Regulator output; 0402, 22 uF nominal, 10 V minimum; X5R reference; verify effective capacitance under DC bias"
+C24,100nF,VBUS_USB / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,
+R7,10k,+3V3 / CHIP_EN,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,
+C21,1uF,CHIP_EN / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,
+R8,10k,+3V3 / GPIO9_BOOT,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,
+R9,10k,+3V3 / GPIO8,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,
+C25,1uF,VBUS_USB / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,At RGB VDD
+C26,100nF,VBUS_USB / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,At LV1T125 VCC

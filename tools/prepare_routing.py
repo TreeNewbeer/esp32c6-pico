@@ -30,6 +30,11 @@ def forbidden(point_,net,radius,segment_to=None,layer=None):
     extra=MM(radius+.11)
     for f in board.GetFootprints():
         for pd in f.Pads():
+            if segment_to is None and pd.GetAttribute()==pcb.PAD_ATTRIB_SMD and pd.IsOnCopperLayer():
+                # Regular vias use a 0.20 mm drill; reserve a mask web on both sides.
+                side=f.GetLayer();mask=pcb.ToMM(pd.GetSolderMaskExpansion(side))
+                if pd.GetEffectiveShape(side).Collide(pt,MM(.1+.1+mask+.005)):
+                    return True
             if not pd.IsOnCopperLayer() or pd.GetNetname()==net:
                 continue
             for l in ([layer] if layer is not None else [pcb.F_Cu,pcb.In1_Cu,pcb.In2_Cu,pcb.B_Cu]):
@@ -48,7 +53,7 @@ def forbidden(point_,net,radius,segment_to=None,layer=None):
 
 
 def attach_via(pd,required=False):
-    net=pd.GetNetname();origin=point(pd.GetPosition());layer=pd.GetLayer()
+    net=pd.GetNetname();origin=point(pd.GetPosition());layer=pd.GetParent().GetLayer()
     # Via drills must stay out of solderable pads. Tent ordinary vias on both sides.
     offsets=[(1,0),(0,1),(-1,0),(0,-1),(.707,.707),(-.707,.707),(-.707,-.707),(.707,-.707)]
     for distance in [.55,.65,.8,1.0,1.2,1.5]:

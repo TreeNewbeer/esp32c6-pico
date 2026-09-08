@@ -1,0 +1,43 @@
+{
+  "date": "2026-09-08",
+  "units": "mm",
+  "board_dimensions": [
+    20.5,
+    32
+  ],
+  "codex": {
+    "file": "codex-silkscreen.svg",
+    "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/master/packages/static-svg/icons/codex.svg",
+    "source_type": "community vector reproduction of the OpenAI Codex logomark",
+    "group": "LOGO_CODEX",
+    "layer": "F.SilkS",
+    "center": [
+      115.3,
+      107.3
+    ],
+    "canvas_size": [
+      2.8,
+      2.8
+    ],
+    "svg_sha256": "d08b4e824cd6727e89617f59e4737273ff53e44c1da849d016dd64dfd08b33e1"
+  },
+  "personal": {
+    "original": "logo.jpg",
+    "original_sha256": "70498d51b0765ad9e53e1254a478fd940d13612b683bb75912f66bbe933c09e2",
+    "file": "personal-silkscreen.svg",
+    "conversion": "central mascot traced as monochrome paths; scenery omitted; K badge preserved as negative space",
+    "group": "LOGO_KZL",
+    "layer": "B.SilkS",
+    "center": [
+      109,
+      109.95
+    ],
+    "canvas_size": [
+      6.430526315789473,
+      8.2
+    ],
+    "mirrored_for_bottom_view": true,
+    "outline_width": 0.12084210526315788,
+    "svg_sha256": "4137a1b98aea4bbee01d14a503f8dbe1c91781218778723cd3f8b6c88267ac20"
+  }
+}

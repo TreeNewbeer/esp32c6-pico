@@ -8,9 +8,9 @@ L3,DNP,DNP,Inductor_SMD:L_0201_0603Metric,NO,Shunt RF tuning option
 C17,DNP,DNP,Capacitor_SMD:C_0201_0603Metric,NO,Antenna pi input shunt
 R6,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Antenna pi series tuning option
 C18,DNP,DNP,Capacitor_SMD:C_0201_0603Metric,NO,Antenna pi output shunt
-AE1,RFANT5220110A0T,RFANT5220110A0T,Walsin_Antenna:RFANT5220110A0T,YES,"Pad 2 has open tuning copper, never connect to ground; 18x9 mm RF clearance"
+AE1,RFANT5220110A0T,RFANT5220110A0T,Walsin_Antenna:RFANT5220110A0T,YES,"Pad 2 stays open with axial end copper; horizontal prototype, 20.5x3.5 mm all-layer clearance; RF validation required"
 D1,PESD5V0F1BL-Q,PESD5V0F1BL-Q,Diode_SMD:D_SOD-882,NO,0.4 pF antenna ESD option; original 15 pF ESD9B is unsuitable
-C8,10uF,10uF,Capacitor_SMD:C_0603_1608Metric,YES,Main bulk; X7R 10 V minimum
+C8,10uF,10uF,Capacitor_SMD:C_0402_1005Metric,YES,"Main bulk; 0402, 10 V minimum; X5R reference; verify effective capacitance under DC bias"
 C9,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,Main bulk; X7R 10 V minimum
 C10,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,Main HF; X7R 10 V minimum
 C12,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pin 5; X7R 10 V minimum
@@ -19,15 +19,15 @@ C14,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pin 37; X7R 10 V minimum
 C15,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pin 40; X7R 10 V minimum
 L2,2.0nH,2.0nH,Inductor_SMD:L_0402_1005Metric,YES,"RF supply filter; Irated >= 500 mA, low DCR"
 C11,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pins 2/3 local bypass
-C19,10uF,10uF,Capacitor_SMD:C_0603_1608Metric,YES,U1 pin 2 local bulk
-C20,10uF,10uF,Capacitor_SMD:C_0603_1608Metric,YES,U1 pin 3 local bulk
+C19,10uF,10uF,Capacitor_SMD:C_0402_1005Metric,YES,"U1 pin 2 local bulk; 0402, 10 V minimum; verify effective capacitance under DC bias"
+C20,10uF,10uF,Capacitor_SMD:C_0402_1005Metric,YES,"U1 pin 3 local bulk; 0402, 10 V minimum; verify effective capacitance under DC bias"
 U3,W25Q32JVZPIQ,W25Q32JVZPIQ,Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm,YES,
-R17,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
-R1,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
-R2,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
-R3,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
-R4,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
-R5,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R17,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R1,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R2,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R3,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R4,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
+R5,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
 C6,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,At flash VCC
 C7,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,At U1 VDD_SPI pin
 L4,24nH,24nH,Inductor_SMD:L_0402_1005Metric,YES,Crystal harmonic suppression; initial value
@@ -46,8 +46,8 @@ F1,0.75A hold,1206L075/6,Fuse:Fuse_1206_3216Metric,YES,Check thermal derating; i
 D3,ESD9B5.0ST5G,ESD9B5.0ST5G,Diode_SMD:D_SOD-923,YES,Move original 15 pF TVS to USB power rail
 D5,SS14FL,SS14FL,Diode_SMD:D_SOD-123F,YES,Blocks USB backfeed; +5V is about VBUS minus diode drop
 U2,AP2112K-3.3,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,YES,600 mA peak rating; continuous load limited by SOT25 dissipation
-C22,10uF,10uF,Capacitor_SMD:C_0603_1608Metric,YES,10 V X7R; regulator input
-C23,22uF,22uF,Capacitor_SMD:C_0603_1608Metric,YES,10 V X5R/X7R; verify DC-bias effective capacitance
+C22,10uF,10uF,Capacitor_SMD:C_0402_1005Metric,YES,"Regulator input; 0402, 10 V minimum; X5R reference; verify effective capacitance under DC bias"
+C23,22uF,22uF,Capacitor_SMD:C_0402_1005Metric,YES,"Regulator output; 0402, 22 uF nominal, 10 V minimum; X5R reference; verify effective capacitance under DC bias"
 C24,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,
 R7,10k,10k,Resistor_SMD:R_0402_1005Metric,YES,
 C21,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,
