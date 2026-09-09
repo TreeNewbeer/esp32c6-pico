@@ -1,0 +1,416 @@
+{
+  "board_sha256": "9b610f18189964e935e392974995683555df3b076f5b5eea5d94fa32192bd349",
+  "source_board_sha256": "e53c6baeb6d6639260dda7c53e938b98e1f9327cc4c4acf29fc80c8a79dd8c67",
+  "backup": "tmp/headers-inward-20260909-113947",
+  "dimensions_mm": [
+    20.0,
+    29.0
+  ],
+  "header_moves": {
+    "J2": {
+      "before_mm": [
+        99.95,
+        114.0
+      ],
+      "after_mm": [
+        100.25,
+        114.0
+      ],
+      "delta_mm": [
+        0.3,
+        0
+      ]
+    },
+    "J3": {
+      "before_mm": [
+        118.05,
+        114.0
+      ],
+      "after_mm": [
+        117.75,
+        114.0
+      ],
+      "delta_mm": [
+        -0.3,
+        0
+      ]
+    }
+  },
+  "column_spacing_mm": 17.5,
+  "edge_clearances": {
+    "J2": {
+      "center_to_side_mm": 1.25,
+      "nominal_body_to_side_mm": 0.25,
+      "copper_to_side_mm": 0.575
+    },
+    "J3": {
+      "center_to_side_mm": 1.25,
+      "nominal_body_to_side_mm": 0.25,
+      "copper_to_side_mm": 0.575
+    }
+  },
+  "unchanged_other_footprints": 63,
+  "schematic_and_rules_unchanged": true,
+  "keepout_and_outline_definitions_unchanged": true,
+  "rf_crystal_usb_tracks_unchanged": true,
+  "existing_item_nets_unchanged": true,
+  "changed_existing_tracks_and_vias": [
+    {
+      "uuid": "2ba1c20a-8052-4a2b-aea5-7bbdda250128",
+      "type": "segment",
+      "net": "GPIO2"
+    },
+    {
+      "uuid": "e7b32af7-98da-4663-b276-eb19152df376",
+      "type": "segment",
+      "net": "GPIO6"
+    },
+    {
+      "uuid": "50d500dc-3ac2-47ee-bff7-e3bf9c4268d5",
+      "type": "segment",
+      "net": "GPIO3"
+    },
+    {
+      "uuid": "539fcf5e-888c-4df9-aad9-0930a1a9e7c4",
+      "type": "segment",
+      "net": "GPIO18"
+    },
+    {
+      "uuid": "6e044dec-94e0-408b-bf31-80f4d5355923",
+      "type": "segment",
+      "net": "GPIO22"
+    },
+    {
+      "uuid": "fb1eb9b8-331d-43dc-a781-9a83de3d61c9",
+      "type": "segment",
+      "net": "GPIO8"
+    },
+    {
+      "uuid": "61edb05f-13c6-470f-8a45-57fc9d31b27f",
+      "type": "segment",
+      "net": "GPIO9_BOOT"
+    },
+    {
+      "uuid": "1431e875-53f1-4a6c-ae5c-1171bdb09401",
+      "type": "segment",
+      "net": "U0TXD"
+    },
+    {
+      "uuid": "850b65a9-c05c-400e-9b19-73caa60d948d",
+      "type": "segment",
+      "net": "GPIO23"
+    },
+    {
+      "uuid": "99e94a80-e461-4fcc-9795-43404d65d14e",
+      "type": "segment",
+      "net": "U0RXD"
+    },
+    {
+      "uuid": "1fa02118-50b0-413c-84f2-ac94613af8a5",
+      "type": "segment",
+      "net": "GPIO20"
+    },
+    {
+      "uuid": "200b8602-1002-4301-9722-0e960f2cc85a",
+      "type": "segment",
+      "net": "GPIO19"
+    },
+    {
+      "uuid": "f8426a3e-15d6-4001-a704-cb419654803d",
+      "type": "segment",
+      "net": "GPIO19"
+    },
+    {
+      "uuid": "b4fe3de1-f710-494a-98e6-03466fd9b0bc",
+      "type": "segment",
+      "net": "GPIO6"
+    },
+    {
+      "uuid": "7e9437d5-b286-4eed-900c-82ea08b7f499",
+      "type": "segment",
+      "net": "U0RXD"
+    },
+    {
+      "uuid": "bb017235-2ee6-400c-aad1-9df3c9eb7b6d",
+      "type": "segment",
+      "net": "GPIO4"
+    },
+    {
+      "uuid": "13d610b1-48d2-4581-b9b9-2a7e47db265c",
+      "type": "segment",
+      "net": "GPIO1"
+    },
+    {
+      "uuid": "b1461eba-fdbd-41d8-99c5-568269e13099",
+      "type": "segment",
+      "net": "GPIO7"
+    },
+    {
+      "uuid": "be991594-e6ce-4e1c-8ea9-56146aa0c519",
+      "type": "segment",
+      "net": "U0TXD"
+    },
+    {
+      "uuid": "ad33d9f3-2262-43ac-9593-50e141863590",
+      "type": "segment",
+      "net": "GPIO5"
+    },
+    {
+      "uuid": "15d84e3f-f5bf-440f-bb9f-d0a4badd3831",
+      "type": "segment",
+      "net": "GPIO18"
+    },
+    {
+      "uuid": "3439d8cb-1d56-4580-b54e-50b70fbc711c",
+      "type": "via",
+      "net": "GND"
+    },
+    {
+      "uuid": "b164df05-ff5b-4828-a1c3-404371cfa3ba",
+      "type": "segment",
+      "net": "GPIO8"
+    },
+    {
+      "uuid": "d869254e-990f-4529-898c-5c153a1fc76b",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "cd96dbab-4027-4db3-b88d-0e860d42952a",
+      "type": "segment",
+      "net": "GPIO23"
+    },
+    {
+      "uuid": "6d59488e-9e74-4e8f-a963-d21eb61fb5f0",
+      "type": "segment",
+      "net": "+3V3"
+    },
+    {
+      "uuid": "17fc0039-e0a2-4985-8d6f-72069f5c80fa",
+      "type": "segment",
+      "net": "GPIO4"
+    }
+  ],
+  "removed_items": [
+    {
+      "uuid": "0121a84a-87fd-4374-addf-e30b6ad80145",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "0cb16295-8ea6-417a-94e4-10c662a1db87",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "51f3f149-4c4b-4119-a26a-a23f495b34ca",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "5f7cdf9f-a986-4a36-a52b-cf3a30329a6f",
+      "type": "segment",
+      "net": "GPIO15"
+    },
+    {
+      "uuid": "6b7e18fb-3961-4bac-9936-cf7f0ab9cadc",
+      "type": "segment",
+      "net": "GPIO10"
+    },
+    {
+      "uuid": "74c7817d-d9ad-4504-8023-c198930ad4b9",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "7e8e55e6-fee0-4857-9046-3581ffa1e794",
+      "type": "via",
+      "net": "GPIO15"
+    },
+    {
+      "uuid": "7f13be30-8183-4af0-9bf4-b681a8d693b6",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "973c40cf-a1cc-46c6-9882-d8e8253b1c7b",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "a7fadec2-0b94-4a32-8e69-748c628dce40",
+      "type": "segment",
+      "net": "GPIO15"
+    },
+    {
+      "uuid": "ba46116d-fc5c-44a8-b4ca-e290e9defdcc",
+      "type": "segment",
+      "net": "GPIO10"
+    },
+    {
+      "uuid": "bf601112-dacb-4998-a23c-d30c3b4d2486",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "c12b6669-4cf8-4f6d-a6bd-d3a1c82d0b20",
+      "type": "segment",
+      "net": "GPIO10"
+    },
+    {
+      "uuid": "d1df2ea0-9f47-461e-bccc-97daf4def13e",
+      "type": "segment",
+      "net": "GPIO15"
+    },
+    {
+      "uuid": "f1560957-f596-4491-a07e-be3b87bb16d4",
+      "type": "segment",
+      "net": "GPIO0"
+    },
+    {
+      "uuid": "f41552fd-9890-4dcf-904e-8299ce2c6b2f",
+      "type": "segment",
+      "net": "GPIO11"
+    }
+  ],
+  "added_items": [
+    {
+      "uuid": "01cd0421-287b-4987-8bf5-dd3054873dc1",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "055a9056-f2e1-4e86-846c-26c1f7a1e099",
+      "type": "segment",
+      "net": "GPIO0"
+    },
+    {
+      "uuid": "1de1c099-eac2-476a-8e54-714122395db1",
+      "type": "segment",
+      "net": "GPIO10"
+    },
+    {
+      "uuid": "2a651d20-34be-424b-b2cf-d46ba61052f4",
+      "type": "segment",
+      "net": "GPIO15"
+    },
+    {
+      "uuid": "2f28f59b-18c0-4fd6-b24c-57fc7e73ab9e",
+      "type": "via",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "662b1840-4c8f-4502-b482-3d4dac717d53",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "7e4648f2-c6cb-4e0c-afed-5b7ad00d12db",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "960e220f-8e79-4714-9e8e-c72d6e1d7615",
+      "type": "segment",
+      "net": "GPIO10"
+    },
+    {
+      "uuid": "986791de-7582-499a-a749-bf3443b3137d",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "a8dd3677-4253-4b2a-af51-c241e195e40e",
+      "type": "segment",
+      "net": "GPIO10"
+    },
+    {
+      "uuid": "b1c5d1c9-9ed3-4180-acd6-6fec763f040c",
+      "type": "via",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "c6568bd7-43af-4e7a-ac21-dcd5adf080d5",
+      "type": "segment",
+      "net": "GPIO0"
+    },
+    {
+      "uuid": "cd187d77-03f9-4384-a25c-b62e09210f51",
+      "type": "segment",
+      "net": "GPIO10"
+    },
+    {
+      "uuid": "d4150aac-01ee-411c-b376-6bb7d1380e91",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "d5821bdb-d67f-4299-8056-25acb8a1c8ad",
+      "type": "segment",
+      "net": "GPIO10"
+    },
+    {
+      "uuid": "e04f8d05-6729-4ba3-bdad-35cac54feebe",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "e20eedb1-ea86-41b5-846f-5d2aa8b91fd4",
+      "type": "segment",
+      "net": "GPIO11"
+    },
+    {
+      "uuid": "e2dbc543-caf9-4a5a-9365-3488fbd62da7",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "e5ebe139-d039-40a5-b456-11c507827e46",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "f33c45e1-c21b-4d03-a3ea-dbebc6dcafa6",
+      "type": "segment",
+      "net": "+5V"
+    },
+    {
+      "uuid": "f6412fdf-56c2-4a2f-a8c9-cc100d3013f3",
+      "type": "segment",
+      "net": "GPIO11"
+    }
+  ],
+  "tracks_before": 928,
+  "tracks_after": 932,
+  "vias_before": 129,
+  "vias_after": 130,
+  "drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "qa_passed": 44,
+  "qa_total": 49,
+  "new_qa_failures": [],
+  "existing_qa_failures": [
+    "Antenna-side series components share a straight axis",
+    "Antenna-to-crystal body gap meets the 8.5 mm project target",
+    "At least nine ground vias under the MCU EPAD",
+    "Crystal and load-capacitor ground pads have a ground via within 1 mm",
+    "Only the original 11 filled/capped thermal vias remain in SMD pads"
+  ],
+  "input_stored_qa_was_stale": true,
+  "placement_rows_verified": 59,
+  "physical_validation_performed": false,
+  "header_layout_board_sha256_before_user_silkscreen_edits": "314bc1b5e46859991f06cc61cda794f094fb2a2a66ce529faf81293274c22625",
+  "subsequent_user_edits": {
+    "personal_logo_translation_mm": [
+      0.012374,
+      -0.858847
+    ],
+    "personal_logo_shapes_translated": 358,
+    "drawing_dimensions_corrected_to_mm": [
+      20,
+      29
+    ],
+    "copper_and_components_unchanged": true
+  }
+}

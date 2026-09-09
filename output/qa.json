@@ -297,8 +297,8 @@
     },
     {
       "check": "At least nine ground vias under the MCU EPAD",
-      "passed": true,
-      "detail": 9
+      "passed": false,
+      "detail": 7
     },
     {
       "check": "Antenna open termination is not grounded",
@@ -331,51 +331,51 @@
           "side": "B.Cu",
           "numbered_pad_positions_mm": [
             [
-              99.95,
+              100.25,
               114.0
             ],
             [
-              99.95,
+              100.25,
               116.0
             ],
             [
-              99.95,
+              100.25,
               118.0
             ],
             [
-              99.95,
+              100.25,
               120.0
             ],
             [
-              99.95,
+              100.25,
               122.0
             ],
             [
-              99.95,
+              100.25,
               124.0
             ],
             [
-              99.95,
+              100.25,
               126.0
             ],
             [
-              99.95,
+              100.25,
               128.0
             ],
             [
-              99.95,
+              100.25,
               130.0
             ],
             [
-              99.95,
+              100.25,
               132.0
             ],
             [
-              99.95,
+              100.25,
               134.0
             ],
             [
-              99.95,
+              100.25,
               136.0
             ]
           ]
@@ -384,51 +384,51 @@
           "side": "B.Cu",
           "numbered_pad_positions_mm": [
             [
-              118.05,
+              117.75,
               114.0
             ],
             [
-              118.05,
+              117.75,
               116.0
             ],
             [
-              118.05,
+              117.75,
               118.0
             ],
             [
-              118.05,
+              117.75,
               120.0
             ],
             [
-              118.05,
+              117.75,
               122.0
             ],
             [
-              118.05,
+              117.75,
               124.0
             ],
             [
-              118.05,
+              117.75,
               126.0
             ],
             [
-              118.05,
+              117.75,
               128.0
             ],
             [
-              118.05,
+              117.75,
               130.0
             ],
             [
-              118.05,
+              117.75,
               132.0
             ],
             [
-              118.05,
+              117.75,
               134.0
             ],
             [
-              118.05,
+              117.75,
               136.0
             ]
           ]
@@ -436,9 +436,25 @@
       }
     },
     {
-      "check": "Header column center spacing is 18.1 mm",
+      "check": "Header column center spacing is 17.5 mm",
       "passed": true,
-      "detail": 18.099999999999994
+      "detail": 17.5
+    },
+    {
+      "check": "Header nominal bodies and copper pads clear both side edges by 0.25 and 0.575 mm",
+      "passed": true,
+      "detail": {
+        "J2": {
+          "center_to_side_mm": 1.25,
+          "nominal_body_to_side_mm": 0.25,
+          "copper_to_side_mm": 0.575
+        },
+        "J3": {
+          "center_to_side_mm": 1.25,
+          "nominal_body_to_side_mm": 0.25,
+          "copper_to_side_mm": 0.575
+        }
+      }
     },
     {
       "check": "Antenna sits on the right with its feed aligned to R6",
@@ -503,10 +519,10 @@
           "layer": "B.Silkscreen",
           "shapes": 358,
           "bounds_mm": [
-            107.275627,
-            109.794695,
-            110.719626,
-            114.123
+            107.288001,
+            108.935848,
+            110.732,
+            113.264153
           ]
         }
       }
@@ -524,12 +540,12 @@
     {
       "check": "Antenna-to-crystal body gap meets the 8.5 mm project target",
       "passed": false,
-      "detail": 5.1
+      "detail": 5.07
     },
     {
       "check": "Crystal body clears MCU clock-pin land edges by at least 2.4 mm",
       "passed": true,
-      "detail": 2.8
+      "detail": 2.43
     },
     {
       "check": "Crystal and load capacitors are on the front beside the MCU",
@@ -548,12 +564,12 @@
     },
     {
       "check": "Crystal and load-capacitor ground pads have a ground via within 1 mm",
-      "passed": true,
+      "passed": false,
       "detail": {
-        "Y1.2": 0.851469,
-        "Y1.4": 0.912414,
-        "C4.2": 0.541202,
-        "C5.2": 0.74793
+        "Y1.2": 2.55,
+        "Y1.4": 0.885889,
+        "C4.2": 0.86093,
+        "C5.2": 0.764199
       }
     },
     {
@@ -573,36 +589,13 @@
     },
     {
       "check": "Non-thermal via holes clear all SMD mask openings by at least 0.10 mm",
-      "passed": false,
-      "detail": [
-        {
-          "reference": "C12",
-          "pad": "2",
-          "pad_net": "GND",
-          "via_net": "GND",
-          "position_mm": [
-            110.0,
-            116.0
-          ],
-          "layer": "B.Cu"
-        },
-        {
-          "reference": "C21",
-          "pad": "2",
-          "pad_net": "GND",
-          "via_net": "GND",
-          "position_mm": [
-            109.0,
-            116.0
-          ],
-          "layer": "B.Cu"
-        }
-      ]
+      "passed": true,
+      "detail": []
     },
     {
       "check": "Only the original 11 filled/capped thermal vias remain in SMD pads",
       "passed": false,
-      "detail": 12
+      "detail": 8
     },
     {
       "check": "Retained thermal vias explicitly specify filling and copper capping",
@@ -619,14 +612,14 @@
       "passed": true,
       "detail": {
         "A": {
-          "D+_mm": 24.1994,
-          "D-_mm": 27.0533,
-          "skew_mm": 2.8539
+          "D+_mm": 25.8808,
+          "D-_mm": 27.2437,
+          "skew_mm": 1.3629
         },
         "B": {
-          "D+_mm": 22.8712,
-          "D-_mm": 23.9769,
-          "skew_mm": 1.1057
+          "D+_mm": 24.5526,
+          "D-_mm": 24.1673,
+          "skew_mm": 0.3853
         }
       }
     },
@@ -637,8 +630,8 @@
     },
     {
       "check": "KiCad DRC has no violations",
-      "passed": false,
-      "detail": 2
+      "passed": true,
+      "detail": 0
     },
     {
       "check": "KiCad PCB has no unconnected items",
@@ -654,9 +647,9 @@
   "all_passed": false,
   "footprints": 65,
   "populated": 59,
-  "tracks": 967,
-  "vias": 139,
-  "via_in_pad_entries": 12,
+  "tracks": 932,
+  "vias": 130,
+  "via_in_pad_entries": 8,
   "dimensions_mm": [
     20.0,
     29.0
@@ -683,13 +676,13 @@
       111.0
     ],
     "crystal_body_bounds_mm": [
-      114.65,
-      116.10000000000001,
-      116.65,
-      117.7
+      114.28,
+      116.07000000000001,
+      116.28,
+      117.67
     ],
-    "body_clearance_mm": 5.1,
-    "clock_pin_land_to_body_mm": 2.8,
+    "body_clearance_mm": 5.07,
+    "clock_pin_land_to_body_mm": 2.43,
     "reference_area_bounds_mm": [
       114.45,
       115.65,
@@ -697,14 +690,14 @@
       118.15
     ],
     "nearest_ground_via_distances_mm": {
-      "Y1.2": 0.851469,
-      "Y1.4": 0.912414,
-      "C4.2": 0.541202,
-      "C5.2": 0.74793
+      "Y1.2": 2.55,
+      "Y1.4": 0.885889,
+      "C4.2": 0.86093,
+      "C5.2": 0.764199
     },
     "l2_uncovered_reference_mm2": 0.0,
     "l2_uncovered_crystal_mm2": 0.0,
-    "clock_copper_total_mm": 11.849524,
+    "clock_copper_total_mm": 10.062372,
     "body_clearance_target_mm": 8.5,
     "target_note": "The 8.5 mm antenna separation target is a project choice, not a manufacturer guarantee"
   },
@@ -723,10 +716,10 @@
       "layer": "B.Silkscreen",
       "shapes": 358,
       "bounds_mm": [
-        107.275627,
-        109.794695,
-        110.719626,
-        114.123
+        107.288001,
+        108.935848,
+        110.732,
+        113.264153
       ]
     }
   },
@@ -747,51 +740,51 @@
       "side": "B.Cu",
       "numbered_pad_positions_mm": [
         [
-          99.95,
+          100.25,
           114.0
         ],
         [
-          99.95,
+          100.25,
           116.0
         ],
         [
-          99.95,
+          100.25,
           118.0
         ],
         [
-          99.95,
+          100.25,
           120.0
         ],
         [
-          99.95,
+          100.25,
           122.0
         ],
         [
-          99.95,
+          100.25,
           124.0
         ],
         [
-          99.95,
+          100.25,
           126.0
         ],
         [
-          99.95,
+          100.25,
           128.0
         ],
         [
-          99.95,
+          100.25,
           130.0
         ],
         [
-          99.95,
+          100.25,
           132.0
         ],
         [
-          99.95,
+          100.25,
           134.0
         ],
         [
-          99.95,
+          100.25,
           136.0
         ]
       ]
@@ -800,70 +793,82 @@
       "side": "B.Cu",
       "numbered_pad_positions_mm": [
         [
-          118.05,
+          117.75,
           114.0
         ],
         [
-          118.05,
+          117.75,
           116.0
         ],
         [
-          118.05,
+          117.75,
           118.0
         ],
         [
-          118.05,
+          117.75,
           120.0
         ],
         [
-          118.05,
+          117.75,
           122.0
         ],
         [
-          118.05,
+          117.75,
           124.0
         ],
         [
-          118.05,
+          117.75,
           126.0
         ],
         [
-          118.05,
+          117.75,
           128.0
         ],
         [
-          118.05,
+          117.75,
           130.0
         ],
         [
-          118.05,
+          117.75,
           132.0
         ],
         [
-          118.05,
+          117.75,
           134.0
         ],
         [
-          118.05,
+          117.75,
           136.0
         ]
       ]
     }
   },
-  "header_column_spacing_mm": 18.1,
+  "header_column_spacing_mm": 17.5,
+  "header_edge_clearances_mm": {
+    "J2": {
+      "center_to_side_mm": 1.25,
+      "nominal_body_to_side_mm": 0.25,
+      "copper_to_side_mm": 0.575
+    },
+    "J3": {
+      "center_to_side_mm": 1.25,
+      "nominal_body_to_side_mm": 0.25,
+      "copper_to_side_mm": 0.575
+    }
+  },
   "antenna_center_x_mm": 113.42,
   "usb_length_method": "Copper centerline plus resistor pad spacing and nominal via barrel; excludes device internals and cable",
   "copper_layers": 4,
   "usb_path_lengths": {
     "A": {
-      "D+_mm": 24.1994,
-      "D-_mm": 27.0533,
-      "skew_mm": 2.8539
+      "D+_mm": 25.8808,
+      "D-_mm": 27.2437,
+      "skew_mm": 1.3629
     },
     "B": {
-      "D+_mm": 22.8712,
-      "D-_mm": 23.9769,
-      "skew_mm": 1.1057
+      "D+_mm": 24.5526,
+      "D-_mm": 24.1673,
+      "skew_mm": 0.3853
     }
   },
   "fabrication_rules": {
@@ -901,10 +906,10 @@
     "ground": "Existing widths retained; excluded from the exact-width rules",
     "widths_by_net": {
       "+3V3": {
-        "0.2": 119
+        "0.2": 115
       },
       "+5V": {
-        "0.2": 29
+        "0.2": 30
       },
       "ANT_FEED": {
         "0.15": 5
@@ -919,24 +924,24 @@
         "0.15": 31
       },
       "GND": {
-        "0.15": 17,
-        "0.2": 59,
+        "0.15": 14,
+        "0.2": 46,
         "0.3": 3
       },
       "GPIO0": {
-        "0.15": 24
+        "0.15": 25
       },
       "GPIO1": {
         "0.15": 13
       },
       "GPIO10": {
-        "0.15": 16
+        "0.15": 18
       },
       "GPIO11": {
-        "0.15": 21
+        "0.15": 23
       },
       "GPIO15": {
-        "0.15": 30
+        "0.15": 28
       },
       "GPIO18": {
         "0.15": 15
@@ -993,7 +998,7 @@
         "0.15": 3
       },
       "RF_MID": {
-        "0.15": 2
+        "0.15": 5
       },
       "SPI_CLK": {
         "0.15": 8
@@ -1041,10 +1046,10 @@
         "0.15": 14
       },
       "USB_D+": {
-        "0.15": 28
+        "0.15": 23
       },
       "USB_D-": {
-        "0.15": 28
+        "0.15": 22
       },
       "USB_MCU_D+": {
         "0.15": 12
@@ -1059,16 +1064,16 @@
         "0.2": 2
       },
       "VBUS_USB": {
-        "0.2": 85
+        "0.2": 79
       },
       "VDD_SPI": {
         "0.2": 12
       },
       "XTAL_LOAD_P": {
-        "0.15": 4
+        "0.15": 3
       },
       "XTAL_N": {
-        "0.15": 8
+        "0.15": 4
       },
       "XTAL_P": {
         "0.15": 3
@@ -1101,76 +1106,76 @@
     "R9"
   ],
   "power_passive_footprints": {
+    "C21": "Capacitor_SMD:C_0402_1005Metric",
+    "R7": "Resistor_SMD:R_0402_1005Metric",
     "R10": "Resistor_SMD:R_0402_1005Metric",
-    "C14": "Capacitor_SMD:C_0402_1005Metric",
+    "C20": "Capacitor_SMD:C_0402_1005Metric",
+    "R11": "Resistor_SMD:R_0402_1005Metric",
+    "C11": "Capacitor_SMD:C_0402_1005Metric",
+    "C19": "Capacitor_SMD:C_0402_1005Metric",
+    "R8": "Resistor_SMD:R_0402_1005Metric",
     "C8": "Capacitor_SMD:C_0402_1005Metric",
-    "C6": "Capacitor_SMD:C_0402_1005Metric",
-    "C24": "Capacitor_SMD:C_0402_1005Metric",
-    "C10": "Capacitor_SMD:C_0402_1005Metric",
     "C25": "Capacitor_SMD:C_0402_1005Metric",
-    "C9": "Capacitor_SMD:C_0402_1005Metric",
+    "C10": "Capacitor_SMD:C_0402_1005Metric",
+    "C6": "Capacitor_SMD:C_0402_1005Metric",
+    "C12": "Capacitor_SMD:C_0402_1005Metric",
     "R9": "Resistor_SMD:R_0402_1005Metric",
     "C23": "Capacitor_SMD:C_0402_1005Metric",
-    "C15": "Capacitor_SMD:C_0402_1005Metric",
-    "R7": "Resistor_SMD:R_0402_1005Metric",
-    "C11": "Capacitor_SMD:C_0402_1005Metric",
-    "C7": "Capacitor_SMD:C_0402_1005Metric",
-    "C19": "Capacitor_SMD:C_0402_1005Metric",
-    "R11": "Resistor_SMD:R_0402_1005Metric",
-    "C12": "Capacitor_SMD:C_0402_1005Metric",
-    "R8": "Resistor_SMD:R_0402_1005Metric",
-    "C26": "Capacitor_SMD:C_0402_1005Metric",
-    "C22": "Capacitor_SMD:C_0402_1005Metric",
-    "C20": "Capacitor_SMD:C_0402_1005Metric",
     "C13": "Capacitor_SMD:C_0402_1005Metric",
-    "C21": "Capacitor_SMD:C_0402_1005Metric"
+    "C9": "Capacitor_SMD:C_0402_1005Metric",
+    "C26": "Capacitor_SMD:C_0402_1005Metric",
+    "C14": "Capacitor_SMD:C_0402_1005Metric",
+    "C7": "Capacitor_SMD:C_0402_1005Metric",
+    "C24": "Capacitor_SMD:C_0402_1005Metric",
+    "C15": "Capacitor_SMD:C_0402_1005Metric",
+    "C22": "Capacitor_SMD:C_0402_1005Metric"
   },
   "resistor_capacitor_footprints": {
-    "C6": "Capacitor_SMD:C_0402_1005Metric",
-    "C24": "Capacitor_SMD:C_0402_1005Metric",
-    "C17": "Capacitor_SMD:C_0201_0603Metric",
-    "R6": "Resistor_SMD:R_0201_0603Metric",
-    "C25": "Capacitor_SMD:C_0402_1005Metric",
-    "C9": "Capacitor_SMD:C_0402_1005Metric",
-    "R9": "Resistor_SMD:R_0402_1005Metric",
+    "C3": "Capacitor_SMD:C_0201_0603Metric",
+    "R14": "Resistor_SMD:R_0402_1005Metric",
     "R5": "Resistor_SMD:R_0402_1005Metric",
     "R7": "Resistor_SMD:R_0402_1005Metric",
-    "R3": "Resistor_SMD:R_0402_1005Metric",
-    "C11": "Capacitor_SMD:C_0402_1005Metric",
-    "C7": "Capacitor_SMD:C_0402_1005Metric",
-    "C19": "Capacitor_SMD:C_0402_1005Metric",
-    "C27": "Capacitor_SMD:C_0402_1005Metric",
-    "R4": "Resistor_SMD:R_0402_1005Metric",
-    "R16": "Resistor_SMD:R_0402_1005Metric",
-    "R12": "Resistor_SMD:R_0402_1005Metric",
-    "C12": "Capacitor_SMD:C_0402_1005Metric",
-    "R17": "Resistor_SMD:R_0402_1005Metric",
-    "R8": "Resistor_SMD:R_0402_1005Metric",
-    "R13": "Resistor_SMD:R_0402_1005Metric",
-    "C13": "Capacitor_SMD:C_0402_1005Metric",
-    "C4": "Capacitor_SMD:C_0402_1005Metric",
     "R10": "Resistor_SMD:R_0402_1005Metric",
-    "C14": "Capacitor_SMD:C_0402_1005Metric",
+    "C27": "Capacitor_SMD:C_0402_1005Metric",
+    "C11": "Capacitor_SMD:C_0402_1005Metric",
     "C28": "Capacitor_SMD:C_0402_1005Metric",
-    "C8": "Capacitor_SMD:C_0402_1005Metric",
-    "C10": "Capacitor_SMD:C_0402_1005Metric",
-    "R14": "Resistor_SMD:R_0402_1005Metric",
-    "R18": "Resistor_SMD:R_0402_1005Metric",
-    "C15": "Capacitor_SMD:C_0402_1005Metric",
-    "C23": "Capacitor_SMD:C_0402_1005Metric",
     "C2": "Capacitor_SMD:C_0201_0603Metric",
-    "R1": "Resistor_SMD:R_0402_1005Metric",
     "R2": "Resistor_SMD:R_0402_1005Metric",
-    "C3": "Capacitor_SMD:C_0201_0603Metric",
-    "C26": "Capacitor_SMD:C_0402_1005Metric",
-    "C5": "Capacitor_SMD:C_0402_1005Metric",
-    "C21": "Capacitor_SMD:C_0402_1005Metric",
-    "C18": "Capacitor_SMD:C_0201_0603Metric",
-    "C22": "Capacitor_SMD:C_0402_1005Metric",
-    "C16": "Capacitor_SMD:C_0201_0603Metric",
-    "C20": "Capacitor_SMD:C_0402_1005Metric",
+    "C10": "Capacitor_SMD:C_0402_1005Metric",
+    "R12": "Resistor_SMD:R_0402_1005Metric",
+    "C13": "Capacitor_SMD:C_0402_1005Metric",
     "R15": "Resistor_SMD:R_0402_1005Metric",
-    "R11": "Resistor_SMD:R_0402_1005Metric"
+    "C24": "Capacitor_SMD:C_0402_1005Metric",
+    "C15": "Capacitor_SMD:C_0402_1005Metric",
+    "C18": "Capacitor_SMD:C_0201_0603Metric",
+    "R17": "Resistor_SMD:R_0402_1005Metric",
+    "C21": "Capacitor_SMD:C_0402_1005Metric",
+    "C5": "Capacitor_SMD:C_0402_1005Metric",
+    "C4": "Capacitor_SMD:C_0402_1005Metric",
+    "R11": "Resistor_SMD:R_0402_1005Metric",
+    "C20": "Capacitor_SMD:C_0402_1005Metric",
+    "C19": "Capacitor_SMD:C_0402_1005Metric",
+    "R18": "Resistor_SMD:R_0402_1005Metric",
+    "C8": "Capacitor_SMD:C_0402_1005Metric",
+    "R8": "Resistor_SMD:R_0402_1005Metric",
+    "C25": "Capacitor_SMD:C_0402_1005Metric",
+    "R6": "Resistor_SMD:R_0201_0603Metric",
+    "R13": "Resistor_SMD:R_0402_1005Metric",
+    "C6": "Capacitor_SMD:C_0402_1005Metric",
+    "R9": "Resistor_SMD:R_0402_1005Metric",
+    "C23": "Capacitor_SMD:C_0402_1005Metric",
+    "R16": "Resistor_SMD:R_0402_1005Metric",
+    "C9": "Capacitor_SMD:C_0402_1005Metric",
+    "C26": "Capacitor_SMD:C_0402_1005Metric",
+    "C12": "Capacitor_SMD:C_0402_1005Metric",
+    "C14": "Capacitor_SMD:C_0402_1005Metric",
+    "C17": "Capacitor_SMD:C_0201_0603Metric",
+    "C16": "Capacitor_SMD:C_0201_0603Metric",
+    "C7": "Capacitor_SMD:C_0402_1005Metric",
+    "R1": "Resistor_SMD:R_0402_1005Metric",
+    "R4": "Resistor_SMD:R_0402_1005Metric",
+    "R3": "Resistor_SMD:R_0402_1005Metric",
+    "C22": "Capacitor_SMD:C_0402_1005Metric"
   },
   "schematic_wiring": {
     "all_passed": true,
@@ -1398,11 +1403,11 @@
     ],
     "method": "Visible wires only; labels and power-symbol aliases are not electrical edges"
   },
-  "board_sha256": "1cb9a4c9de86b4bedfd481f23dab1cc75387c9d12d9d2777e7867aeec623efaa",
+  "board_sha256": "9b610f18189964e935e392974995683555df3b076f5b5eea5d94fa32192bd349",
   "project_sha256": "6b5c1af6c23faa2d72481340d1a1fb2ef6b08bf3b0d06f249b20bcead665dcc4",
   "custom_rules_sha256": "24629c2ec7f67e6f74c9ed8839fac1ba4c8a024ed2e446ea2993efe6cea08599",
   "nonthermal_hole_to_mask_minimum_mm": 0.1,
-  "retained_filled_capped_vias": 10,
+  "retained_filled_capped_vias": 8,
   "erc_kicad_version": "10.0.6",
   "drc_kicad_version": "10.0.6",
   "limitations": [

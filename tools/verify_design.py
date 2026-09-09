@@ -145,7 +145,18 @@ check('Headers are mounted on the back with pin 1 toward the antenna and 2 mm pi
                   for a,c in zip(d['numbered_pad_positions_mm'],d['numbered_pad_positions_mm'][1:]))
           for ref,d in header_geometry.items()),header_geometry)
 header_column_spacing=point(fps['J3'].GetPosition())[0]-point(fps['J2'].GetPosition())[0]
-check('Header column center spacing is 18.1 mm',math.isclose(header_column_spacing,18.1,abs_tol=.001),header_column_spacing)
+check('Header column center spacing is 17.5 mm',math.isclose(header_column_spacing,17.5,abs_tol=.001),header_column_spacing)
+header_edge_clearances={}
+for ref in ['J2','J3']:
+    x=point(fps[ref].GetPosition())[0]
+    center_gap=min(x-min(p[0] for p in outline_points),max(p[0] for p in outline_points)-x)
+    # The library's nominal plastic body is 2.00 mm wide; copper pads are 1.35 mm.
+    copper_gap=min(center_gap-pcb.ToMM(pd.GetSize().x)/2 for pd in fps[ref].Pads())
+    header_edge_clearances[ref]=dict(center_to_side_mm=round(center_gap,6),
+        nominal_body_to_side_mm=round(center_gap-1,6),copper_to_side_mm=round(copper_gap,6))
+check('Header nominal bodies and copper pads clear both side edges by 0.25 and 0.575 mm',
+      all(d['nominal_body_to_side_mm']>=.25 and d['copper_to_side_mm']>=.575
+          for d in header_edge_clearances.values()),header_edge_clearances)
 center_x=(min(p[0] for p in outline_points)+max(p[0] for p in outline_points))/2
 antenna_feed=next(p for p in fps['AE1'].Pads() if p.GetNumber()=='1')
 matching_feed=next(p for p in fps['R6'].Pads() if p.GetNumber()=='2')
@@ -353,6 +364,7 @@ result=dict(checks=checks,all_passed=all(x['passed']for x in checks),footprints=
             crystal_isolation=crystal_isolation,silkscreen_logos=silkscreen_logos,
             component_sides={r:pcb.LayerName(fps[r].GetLayer()) for r in ['U3','D4','SW1','SW2','J2','J3','Y1','C4','C5','C26']},
             header_geometry=header_geometry,header_column_spacing_mm=round(header_column_spacing,6),
+            header_edge_clearances_mm=header_edge_clearances,
             antenna_center_x_mm=point(fps['AE1'].GetPosition())[0],
             usb_length_method='Copper centerline plus resistor pad spacing and nominal via barrel; excludes device internals and cable',
             copper_layers=4,usb_path_lengths=usb,fabrication_rules=rules,track_width_policy=width_policy,power_passive_references=sorted(power_passives),
