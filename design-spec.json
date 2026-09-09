@@ -186,7 +186,7 @@
     "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/c5287210-ef13-4efd-9e37-7930fcdc1c66",
     "dnp": false,
     "mpn": "RFANT5220110A0T",
-    "note": "Pad 2 stays open with axial end copper; horizontal prototype, 20.5x3.5 mm all-layer clearance; RF validation required"
+    "note": "Pad 2 stays open with axial end copper; right-aligned horizontal prototype, 20x3.8 mm all-layer clearance; RF validation required"
   },
   {
     "ref": "D1",

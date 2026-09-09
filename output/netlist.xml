@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/genius/projects/hardware/esp32c6-pico/esp32-c6-pico.kicad_sch</source>
-    <date>2026-09-08T19:51:59</date>
-    <tool>Eeschema 10.0.3</tool>
+    <source>D:\Colin\projects\pcbs\esp32-c6-pico\esp32-c6-pico\esp32-c6-pico.kicad_sch</source>
+    <date>2026-09-09T09:41:05</date>
+    <tool>Eeschema 10.0.4</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>ESP32-C6 PICO - prototype Rev A</title>
@@ -48,15 +48,15 @@
       <datasheet>ASC_RFANT5220110A0T_V13</datasheet>
       <fields>
         <field name="MPN">RFANT5220110A0T</field>
-        <field name="AssemblyNote">Pad 2 stays open with axial end copper; horizontal prototype, 20.5x3.5 mm all-layer clearance; RF validation required</field>
+        <field name="AssemblyNote">Pad 2 stays open with axial end copper; right-aligned horizontal prototype, 20x3.8 mm all-layer clearance; RF validation required</field>
         <field name="Footprint">Walsin_Antenna:RFANT5220110A0T</field>
         <field name="Datasheet">ASC_RFANT5220110A0T_V13</field>
         <field name="Description"/>
       </fields>
       <libsource lib="Pico_Design" part="Walsin_Antenna__RFANT5220110A0T" description="Walsin multilayer ceramic chip antenna, 2.4GHz ISM band (2.4-2.5GHz), 5.2x2.0x1.15mm SMD, 2dBi typ., 50ohm, VSWR&lt;=2"/>
       <property name="MPN" value="RFANT5220110A0T"/>
-      <property name="AssemblyNote" value="Pad 2 stays open with axial end copper; horizontal prototype, 20.5x3.5 mm all-layer clearance; RF validation required"/>
-      <property name="Sheetname" value=""/>
+      <property name="AssemblyNote" value="Pad 2 stays open with axial end copper; right-aligned horizontal prototype, 20x3.8 mm all-layer clearance; RF validation required"/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="antenna 2.4GHz chip ceramic ISM Bluetooth WiFi BLE Zigbee Walsin"/>
       <sheetpath names="/" tstamps="/"/>
@@ -83,7 +83,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="1.5pF"/>
       <property name="AssemblyNote" value="C0G; RF initial value"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -111,7 +111,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="1.5pF"/>
       <property name="AssemblyNote" value="C0G; RF initial value, VNA tuning required"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -139,7 +139,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="12pF"/>
       <property name="AssemblyNote" value="C0G; assumes about 2 pF stray; trim frequency on hardware"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -167,7 +167,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="12pF"/>
       <property name="AssemblyNote" value="C0G; crystal load tuning"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -195,7 +195,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="100nF"/>
       <property name="AssemblyNote" value="At flash VCC"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -223,7 +223,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="1uF"/>
       <property name="AssemblyNote" value="At U1 VDD_SPI pin"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -251,7 +251,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="10uF"/>
       <property name="AssemblyNote" value="Main bulk; 0402, 10 V minimum; X5R reference; verify effective capacitance under DC bias"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -279,7 +279,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="1uF"/>
       <property name="AssemblyNote" value="Main bulk; X7R 10 V minimum"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -307,7 +307,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="100nF"/>
       <property name="AssemblyNote" value="Main HF; X7R 10 V minimum"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -335,7 +335,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="1uF"/>
       <property name="AssemblyNote" value="U1 pins 2/3 local bypass"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -363,7 +363,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="100nF"/>
       <property name="AssemblyNote" value="U1 pin 5; X7R 10 V minimum"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -391,7 +391,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="100nF"/>
       <property name="AssemblyNote" value="U1 pin 28; X7R 10 V minimum"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -419,7 +419,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="100nF"/>
       <property name="AssemblyNote" value="U1 pin 37; X7R 10 V minimum"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -447,7 +447,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="100nF"/>
       <property name="AssemblyNote" value="U1 pin 40; X7R 10 V minimum"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -475,7 +475,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="10pF"/>
       <property name="AssemblyNote" value="C0G DC-block / tuning initial value"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -503,7 +503,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="DNP"/>
       <property name="AssemblyNote" value="Antenna pi input shunt"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="dnp"/>
       <property name="ki_keywords" value="capacitor cap"/>
@@ -532,7 +532,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="DNP"/>
       <property name="AssemblyNote" value="Antenna pi output shunt"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="dnp"/>
       <property name="ki_keywords" value="capacitor cap"/>
@@ -561,7 +561,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="10uF"/>
       <property name="AssemblyNote" value="U1 pin 2 local bulk; 0402, 10 V minimum; verify effective capacitance under DC bias"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -589,7 +589,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="10uF"/>
       <property name="AssemblyNote" value="U1 pin 3 local bulk; 0402, 10 V minimum; verify effective capacitance under DC bias"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -617,7 +617,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="1uF"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -645,7 +645,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="1uF"/>
       <property name="AssemblyNote" value="At RGB VDD"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -673,7 +673,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="100nF"/>
       <property name="AssemblyNote" value="At LV1T125 VCC"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <property name="ki_fp_filters" value="C_*"/>
@@ -701,7 +701,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="DNP"/>
       <property name="AssemblyNote" value="EMI tuning option; leave open"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="dnp"/>
       <property name="ki_keywords" value="capacitor cap"/>
@@ -730,7 +730,7 @@
       <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="MPN" value="DNP"/>
       <property name="AssemblyNote" value="EMI tuning option; leave open"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="dnp"/>
       <property name="ki_keywords" value="capacitor cap"/>
@@ -760,7 +760,7 @@
       <libsource lib="Pico_Design" part="Diode__ESD9B5.0ST5G" description="ESD protection diode, 5.0Vrwm, SOD-923"/>
       <property name="MPN" value="PESD5V0F1BL-Q"/>
       <property name="AssemblyNote" value="0.4 pF antenna ESD option; original 15 pF ESD9B is unsuitable"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="dnp"/>
       <property name="ki_keywords" value="diode TVS ESD"/>
@@ -790,7 +790,7 @@
       <libsource lib="Pico_Design" part="LED__WS2812B-2020" description="RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"/>
       <property name="MPN" value="WS2812B-2020"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="RGB LED NeoPixel Nano addressable"/>
       <property name="ki_fp_filters" value="LED*WS2812*-2020_PLCC4*"/>
@@ -820,7 +820,7 @@
       <libsource lib="Pico_Design" part="Device__L_Small" description="Inductor, small symbol"/>
       <property name="MPN" value="2.4nH"/>
       <property name="AssemblyNote" value="High-Q RF; initial value"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
       <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
@@ -848,7 +848,7 @@
       <libsource lib="Pico_Design" part="Device__L_Small" description="Inductor, small symbol"/>
       <property name="MPN" value="2.0nH"/>
       <property name="AssemblyNote" value="RF supply filter; Irated &gt;= 500 mA, low DCR"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
       <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
@@ -876,7 +876,7 @@
       <libsource lib="Pico_Design" part="Device__L_Small" description="Inductor, small symbol"/>
       <property name="MPN" value="DNP"/>
       <property name="AssemblyNote" value="Shunt RF tuning option"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="dnp"/>
       <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
@@ -905,7 +905,7 @@
       <libsource lib="Pico_Design" part="Device__L_Small" description="Inductor, small symbol"/>
       <property name="MPN" value="24nH"/>
       <property name="AssemblyNote" value="Crystal harmonic suppression; initial value"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="inductor choke coil reactor magnetic"/>
       <property name="ki_fp_filters" value="Choke_* *Coil* Inductor_* L_*"/>
@@ -933,7 +933,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="0R"/>
       <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -961,7 +961,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="0R"/>
       <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -989,7 +989,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="0R"/>
       <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1017,7 +1017,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="0R"/>
       <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1045,7 +1045,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="0R"/>
       <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1073,7 +1073,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="0R"/>
       <property name="AssemblyNote" value="Antenna pi series tuning option"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1101,7 +1101,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="10k"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1129,7 +1129,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="10k"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1157,7 +1157,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="10k"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1185,7 +1185,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="22R"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1213,7 +1213,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="22R"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1241,7 +1241,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="499R"/>
       <property name="AssemblyNote" value="UART0 harmonic damping at U1"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1269,7 +1269,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="330R"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1297,7 +1297,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="100k"/>
       <property name="AssemblyNote" value="Keep LED data low at reset"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1325,7 +1325,7 @@
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
       <property name="MPN" value="0R"/>
       <property name="AssemblyNote" value="Place at U1; SPI clock defaults to 40 MHz for bring-up"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
@@ -1353,7 +1353,7 @@
       <libsource lib="Pico_Design" part="Switch__SW_Push" description="Push button switch, generic, two pins"/>
       <property name="MPN" value="KMR221GLFS"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1380,7 +1380,7 @@
       <libsource lib="Pico_Design" part="Switch__SW_Push" description="Push button switch, generic, two pins"/>
       <property name="MPN" value="KMR221GLFS"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="switch normally-open pushbutton push-button"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1408,7 +1408,7 @@
       <libsource lib="Pico_Design" part="espressif-kicad-addon__ESP32-C6" description="ESP32C6,ultra-low-power SoC with RISC-V single-core microprocessor,2.4 GHz Wi-Fi 6 (802.11 ax), Bluetooth 5 (LE), Zigbee and Thread (802.15.4),QFN-40"/>
       <property name="MPN" value="ESP32-C6"/>
       <property name="AssemblyNote" value="QFN40, NOT the pin-incompatible C6FH4 QFN32"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="esp32c6 riscv wifi bluetooth zigbee thread"/>
       <property name="ki_fp_filters" value="QFN*W5mm*P0.4mm*"/>
@@ -1476,7 +1476,7 @@
       <libsource lib="Pico_Design" part="Memory_Flash__W25Q32JVZP" description="32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8"/>
       <property name="MPN" value="W25Q32JVZPIQ"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="flash memory SPI"/>
       <property name="ki_fp_filters" value="WSON*1EP*6x5mm*P1.27mm*"/>
@@ -1512,7 +1512,7 @@
       <libsource lib="Pico_Design" part="Pico_Custom__SN74LV1T125" description="Single-supply logic-level translating buffer, active-low OE, 1.6-5.5 V supply"/>
       <property name="MPN" value="SN74LV1T125DBVR"/>
       <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="Single Gate Buff Tri-State LVC CMOS"/>
       <property name="ki_fp_filters" value="SOT* SG-*"/>
@@ -1544,7 +1544,7 @@
       <libsource lib="Pico_Design" part="Device__Crystal_GND24_Small" description="Four pin crystal, GND on pins 2 and 4, small symbol"/>
       <property name="MPN" value="E9X400081G08"/>
       <property name="AssemblyNote" value="Eaton E9X; 40 MHz, CL 8 pF, initial tolerance 10 ppm, ESR &lt;=50 ohm; verify assembled frequency"/>
-      <property name="Sheetname" value=""/>
+      <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="quartz ceramic resonator oscillator"/>
       <property name="ki_fp_filters" value="Crystal*"/>
@@ -1788,14 +1788,14 @@
         <unit name="A">
           <pins>
             <pin num="SH"/>
-            <pin num="B1"/>
-            <pin num="B12"/>
             <pin num="A1"/>
             <pin num="A12"/>
+            <pin num="B1"/>
+            <pin num="B12"/>
+            <pin num="A4"/>
             <pin num="A9"/>
             <pin num="B4"/>
             <pin num="B9"/>
-            <pin num="A4"/>
             <pin num="A5"/>
             <pin num="B5"/>
             <pin num="A7"/>
@@ -2390,7 +2390,7 @@
       <node ref="U1" pin="5" pinfunction="VDDPST1_5" pintype="power_in"/>
       <node ref="U2" pin="5" pinfunction="VOUT_5" pintype="power_out"/>
     </net>
-    <net code="2" name="+5V" class="Default">
+    <net code="2" name="+5V" class="Power">
       <node ref="C22" pin="1" pintype="passive"/>
       <node ref="D5" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="J3" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
@@ -2666,7 +2666,7 @@
       <node ref="U1" pin="2" pinfunction="VDDA3P3_2" pintype="power_in"/>
       <node ref="U1" pin="3" pinfunction="VDDA3P3_3" pintype="passive"/>
     </net>
-    <net code="52" name="VBUS_FUSED" class="Default">
+    <net code="52" name="VBUS_FUSED" class="Power">
       <node ref="D5" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="F1" pin="2" pintype="passive"/>
     </net>

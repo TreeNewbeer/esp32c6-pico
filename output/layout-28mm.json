@@ -1,0 +1,272 @@
+{
+  "date": "2026-09-09",
+  "board_dimensions_mm": [
+    20.5,
+    28
+  ],
+  "previous_saved_dimensions_mm": [
+    20.5,
+    32
+  ],
+  "antenna_move_mm": [
+    0,
+    4
+  ],
+  "antenna_no_zone_fill_mm": [
+    20.5,
+    2.8
+  ],
+  "antenna_crystal_body_gap_mm": 5.110039,
+  "footprint_changes": {
+    "L1": {
+      "before": {
+        "position_mm": [
+          110.8,
+          112.245
+        ],
+        "angle_degrees": 90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          111.4,
+          112.65
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    },
+    "L2": {
+      "before": {
+        "position_mm": [
+          104.05,
+          111.58
+        ],
+        "angle_degrees": 90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          102.1,
+          113.0
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    },
+    "C11": {
+      "before": {
+        "position_mm": [
+          108.1,
+          112.1
+        ],
+        "angle_degrees": 180.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          109.0,
+          113.0
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    },
+    "R6": {
+      "before": {
+        "position_mm": [
+          111.75,
+          110.695
+        ],
+        "angle_degrees": 90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          115.8,
+          112.65
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    },
+    "C20": {
+      "before": {
+        "position_mm": [
+          106.5,
+          111.58
+        ],
+        "angle_degrees": -90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          106.85,
+          113.1
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    },
+    "AE1": {
+      "before": {
+        "position_mm": [
+          109.0,
+          107.0
+        ],
+        "angle_degrees": -90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          109.0,
+          111.0
+        ],
+        "angle_degrees": -90.0,
+        "layer": "F.Cu"
+      }
+    },
+    "D1": {
+      "before": {
+        "position_mm": [
+          113.15,
+          110.65
+        ],
+        "angle_degrees": 180.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          117.35,
+          112.65
+        ],
+        "angle_degrees": 180.0,
+        "layer": "F.Cu"
+      }
+    },
+    "C19": {
+      "before": {
+        "position_mm": [
+          105.3,
+          111.58
+        ],
+        "angle_degrees": -90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          104.65,
+          113.1
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    },
+    "C2": {
+      "before": {
+        "position_mm": [
+          109.9,
+          112.245
+        ],
+        "angle_degrees": -90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          112.5,
+          113.1
+        ],
+        "angle_degrees": -90.0,
+        "layer": "F.Cu"
+      }
+    },
+    "L3": {
+      "before": {
+        "position_mm": [
+          112.7,
+          112.245
+        ],
+        "angle_degrees": -90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          113.65,
+          113.45
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    },
+    "C17": {
+      "before": {
+        "position_mm": [
+          110.38,
+          111.1
+        ],
+        "angle_degrees": 180.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          114.7,
+          113.25
+        ],
+        "angle_degrees": -90.0,
+        "layer": "F.Cu"
+      }
+    },
+    "C16": {
+      "before": {
+        "position_mm": [
+          111.75,
+          112.245
+        ],
+        "angle_degrees": 90.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          113.6,
+          112.65
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    },
+    "C18": {
+      "before": {
+        "position_mm": [
+          110.38,
+          110.3
+        ],
+        "angle_degrees": 180.0,
+        "layer": "F.Cu"
+      },
+      "after": {
+        "position_mm": [
+          115.8,
+          113.65
+        ],
+        "angle_degrees": 0.0,
+        "layer": "F.Cu"
+      }
+    }
+  },
+  "qa_status": "not_run_user_requested",
+  "rf_hardware_validation": "not_performed",
+  "board_sha256": "d781d2d123de365866ed976a86786dbec74e2b486e47c3219486297a1403a578",
+  "input_board_sha256": "01523252e7856e7910f5dcdb768adb9ae3b90dd901be9b7b660b3a97b2f179f2",
+  "backup": "tmp\\antenna-28mm-20260908-222253",
+  "drc_report": "drc-final.json",
+  "drc_violations": 2,
+  "new_drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity": 0,
+  "erc_violations": 0,
+  "evidence_sha256": {
+    "drc-final.json": "d381aa9e0b4a4d8167001e4199936550cf9b4444f63f68228f6cb6246cfc2a20",
+    "erc.json": "15ef145ca9811b290b9090e6844f9f98f962833f5cc2bfd42cf653d88b43c1c2",
+    "netlist.xml": "2e4d2edc7a064c9bb516e318ff44b273aba9ba67689f1108088a2d422e4873e1"
+  }
+}

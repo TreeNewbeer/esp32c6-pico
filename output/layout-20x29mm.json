@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-09",
+  "board_dimensions_mm": [
+    20,
+    29
+  ],
+  "previous_dimensions_mm": [
+    20.5,
+    29
+  ],
+  "outline_bounds_mm": [
+    99,
+    108.5,
+    119,
+    137.5
+  ],
+  "trim_per_side_mm": 0.25,
+  "header_column_spacing_mm": 18.1,
+  "header_pad_to_board_edge_mm": 0.275,
+  "required_copper_to_edge_mm": 0.25,
+  "no_zone_fill_mm": [
+    20,
+    3.8
+  ],
+  "assembly_origin_mm": [
+    99,
+    137.5
+  ],
+  "qa_status": "not_run_user_requested",
+  "board_sha256": "80f268946f78145986ff57ee94ac157f02c0057a61a3d2a9f2f21131edb5ac61",
+  "backup": "tmp\\width-20mm-20260909-0937",
+  "drc_report": "drc-final.json",
+  "drc_violations": 2,
+  "new_drc_violations": 0,
+  "erc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity": 0,
+  "footprint_via_and_routing_geometry_unchanged": true,
+  "evidence_sha256": {
+    "netlist.xml": "be2bec6569e0b27ed795bb7d1d4a4d80bdb641892714214bf144a554b727a759",
+    "erc.json": "3fbe340fcd0fa78048ed35d8bd180e85aeadc1052488438e0a5633ac886f99e6",
+    "drc-final.json": "69b127f73e08ae92c406817a34dd513ee665efc74e5ec1f6da738fd88c682eab"
+  }
+}

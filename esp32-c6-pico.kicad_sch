@@ -6103,7 +6103,7 @@
 				(hide yes)
 			)
 		)
-		(property "AssemblyNote" "Pad 2 stays open with axial end copper; horizontal prototype, 20.5x3.5 mm all-layer clearance; RF validation required"
+		(property "AssemblyNote" "Pad 2 stays open with axial end copper; right-aligned horizontal prototype, 20x3.8 mm all-layer clearance; RF validation required"
 			(at 495.3 43.18 0)
 			(effects
 				(font

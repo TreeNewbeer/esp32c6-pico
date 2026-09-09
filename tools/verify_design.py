@@ -43,6 +43,17 @@ for ref,c in components.items():
     if fps[ref].GetFPID().GetUniStringLibId()!=c.findtext('footprint'):
         fp_mismatch.append([ref,c.findtext('footprint'),fps[ref].GetFPID().GetUniStringLibId()])
 check('Assigned footprint IDs match',not fp_mismatch,fp_mismatch)
+field_mismatch=[]
+for ref,c in components.items():
+    if ref not in fps:continue
+    expected_fields={n.attrib['name']:n.text or '' for n in c.findall('./fields/field')
+                     if n.attrib['name']!='Footprint'}
+    expected_fields['Value']=c.findtext('value') or ''
+    actual_fields={field.GetName():field.GetText() for field in fps[ref].GetFields()}
+    for name,value in expected_fields.items():
+        if actual_fields.get(name)!=value:
+            field_mismatch.append([ref,name,value,actual_fields.get(name)])
+check('PCB values and schematic instance fields match the netlist',not field_mismatch,field_mismatch)
 # RF matching R/C parts are the only 0201 exceptions.
 power_passives={ref for ref,fp in fps.items() if ref.startswith(('R','C'))
                 and any(pd.GetNetname() in POWER_NETS for pd in fp.Pads())}|{'C21','R10','R11'}
@@ -110,7 +121,7 @@ platebox=endplate.GetBoundingBox()
 end_copper=dict(plate_size_board_axes_mm=[pcb.ToMM(platebox.GetWidth()),pcb.ToMM(platebox.GetHeight())],
                 plate_area_mm2=round(pcb.ToMM(endplate.GetSize().x)*pcb.ToMM(endplate.GetSize().y),6),
                 RF_status='Geometric starting point; not tuned or proven RF-equivalent to the reference')
-check('PCB outline is 20.5 x 32 mm',dimensions==[20.5,32],dimensions)
+check('PCB outline is 20 x 29 mm',dimensions==[20,29],dimensions)
 check('Flash and USB TVS are on the back; both buttons are on the front',
       all(fps[r].GetLayer()==pcb.B_Cu for r in ['U3','D4']) and
       all(fps[r].GetLayer()==pcb.F_Cu for r in ['SW1','SW2']))
@@ -127,15 +138,19 @@ check('Headers are mounted on the back with pin 1 toward the antenna and 2 mm pi
 header_column_spacing=point(fps['J3'].GetPosition())[0]-point(fps['J2'].GetPosition())[0]
 check('Header column center spacing is 18.1 mm',math.isclose(header_column_spacing,18.1,abs_tol=.001),header_column_spacing)
 center_x=(min(p[0] for p in outline_points)+max(p[0] for p in outline_points))/2
-check('Antenna body is centered across the board',math.isclose(point(fps['AE1'].GetPosition())[0],center_x,abs_tol=.001))
+antenna_feed=next(p for p in fps['AE1'].Pads() if p.GetNumber()=='1')
+matching_feed=next(p for p in fps['R6'].Pads() if p.GetNumber()=='2')
+check('Antenna sits on the right with its feed aligned to R6',
+      point(fps['AE1'].GetPosition())[0]>center_x and
+      math.isclose(point(antenna_feed.GetPosition())[0],point(matching_feed.GetPosition())[0],abs_tol=.001))
 series_x=[point(p.GetPosition())[0] for ref in ['C16','R6','AE1'] for p in fps[ref].Pads() if p.GetNumber()=='1']
 check('Antenna-side series components share a straight axis',max(series_x)-min(series_x)<.001,series_x)
 usb_vias={name:[v for v in vias if v.GetNetname()==name] for name in ['USB_D+','USB_D-']}
 check('Each USB data net has two matched front/back transitions',all(len(v)==2 for v in usb_vias.values()),{n:len(v) for n,v in usb_vias.items()})
 check('USB routing uses only the two outer layers',all(isinstance(t,pcb.PCB_VIA) or t.GetLayer() in [pcb.F_Cu,pcb.B_Cu] for t in b.GetTracks() if t.GetNetname().startswith('USB_')))
 check('Antenna is mounted horizontally',math.isclose(fps['AE1'].GetOrientationDegrees()%180,90,abs_tol=.001))
-check('Prototype antenna clearance is 20.5 x 3.5 mm on all copper layers',
-      antenna_clearance==[20.5,3.5] and antenna_zone.GetDoNotAllowZoneFills()
+check('Prototype antenna clearance is 20 x 3.8 mm on all copper layers',
+      antenna_clearance==[20,3.8] and antenna_zone.GetDoNotAllowZoneFills()
       and all(antenna_zone.IsOnLayer(layer) for layer in [pcb.F_Cu,pcb.In1_Cu,pcb.In2_Cu,pcb.B_Cu]),antenna_clearance)
 check('No vias in the antenna clearance',not any(antenna_zone.Outline().Contains(v.GetPosition()) for v in vias))
 
@@ -256,9 +271,11 @@ check('Only the original 11 filled/capped thermal vias remain in SMD pads',
 check('Retained thermal vias explicitly specify filling and copper capping',
       all(v.GetFillingMode()==pcb.FILLING_MODE_FILLED and v.GetCappingMode()==pcb.CAPPING_MODE_CAPPED
           for v in vias if v.m_Uuid.AsString() in thermal_via_ids))
-check('Ordinary vias explicitly specify tenting on both sides',
-      all(v.GetFrontTentingMode()==pcb.TENTING_MODE_TENTED and v.GetBackTentingMode()==pcb.TENTING_MODE_TENTED
-          for v in vias if v.m_Uuid.AsString() not in thermal_via_ids))
+tenting_errors=[dict(uuid=v.m_Uuid.AsString(),position_mm=point(v.GetPosition()),
+                     front_mode=v.GetFrontTentingMode(),back_mode=v.GetBackTentingMode())
+                for v in vias if v.m_Uuid.AsString() not in thermal_via_ids
+                and (v.GetFrontTentingMode()!=pcb.TENTING_MODE_TENTED or v.GetBackTentingMode()!=pcb.TENTING_MODE_TENTED)]
+check('Ordinary vias explicitly specify tenting on both sides',not tenting_errors,tenting_errors)
 with (OUTPUT/'via-in-pad.csv').open('w',encoding='utf-8-sig',newline='') as f:
     w=csv.DictWriter(f,fieldnames=['reference','pad','net','x_mm','y_mm','drill_mm','diameter_mm'],lineterminator='\n');w.writeheader();w.writerows(vippo)
 
@@ -318,6 +335,7 @@ erc_count=sum(len(s['violations'])for s in erc['sheets'])
 check('KiCad ERC has no errors or warnings',erc_count==0,erc_count)
 check('KiCad DRC has no violations',len(drc['violations'])==0,len(drc['violations']))
 check('KiCad PCB has no unconnected items',len(drc['unconnected_items'])==0,len(drc['unconnected_items']))
+check('KiCad schematic parity report has no mismatches',drc.get('schematic_parity')==[],drc.get('schematic_parity'))
 result=dict(checks=checks,all_passed=all(x['passed']for x in checks),footprints=len(fps),
             populated=sum(not f.IsDNP()for f in fps.values()),tracks=sum(not isinstance(t,pcb.PCB_VIA)for t in b.GetTracks()),
             vias=len(vias),via_in_pad_entries=len(vippo),dimensions_mm=dimensions,nominal_thickness_mm=.8,
@@ -336,7 +354,7 @@ result=dict(checks=checks,all_passed=all(x['passed']for x in checks),footprints=
             custom_rules_sha256=hashlib.sha256(BOARD_FILE.with_suffix('.kicad_dru').read_bytes()).hexdigest(),
             nonthermal_hole_to_mask_minimum_mm=.1,retained_filled_capped_vias=len(retained_thermal),
             erc_kicad_version=erc.get('kicad_version'),drc_kicad_version=drc.get('kicad_version'),
-            limitations=['Axial end copper and 20.5 x 3.5 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured',
+            limitations=['Axial end copper and 20 x 3.8 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured',
                          'RF matching values and antenna efficiency require hardware tuning',
                          'Nominal RF/USB impedance requires manufacturer stackup confirmation',
                          'The 11 retained thermal vias require filling and copper capping; dual-sided SMT assembly required; no physical power or thermal tests performed'])

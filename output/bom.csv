@@ -1,4 +1,4 @@
-﻿Reference,Value,MPN,Footprint,Populate,Note
+Reference,Value,MPN,Footprint,Populate,Note
 U1,ESP32-C6,ESP32-C6,Pico:QFN40_ESP32_C6_Compact,YES,"QFN40, NOT the pin-incompatible C6FH4 QFN32"
 C3,1.5pF,1.5pF,Capacitor_SMD:C_0201_0603Metric,YES,"C0G; RF initial value, VNA tuning required"
 L1,2.4nH,2.4nH,Inductor_SMD:L_0201_0603Metric,YES,High-Q RF; initial value
@@ -8,7 +8,7 @@ L3,DNP,DNP,Inductor_SMD:L_0201_0603Metric,NO,Shunt RF tuning option
 C17,DNP,DNP,Capacitor_SMD:C_0201_0603Metric,NO,Antenna pi input shunt
 R6,0R,0R,Resistor_SMD:R_0201_0603Metric,YES,Antenna pi series tuning option
 C18,DNP,DNP,Capacitor_SMD:C_0201_0603Metric,NO,Antenna pi output shunt
-AE1,RFANT5220110A0T,RFANT5220110A0T,Walsin_Antenna:RFANT5220110A0T,YES,"Pad 2 stays open with axial end copper; horizontal prototype, 20.5x3.5 mm all-layer clearance; RF validation required"
+AE1,RFANT5220110A0T,RFANT5220110A0T,Walsin_Antenna:RFANT5220110A0T,YES,"Pad 2 stays open with axial end copper; right-aligned horizontal prototype, 20x3.8 mm all-layer clearance; RF validation required"
 D1,PESD5V0F1BL-Q,PESD5V0F1BL-Q,Diode_SMD:D_SOD-882,NO,0.4 pF antenna ESD option; original 15 pF ESD9B is unsuitable
 C8,10uF,10uF,Capacitor_SMD:C_0402_1005Metric,YES,"Main bulk; 0402, 10 V minimum; X5R reference; verify effective capacitance under DC bias"
 C9,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,Main bulk; X7R 10 V minimum

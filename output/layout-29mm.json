@@ -1,0 +1,51 @@
+{
+  "date": "2026-09-09",
+  "board_dimensions_mm": [
+    20.5,
+    29
+  ],
+  "previous_dimensions_mm": [
+    20.5,
+    28
+  ],
+  "antenna_center_mm": [
+    113.42,
+    110
+  ],
+  "antenna_move_mm": [
+    4.42,
+    -1
+  ],
+  "codex_center_mm": [
+    102.6,
+    110
+  ],
+  "no_zone_fill_mm": [
+    20.5,
+    3.8
+  ],
+  "feed_route_center_to_center_mm": {
+    "before": 6.07,
+    "after": 2.65
+  },
+  "antenna_crystal_body_gap_mm": 5.1,
+  "qa_status": "not_run_user_requested",
+  "rf_hardware_validation": "not_performed",
+  "board_sha256": "659e9847d0934e970a73cf7664b064c93e7f3107a5b0ef367fd6ecc17c1b5a58",
+  "backup": "tmp\\antenna-right-29mm-20260909-0926",
+  "drc_report": "drc-final.json",
+  "drc_violations": 2,
+  "new_drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity": 0,
+  "erc_violations": 0,
+  "changed_footprint_positions": [
+    "AE1"
+  ],
+  "unaffected_net_routing_unchanged": true,
+  "evidence_sha256": {
+    "drc-final.json": "45671db538b978a314d0740f6f05953a04902080deecbdb59ac91fede1240165",
+    "erc.json": "6d7d567cffc694f092ddf6006009e33ec9f157ec549b336ff2716aaa95ec8ae1",
+    "netlist.xml": "6bdf18585187acee75ae229027a4a0473e5ba094477bcc17ede7da96ee7a3208"
+  }
+}

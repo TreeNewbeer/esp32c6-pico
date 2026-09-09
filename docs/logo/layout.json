@@ -1,9 +1,9 @@
 {
-  "date": "2026-09-08",
+  "date": "2026-09-09",
   "units": "mm",
   "board_dimensions": [
-    20.5,
-    32
+    20,
+    29
   ],
   "codex": {
     "file": "codex-silkscreen.svg",
@@ -12,14 +12,19 @@
     "group": "LOGO_CODEX",
     "layer": "F.SilkS",
     "center": [
-      115.3,
-      107.3
+      102.6,
+      110
     ],
     "canvas_size": [
+      2.1,
+      2.1
+    ],
+    "svg_sha256": "d08b4e824cd6727e89617f59e4737273ff53e44c1da849d016dd64dfd08b33e1",
+    "source_canvas_size": [
       2.8,
       2.8
     ],
-    "svg_sha256": "d08b4e824cd6727e89617f59e4737273ff53e44c1da849d016dd64dfd08b33e1"
+    "pcb_scale_from_svg": 0.75
   },
   "personal": {
     "original": "logo.jpg",
@@ -30,14 +35,19 @@
     "layer": "B.SilkS",
     "center": [
       109,
-      109.95
+      111.95
     ],
     "canvas_size": [
-      6.430526315789473,
-      8.2
+      3.536789,
+      4.51
     ],
     "mirrored_for_bottom_view": true,
     "outline_width": 0.12084210526315788,
-    "svg_sha256": "4137a1b98aea4bbee01d14a503f8dbe1c91781218778723cd3f8b6c88267ac20"
+    "svg_sha256": "4137a1b98aea4bbee01d14a503f8dbe1c91781218778723cd3f8b6c88267ac20",
+    "source_canvas_size": [
+      6.430526315789473,
+      8.2
+    ],
+    "pcb_scale_from_svg": 0.55
   }
 }

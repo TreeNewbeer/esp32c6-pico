@@ -16,8 +16,8 @@
 
 后续用户明确调整设计时，同步更新相关工程、说明及检查条件。
 
-- 板框为 20.5 × 32.0 mm，四层、标称 0.8 mm；L2 保留 GND 参考，遵守现有天线和射频禁布区。
-- 陶瓷天线横向居中，优先控制面积；AE1 的开路端铜箔不能接地。20.5 × 3.5 mm 净空是样板设计选择，性能尚未实测。
+- 板框为 20.0 × 29.0 mm，四层、标称 0.8 mm；L2 保留 GND 参考，遵守现有天线和射频禁布区。
+- 陶瓷天线横放在板头右侧，馈电焊盘与 R6 对齐，Codex 图标位于左侧；AE1 的开路端铜箔不能接地。20.0 × 3.8 mm 净空是样板设计选择，性能尚未实测。
 - 正面 `LOGO_CODEX`、背面 `LOGO_KZL` 是可编辑丝印图形组；源图和参数在 [docs/logo/](docs/logo/)。背面图形按背面视角显示，保持铜层禁布区；不要恢复已替换的 `2.4 GHz` / `NO COPPER` 丝印。
 - 晶振及负载电容位于主控右侧；射频、晶振信号保持正面且不使用过孔，保留晶振下方的接地参考和禁布区。
 - Flash、USB TVS、排针在背面，两颗按键在正面。排针针距 2.00 mm、列中心距 18.10 mm，1 脚朝天线；翻面时保持编号与网络顺序，功能丝印在背面。
@@ -33,7 +33,7 @@
 - 以下命令在仓库根目录执行；QA 依赖与当前工程一致的网表、ERC 和 DRC 报告：
 
 ```sh
-flatpak run --command=kicad-cli org.kicad.KiCad pcb drc --format json --exit-code-violations -o output/drc-final.json esp32-c6-pico.kicad_pcb
+flatpak run --command=kicad-cli org.kicad.KiCad pcb drc --schematic-parity --format json --exit-code-violations -o output/drc-final.json esp32-c6-pico.kicad_pcb
 flatpak run --command=python3 org.kicad.KiCad tools/verify_design.py
 ```
 
