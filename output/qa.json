@@ -633,14 +633,34 @@
       "detail": {
         "A": {
           "D+_mm": 25.8808,
-          "D-_mm": 27.2437,
-          "skew_mm": 1.3629
+          "D-_mm": 27.1609,
+          "skew_mm": 1.2801
         },
         "B": {
           "D+_mm": 24.5526,
-          "D-_mm": 24.1673,
-          "skew_mm": 0.3853
+          "D-_mm": 24.0845,
+          "skew_mm": 0.4681
         }
+      }
+    },
+    {
+      "check": "L2 is on the back with continuous filtered supply paths and C11 on the front",
+      "passed": true,
+      "detail": {
+        "side": "B.Cu",
+        "position_mm": [
+          111.55,
+          112.65
+        ],
+        "output_paths_mm": {
+          "U1.2": 3.8553,
+          "U1.3": 3.6896,
+          "C11.1": 4.2193,
+          "C19.1": 8.6693,
+          "C20.1": 6.4693
+        },
+        "output_vias": 1,
+        "length_method": "Copper centerline plus nominal via barrel; excludes component internals"
       }
     },
     {
@@ -667,8 +687,8 @@
   "all_passed": false,
   "footprints": 64,
   "populated": 58,
-  "tracks": 883,
-  "vias": 126,
+  "tracks": 884,
+  "vias": 125,
   "via_in_pad_entries": 7,
   "dimensions_mm": [
     20.0,
@@ -744,6 +764,7 @@
     }
   },
   "component_sides": {
+    "L2": "B.Cu",
     "U3": "B.Cu",
     "D4": "B.Cu",
     "SW1": "F.Cu",
@@ -754,6 +775,22 @@
     "C4": "F.Cu",
     "C5": "F.Cu",
     "C26": "F.Cu"
+  },
+  "rf_supply_filter": {
+    "side": "B.Cu",
+    "position_mm": [
+      111.55,
+      112.65
+    ],
+    "output_paths_mm": {
+      "U1.2": 3.8553,
+      "U1.3": 3.6896,
+      "C11.1": 4.2193,
+      "C19.1": 8.6693,
+      "C20.1": 6.4693
+    },
+    "output_vias": 1,
+    "length_method": "Copper centerline plus nominal via barrel; excludes component internals"
   },
   "header_geometry": {
     "J2": {
@@ -882,13 +919,13 @@
   "usb_path_lengths": {
     "A": {
       "D+_mm": 25.8808,
-      "D-_mm": 27.2437,
-      "skew_mm": 1.3629
+      "D-_mm": 27.1609,
+      "skew_mm": 1.2801
     },
     "B": {
       "D+_mm": 24.5526,
-      "D-_mm": 24.1673,
-      "skew_mm": 0.3853
+      "D-_mm": 24.0845,
+      "skew_mm": 0.4681
     }
   },
   "fabrication_rules": {
@@ -925,7 +962,7 @@
     "ground": "Existing widths retained; excluded from the exact-width rules",
     "widths_by_net": {
       "+3V3": {
-        "0.2": 113
+        "0.2": 112
       },
       "+5V": {
         "0.2": 30
@@ -951,10 +988,10 @@
         "0.15": 25
       },
       "GPIO1": {
-        "0.15": 13
+        "0.15": 14
       },
       "GPIO10": {
-        "0.15": 18
+        "0.15": 19
       },
       "GPIO11": {
         "0.15": 18
@@ -969,7 +1006,7 @@
         "0.15": 21
       },
       "GPIO2": {
-        "0.15": 12
+        "0.15": 14
       },
       "GPIO20": {
         "0.15": 21
@@ -1002,7 +1039,7 @@
         "0.15": 21
       },
       "GPIO9_BOOT": {
-        "0.15": 30
+        "0.15": 26
       },
       "LED_DATA_5V": {
         "0.15": 10
@@ -1068,7 +1105,7 @@
         "0.15": 23
       },
       "USB_D-": {
-        "0.15": 22
+        "0.15": 23
       },
       "USB_MCU_D+": {
         "0.15": 12
@@ -1077,7 +1114,7 @@
         "0.15": 8
       },
       "V3A": {
-        "0.2": 10
+        "0.2": 11
       },
       "VBUS_USB": {
         "0.2": 62
@@ -1122,76 +1159,76 @@
     "R9"
   ],
   "power_passive_footprints": {
-    "C13": "Capacitor_SMD:C_0402_1005Metric",
-    "C9": "Capacitor_SMD:C_0402_1005Metric",
-    "C15": "Capacitor_SMD:C_0402_1005Metric",
-    "C23": "Capacitor_SMD:C_0402_1005Metric",
-    "C14": "Capacitor_SMD:C_0402_1005Metric",
-    "C26": "Capacitor_SMD:C_0402_1005Metric",
-    "C10": "Capacitor_SMD:C_0402_1005Metric",
-    "C22": "Capacitor_SMD:C_0402_1005Metric",
-    "C12": "Capacitor_SMD:C_0402_1005Metric",
-    "C21": "Capacitor_SMD:C_0402_1005Metric",
-    "C8": "Capacitor_SMD:C_0402_1005Metric",
-    "C19": "Capacitor_SMD:C_0402_1005Metric",
-    "R8": "Resistor_SMD:R_0402_1005Metric",
-    "C6": "Capacitor_SMD:C_0402_1005Metric",
-    "R10": "Resistor_SMD:R_0402_1005Metric",
     "C11": "Capacitor_SMD:C_0402_1005Metric",
-    "R11": "Resistor_SMD:R_0402_1005Metric",
-    "C20": "Capacitor_SMD:C_0402_1005Metric",
+    "C21": "Capacitor_SMD:C_0402_1005Metric",
     "R7": "Resistor_SMD:R_0402_1005Metric",
-    "C25": "Capacitor_SMD:C_0402_1005Metric",
     "C7": "Capacitor_SMD:C_0402_1005Metric",
+    "R9": "Resistor_SMD:R_0402_1005Metric",
+    "C19": "Capacitor_SMD:C_0402_1005Metric",
+    "C6": "Capacitor_SMD:C_0402_1005Metric",
+    "C15": "Capacitor_SMD:C_0402_1005Metric",
+    "C14": "Capacitor_SMD:C_0402_1005Metric",
+    "C22": "Capacitor_SMD:C_0402_1005Metric",
+    "C23": "Capacitor_SMD:C_0402_1005Metric",
+    "C8": "Capacitor_SMD:C_0402_1005Metric",
+    "R10": "Resistor_SMD:R_0402_1005Metric",
+    "R11": "Resistor_SMD:R_0402_1005Metric",
+    "C13": "Capacitor_SMD:C_0402_1005Metric",
+    "C20": "Capacitor_SMD:C_0402_1005Metric",
+    "R8": "Resistor_SMD:R_0402_1005Metric",
+    "C9": "Capacitor_SMD:C_0402_1005Metric",
+    "C26": "Capacitor_SMD:C_0402_1005Metric",
+    "C25": "Capacitor_SMD:C_0402_1005Metric",
+    "C12": "Capacitor_SMD:C_0402_1005Metric",
     "C24": "Capacitor_SMD:C_0402_1005Metric",
-    "R9": "Resistor_SMD:R_0402_1005Metric"
+    "C10": "Capacitor_SMD:C_0402_1005Metric"
   },
   "resistor_capacitor_footprints": {
-    "C15": "Capacitor_SMD:C_0402_1005Metric",
-    "C23": "Capacitor_SMD:C_0402_1005Metric",
-    "C14": "Capacitor_SMD:C_0402_1005Metric",
-    "C28": "Capacitor_SMD:C_0402_1005Metric",
-    "C10": "Capacitor_SMD:C_0402_1005Metric",
-    "C5": "Capacitor_SMD:C_0402_1005Metric",
-    "C12": "Capacitor_SMD:C_0402_1005Metric",
-    "R18": "Resistor_SMD:R_0402_1005Metric",
-    "C8": "Capacitor_SMD:C_0402_1005Metric",
-    "C21": "Capacitor_SMD:C_0402_1005Metric",
-    "R1": "Resistor_SMD:R_0402_1005Metric",
-    "C6": "Capacitor_SMD:C_0402_1005Metric",
-    "R5": "Resistor_SMD:R_0402_1005Metric",
-    "C4": "Capacitor_SMD:C_0402_1005Metric",
-    "C20": "Capacitor_SMD:C_0402_1005Metric",
-    "R4": "Resistor_SMD:R_0402_1005Metric",
-    "R12": "Resistor_SMD:R_0402_1005Metric",
-    "R15": "Resistor_SMD:R_0402_1005Metric",
-    "C24": "Capacitor_SMD:C_0402_1005Metric",
-    "R17": "Resistor_SMD:R_0402_1005Metric",
-    "C25": "Capacitor_SMD:C_0402_1005Metric",
-    "R6": "Resistor_SMD:R_0201_0603Metric",
-    "C3": "Capacitor_SMD:C_0201_0603Metric",
-    "R14": "Resistor_SMD:R_0402_1005Metric",
-    "C13": "Capacitor_SMD:C_0402_1005Metric",
-    "C9": "Capacitor_SMD:C_0402_1005Metric",
-    "C26": "Capacitor_SMD:C_0402_1005Metric",
-    "C22": "Capacitor_SMD:C_0402_1005Metric",
-    "R16": "Resistor_SMD:R_0402_1005Metric",
-    "C19": "Capacitor_SMD:C_0402_1005Metric",
-    "R8": "Resistor_SMD:R_0402_1005Metric",
-    "C27": "Capacitor_SMD:C_0402_1005Metric",
-    "R10": "Resistor_SMD:R_0402_1005Metric",
     "C11": "Capacitor_SMD:C_0402_1005Metric",
-    "R11": "Resistor_SMD:R_0402_1005Metric",
-    "R13": "Resistor_SMD:R_0402_1005Metric",
-    "C2": "Capacitor_SMD:C_0201_0603Metric",
-    "C16": "Capacitor_SMD:C_0201_0603Metric",
-    "R3": "Resistor_SMD:R_0402_1005Metric",
-    "C18": "Capacitor_SMD:C_0201_0603Metric",
+    "C21": "Capacitor_SMD:C_0402_1005Metric",
     "R7": "Resistor_SMD:R_0402_1005Metric",
+    "C18": "Capacitor_SMD:C_0201_0603Metric",
+    "C28": "Capacitor_SMD:C_0402_1005Metric",
     "C7": "Capacitor_SMD:C_0402_1005Metric",
+    "R4": "Resistor_SMD:R_0402_1005Metric",
+    "R6": "Resistor_SMD:R_0201_0603Metric",
+    "C2": "Capacitor_SMD:C_0201_0603Metric",
+    "R9": "Resistor_SMD:R_0402_1005Metric",
+    "C15": "Capacitor_SMD:C_0402_1005Metric",
+    "C4": "Capacitor_SMD:C_0402_1005Metric",
+    "C14": "Capacitor_SMD:C_0402_1005Metric",
+    "C3": "Capacitor_SMD:C_0201_0603Metric",
+    "C22": "Capacitor_SMD:C_0402_1005Metric",
+    "R10": "Resistor_SMD:R_0402_1005Metric",
+    "R11": "Resistor_SMD:R_0402_1005Metric",
+    "C23": "Capacitor_SMD:C_0402_1005Metric",
+    "C13": "Capacitor_SMD:C_0402_1005Metric",
+    "R8": "Resistor_SMD:R_0402_1005Metric",
+    "C26": "Capacitor_SMD:C_0402_1005Metric",
+    "R18": "Resistor_SMD:R_0402_1005Metric",
+    "C24": "Capacitor_SMD:C_0402_1005Metric",
+    "R13": "Resistor_SMD:R_0402_1005Metric",
+    "C10": "Capacitor_SMD:C_0402_1005Metric",
+    "R17": "Resistor_SMD:R_0402_1005Metric",
     "C17": "Capacitor_SMD:C_0201_0603Metric",
+    "R1": "Resistor_SMD:R_0402_1005Metric",
+    "C27": "Capacitor_SMD:C_0402_1005Metric",
+    "R14": "Resistor_SMD:R_0402_1005Metric",
+    "R15": "Resistor_SMD:R_0402_1005Metric",
+    "C5": "Capacitor_SMD:C_0402_1005Metric",
+    "C19": "Capacitor_SMD:C_0402_1005Metric",
+    "C6": "Capacitor_SMD:C_0402_1005Metric",
+    "R16": "Resistor_SMD:R_0402_1005Metric",
+    "C8": "Capacitor_SMD:C_0402_1005Metric",
+    "R5": "Resistor_SMD:R_0402_1005Metric",
+    "R3": "Resistor_SMD:R_0402_1005Metric",
+    "C20": "Capacitor_SMD:C_0402_1005Metric",
+    "C9": "Capacitor_SMD:C_0402_1005Metric",
+    "R12": "Resistor_SMD:R_0402_1005Metric",
+    "C25": "Capacitor_SMD:C_0402_1005Metric",
+    "C12": "Capacitor_SMD:C_0402_1005Metric",
     "R2": "Resistor_SMD:R_0402_1005Metric",
-    "R9": "Resistor_SMD:R_0402_1005Metric"
+    "C16": "Capacitor_SMD:C_0201_0603Metric"
   },
   "schematic_wiring": {
     "all_passed": true,
@@ -1419,13 +1456,13 @@
     ],
     "method": "Visible wires only; labels and power-symbol aliases are not electrical edges"
   },
-  "board_sha256": "dccdcdd71048c0b382b1d8b2d7f2f538dc12d4daffd08f105bab766d927ed049",
+  "board_sha256": "d4d1aab17f2eb046445f057c07bf70fa4d3f235ee5a89987f6359327a3ca8047",
   "project_sha256": "9a02d260275be72de855acb3cf06b460336b5f766b7d5b4829ca20ce67a451ac",
   "custom_rules_sha256": "0a899caf5014df4439119ce969edeeac7c1f1df3d60aa6657820cf0b78e6ae9a",
   "nonthermal_hole_to_mask_minimum_mm": 0.1,
   "retained_filled_capped_vias": 7,
-  "erc_kicad_version": "10.0.6",
-  "drc_kicad_version": "10.0.6",
+  "erc_kicad_version": "10.0.4",
+  "drc_kicad_version": "10.0.4",
   "limitations": [
     "Axial end copper and 20 x 3.8 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured",
     "RF matching values and antenna efficiency require hardware tuning",

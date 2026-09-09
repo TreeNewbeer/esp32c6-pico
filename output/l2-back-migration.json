@@ -1,0 +1,165 @@
+{
+  "task": "Move RF supply inductor L2 to B.Cu with minimal local routing changes",
+  "backup": "tmp/l2-back-20260909-205159",
+  "kicad_version": "10.0.4",
+  "before_sha256": "3454007f47ae31055fa7aa89cac765302fe5170e8b4115a861dcc55829f8f63a",
+  "after_sha256": "d4d1aab17f2eb046445f057c07bf70fa4d3f235ee5a89987f6359327a3ca8047",
+  "component": {
+    "reference": "L2",
+    "value": "2.0nH",
+    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "before": {
+      "side": "F.Cu",
+      "position_mm": [
+        102.1,
+        113.0
+      ],
+      "rotation_degrees": 0
+    },
+    "after": {
+      "side": "B.Cu",
+      "position_mm": [
+        111.55,
+        112.65
+      ],
+      "rotation_degrees": 180
+    }
+  },
+  "changed_footprints": [
+    "L2"
+  ],
+  "other_63_footprints_unchanged": true,
+  "changed_nets": [
+    "+3V3",
+    "V3A"
+  ],
+  "signal_tracks_unchanged": true,
+  "schematics_unchanged": true,
+  "rules_outline_logos_and_zone_definitions_unchanged": true,
+  "removed_track_via_uuids": [
+    "16b485e8-238e-4120-a33e-a96aedb93dd5",
+    "52f81e02-38ab-4552-98de-9edcb8edea6e",
+    "7168ec6f-b566-45ca-9795-ec1004ff705a",
+    "86ff4bd6-f23d-4848-8c93-afa4e528069d",
+    "961f8dae-29eb-4c17-ad63-16c502655990",
+    "aab1cdcc-08f8-4a6f-9dbc-a0b958060760",
+    "d7d4b84a-481e-40ba-98e4-e1003b7f1fa6"
+  ],
+  "added_track_via_uuids": [
+    "11bf850a-c4a4-44bd-8465-84d464a24f9b",
+    "35fcad28-02e5-4c53-8a10-bf1608519ef8",
+    "36d1d49d-eedb-4ada-b496-578c97b2fb5a",
+    "8ba1969b-a09e-4165-bb00-5749381f1d40",
+    "c0b32ab2-d635-425e-a8f9-375048e9214e",
+    "e7b98177-fce4-422c-83fb-b500d23782a2"
+  ],
+  "modified_track_via_uuids": [
+    "062cfedb-6c01-4f93-9164-d7826c37e37c"
+  ],
+  "removed_input_via_mm": [
+    102.25,
+    113.8
+  ],
+  "new_output_via_mm": [
+    110.5,
+    112.8
+  ],
+  "new_output_via": {
+    "diameter_mm": 0.3,
+    "drill_mm": 0.15,
+    "front_tented": true,
+    "back_tented": true
+  },
+  "via_count_before": 125,
+  "via_count_after": 125,
+  "power_trace_width_mm": 0.2,
+  "rf_supply_filter": {
+    "side": "B.Cu",
+    "position_mm": [
+      111.55,
+      112.65
+    ],
+    "output_paths_mm": {
+      "U1.2": 3.8553,
+      "U1.3": 3.6896,
+      "C11.1": 4.2193,
+      "C19.1": 8.6693,
+      "C20.1": 6.4693
+    },
+    "output_vias": 1,
+    "length_method": "Copper centerline plus nominal via barrel; excludes component internals"
+  },
+  "baseline_qa_passed": 45,
+  "baseline_qa_total": 51,
+  "final_qa_passed": 46,
+  "final_qa_total": 52,
+  "existing_qa_failures": [
+    {
+      "check": "At least nine ground vias under the MCU EPAD",
+      "passed": false,
+      "detail": 7
+    },
+    {
+      "check": "Antenna-side series components share a straight axis",
+      "passed": false,
+      "detail": [
+        113.28,
+        115.48,
+        116.12
+      ]
+    },
+    {
+      "check": "Antenna-to-crystal body gap meets the 8.5 mm project target",
+      "passed": false,
+      "detail": 5.07
+    },
+    {
+      "check": "Crystal and load-capacitor ground pads have a ground via within 1 mm",
+      "passed": false,
+      "detail": {
+        "Y1.2": 2.55,
+        "Y1.4": 0.885889,
+        "C4.2": 0.86093,
+        "C5.2": 0.764199
+      }
+    },
+    {
+      "check": "Only the nine MCU filled/capped thermal vias remain in SMD pads",
+      "passed": false,
+      "detail": 7
+    },
+    {
+      "check": "Ordinary vias explicitly specify tenting on both sides",
+      "passed": false,
+      "detail": [
+        {
+          "uuid": "356d90c4-f852-4988-88d2-eacef5067b6c",
+          "position_mm": [
+            113.825,
+            121.780854
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        }
+      ]
+    }
+  ],
+  "new_qa_failures": [],
+  "drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity": 0,
+  "hardware_validation": "Not performed; supply/RF behavior after layer migration requires board measurement",
+  "erc_violations": 0,
+  "bom_unchanged": true,
+  "placement_changed_references": [
+    "L2"
+  ],
+  "evidence_sha256": {
+    "netlist.xml": "a189f426dc56a2c192bd53437fd219c24ed27adfa291593ccc8d581d7b146ac7",
+    "erc.json": "e7bf8cb3397fe6cfaa81ed9cd8aabd5c7796aa4ec4a815136129fd21a64931ca",
+    "drc-final.json": "01fc7698c10a6102176a2438a000d720a5536de7715ba332253558021af4555f",
+    "qa.json": "8df45204ede1caef019f7a229e6096430f90be856113e0d190ea688964d0f39b",
+    "placement.csv": "c84324f97115ea8355df5cf9a530b2a1c6af5c2253241951dc1cba88963d8aa8",
+    "bom.csv": "df0d9cdca3393d9f944e565ff14cc4602287d95706af8603dc0f04d40685ddd2"
+  }
+}

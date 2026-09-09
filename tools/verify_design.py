@@ -318,7 +318,7 @@ def key(x,y,net,layer):return (round(x,3),round(y,3),net,layer)
 def edge(a,c,w):
     graph.setdefault(a,[]).append((c,w));graph.setdefault(c,[]).append((a,w))
 all_usb=['USB_D+','USB_D-','USB_MCU_D+','USB_MCU_D-']
-for net in all_usb:
+for net in all_usb+['V3A']:
     net_vias=[v for v in vias if v.GetNetname()==net]
     for layer in [pcb.F_Cu,pcb.B_Cu]:
         tracks=[t for t in b.GetTracks() if t.GetNetname()==net and not isinstance(t,pcb.PCB_VIA) and t.GetLayer()==layer]
@@ -360,6 +360,16 @@ usb={side:{'D+_mm':shortest(('U1','19'),('J1',side+'6')),
 for values in usb.values():
     values['skew_mm']=round(abs(values['D+_mm']-values['D-_mm']),4) if all(v is not None for v in values.values()) else None
 check('Both USB-C orientations have continuous data paths through their series resistors',all(v is not None for values in usb.values() for v in values.values()),usb)
+rf_supply_paths={ref+'.'+pin:shortest(('L2','2'),(ref,pin))
+                 for ref,pin in [('U1','2'),('U1','3'),('C11','1'),('C19','1'),('C20','1')]}
+rf_supply_filter=dict(side=pcb.LayerName(fps['L2'].GetLayer()),position_mm=point(fps['L2'].GetPosition()),
+                      output_paths_mm=rf_supply_paths,
+                      output_vias=sum(v.GetNetname()=='V3A' for v in vias),
+                      length_method='Copper centerline plus nominal via barrel; excludes component internals')
+check('L2 is on the back with continuous filtered supply paths and C11 on the front',
+      fps['L2'].GetLayer()==pcb.B_Cu and fps['C11'].GetLayer()==pcb.F_Cu
+      and expected.get(('L2','1'))=='+3V3' and expected.get(('L2','2'))=='V3A'
+      and all(value is not None for value in rf_supply_paths.values()),rf_supply_filter)
 erc=json.loads((OUTPUT/'erc.json').read_text(encoding='utf-8'))
 drc=json.loads((OUTPUT/'drc-final.json').read_text(encoding='utf-8'))
 erc_count=sum(len(s['violations'])for s in erc['sheets'])
@@ -373,7 +383,8 @@ result=dict(checks=checks,all_passed=all(x['passed']for x in checks),footprints=
             antenna_clearance_mm=antenna_clearance,antenna_orientation_degrees=fps['AE1'].GetOrientationDegrees(),
             antenna_end_copper=end_copper,
             crystal_isolation=crystal_isolation,silkscreen_logos=silkscreen_logos,
-            component_sides={r:pcb.LayerName(fps[r].GetLayer()) for r in ['U3','D4','SW1','SW2','J2','J3','Y1','C4','C5','C26']},
+            component_sides={r:pcb.LayerName(fps[r].GetLayer()) for r in ['L2','U3','D4','SW1','SW2','J2','J3','Y1','C4','C5','C26']},
+            rf_supply_filter=rf_supply_filter,
             header_geometry=header_geometry,header_column_spacing_mm=round(header_column_spacing,6),
             header_edge_clearances_mm=header_edge_clearances,
             antenna_center_x_mm=point(fps['AE1'].GetPosition())[0],
