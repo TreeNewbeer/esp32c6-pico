@@ -370,8 +370,8 @@
   },
   {
     "ref": "U3",
-    "value": "W25Q32JVZPIQ",
-    "footprint": "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm",
+    "value": "W25Q32JVSNIQ",
+    "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
     "nets": {
       "1": "SPI_CS",
       "2": "SPI_Q",
@@ -380,15 +380,14 @@
       "5": "SPI_D",
       "6": "SPI_CLK",
       "7": "SPI_HD",
-      "8": "VDD_SPI",
-      "9": "GND"
+      "8": "VDD_SPI"
     },
     "uuid": "11dd3793-e446-4d3b-bb90-c7cfe42ad248",
     "sheet": "core",
     "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/11dd3793-e446-4d3b-bb90-c7cfe42ad248",
     "dnp": false,
-    "mpn": "W25Q32JVZPIQ",
-    "note": ""
+    "mpn": "W25Q32JVSNIQ",
+    "note": "SOIC-8 150 mil; 3.9 x 4.9 mm body; no exposed pad; 4 MB, 2.7-3.6 V"
   },
   {
     "ref": "R17",
@@ -712,21 +711,6 @@
     "note": "EMI tuning option; leave open"
   },
   {
-    "ref": "F1",
-    "value": "0.75A hold",
-    "footprint": "Fuse:Fuse_1206_3216Metric",
-    "nets": {
-      "1": "VBUS_USB",
-      "2": "VBUS_FUSED"
-    },
-    "uuid": "ce620ea1-349a-57d8-9858-4ead1de4dba4",
-    "sheet": "io",
-    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/ce620ea1-349a-57d8-9858-4ead1de4dba4",
-    "dnp": false,
-    "mpn": "1206L075/6",
-    "note": "Check thermal derating; input source >=500 mA"
-  },
-  {
     "ref": "D3",
     "value": "ESD9B5.0ST5G",
     "footprint": "Diode_SMD:D_SOD-923",
@@ -743,18 +727,18 @@
   },
   {
     "ref": "D5",
-    "value": "SS14FL",
-    "footprint": "Diode_SMD:D_SOD-123F",
+    "value": "BAT760-7",
+    "footprint": "Diode_SMD:D_SOD-323",
     "nets": {
       "1": "+5V",
-      "2": "VBUS_FUSED"
+      "2": "VBUS_USB"
     },
     "uuid": "506f9a74-e380-5367-9605-0b307764d30d",
     "sheet": "io",
     "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/506f9a74-e380-5367-9605-0b307764d30d",
     "dnp": false,
-    "mpn": "SS14FL",
-    "note": "Blocks USB backfeed; +5V is about VBUS minus diode drop"
+    "mpn": "BAT760-7",
+    "note": "Same part/package as at820_tiga D9/D10; 30 V, 1 A with datasheet thermal derating; blocks USB backfeed"
   },
   {
     "ref": "U2",

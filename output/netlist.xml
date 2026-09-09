@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/genius/projects/hardware/esp32c6-pico/esp32-c6-pico.kicad_sch</source>
-    <date>2026-09-09T10:50:49</date>
+    <date>2026-09-09T18:36:04</date>
     <tool>Eeschema 10.0.6</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1463,23 +1463,23 @@
       </units>
     </comp>
     <comp ref="U3">
-      <value>W25Q32JVZPIQ</value>
-      <footprint>Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm</footprint>
+      <value>W25Q32JVSNIQ</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
       <datasheet>http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf</datasheet>
       <fields>
-        <field name="MPN">W25Q32JVZPIQ</field>
-        <field name="AssemblyNote"/>
-        <field name="Footprint">Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm</field>
+        <field name="MPN">W25Q32JVSNIQ</field>
+        <field name="AssemblyNote">SOIC-8 150 mil; 3.9 x 4.9 mm body; no exposed pad; 4 MB, 2.7-3.6 V</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
         <field name="Datasheet">http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Pico_Design" part="Memory_Flash__W25Q32JVZP" description="32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8"/>
-      <property name="MPN" value="W25Q32JVZPIQ"/>
-      <property name="AssemblyNote" value=""/>
+      <libsource lib="Pico_Design" part="Memory_Flash__W25Q32JVSN" description="32Mbit / 4MiB Serial Flash, SPI/Dual/Quad, 2.7-3.6V, SOIC-8 150 mil, no exposed pad"/>
+      <property name="MPN" value="W25Q32JVSNIQ"/>
+      <property name="AssemblyNote" value="SOIC-8 150 mil; 3.9 x 4.9 mm body; no exposed pad; 4 MB, 2.7-3.6 V"/>
       <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="flash memory SPI"/>
-      <property name="ki_fp_filters" value="WSON*1EP*6x5mm*P1.27mm*"/>
+      <property name="ki_fp_filters" value="SOIC*3.9x4.9mm*P1.27mm*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>11dd3793-e446-4d3b-bb90-c7cfe42ad248</tstamps>
       <units>
@@ -1492,7 +1492,6 @@
             <pin num="6"/>
             <pin num="5"/>
             <pin num="4"/>
-            <pin num="9"/>
             <pin num="8"/>
           </pins>
         </unit>
@@ -1708,53 +1707,25 @@
       </units>
     </comp>
     <comp ref="D5">
-      <value>SS14FL</value>
-      <footprint>Diode_SMD:D_SOD-123F</footprint>
-      <datasheet>https://www.onsemi.com/download/data-sheet/pdf/ss14fl-d.pdf</datasheet>
+      <value>BAT760-7</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <datasheet>https://www.diodes.com/datasheet/download/BAT760.pdf</datasheet>
       <fields>
-        <field name="MPN">SS14FL</field>
-        <field name="AssemblyNote">Blocks USB backfeed; +5V is about VBUS minus diode drop</field>
-        <field name="Footprint">Diode_SMD:D_SOD-123F</field>
-        <field name="Datasheet">https://www.onsemi.com/download/data-sheet/pdf/ss14fl-d.pdf</field>
+        <field name="MPN">BAT760-7</field>
+        <field name="AssemblyNote">Same part/package as at820_tiga D9/D10; 30 V, 1 A with datasheet thermal derating; blocks USB backfeed</field>
+        <field name="Footprint">Diode_SMD:D_SOD-323</field>
+        <field name="Datasheet">https://www.diodes.com/datasheet/download/BAT760.pdf</field>
         <field name="Description"/>
       </fields>
       <libsource lib="Pico_Design" part="Device__D_Schottky" description="Schottky diode"/>
-      <property name="MPN" value="SS14FL"/>
-      <property name="AssemblyNote" value="Blocks USB backfeed; +5V is about VBUS minus diode drop"/>
+      <property name="MPN" value="BAT760-7"/>
+      <property name="AssemblyNote" value="Same part/package as at820_tiga D9/D10; 30 V, 1 A with datasheet thermal derating; blocks USB backfeed"/>
       <property name="Sheetname" value="Power, USB and interfaces"/>
       <property name="Sheetfile" value="power-io.kicad_sch"/>
       <property name="ki_keywords" value="diode Schottky"/>
       <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
       <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
       <tstamps>506f9a74-e380-5367-9605-0b307764d30d</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="F1">
-      <value>0.75A hold</value>
-      <footprint>Fuse:Fuse_1206_3216Metric</footprint>
-      <fields>
-        <field name="MPN">1206L075/6</field>
-        <field name="AssemblyNote">Check thermal derating; input source &gt;=500 mA</field>
-        <field name="Footprint">Fuse:Fuse_1206_3216Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Pico_Design" part="Device__Polyfuse_Small" description="Resettable fuse, polymeric positive temperature coefficient, small symbol"/>
-      <property name="MPN" value="1206L075/6"/>
-      <property name="AssemblyNote" value="Check thermal derating; input source &gt;=500 mA"/>
-      <property name="Sheetname" value="Power, USB and interfaces"/>
-      <property name="Sheetfile" value="power-io.kicad_sch"/>
-      <property name="ki_keywords" value="resettable fuse PTC PPTC polyfuse polyswitch"/>
-      <property name="ki_fp_filters" value="*polyfuse* *PTC*"/>
-      <sheetpath names="/Power, USB and interfaces/" tstamps="/13033aea-e4f8-548e-9e40-21ec019685cb/"/>
-      <tstamps>ce620ea1-349a-57d8-9858-4ead1de4dba4</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -2112,24 +2083,6 @@
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Pico_Design" part="Device__Polyfuse_Small">
-      <description>Resettable fuse, polymeric positive temperature coefficient, small symbol</description>
-      <footprints>
-        <fp>*polyfuse*</fp>
-        <fp>*PTC*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">F</field>
-        <field name="Value">Polyfuse_Small</field>
-        <field name="Footprint"/>
-        <field name="Datasheet"/>
-        <field name="Description">Resettable fuse, polymeric positive temperature coefficient, small symbol</field>
-      </fields>
-      <pins>
-        <pin num="1" name="" type="passive"/>
-        <pin num="2" name="" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="Pico_Design" part="Device__R_Small">
       <description>Resistor, small symbol</description>
       <footprints>
@@ -2185,18 +2138,18 @@
         <pin num="4" name="VDD" type="power_in"/>
       </pins>
     </libpart>
-    <libpart lib="Pico_Design" part="Memory_Flash__W25Q32JVZP">
-      <description>32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8</description>
+    <libpart lib="Pico_Design" part="Memory_Flash__W25Q32JVSN">
+      <description>32Mbit / 4MiB Serial Flash, SPI/Dual/Quad, 2.7-3.6V, SOIC-8 150 mil, no exposed pad</description>
       <docs>http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf</docs>
       <footprints>
-        <fp>WSON*1EP*6x5mm*P1.27mm*</fp>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
       </footprints>
       <fields>
         <field name="Reference">U</field>
-        <field name="Value">W25Q32JVZP</field>
-        <field name="Footprint">Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm</field>
+        <field name="Value">W25Q32JVSN</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
         <field name="Datasheet">http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf</field>
-        <field name="Description">32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8</field>
+        <field name="Description">32Mbit / 4MiB Serial Flash, SPI/Dual/Quad, 2.7-3.6V, SOIC-8 150 mil, no exposed pad</field>
       </fields>
       <pins>
         <pin num="1" name="~{CS}" type="input"/>
@@ -2207,7 +2160,6 @@
         <pin num="6" name="CLK" type="input"/>
         <pin num="7" name="~{HOLD}_/_IO3" type="bidirectional"/>
         <pin num="8" name="VCC" type="power_in"/>
-        <pin num="9" name="EP" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Pico_Design" part="Pico_Custom__SN74LV1T125">
@@ -2464,7 +2416,6 @@
       <node ref="U1" pin="41" pinfunction="GND_41" pintype="power_in"/>
       <node ref="U2" pin="2" pinfunction="GND_2" pintype="power_in"/>
       <node ref="U3" pin="4" pinfunction="GND_4" pintype="power_in"/>
-      <node ref="U3" pin="9" pinfunction="EP_9" pintype="passive"/>
       <node ref="U4" pin="1" pinfunction="~{OE}_1" pintype="input"/>
       <node ref="U4" pin="3" pinfunction="GND_3" pintype="power_in"/>
       <node ref="Y1" pin="2" pinfunction="G_2" pintype="passive"/>
@@ -2666,57 +2617,53 @@
       <node ref="U1" pin="2" pinfunction="VDDA3P3_2" pintype="power_in"/>
       <node ref="U1" pin="3" pinfunction="VDDA3P3_3" pintype="passive"/>
     </net>
-    <net code="52" name="VBUS_FUSED" class="Power">
-      <node ref="D5" pin="2" pinfunction="A_2" pintype="passive"/>
-      <node ref="F1" pin="2" pintype="passive"/>
-    </net>
-    <net code="53" name="VBUS_USB" class="Power">
+    <net code="52" name="VBUS_USB" class="Power">
       <node ref="C24" pin="1" pintype="passive"/>
       <node ref="C25" pin="1" pintype="passive"/>
       <node ref="C26" pin="1" pintype="passive"/>
       <node ref="D2" pin="4" pinfunction="VDD_4" pintype="power_in"/>
       <node ref="D3" pin="2" pinfunction="A2_2" pintype="passive"/>
       <node ref="D4" pin="5" pinfunction="VBUS_5" pintype="passive"/>
-      <node ref="F1" pin="1" pintype="passive"/>
+      <node ref="D5" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="J1" pin="A4" pinfunction="VBUS_A4" pintype="passive"/>
       <node ref="J1" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
       <node ref="J1" pin="B4" pinfunction="VBUS_B4" pintype="passive"/>
       <node ref="J1" pin="B9" pinfunction="VBUS_B9" pintype="passive"/>
       <node ref="U4" pin="5" pinfunction="VCC_5" pintype="power_in"/>
     </net>
-    <net code="54" name="VDD_SPI" class="Power">
+    <net code="53" name="VDD_SPI" class="Power">
       <node ref="C6" pin="1" pintype="passive"/>
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="U1" pin="23" pinfunction="VDD_SPI_23" pintype="power_out"/>
       <node ref="U3" pin="8" pinfunction="VCC_8" pintype="power_in"/>
     </net>
-    <net code="55" name="XTAL_LOAD_P" class="Default">
+    <net code="54" name="XTAL_LOAD_P" class="Default">
       <node ref="C4" pin="1" pintype="passive"/>
       <node ref="R18" pin="2" pintype="passive"/>
       <node ref="Y1" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
-    <net code="56" name="XTAL_N" class="Default">
+    <net code="55" name="XTAL_N" class="Default">
       <node ref="C5" pin="1" pintype="passive"/>
       <node ref="U1" pin="38" pinfunction="XTAL_N_38" pintype="output"/>
       <node ref="Y1" pin="3" pinfunction="3_3" pintype="passive"/>
     </net>
-    <net code="57" name="XTAL_P" class="Default">
+    <net code="56" name="XTAL_P" class="Default">
       <node ref="R18" pin="1" pintype="passive"/>
       <node ref="U1" pin="39" pinfunction="XTAL_P_39" pintype="input"/>
     </net>
-    <net code="58" name="unconnected-(AE1-SOLDER-Pad2)" class="Default">
+    <net code="57" name="unconnected-(AE1-SOLDER-Pad2)" class="Default">
       <node ref="AE1" pin="2" pinfunction="SOLDER_2" pintype="passive+no_connect"/>
     </net>
-    <net code="59" name="unconnected-(D2-DOUT-Pad1)" class="Default">
+    <net code="58" name="unconnected-(D2-DOUT-Pad1)" class="Default">
       <node ref="D2" pin="1" pinfunction="DOUT_1" pintype="output+no_connect"/>
     </net>
-    <net code="60" name="unconnected-(J1-SBU1-PadA8)" class="Default">
+    <net code="59" name="unconnected-(J1-SBU1-PadA8)" class="Default">
       <node ref="J1" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="61" name="unconnected-(J1-SBU2-PadB8)" class="Default">
+    <net code="60" name="unconnected-(J1-SBU2-PadB8)" class="Default">
       <node ref="J1" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="62" name="unconnected-(U2-NC-Pad4)" class="Default">
+    <net code="61" name="unconnected-(U2-NC-Pad4)" class="Default">
       <node ref="U2" pin="4" pinfunction="NC_4" pintype="no_connect"/>
     </net>
   </nets>

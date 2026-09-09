@@ -18,7 +18,7 @@ FPLIB = Path('C:/Program Files/KiCad/10.0/share/kicad/footprints')
 OUTPUT = ROOT/'output'
 BOARD_FILE = ROOT/'esp32-c6-pico.kicad_pcb'
 MM = pcb.FromMM
-POWER_NETS = frozenset(['+3V3', '+5V', 'V3A', 'VBUS_FUSED', 'VBUS_USB', 'VDD_SPI'])
+POWER_NETS = frozenset(['+3V3', '+5V', 'V3A', 'VBUS_USB', 'VDD_SPI'])
 
 
 def xy(x, y):
@@ -57,7 +57,7 @@ PLACEMENT = {
     'R11':(107.7,128.5,0,'F'), 'D3':(115,132.9,90,'B'),
     'C24':(111.2,129.1,270,'B'),
     'U2':(114,125.5,90,'B'), 'D5':(109.4,133.2,0,'B'),
-    'F1':(109,135.8,0,'B'), 'C22':(114,128.5,0,'B'),
+    'C22':(114,128.5,0,'B'),
     'C23':(113.7,128.5,0,'F'),
     'SW1':(106.65,125.1,0,'F'), 'SW2':(112.35,125.1,0,'F'),
     'R7':(106.95,115.4,180,'B'), 'C21':(104.2,116.5,0,'B'),

@@ -552,10 +552,6 @@
       },
       {
         "netclass": "Power",
-        "pattern": "VBUS_FUSED"
-      },
-      {
-        "netclass": "Power",
         "pattern": "VBUS_USB"
       },
       {
@@ -657,7 +653,7 @@
         },
         {
           "group_by": false,
-          "label": "\u63cf\u8ff0",
+          "label": "描述",
           "name": "Description",
           "show": false
         },
@@ -712,7 +708,7 @@
     "top_level_sheets": [
       {
         "filename": "esp32-c6-pico.kicad_sch",
-        "name": "\u6839\u76ee\u5f55",
+        "name": "根目录",
         "uuid": "d29d372c-7a4c-447f-ba6c-21fb60482be4"
       }
     ],
@@ -722,7 +718,7 @@
   "sheets": [
     [
       "d29d372c-7a4c-447f-ba6c-21fb60482be4",
-      "\u6839\u76ee\u5f55"
+      "根目录"
     ]
   ],
   "text_variables": {},

@@ -7,9 +7,10 @@ for fp in b.GetFootprints():
     ref=fp.GetReference()
     # Keep connector references clear of the plated hole at pin 1.
     label_position=fp.GetPosition()+xy(0,-2) if ref in ['J2','J3'] else fp.GetPosition()
+    if ref=='D5':label_position=fp.GetPosition()+xy(0,.9)
     # Suppress labels that collide with the reference in the plotting-only copy.
     for pd in fp.Pads():
-        if ref.startswith(('R','L','C')) or (ref,pd.GetNumber()) in [('U1','41'),('U3','9')]:
+        if ref.startswith(('R','L','C')) or (ref,pd.GetNumber()) == ('U1','41'):
             pd.SetNumber('')
     size=.30 if ref in ['R1','R2','R3','R4','R5','R6','R17','C2','C3','C16','C17','C18','L1','L3'] else .38
     if ref.startswith(('U','J','SW')) or ref=='AE1':size=.7

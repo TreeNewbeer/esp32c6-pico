@@ -1,0 +1,309 @@
+{
+  "status": "Complete: SOIC-8 flash, SOD-323 diode, and F1 removed with direct USB supply",
+  "backup": "/home/genius/projects/hardware/esp32c6-pico/tmp/package-swap-20260909-132817",
+  "changed_components": {
+    "D5": {
+      "before": {
+        "position_mm": [
+          109.4,
+          133.2
+        ],
+        "rotation_degrees": 0.0,
+        "side": "B.Cu",
+        "footprint": "Diode_SMD:D_SOD-123F",
+        "value": "SS14FL",
+        "dnp": false
+      },
+      "after": {
+        "position_mm": [
+          109.4,
+          133.2
+        ],
+        "rotation_degrees": 0.0,
+        "side": "B.Cu",
+        "footprint": "Diode_SMD:D_SOD-323",
+        "value": "BAT760-7",
+        "dnp": false
+      }
+    },
+    "C6": {
+      "before": {
+        "position_mm": [
+          111.7,
+          126.2
+        ],
+        "rotation_degrees": 90.0,
+        "side": "B.Cu",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "value": "100nF",
+        "dnp": false
+      },
+      "after": {
+        "position_mm": [
+          111.8,
+          126.2
+        ],
+        "rotation_degrees": 90.0,
+        "side": "B.Cu",
+        "footprint": "Capacitor_SMD:C_0402_1005Metric",
+        "value": "100nF",
+        "dnp": false
+      }
+    },
+    "U3": {
+      "before": {
+        "position_mm": [
+          107.8,
+          125.0
+        ],
+        "rotation_degrees": 0.0,
+        "side": "B.Cu",
+        "footprint": "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm",
+        "value": "W25Q32JVZPIQ",
+        "dnp": false
+      },
+      "after": {
+        "position_mm": [
+          107.6,
+          124.9
+        ],
+        "rotation_degrees": 0.0,
+        "side": "B.Cu",
+        "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+        "value": "W25Q32JVSNIQ",
+        "dnp": false
+      }
+    },
+    "F1": {
+      "before": {
+        "value": "0.75A hold",
+        "footprint": "Fuse:Fuse_1206_3216Metric",
+        "position_mm": [
+          109.0,
+          135.8
+        ],
+        "side": "B.Cu"
+      },
+      "after": null
+    }
+  },
+  "unchanged_component_count": 61,
+  "board_dimensions_mm": [
+    20.0,
+    29.0
+  ],
+  "courtyard_bounds": {
+    "U3": {
+      "before_mm": [
+        6.69,
+        5.59
+      ],
+      "after_mm": [
+        7.49,
+        5.49
+      ]
+    },
+    "D5": {
+      "before_mm": [
+        4.49,
+        2.39
+      ],
+      "after_mm": [
+        3.29,
+        1.99
+      ]
+    },
+    "F1": {
+      "before_mm": [
+        4.65,
+        2.35
+      ],
+      "after_mm": null
+    }
+  },
+  "unchanged": [
+    "All remaining pad/pin nets except removal of U3.9 and the VBUS_FUSED-to-VBUS_USB merge",
+    "RF, crystal and USB data trace/via geometry",
+    "Board outline, rule areas, silkscreen graphics and logos"
+  ],
+  "copper_items": {
+    "before": 1001,
+    "after": 1009,
+    "removed": 58,
+    "added": 66,
+    "modified": 7
+  },
+  "baseline": {
+    "passed": 43,
+    "total": 49,
+    "failed": [
+      {
+        "check": "At least nine ground vias under the MCU EPAD",
+        "passed": false,
+        "detail": 7
+      },
+      {
+        "check": "Antenna-side series components share a straight axis",
+        "passed": false,
+        "detail": [
+          113.28,
+          115.48,
+          116.12
+        ]
+      },
+      {
+        "check": "Antenna-to-crystal body gap meets the 8.5 mm project target",
+        "passed": false,
+        "detail": 5.07
+      },
+      {
+        "check": "Crystal and load-capacitor ground pads have a ground via within 1 mm",
+        "passed": false,
+        "detail": {
+          "Y1.2": 2.55,
+          "Y1.4": 0.885889,
+          "C4.2": 0.86093,
+          "C5.2": 0.764199
+        }
+      },
+      {
+        "check": "Only the original 11 filled/capped thermal vias remain in SMD pads",
+        "passed": false,
+        "detail": 8
+      },
+      {
+        "check": "Ordinary vias explicitly specify tenting on both sides",
+        "passed": false,
+        "detail": [
+          {
+            "uuid": "356d90c4-f852-4988-88d2-eacef5067b6c",
+            "position_mm": [
+              113.825,
+              121.780854
+            ],
+            "front_mode": 0,
+            "back_mode": 0
+          }
+        ]
+      }
+    ]
+  },
+  "final": {
+    "passed": 45,
+    "total": 51,
+    "failed": [
+      {
+        "check": "At least nine ground vias under the MCU EPAD",
+        "passed": false,
+        "detail": 7
+      },
+      {
+        "check": "Antenna-side series components share a straight axis",
+        "passed": false,
+        "detail": [
+          113.28,
+          115.48,
+          116.12
+        ]
+      },
+      {
+        "check": "Antenna-to-crystal body gap meets the 8.5 mm project target",
+        "passed": false,
+        "detail": 5.07
+      },
+      {
+        "check": "Crystal and load-capacitor ground pads have a ground via within 1 mm",
+        "passed": false,
+        "detail": {
+          "Y1.2": 2.55,
+          "Y1.4": 0.885889,
+          "C4.2": 0.86093,
+          "C5.2": 0.764199
+        }
+      },
+      {
+        "check": "Only the nine MCU filled/capped thermal vias remain in SMD pads",
+        "passed": false,
+        "detail": 7
+      },
+      {
+        "check": "Ordinary vias explicitly specify tenting on both sides",
+        "passed": false,
+        "detail": [
+          {
+            "uuid": "356d90c4-f852-4988-88d2-eacef5067b6c",
+            "position_mm": [
+              113.825,
+              121.780854
+            ],
+            "front_mode": 0,
+            "back_mode": 0
+          }
+        ]
+      }
+    ]
+  },
+  "fabrication_note": "U3 now has no EPAD; U1 target stays at nine filled/capped vias, with seven present as in the input. The former U3 EPAD via is tented.",
+  "sources": {
+    "flash": "https://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf",
+    "flash_ordering": "https://www.winbond.com/export/sites/winbond/product-selection-guide/file/2025-Product-Selection-Guide-Winbond-Code-Storage-Flash-Memory.pdf",
+    "diode": "https://www.diodes.com/datasheet/download/BAT760.pdf",
+    "reference_project": "/home/genius/projects/hardware/at820_tiga/power.kicad_sch"
+  },
+  "hashes": {
+    "esp32-c6-pico.kicad_pcb": "dccdcdd71048c0b382b1d8b2d7f2f538dc12d4daffd08f105bab766d927ed049",
+    "esp32-c6-pico.kicad_sch": "037eb716986a557ab7119a6b346d07707bba0bd3da4c2e6e392e9980da8280f6",
+    "power-io.kicad_sch": "db134a5c0f82a4ba7c04123b3fd6bd52887a489ceccdd55f515054bd0ddfd3ca",
+    "esp32-c6-pico.kicad_dru": "0a899caf5014df4439119ce969edeeac7c1f1df3d60aa6657820cf0b78e6ae9a",
+    "output/netlist.xml": "da590584370a2a44ff2c6da98e92a9d34d98f88b9f3b3322fe963d9a328070a4",
+    "output/drc-final.json": "9e795cc1f0f0992054bc4ee57c11382e22839db5ee4b62f9e07f7a0f3ab0bf41",
+    "output/erc.json": "3e3b0ab61de0c7590bd6beade519cac7316607df0cdc1636c61f2aa0474ab389",
+    "output/qa.json": "8390d54e3adbcc72f4d2d6c6a260a5fff36d6fda7017fcb8b8e33fa4d1be9da4",
+    "esp32-c6-pico.kicad_pro": "9a02d260275be72de855acb3cf06b460336b5f766b7d5b4829ca20ce67a451ac"
+  },
+  "backups": {
+    "package_swap": "/home/genius/projects/hardware/esp32c6-pico/tmp/package-swap-20260909-132817",
+    "f1_removal": "/home/genius/projects/hardware/esp32c6-pico/tmp/remove-f1-20260909-135621"
+  },
+  "f1_removal": {
+    "remaining_components": 64,
+    "populated": 58,
+    "unchanged_component_geometry": 64,
+    "all_vias_unchanged": true,
+    "connection": "J1 VBUS_USB directly to D5.2; D5.1 remains +5V",
+    "copper_items": {
+      "before": 1009,
+      "after": 1009,
+      "removed": 4,
+      "added": 4,
+      "modified": 0
+    },
+    "new_path_mm": [
+      [
+        106.9389,
+        132.3
+      ],
+      [
+        106.9389,
+        133.6
+      ],
+      [
+        107.3,
+        133.9611
+      ],
+      [
+        109.6889,
+        133.9611
+      ],
+      [
+        110.45,
+        133.2
+      ]
+    ],
+    "trace_width_mm": 0.2,
+    "trace_layer": "B.Cu",
+    "baseline_qa": "45/51",
+    "final_qa": "45/51",
+    "new_failed_checks": []
+  }
+}

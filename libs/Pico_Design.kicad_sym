@@ -1681,7 +1681,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "Memory_Flash__W25Q32JVZP"
+	(symbol "Memory_Flash__W25Q32JVSN"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1697,7 +1697,7 @@
 				)
 			)
 		)
-		(property "Value" "W25Q32JVZP"
+		(property "Value" "W25Q32JVSN"
 			(at 7.62 11.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1707,7 +1707,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm"
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1729,7 +1729,7 @@
 				)
 			)
 		)
-		(property "Description" "32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8"
+		(property "Description" "32Mbit / 4MiB Serial Flash, SPI/Dual/Quad, 2.7-3.6V, SOIC-8 150 mil, no exposed pad"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1751,7 +1751,7 @@
 				)
 			)
 		)
-		(property "ki_fp_filters" "WSON*1EP*6x5mm*P1.27mm*"
+		(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1763,7 +1763,7 @@
 			)
 		)
 		(embedded_fonts no)
-		(symbol "Memory_Flash__W25Q32JVZP_0_1"
+		(symbol "Memory_Flash__W25Q32JVSN_0_1"
 			(rectangle
 				(start -21.59 24.13)
 				(end 21.59 -24.13)
@@ -1776,7 +1776,7 @@
 				)
 			)
 		)
-		(symbol "Memory_Flash__W25Q32JVZP_1_1"
+		(symbol "Memory_Flash__W25Q32JVSN_1_1"
 			(pin input line
 				(at -26.67 12.7 0)
 				(length 5.08)
@@ -1914,24 +1914,6 @@
 					)
 				)
 				(number "8"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 2.54 -29.21 90)
-				(length 5.08)
-				(name "EP"
-					(effects
-						(font
-							(size 1.016 1.016)
-						)
-					)
-				)
-				(number "9"
 					(effects
 						(font
 							(size 1.016 1.016)

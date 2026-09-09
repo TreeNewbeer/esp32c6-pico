@@ -89,7 +89,7 @@ aliases={n:('/'.join(v.split('/')[:2]) if not v.startswith('GPIO') else v.split(
 aliases.update({'18':'GPIO12 / USB_D-','19':'GPIO13 / USB_D+','4':'CHIP_PU / EN'})
 reshape('U1',MC,MB,mp,aliases)
 fp={n:(414.02,114.3+i*5.08,0) for i,(_,_,n,_) in enumerate(spi)}
-fp.update({'8':(467.36,114.3,180),'4':(438.15,156.21,90),'9':(443.23,156.21,90)})
+fp.update({'8':(467.36,114.3,180),'4':(438.15,156.21,90)})
 reshape('U3',(440.69,127),(419.1,102.87,462.28,151.13),fp,
         {'1':'~{CS}','2':'DO / IO1','3':'~{WP} / IO2','7':'~{HOLD} / IO3','5':'DI / IO0','6':'CLK'})
 # The USBLC6 channel pins are paired on the same nets in this design.
@@ -237,7 +237,7 @@ symbol('C7',345.44,99.06);symbol('C6',499.11,99.06)
 line('core','VDD_SPI',P('U1',23),(279.4,86.36),(499.11,86.36),P('C6',1))
 line('core','VDD_SPI',(345.44,86.36),P('C7',1));line('core','VDD_SPI',(480.06,86.36),(480.06,114.3),P('U3',8));netlabel('core','VDD_SPI',292.1,86.36)
 for ref in ['C6','C7']:ground('core',P(ref,2))
-line('core','GND',P('U3',4),(438.15,161.29),(443.23,161.29),P('U3',9));ground('core',(440.69,161.29))
+line('core','GND',P('U3',4),(438.15,161.29),(440.69,161.29));ground('core',(440.69,161.29))
 
 text('core','Native USB Serial/JTAG / connector and TVS on sheet 2',327.66,154.94,1.778)
 for r,c,n,y,net in [('R12','C27',18,165.1,'USB_D-'),('R13','C28',19,185.42,'USB_D+')]:
@@ -274,11 +274,10 @@ line('io','USB_D+',P('J1','A6'),(76.2,87.63),(76.2,90.17),P('D4',1));line('io','
 line('io','GND',P('J1','SH'),(38.1,114.3),(45.72,114.3),P('J1','A1'));ground('io',(45.72,114.3));ground('io',P('D4',2))
 symbol('C24',172.72,88.9,sheet='io');power('io','VBUS_USB',P('C24',1));ground('io',P('C24',2))
 
-text('io','Protected USB supply and 3.3 V regulator',220.98,30.48,1.778)
-symbol('F1',236.22,53.34,90,'io');symbol('D5',271.78,53.34,180,'io');symbol('D3',220.98,71.12,90,'io')
+text('io','USB supply, backfeed blocking and 3.3 V regulator',220.98,30.48,1.778)
+symbol('D5',271.78,53.34,180,'io');symbol('D3',220.98,71.12,90,'io')
 symbol('U2',336.55,71.12,sheet='io');symbol('C22',307.34,83.82,sheet='io');symbol('C23',365.76,83.82,sheet='io')
-power('io','VBUS_USB',(218.44,53.34));line('io','VBUS_USB',(218.44,53.34),P('F1',1));line('io','VBUS_USB',(P('D3',2)[0],53.34),P('D3',2));ground('io',P('D3',1))
-line('io','VBUS_FUSED',P('F1',2),P('D5',2));netlabel('io','VBUS_FUSED',254,53.34)
+power('io','VBUS_USB',(218.44,53.34));line('io','VBUS_USB',(218.44,53.34),P('D5',2));line('io','VBUS_USB',(P('D3',2)[0],53.34),P('D3',2));ground('io',P('D3',1))
 line('io','+5V',P('D5',1),(307.34,53.34),(307.34,68.58),P('U2',1));line('io','+5V',(307.34,68.58),P('C22',1))
 line('io','+5V',P('U2',3),(317.5,71.12),(317.5,68.58));power('io','+5V',(307.34,53.34))
 line('io','+3V3',P('U2',5),(365.76,68.58),P('C23',1));power('io','+3V3',(365.76,68.58))
@@ -293,7 +292,7 @@ for ref,x in [('J2',93.98),('J3',187.96)]:
         if net in ['GND','+3V3','+5V']:glabel('io',net,*end,180)
         else:glabel('io',net,*end,180)
 text('io','Keep GPIO4/5/8/9/15 strap levels valid during reset.\nHold BOOT, tap RESET, then release BOOT for recovery.\nUART adapter logic must be 3.3 V.',35.56,228.6,1.524)
-for i,net in enumerate(['GND','VBUS_USB','VBUS_FUSED','+5V','V3A']):
+for i,net in [(0,'GND'),(1,'VBUS_USB'),(3,'+5V'),(4,'V3A')]:
     ref=f'#FLG{i:02d}';symbol(ref,254+i*25.4,175.26,sheet='io');q=P(ref,1);line('io',net,q,(q[0],q[1]+5.08));glabel('io',net,q[0],q[1]+5.08,270)
 assert set(PARTS)<=PLACED,set(PARTS)-PLACED
 

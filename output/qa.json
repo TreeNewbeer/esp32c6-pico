@@ -16,6 +16,16 @@
       "detail": []
     },
     {
+      "check": "Flash uses the 150 mil SOIC-8 pinout without an exposed pad",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "USB supply bypasses the removed fuse through the SOD-323 blocking diode",
+      "passed": true,
+      "detail": null
+    },
+    {
       "check": "PCB values and schematic instance fields match the netlist",
       "passed": true,
       "detail": []
@@ -593,9 +603,9 @@
       "detail": []
     },
     {
-      "check": "Only the original 11 filled/capped thermal vias remain in SMD pads",
+      "check": "Only the nine MCU filled/capped thermal vias remain in SMD pads",
       "passed": false,
-      "detail": 8
+      "detail": 7
     },
     {
       "check": "Retained thermal vias explicitly specify filling and copper capping",
@@ -604,8 +614,18 @@
     },
     {
       "check": "Ordinary vias explicitly specify tenting on both sides",
-      "passed": true,
-      "detail": []
+      "passed": false,
+      "detail": [
+        {
+          "uuid": "356d90c4-f852-4988-88d2-eacef5067b6c",
+          "position_mm": [
+            113.825,
+            121.780854
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        }
+      ]
     },
     {
       "check": "Both USB-C orientations have continuous data paths through their series resistors",
@@ -645,11 +665,11 @@
     }
   ],
   "all_passed": false,
-  "footprints": 65,
-  "populated": 59,
-  "tracks": 932,
-  "vias": 130,
-  "via_in_pad_entries": 8,
+  "footprints": 64,
+  "populated": 58,
+  "tracks": 883,
+  "vias": 126,
+  "via_in_pad_entries": 7,
   "dimensions_mm": [
     20.0,
     29.0
@@ -899,14 +919,13 @@
       "+3V3",
       "+5V",
       "V3A",
-      "VBUS_FUSED",
       "VBUS_USB",
       "VDD_SPI"
     ],
     "ground": "Existing widths retained; excluded from the exact-width rules",
     "widths_by_net": {
       "+3V3": {
-        "0.2": 115
+        "0.2": 113
       },
       "+5V": {
         "0.2": 30
@@ -924,8 +943,8 @@
         "0.15": 31
       },
       "GND": {
-        "0.15": 14,
-        "0.2": 46,
+        "0.15": 11,
+        "0.2": 38,
         "0.3": 3
       },
       "GPIO0": {
@@ -938,22 +957,22 @@
         "0.15": 18
       },
       "GPIO11": {
-        "0.15": 23
+        "0.15": 18
       },
       "GPIO15": {
-        "0.15": 28
+        "0.15": 16
       },
       "GPIO18": {
         "0.15": 15
       },
       "GPIO19": {
-        "0.15": 22
+        "0.15": 21
       },
       "GPIO2": {
         "0.15": 12
       },
       "GPIO20": {
-        "0.15": 27
+        "0.15": 21
       },
       "GPIO21_LED": {
         "0.15": 20
@@ -1007,7 +1026,7 @@
         "0.15": 5
       },
       "SPI_CS": {
-        "0.15": 8
+        "0.15": 9
       },
       "SPI_CS_MCU": {
         "0.15": 6
@@ -1019,13 +1038,13 @@
         "0.15": 10
       },
       "SPI_HD": {
-        "0.15": 6
+        "0.15": 8
       },
       "SPI_HD_MCU": {
         "0.15": 4
       },
       "SPI_Q": {
-        "0.15": 6
+        "0.15": 10
       },
       "SPI_Q_MCU": {
         "0.15": 4
@@ -1043,7 +1062,7 @@
         "0.15": 6
       },
       "U0TXD_MCU": {
-        "0.15": 14
+        "0.15": 12
       },
       "USB_D+": {
         "0.15": 23
@@ -1060,14 +1079,11 @@
       "V3A": {
         "0.2": 10
       },
-      "VBUS_FUSED": {
-        "0.2": 2
-      },
       "VBUS_USB": {
-        "0.2": 79
+        "0.2": 62
       },
       "VDD_SPI": {
-        "0.2": 12
+        "0.2": 14
       },
       "XTAL_LOAD_P": {
         "0.15": 3
@@ -1106,76 +1122,76 @@
     "R9"
   ],
   "power_passive_footprints": {
-    "C21": "Capacitor_SMD:C_0402_1005Metric",
-    "R7": "Resistor_SMD:R_0402_1005Metric",
-    "R10": "Resistor_SMD:R_0402_1005Metric",
-    "C20": "Capacitor_SMD:C_0402_1005Metric",
-    "R11": "Resistor_SMD:R_0402_1005Metric",
-    "C11": "Capacitor_SMD:C_0402_1005Metric",
-    "C19": "Capacitor_SMD:C_0402_1005Metric",
-    "R8": "Resistor_SMD:R_0402_1005Metric",
-    "C8": "Capacitor_SMD:C_0402_1005Metric",
-    "C25": "Capacitor_SMD:C_0402_1005Metric",
-    "C10": "Capacitor_SMD:C_0402_1005Metric",
-    "C6": "Capacitor_SMD:C_0402_1005Metric",
-    "C12": "Capacitor_SMD:C_0402_1005Metric",
-    "R9": "Resistor_SMD:R_0402_1005Metric",
-    "C23": "Capacitor_SMD:C_0402_1005Metric",
     "C13": "Capacitor_SMD:C_0402_1005Metric",
     "C9": "Capacitor_SMD:C_0402_1005Metric",
-    "C26": "Capacitor_SMD:C_0402_1005Metric",
+    "C15": "Capacitor_SMD:C_0402_1005Metric",
+    "C23": "Capacitor_SMD:C_0402_1005Metric",
     "C14": "Capacitor_SMD:C_0402_1005Metric",
+    "C26": "Capacitor_SMD:C_0402_1005Metric",
+    "C10": "Capacitor_SMD:C_0402_1005Metric",
+    "C22": "Capacitor_SMD:C_0402_1005Metric",
+    "C12": "Capacitor_SMD:C_0402_1005Metric",
+    "C21": "Capacitor_SMD:C_0402_1005Metric",
+    "C8": "Capacitor_SMD:C_0402_1005Metric",
+    "C19": "Capacitor_SMD:C_0402_1005Metric",
+    "R8": "Resistor_SMD:R_0402_1005Metric",
+    "C6": "Capacitor_SMD:C_0402_1005Metric",
+    "R10": "Resistor_SMD:R_0402_1005Metric",
+    "C11": "Capacitor_SMD:C_0402_1005Metric",
+    "R11": "Resistor_SMD:R_0402_1005Metric",
+    "C20": "Capacitor_SMD:C_0402_1005Metric",
+    "R7": "Resistor_SMD:R_0402_1005Metric",
+    "C25": "Capacitor_SMD:C_0402_1005Metric",
     "C7": "Capacitor_SMD:C_0402_1005Metric",
     "C24": "Capacitor_SMD:C_0402_1005Metric",
-    "C15": "Capacitor_SMD:C_0402_1005Metric",
-    "C22": "Capacitor_SMD:C_0402_1005Metric"
+    "R9": "Resistor_SMD:R_0402_1005Metric"
   },
   "resistor_capacitor_footprints": {
-    "C3": "Capacitor_SMD:C_0201_0603Metric",
-    "R14": "Resistor_SMD:R_0402_1005Metric",
-    "R5": "Resistor_SMD:R_0402_1005Metric",
-    "R7": "Resistor_SMD:R_0402_1005Metric",
-    "R10": "Resistor_SMD:R_0402_1005Metric",
-    "C27": "Capacitor_SMD:C_0402_1005Metric",
-    "C11": "Capacitor_SMD:C_0402_1005Metric",
-    "C28": "Capacitor_SMD:C_0402_1005Metric",
-    "C2": "Capacitor_SMD:C_0201_0603Metric",
-    "R2": "Resistor_SMD:R_0402_1005Metric",
-    "C10": "Capacitor_SMD:C_0402_1005Metric",
-    "R12": "Resistor_SMD:R_0402_1005Metric",
-    "C13": "Capacitor_SMD:C_0402_1005Metric",
-    "R15": "Resistor_SMD:R_0402_1005Metric",
-    "C24": "Capacitor_SMD:C_0402_1005Metric",
     "C15": "Capacitor_SMD:C_0402_1005Metric",
-    "C18": "Capacitor_SMD:C_0201_0603Metric",
-    "R17": "Resistor_SMD:R_0402_1005Metric",
-    "C21": "Capacitor_SMD:C_0402_1005Metric",
+    "C23": "Capacitor_SMD:C_0402_1005Metric",
+    "C14": "Capacitor_SMD:C_0402_1005Metric",
+    "C28": "Capacitor_SMD:C_0402_1005Metric",
+    "C10": "Capacitor_SMD:C_0402_1005Metric",
     "C5": "Capacitor_SMD:C_0402_1005Metric",
-    "C4": "Capacitor_SMD:C_0402_1005Metric",
-    "R11": "Resistor_SMD:R_0402_1005Metric",
-    "C20": "Capacitor_SMD:C_0402_1005Metric",
-    "C19": "Capacitor_SMD:C_0402_1005Metric",
+    "C12": "Capacitor_SMD:C_0402_1005Metric",
     "R18": "Resistor_SMD:R_0402_1005Metric",
     "C8": "Capacitor_SMD:C_0402_1005Metric",
-    "R8": "Resistor_SMD:R_0402_1005Metric",
+    "C21": "Capacitor_SMD:C_0402_1005Metric",
+    "R1": "Resistor_SMD:R_0402_1005Metric",
+    "C6": "Capacitor_SMD:C_0402_1005Metric",
+    "R5": "Resistor_SMD:R_0402_1005Metric",
+    "C4": "Capacitor_SMD:C_0402_1005Metric",
+    "C20": "Capacitor_SMD:C_0402_1005Metric",
+    "R4": "Resistor_SMD:R_0402_1005Metric",
+    "R12": "Resistor_SMD:R_0402_1005Metric",
+    "R15": "Resistor_SMD:R_0402_1005Metric",
+    "C24": "Capacitor_SMD:C_0402_1005Metric",
+    "R17": "Resistor_SMD:R_0402_1005Metric",
     "C25": "Capacitor_SMD:C_0402_1005Metric",
     "R6": "Resistor_SMD:R_0201_0603Metric",
-    "R13": "Resistor_SMD:R_0402_1005Metric",
-    "C6": "Capacitor_SMD:C_0402_1005Metric",
-    "R9": "Resistor_SMD:R_0402_1005Metric",
-    "C23": "Capacitor_SMD:C_0402_1005Metric",
-    "R16": "Resistor_SMD:R_0402_1005Metric",
+    "C3": "Capacitor_SMD:C_0201_0603Metric",
+    "R14": "Resistor_SMD:R_0402_1005Metric",
+    "C13": "Capacitor_SMD:C_0402_1005Metric",
     "C9": "Capacitor_SMD:C_0402_1005Metric",
     "C26": "Capacitor_SMD:C_0402_1005Metric",
-    "C12": "Capacitor_SMD:C_0402_1005Metric",
-    "C14": "Capacitor_SMD:C_0402_1005Metric",
-    "C17": "Capacitor_SMD:C_0201_0603Metric",
+    "C22": "Capacitor_SMD:C_0402_1005Metric",
+    "R16": "Resistor_SMD:R_0402_1005Metric",
+    "C19": "Capacitor_SMD:C_0402_1005Metric",
+    "R8": "Resistor_SMD:R_0402_1005Metric",
+    "C27": "Capacitor_SMD:C_0402_1005Metric",
+    "R10": "Resistor_SMD:R_0402_1005Metric",
+    "C11": "Capacitor_SMD:C_0402_1005Metric",
+    "R11": "Resistor_SMD:R_0402_1005Metric",
+    "R13": "Resistor_SMD:R_0402_1005Metric",
+    "C2": "Capacitor_SMD:C_0201_0603Metric",
     "C16": "Capacitor_SMD:C_0201_0603Metric",
-    "C7": "Capacitor_SMD:C_0402_1005Metric",
-    "R1": "Resistor_SMD:R_0402_1005Metric",
-    "R4": "Resistor_SMD:R_0402_1005Metric",
     "R3": "Resistor_SMD:R_0402_1005Metric",
-    "C22": "Capacitor_SMD:C_0402_1005Metric"
+    "C18": "Capacitor_SMD:C_0201_0603Metric",
+    "R7": "Resistor_SMD:R_0402_1005Metric",
+    "C7": "Capacitor_SMD:C_0402_1005Metric",
+    "C17": "Capacitor_SMD:C_0201_0603Metric",
+    "R2": "Resistor_SMD:R_0402_1005Metric",
+    "R9": "Resistor_SMD:R_0402_1005Metric"
   },
   "schematic_wiring": {
     "all_passed": true,
@@ -1403,17 +1419,17 @@
     ],
     "method": "Visible wires only; labels and power-symbol aliases are not electrical edges"
   },
-  "board_sha256": "9b610f18189964e935e392974995683555df3b076f5b5eea5d94fa32192bd349",
-  "project_sha256": "6b5c1af6c23faa2d72481340d1a1fb2ef6b08bf3b0d06f249b20bcead665dcc4",
-  "custom_rules_sha256": "24629c2ec7f67e6f74c9ed8839fac1ba4c8a024ed2e446ea2993efe6cea08599",
+  "board_sha256": "dccdcdd71048c0b382b1d8b2d7f2f538dc12d4daffd08f105bab766d927ed049",
+  "project_sha256": "9a02d260275be72de855acb3cf06b460336b5f766b7d5b4829ca20ce67a451ac",
+  "custom_rules_sha256": "0a899caf5014df4439119ce969edeeac7c1f1df3d60aa6657820cf0b78e6ae9a",
   "nonthermal_hole_to_mask_minimum_mm": 0.1,
-  "retained_filled_capped_vias": 8,
+  "retained_filled_capped_vias": 7,
   "erc_kicad_version": "10.0.6",
   "drc_kicad_version": "10.0.6",
   "limitations": [
     "Axial end copper and 20 x 3.8 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured",
     "RF matching values and antenna efficiency require hardware tuning",
     "Nominal RF/USB impedance requires manufacturer stackup confirmation",
-    "The 11 retained thermal vias require filling and copper capping; dual-sided SMT assembly required; no physical power or thermal tests performed"
+    "The nine MCU thermal vias require filling and copper capping; SOIC-8 flash has no exposed pad; dual-sided SMT assembly required; no physical power or thermal tests performed"
   ]
 }

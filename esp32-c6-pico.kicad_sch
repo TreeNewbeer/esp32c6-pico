@@ -1698,7 +1698,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Pico_Design:Memory_Flash__W25Q32JVZP"
+		(symbol "Pico_Design:Memory_Flash__W25Q32JVSN"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1714,7 +1714,7 @@
 					)
 				)
 			)
-			(property "Value" "W25Q32JVZP"
+			(property "Value" "W25Q32JVSN"
 				(at 7.62 11.43 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1724,7 +1724,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm"
+			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1746,7 +1746,7 @@
 					)
 				)
 			)
-			(property "Description" "32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8"
+			(property "Description" "32Mbit / 4MiB Serial Flash, SPI/Dual/Quad, 2.7-3.6V, SOIC-8 150 mil, no exposed pad"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1768,7 +1768,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "WSON*1EP*6x5mm*P1.27mm*"
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1780,7 +1780,7 @@
 				)
 			)
 			(embedded_fonts no)
-			(symbol "Memory_Flash__W25Q32JVZP_0_1"
+			(symbol "Memory_Flash__W25Q32JVSN_0_1"
 				(rectangle
 					(start -21.59 24.13)
 					(end 21.59 -24.13)
@@ -1793,7 +1793,7 @@
 					)
 				)
 			)
-			(symbol "Memory_Flash__W25Q32JVZP_1_1"
+			(symbol "Memory_Flash__W25Q32JVSN_1_1"
 				(pin input line
 					(at -26.67 12.7 0)
 					(length 5.08)
@@ -1931,24 +1931,6 @@
 						)
 					)
 					(number "8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -29.21 90)
-					(length 5.08)
-					(name "EP"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "9"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -9405,7 +9387,7 @@
 		(uuid "e1bfca34-0173-5fcc-bc20-00260170c782")
 	)
 	(symbol
-		(lib_id "Pico_Design:Memory_Flash__W25Q32JVZP")
+		(lib_id "Pico_Design:Memory_Flash__W25Q32JVSN")
 		(at 440.69 127 0)
 		(unit 1)
 		(in_bom yes)
@@ -9420,7 +9402,7 @@
 				)
 			)
 		)
-		(property "Value" "W25Q32JVZPIQ"
+		(property "Value" "W25Q32JVSNIQ"
 			(at 440.69 99.06 0)
 			(effects
 				(font
@@ -9428,7 +9410,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm"
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 440.69 127 0)
 			(effects
 				(font
@@ -9446,7 +9428,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "W25Q32JVZPIQ"
+		(property "MPN" "W25Q32JVSNIQ"
 			(at 440.69 127 0)
 			(effects
 				(font
@@ -9455,7 +9437,7 @@
 				(hide yes)
 			)
 		)
-		(property "AssemblyNote" ""
+		(property "AssemblyNote" "SOIC-8 150 mil; 3.9 x 4.9 mm body; no exposed pad; 4 MB, 2.7-3.6 V"
 			(at 440.69 127 0)
 			(effects
 				(font
@@ -9487,9 +9469,6 @@
 		)
 		(pin "8"
 			(uuid "06f37090-b7d9-5dfb-b579-81ce9702daac")
-		)
-		(pin "9"
-			(uuid "277f2f3e-42c1-5deb-9274-ca0e2a13befe")
 		)
 		(instances
 			(project "esp32-c6-pico"
@@ -13081,17 +13060,6 @@
 	)
 	(wire
 		(pts
-			(xy 440.69 161.29)
-			(xy 443.23 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "835bcb70-d627-5bd2-8a30-e5f967e3df8a")
-	)
-	(wire
-		(pts
 			(xy 441.96 231.14)
 			(xy 441.96 236.22)
 		)
@@ -13100,17 +13068,6 @@
 			(type default)
 		)
 		(uuid "0fa9c84e-b139-5b36-bc8d-931be8083890")
-	)
-	(wire
-		(pts
-			(xy 443.23 156.21)
-			(xy 443.23 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e72ed576-a070-50ec-a9ce-b1203a6f043d")
 	)
 	(wire
 		(pts
@@ -14504,12 +14461,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4695401c-4eb5-59dd-b99a-4c72f4b2c677")
-	)
-	(junction
-		(at 440.69 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0db104a3-3ee1-55d5-9f3f-69f7a46c594d")
 	)
 	(junction
 		(at 342.9 241.3)

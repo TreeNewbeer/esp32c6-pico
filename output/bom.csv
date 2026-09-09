@@ -21,7 +21,7 @@ L2,2.0nH,2.0nH,Inductor_SMD:L_0402_1005Metric,YES,"RF supply filter; Irated >= 5
 C11,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,U1 pins 2/3 local bypass
 C19,10uF,10uF,Capacitor_SMD:C_0402_1005Metric,YES,"U1 pin 2 local bulk; 0402, 10 V minimum; verify effective capacitance under DC bias"
 C20,10uF,10uF,Capacitor_SMD:C_0402_1005Metric,YES,"U1 pin 3 local bulk; 0402, 10 V minimum; verify effective capacitance under DC bias"
-U3,W25Q32JVZPIQ,W25Q32JVZPIQ,Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4mm,YES,
+U3,W25Q32JVSNIQ,W25Q32JVSNIQ,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,YES,"SOIC-8 150 mil; 3.9 x 4.9 mm body; no exposed pad; 4 MB, 2.7-3.6 V"
 R17,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
 R1,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
 R2,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
@@ -42,9 +42,8 @@ R12,22R,22R,Resistor_SMD:R_0402_1005Metric,YES,
 R13,22R,22R,Resistor_SMD:R_0402_1005Metric,YES,
 C27,DNP,DNP,Capacitor_SMD:C_0402_1005Metric,NO,EMI tuning option; leave open
 C28,DNP,DNP,Capacitor_SMD:C_0402_1005Metric,NO,EMI tuning option; leave open
-F1,0.75A hold,1206L075/6,Fuse:Fuse_1206_3216Metric,YES,Check thermal derating; input source >=500 mA
 D3,ESD9B5.0ST5G,ESD9B5.0ST5G,Diode_SMD:D_SOD-923,YES,Move original 15 pF TVS to USB power rail
-D5,SS14FL,SS14FL,Diode_SMD:D_SOD-123F,YES,Blocks USB backfeed; +5V is about VBUS minus diode drop
+D5,BAT760-7,BAT760-7,Diode_SMD:D_SOD-323,YES,"Same part/package as at820_tiga D9/D10; 30 V, 1 A with datasheet thermal derating; blocks USB backfeed"
 U2,AP2112K-3.3,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,YES,600 mA peak rating; continuous load limited by SOT25 dissipation
 C22,10uF,10uF,Capacitor_SMD:C_0402_1005Metric,YES,"Regulator input; 0402, 10 V minimum; X5R reference; verify effective capacitance under DC bias"
 C23,22uF,22uF,Capacitor_SMD:C_0402_1005Metric,YES,"Regulator output; 0402, 22 uF nominal, 10 V minimum; X5R reference; verify effective capacitance under DC bias"

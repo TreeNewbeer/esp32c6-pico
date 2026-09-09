@@ -43,6 +43,18 @@ for ref,c in components.items():
     if fps[ref].GetFPID().GetUniStringLibId()!=c.findtext('footprint'):
         fp_mismatch.append([ref,c.findtext('footprint'),fps[ref].GetFPID().GetUniStringLibId()])
 check('Assigned footprint IDs match',not fp_mismatch,fp_mismatch)
+check('Flash uses the 150 mil SOIC-8 pinout without an exposed pad',
+      fps['U3'].GetFPID().GetUniStringLibId()=='Package_SO:SOIC-8_3.9x4.9mm_P1.27mm'
+      and fps['U3'].GetValue()=='W25Q32JVSNIQ'
+      and {p.GetNumber() for p in fps['U3'].Pads()}==set('12345678')
+      and ('U3','9') not in expected)
+check('USB supply bypasses the removed fuse through the SOD-323 blocking diode',
+      fps['D5'].GetFPID().GetUniStringLibId()=='Diode_SMD:D_SOD-323'
+      and fps['D5'].GetValue()=='BAT760-7'
+      and expected.get(('D5','1'))=='+5V'
+      and expected.get(('D5','2'))==expected.get(('J1','A4'))=='VBUS_USB'
+      and 'F1' not in fps and 'F1' not in components
+      and 'VBUS_FUSED' not in expected.values())
 field_mismatch=[]
 for ref,c in components.items():
     if ref not in fps:continue
@@ -260,7 +272,6 @@ vippo=[]
 mask_violations=[]
 thermal_positions={
     ('U1','41'):{(float(x),float(y)) for x in (108,109,110) for y in (116,117,118)},
-    ('U3','9'):{(107.3,125.0),(108.58,123.2)},
 }
 retained_thermal=set()
 thermal_via_ids=set()
@@ -286,8 +297,8 @@ for v in vias:
                                             via_net=v.GetNetname(),position_mm=position,layer=pcb.LayerName(layer)))
 check('Non-thermal via holes clear all SMD mask openings by at least 0.10 mm',not mask_violations,mask_violations)
 expected_thermal={(ref,num,pos) for (ref,num),positions in thermal_positions.items() for pos in positions}
-check('Only the original 11 filled/capped thermal vias remain in SMD pads',
-      len(vippo)==11 and retained_thermal==expected_thermal,len(vippo))
+check('Only the nine MCU filled/capped thermal vias remain in SMD pads',
+      len(vippo)==9 and retained_thermal==expected_thermal,len(vippo))
 check('Retained thermal vias explicitly specify filling and copper capping',
       all(v.GetFillingMode()==pcb.FILLING_MODE_FILLED and v.GetCappingMode()==pcb.CAPPING_MODE_CAPPED
           for v in vias if v.m_Uuid.AsString() in thermal_via_ids))
@@ -378,7 +389,7 @@ result=dict(checks=checks,all_passed=all(x['passed']for x in checks),footprints=
             limitations=['Axial end copper and 20 x 3.8 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured',
                          'RF matching values and antenna efficiency require hardware tuning',
                          'Nominal RF/USB impedance requires manufacturer stackup confirmation',
-                         'The 11 retained thermal vias require filling and copper capping; dual-sided SMT assembly required; no physical power or thermal tests performed'])
+                         'The nine MCU thermal vias require filling and copper capping; SOIC-8 flash has no exposed pad; dual-sided SMT assembly required; no physical power or thermal tests performed'])
 (OUTPUT/'qa.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
 print(json.dumps({k:result[k]for k in ['all_passed','footprints','populated','tracks','vias','via_in_pad_entries','usb_path_lengths']},indent=2))
 for c in checks:

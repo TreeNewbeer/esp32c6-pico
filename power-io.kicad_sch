@@ -1693,7 +1693,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Pico_Design:Memory_Flash__W25Q32JVZP"
+		(symbol "Pico_Design:Memory_Flash__W25Q32JVSN"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1709,7 +1709,7 @@
 					)
 				)
 			)
-			(property "Value" "W25Q32JVZP"
+			(property "Value" "W25Q32JVSN"
 				(at 7.62 11.43 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1719,7 +1719,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Package_SON:WSON-8-1EP_6x5mm_P1.27mm_EP3.4x4.3mm"
+			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1741,7 +1741,7 @@
 					)
 				)
 			)
-			(property "Description" "32Mbit / 4MiB Serial Flash Memory, Standard/Dual/Quad SPI, 2.7-3.6V, WSON-8"
+			(property "Description" "32Mbit / 4MiB Serial Flash, SPI/Dual/Quad, 2.7-3.6V, SOIC-8 150 mil, no exposed pad"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1763,7 +1763,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "WSON*1EP*6x5mm*P1.27mm*"
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1775,7 +1775,7 @@
 				)
 			)
 			(embedded_fonts no)
-			(symbol "Memory_Flash__W25Q32JVZP_0_1"
+			(symbol "Memory_Flash__W25Q32JVSN_0_1"
 				(rectangle
 					(start -21.59 24.13)
 					(end 21.59 -24.13)
@@ -1788,7 +1788,7 @@
 					)
 				)
 			)
-			(symbol "Memory_Flash__W25Q32JVZP_1_1"
+			(symbol "Memory_Flash__W25Q32JVSN_1_1"
 				(pin input line
 					(at -26.67 12.7 0)
 					(length 5.08)
@@ -1926,24 +1926,6 @@
 						)
 					)
 					(number "8"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -29.21 90)
-					(length 5.08)
-					(name "EP"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "9"
 						(effects
 							(font
 								(size 1.016 1.016)
@@ -6018,7 +6000,7 @@
 			)
 		)
 	)
-	(text "Protected USB supply and 3.3 V regulator"
+	(text "USB supply, backfeed blocking and 3.3 V regulator"
 		(at 220.98 30.48 0)
 		(effects
 			(font
@@ -6027,81 +6009,6 @@
 			(justify left bottom)
 		)
 		(uuid "33afc678-368b-5359-8507-2482ffe62fb2")
-	)
-	(symbol
-		(lib_id "Pico_Design:Device__Polyfuse_Small")
-		(at 236.22 53.34 90)
-		(unit 1)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ce620ea1-349a-57d8-9858-4ead1de4dba4")
-		(property "Reference" "F1"
-			(at 236.22 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0.75A hold"
-			(at 236.22 48.26 90)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Fuse:Fuse_1206_3216Metric"
-			(at 236.22 53.34 0)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 236.22 53.34 0)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "1206L075/6"
-			(at 236.22 53.34 0)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(hide yes)
-			)
-		)
-		(property "AssemblyNote" "Check thermal derating; input source >=500 mA"
-			(at 236.22 53.34 0)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "93367a2d-c74c-5693-adad-d74af59f628c")
-		)
-		(pin "2"
-			(uuid "51fd3f8a-cfda-5bf6-801f-5eade86c2414")
-		)
-		(instances
-			(project "esp32-c6-pico"
-				(path "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb"
-					(reference "F1")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Pico_Design:Device__D_Schottky")
@@ -6119,7 +6026,7 @@
 				)
 			)
 		)
-		(property "Value" "SS14FL"
+		(property "Value" "BAT760-7"
 			(at 271.78 50.8 0)
 			(effects
 				(font
@@ -6127,7 +6034,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123F"
+		(property "Footprint" "Diode_SMD:D_SOD-323"
 			(at 271.78 53.34 0)
 			(effects
 				(font
@@ -6136,7 +6043,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.onsemi.com/download/data-sheet/pdf/ss14fl-d.pdf"
+		(property "Datasheet" "https://www.diodes.com/datasheet/download/BAT760.pdf"
 			(at 271.78 53.34 0)
 			(effects
 				(font
@@ -6145,7 +6052,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "SS14FL"
+		(property "MPN" "BAT760-7"
 			(at 271.78 53.34 0)
 			(effects
 				(font
@@ -6154,7 +6061,7 @@
 				(hide yes)
 			)
 		)
-		(property "AssemblyNote" "Blocks USB backfeed; +5V is about VBUS minus diode drop"
+		(property "AssemblyNote" "Same part/package as at820_tiga D9/D10; 30 V, 1 A with datasheet thermal derating; blocks USB backfeed"
 			(at 271.78 53.34 0)
 			(effects
 				(font
@@ -6582,26 +6489,6 @@
 				)
 			)
 		)
-	)
-	(global_label "VBUS_FUSED"
-		(shape input)
-		(at 254.0 49.53 90)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify left)
-		)
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 254.0 49.53 90)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(uuid "4f3b9ade-299c-5353-b03e-23dd63ab9f69")
 	)
 	(symbol
 		(lib_id "Pico_Design:power__+3V3")
@@ -7743,100 +7630,6 @@
 	)
 	(symbol
 		(lib_id "Pico_Design:power__PWR_FLAG")
-		(at 304.8 175.26 0)
-		(unit 1)
-		(in_bom no)
-		(on_board no)
-		(dnp no)
-		(uuid "2e4b91e9-1e69-5c29-973d-3349bcd1f096")
-		(property "Reference" "#FLG02"
-			(at 304.8 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 304.8 172.72 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" ""
-			(at 304.8 175.26 0)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 304.8 175.26 0)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(hide yes)
-			)
-		)
-		(property "MPN" "PWR_FLAG"
-			(at 304.8 175.26 0)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(hide yes)
-			)
-		)
-		(property "AssemblyNote" ""
-			(at 304.8 175.26 0)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7be7fac7-bfb7-554b-adc7-b89dc1aabc26")
-		)
-		(instances
-			(project "esp32-c6-pico"
-				(path "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb"
-					(reference "#FLG02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(global_label "VBUS_FUSED"
-		(shape input)
-		(at 304.8 180.34 270)
-		(effects
-			(font
-				(size 1.016 1.016)
-			)
-			(justify right)
-		)
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 304.8 180.34 270)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(uuid "db8335f2-c773-52f9-86c6-41c7bb523330")
-	)
-	(symbol
-		(lib_id "Pico_Design:power__PWR_FLAG")
 		(at 330.2 175.26 0)
 		(unit 1)
 		(in_bom no)
@@ -8773,50 +8566,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 53.34)
-			(xy 254.0 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "92675937-6075-570a-b139-a05fdfa88819")
-	)
-	(wire
-		(pts
-			(xy 254.0 49.53)
-			(xy 254.0 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ffdd6fd-e7e6-53f9-984a-6d2cb58859c7")
-	)
-	(wire
-		(pts
-			(xy 254.0 53.34)
-			(xy 267.97 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b9a81d7-d198-5f1b-b9af-ab11c68089d8")
-	)
-	(wire
-		(pts
-			(xy 304.8 175.26)
-			(xy 304.8 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "12ea6780-a1e9-54cd-9476-a82b686c051e")
-	)
-	(wire
-		(pts
 			(xy 60.96 69.85)
 			(xy 66.04 69.85)
 		)
@@ -8884,7 +8633,7 @@
 	(wire
 		(pts
 			(xy 220.98 53.34)
-			(xy 233.68 53.34)
+			(xy 267.97 53.34)
 		)
 		(stroke
 			(width 0)
@@ -8932,12 +8681,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e7e3bc10-81fb-54cd-afae-b91cb4f40474")
-	)
-	(junction
-		(at 254.0 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "170d5be1-1871-58e2-aeef-f9a7830943f0")
 	)
 	(junction
 		(at 220.98 53.34)
