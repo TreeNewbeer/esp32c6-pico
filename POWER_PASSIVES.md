@@ -10,12 +10,13 @@
 | 大容量电源电容，本次由 0603 改为 0402 | C8、C19、C20、C22、C23 | 0402 |
 | Flash 串联电阻，本次由 0201 改为 0402 | R17、R1–R5 | 0402 |
 | 其余非射频 R/C | C4–C7、C9–C15、C21、C24–C28、R7–R16 | 0402 |
+| 晶振串联电阻，2026-09-09 由原 L4 更正 | R18 = 0 Ω，对应官方模组 R4 | 0402 |
 
-全部 R/C 共 44 个：6 个保留 0201，38 个使用 0402，其中 11 个本次实际更换封装。射频 L1、L3 及其他电感、芯片、保护器件不在阻容替换范围内。射频几何与匹配值保持原样。
+当前全部 R/C 共 45 个：6 个保留 0201，39 个使用 0402。2026-09-08 有 11 个器件更换封装；2026-09-09 另将晶振串联器件从 L4 = 24 nH 电感改为 R18 = 0 Ω 电阻，采用标准 `Resistor_SMD:R_0402_1005Metric`，连接不变。依据为模组手册第 37、38 页的 R4，详见 [外围电路复核](docs/ESP32_C6_SCHEMATIC_REVIEW.md)。射频 L1、L3 及其他电感、芯片、保护器件保持原样。
 
 原理图、PCB、设计清单与 BOM 同步，保持数值、网络和 DNP 状态。Flash 串阻在背面以 1.20 mm 间距对齐成一排，局部重新扇出；U3 与 D4 各向 USB 方向移动 0.80 mm，C7 位于正面的 VDD_SPI 扇出旁。U3 的两个填孔盖铜接地孔随有效焊盘位置调整，仍只保留全板 11 个该工艺例外。所有信号走线仍为 0.15 mm，非 GND 电源仍为 0.20 mm；普通过孔孔边到正反面 SMD 开窗至少 0.10 mm。
 
-[output/passive-packages.csv](output/passive-packages.csv) 记录全部 44 个 R/C 的封装；[output/power-passives.csv](output/power-passives.csv) 保留 23 个电源、EN 定时及 USB-C 供电识别阻容的子集。两表的 `BeforeFootprint` 均指本次修改前，`Footprint` 为当前封装，实际变化标记 `Changed=YES`。独立 QA 按上述全部 R/C 规则核对。
+[output/passive-packages.csv](output/passive-packages.csv) 记录全部 45 个 R/C 的封装；[output/power-passives.csv](output/power-passives.csv) 保留 23 个电源、EN 定时及 USB-C 供电识别阻容的子集。`BeforeFootprint` 对原有器件指 2026-09-08 调整前，对新增记录 R18 指 2026-09-09 更正前的 L4 电感封装；`Footprint` 为当前封装，实际变化标记 `Changed=YES`，累计 12 条。独立 QA 按上述全部 R/C 规则核对，并检查 R18 的电阻符号、0 Ω 数值、装配状态和晶振网络。
 
 ## 大容量电容
 

@@ -30,7 +30,7 @@ R4,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 4
 R5,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Place at U1; SPI clock defaults to 40 MHz for bring-up
 C6,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,At flash VCC
 C7,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,At U1 VDD_SPI pin
-L4,24nH,24nH,Inductor_SMD:L_0402_1005Metric,YES,Crystal harmonic suppression; initial value
+R18,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,Crystal series link; 0R per ESP32-C6-WROOM-1/1U v1.4 figs 8-1/8-2 (R4); former L4
 Y1,40MHz / CL=8pF,E9X400081G08,Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm,YES,"Eaton E9X; 40 MHz, CL 8 pF, initial tolerance 10 ppm, ESR <=50 ohm; verify assembled frequency"
 C4,12pF,12pF,Capacitor_SMD:C_0402_1005Metric,YES,C0G; assumes about 2 pF stray; trim frequency on hardware
 C5,12pF,12pF,Capacitor_SMD:C_0402_1005Metric,YES,C0G; crystal load tuning

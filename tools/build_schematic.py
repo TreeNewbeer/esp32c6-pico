@@ -217,7 +217,7 @@ def build():
     passive('C6','100nF','VDD_SPI','GND',127,198,note='At flash VCC')
     passive('C7','1uF','VDD_SPI','GND',147,198,note='At U1 VDD_SPI pin')
     note('core','05  40 MHz crystal',170,199,1.8)
-    passive('L4','24nH','XTAL_P','XTAL_LOAD_P',181,219,angle=90,fp='Inductor_SMD:L_0402_1005Metric',note='Crystal harmonic suppression; initial value')
+    passive('R18','0R','XTAL_P','XTAL_LOAD_P',181,219,angle=90,fp='Resistor_SMD:R_0402_1005Metric',note='Crystal series link; 0R per ESP32-C6-WROOM-1/1U v1.4 figs 8-1/8-2 (R4); former L4')
     part('Y1','Device:Crystal_GND24_Small','40MHz / CL=8pF','Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm',
          {1:'XTAL_LOAD_P',2:'GND',3:'XTAL_N',4:'GND'},227,219,mpn='E9X400081G08',
          detail='Eaton E9X; 40 MHz, CL 8 pF, initial tolerance 10 ppm, ESR <=50 ohm; verify assembled frequency',

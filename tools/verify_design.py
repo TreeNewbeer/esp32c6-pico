@@ -65,8 +65,17 @@ power_passive_footprints={ref:passive_footprints[ref] for ref in power_passives}
 package_errors=[[ref,fps[ref].GetFPID().GetUniStringLibId(),expected_fp]
                 for ref,expected_fp in sorted(passive_footprints.items())
                 if fps[ref].GetFPID().GetUniStringLibId()!=expected_fp]
-check('Six RF resistors/capacitors remain 0201; all 38 non-RF resistors/capacitors are 0402',
-      len(rc_passives)==44 and rf_passives<=rc_passives and not package_errors,package_errors)
+check('Six RF resistors/capacitors remain 0201; all 39 non-RF resistors/capacitors are 0402',
+      len(rc_passives)==45 and rf_passives<=rc_passives and not package_errors,package_errors)
+# The WROOM module diagram uses R4 = 0R at XTAL_P; its local reference is R18.
+crystal_series=components.get('R18')
+check('XTAL_P uses a populated 0R resistor matching the WROOM module reference',
+      'L4' not in fps and 'R18' in fps and not fps['R18'].IsDNP()
+      and crystal_series is not None and crystal_series.findtext('value')=='0R'
+      and crystal_series.find('libsource') is not None
+      and crystal_series.find('libsource').get('part')=='Device__R_Small'
+      and expected.get(('R18','1'))==expected.get(('U1','39'))=='XTAL_P'
+      and expected.get(('R18','2'))==expected.get(('Y1','1'))==expected.get(('C4','1'))=='XTAL_LOAD_P')
 wiring_audit=audit_wiring(BOARD_FILE.parent)
 check('MCU peripherals connect by visible wires without relying on labels',wiring_audit['all_passed'],wiring_audit)
 spec={c['ref']:c for c in json.loads((BOARD_FILE.parent/'design-spec.json').read_text())}

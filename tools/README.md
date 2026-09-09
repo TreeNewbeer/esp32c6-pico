@@ -8,7 +8,7 @@
 
 器件字段核对逐项比较 PCB 与网表中的 Value、MPN、AssemblyNote、Datasheet 等原理图实例字段，包括空值；封装库自带的额外字段保留。DRC 必须启用 `--schematic-parity`，其结果也纳入 QA。仅检查走线的 DRC 报告不能代替原理图一致性检查。
 
-封装核对覆盖全部 44 个电阻、电容：射频匹配的 C2、C3、C16、C17、C18、R6 为 0201，其余 38 个为 0402。定义与变更记录见 [POWER_PASSIVES.md](../POWER_PASSIVES.md)。
+封装核对覆盖全部 45 个电阻、电容：射频匹配的 C2、C3、C16、C17、C18、R6 为 0201，其余 39 个为 0402。晶振串联器件按模组图由原 L4 更正为 R18 = 0 Ω；QA 同时核对其电阻符号、数值、装配状态及 U1.39 / Y1.1 / C4.1 的连接。定义与变更记录见 [POWER_PASSIVES.md](../POWER_PASSIVES.md)。
 
 线宽核对覆盖全部走线和圆弧：信号固定 0.15 mm，非 GND 电源固定 0.20 mm，同时检查实际网络类及默认布线宽度。电源网络集合维护在 `build_pcb.py` 的 `POWER_NETS`，项目 `Power` 类与 `.kicad_dru` 应同步；GND 不参与固定线宽检查。QA 的 `track_width_policy` 保存各网络实际线宽和线段数量。
 
@@ -40,4 +40,4 @@ Windows 验证示例（PowerShell）：
 
 `verify_schematic_wiring.py` 独立读取主原理图的实线与引脚位置，不把标签或电源别名当作连线，核对 U1 的关键外围可以沿线追踪。该检查与原理图/PCB 符号路径核对均已纳入 `verify_design.py`。
 
-2026-09-09 的 29 mm 布局迭代按用户要求跳过独立 QA，`output/qa.json` 记录 `not_run`。板框和净空检查尺寸已同步；历史 8.5 mm 天线/晶振目标仍保留，当前约 5.100 mm，不应将该版描述为 QA 通过。
+2026-09-09 的 29 mm 布局迭代曾跳过独立 QA。此后的晶振串联电阻修正已重新运行 QA，当前 `output/qa.json` 为实际检查结果：43/48 通过，保留五项已有失败条件。历史 8.5 mm 天线/晶振目标仍保留，当前约 5.100 mm；不得将该版描述为 QA 全部通过。详情见 [外围电路复核](../docs/ESP32_C6_SCHEMATIC_REVIEW.md)。

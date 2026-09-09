@@ -1,6 +1,8 @@
 # ESP32-C6 Pico · Rev A
 
-已完成 **20.0 × 29.0 mm、四层、标称 0.8 mm** 的 PCB 布局布线。使用 ESP32-C6 QFN40、4 MB 外置 Flash、横向 RFANT5220110A0T 陶瓷天线和 USB-C 原生 USB Serial/JTAG。本轮将板宽缩至 20 mm，沿用右侧天线和左侧 Codex 图标布局；继续跳过独立 QA，最终 DRC 仍有两项原有孔距违规。
+已完成 **20.0 × 29.0 mm、四层、标称 0.8 mm** 的 PCB 布局布线。使用 ESP32-C6 QFN40、4 MB 外置 Flash、横向 RFANT5220110A0T 陶瓷天线和 USB-C 原生 USB Serial/JTAG。最近布局将板宽缩至 20 mm，沿用右侧天线和左侧 Codex 图标布局；仍有两项原有孔距违规。
+
+2026-09-09 原理图复核：已对照 `docs/` 的 WROOM-1 / WROOM-1U 模组图，将晶振串联器件 **L4 = 24 nH 更正为 R18 = 0 Ω、0402 电阻**，对应模组图的 R4；原理图符号、PCB 封装、BOM 和检查条件均已同步。另记录 VDDA3P3、VDDA1/VDDA2 的本地去耦差异。重新填铜后，ERC 0 项、原理图一致性 0 项、未连接 0 项；DRC 仍有原有 2 项，独立 QA **43/48 通过**。详细依据与风险见 [外围电路复核](docs/ESP32_C6_SCHEMATIC_REVIEW.md)。下文跳过 QA 的描述属于此前布局轮次。
 
 天线本体在板头右侧横向放置，末端铜箔向左展开、保持开路；板头全层不铺铜区域为 **20.0 × 3.8 mm**。AE1 馈电焊盘与 R6 对齐，正面馈线直接向下连接，不再从匹配网络折返向左。Codex 图标移至左侧；Flash U3、USB TVS D4 和排针位于背面，两颗按键位于正面。
 
@@ -14,7 +16,7 @@
 
 直接用 KiCad 10 打开 `esp32-c6-pico.kicad_pro`。如编辑器仍显示修改前的内容，请关闭旧窗口并重新打开磁盘文件，避免旧窗口覆盖新文件。
 
-当前封装约定：**射频匹配的 6 个电阻/电容保持 0201，其余全部 38 个电阻/电容统一 0402**，包括 C19、C20、C23 等大容量电源电容及 Flash 串阻。容量、阻值、网络和 DNP 状态保持不变。大容量电源电容保留最低 10V 额定耐压要求，实际料号与偏压下的有效容量仍需核对。变更清单见 [POWER_PASSIVES.md](POWER_PASSIVES.md) 和 [全部阻容封装表](output/passive-packages.csv)。
+当前封装约定：**射频匹配的 6 个电阻/电容保持 0201，其余全部 39 个电阻/电容统一 0402**，包括 C19、C20、C23 等大容量电源电容及 Flash 串阻。容量、阻值、网络和 DNP 状态保持不变。大容量电源电容保留最低 10V 额定耐压要求，实际料号与偏压下的有效容量仍需核对。变更清单见 [POWER_PASSIVES.md](POWER_PASSIVES.md) 和 [全部阻容封装表](output/passive-packages.csv)。
 
 主原理图已把 ESP32-C6 的供电去耦、上电复位、BOOT、晶振、Flash、USB 串阻、UART 与 RGB 驱动沿芯片引脚用实线连接。电源输入、USB 接口与排针位于第二页。逐引脚网表与重排前一致。
 
@@ -25,13 +27,13 @@
 - USB-C 正反插数据连接、CC1/CC2 独立 5.1 kΩ 下拉、USBLC6-2SC6 静电保护、22 Ω 串联电阻及选装 EMI 电容。
 - AP2112K-3.3 稳压、输入保护、肖特基防反灌、主电源及各供电脚的去耦；RF 电源使用独立 LC 滤波。
 - CHIP_EN 的 10 kΩ / 1 µF 上电延时，RESET、BOOT 按键，GPIO8/9 上拉与 UART0 备用下载接口。
-- W25Q32JVZPIQ 外置 Flash，真正接通 VDD_SPI；40 MHz / 8 pF 晶振，两个外壳脚接地，并保留负载调试与串联电感。
+- W25Q32JVZPIQ 外置 Flash，真正接通 VDD_SPI；40 MHz / 8 pF 晶振，两个外壳脚接地，并保留负载调试与 R18 = 0 Ω 串联电阻。
 - 芯片端 CLCCL 射频网络、天线端 π 网络、低电容 ESD 选装位，以及陶瓷天线开路端调谐铜箔。
 - WS2812B-2020 RGB 灯及 SN74LV1T125 电平转换，GPIO21 驱动。
 
 ## 检查与交付文件
 
-2026-09-09 使用 KiCad 10.0.4 重新填铜并检查：**ERC 0 项；原理图一致性 0 项；未连接 0 项；DRC 2 项，均为输入版本已有的 C12、C21 接地焊盘与 U1 散热过孔重叠**。本轮没有新增 DRC 违规。独立 QA 按用户要求未运行；`output/qa.json` 明确记录 `not_run`，不沿用旧版通过数量。最新报告见 `output/drc-final.json`、`output/erc.json` 和 `output/layout-20x29mm.json`。
+2026-09-09 使用 KiCad 10.0.4 重新填铜并检查：**ERC 0 项；原理图一致性 0 项；未连接 0 项；DRC 2 项，均为输入版本已有的 C12、C21 接地焊盘与 U1 散热过孔重叠**。本轮没有新增 DRC 违规。该布局轮次曾跳过独立 QA；此后晶振串联电阻修正已重新检查，`output/qa.json` 为当前 43/48 通过的实际结果。最新报告见 `output/drc-final.json`、`output/erc.json` 和 `output/layout-20x29mm.json`。
 
 原先 65 项一致性报错来自 PCB 器件字段缺失。现已按原理图为 65 个器件同步 141 处字段，包括 MPN、AssemblyNote 和 Datasheet；新增字段隐藏显示，保留封装库自带的额外字段。原理图、网络连接、封装、器件值和 DNP 状态保持不变。已重新填铜，并在重新加载磁盘 PCB 后启用 `--schematic-parity` 验证为 0 项；QA 新增逐字段比较与一致性报告检查，后续 DRC 命令也必须带此参数。
 
@@ -59,7 +61,7 @@ USB 保持简洁路径，没有加入蛇形等长补偿。两根线在按键上�
 | `docs/logo/` | 个人原图、两面丝印 SVG、图形来源和放置参数 |
 | `output/assembly-front.svg` / `assembly-back.svg` | 带位号的装配视图 |
 | `POWER_PASSIVES.md` / `output/power-passives.csv` | 当前 0402 约定、封装变更记录和选料说明 |
-| `output/passive-packages.csv` | 全部 44 个电阻/电容及 11 个实际封装变化 |
+| `output/passive-packages.csv` | 全部 45 个电阻/电容及累计 12 个封装变化记录 |
 | `output/bom.csv` | BOM；`Populate=NO` 表示不装 |
 | `output/placement.csv` | 双面贴装坐标，已排除 DNP；坐标原点为板左下角 |
 | `output/via-in-pad.csv` | 保留的 11 个散热焊盘内孔，须填孔盖铜 |

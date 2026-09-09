@@ -8845,14 +8845,14 @@
 		(uuid "77351201-b663-506e-a1df-748884469355")
 	)
 	(symbol
-		(lib_id "Pico_Design:Device__L_Small")
+		(lib_id "Pico_Design:Device__R_Small")
 		(at 193.04 309.88 270)
 		(unit 1)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "f0cb3350-2c2f-5ce3-99ca-b77f21e1be56")
-		(property "Reference" "L4"
+		(property "Reference" "R18"
 			(at 189.23 307.34 90)
 			(effects
 				(font
@@ -8860,7 +8860,7 @@
 				)
 			)
 		)
-		(property "Value" "24nH"
+		(property "Value" "0R"
 			(at 196.85 307.34 90)
 			(effects
 				(font
@@ -8868,7 +8868,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 193.04 309.88 0)
 			(effects
 				(font
@@ -8886,7 +8886,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "24nH"
+		(property "MPN" "0R"
 			(at 193.04 309.88 0)
 			(effects
 				(font
@@ -8895,7 +8895,7 @@
 				(hide yes)
 			)
 		)
-		(property "AssemblyNote" "Crystal harmonic suppression; initial value"
+		(property "AssemblyNote" "Crystal series link; 0R per ESP32-C6-WROOM-1/1U v1.4 figs 8-1/8-2 (R4); former L4"
 			(at 193.04 309.88 0)
 			(effects
 				(font
@@ -8913,7 +8913,7 @@
 		(instances
 			(project "esp32-c6-pico"
 				(path "/d29d372c-7a4c-447f-ba6c-21fb60482be4"
-					(reference "L4")
+					(reference "R18")
 					(unit 1)
 				)
 			)

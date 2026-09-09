@@ -1,0 +1,415 @@
+{
+  "scope": "Static pin/net comparison to Espressif QFN40 module diagrams and chip pin tables; not analog or hardware validation",
+  "u1_pins": 41,
+  "peripheral_checks": [
+    {
+      "check": "R17 MCU side",
+      "pins": [
+        "U1.20",
+        "R17.1"
+      ],
+      "nets": [
+        "SPI_CS_MCU",
+        "SPI_CS_MCU"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R17 flash side",
+      "pins": [
+        "R17.2",
+        "U3.1"
+      ],
+      "nets": [
+        "SPI_CS",
+        "SPI_CS"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R17 is populated 0R",
+      "passed": true
+    },
+    {
+      "check": "R1 MCU side",
+      "pins": [
+        "U1.21",
+        "R1.1"
+      ],
+      "nets": [
+        "SPI_Q_MCU",
+        "SPI_Q_MCU"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R1 flash side",
+      "pins": [
+        "R1.2",
+        "U3.2"
+      ],
+      "nets": [
+        "SPI_Q",
+        "SPI_Q"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R1 is populated 0R",
+      "passed": true
+    },
+    {
+      "check": "R2 MCU side",
+      "pins": [
+        "U1.22",
+        "R2.1"
+      ],
+      "nets": [
+        "SPI_WP_MCU",
+        "SPI_WP_MCU"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R2 flash side",
+      "pins": [
+        "R2.2",
+        "U3.3"
+      ],
+      "nets": [
+        "SPI_WP",
+        "SPI_WP"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R2 is populated 0R",
+      "passed": true
+    },
+    {
+      "check": "R3 MCU side",
+      "pins": [
+        "U1.24",
+        "R3.1"
+      ],
+      "nets": [
+        "SPI_HD_MCU",
+        "SPI_HD_MCU"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R3 flash side",
+      "pins": [
+        "R3.2",
+        "U3.7"
+      ],
+      "nets": [
+        "SPI_HD",
+        "SPI_HD"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R3 is populated 0R",
+      "passed": true
+    },
+    {
+      "check": "R4 MCU side",
+      "pins": [
+        "U1.25",
+        "R4.1"
+      ],
+      "nets": [
+        "SPI_CLK_MCU",
+        "SPI_CLK_MCU"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R4 flash side",
+      "pins": [
+        "R4.2",
+        "U3.6"
+      ],
+      "nets": [
+        "SPI_CLK",
+        "SPI_CLK"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R4 is populated 0R",
+      "passed": true
+    },
+    {
+      "check": "R5 MCU side",
+      "pins": [
+        "U1.26",
+        "R5.1"
+      ],
+      "nets": [
+        "SPI_D_MCU",
+        "SPI_D_MCU"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R5 flash side",
+      "pins": [
+        "R5.2",
+        "U3.5"
+      ],
+      "nets": [
+        "SPI_D",
+        "SPI_D"
+      ],
+      "passed": true
+    },
+    {
+      "check": "R5 is populated 0R",
+      "passed": true
+    },
+    {
+      "check": "Flash supply from VDD_SPI",
+      "pins": [
+        "U1.23",
+        "U3.8",
+        "C6.1",
+        "C7.1"
+      ],
+      "nets": [
+        "VDD_SPI",
+        "VDD_SPI",
+        "VDD_SPI",
+        "VDD_SPI"
+      ],
+      "passed": true
+    },
+    {
+      "check": "XTAL_P series element",
+      "pins": [
+        "U1.39",
+        "R18.1"
+      ],
+      "nets": [
+        "XTAL_P",
+        "XTAL_P"
+      ],
+      "passed": true
+    },
+    {
+      "check": "Crystal P-side load after series element",
+      "pins": [
+        "R18.2",
+        "Y1.1",
+        "C4.1"
+      ],
+      "nets": [
+        "XTAL_LOAD_P",
+        "XTAL_LOAD_P",
+        "XTAL_LOAD_P"
+      ],
+      "passed": true
+    },
+    {
+      "check": "Crystal N-side load",
+      "pins": [
+        "U1.38",
+        "Y1.3",
+        "C5.1"
+      ],
+      "nets": [
+        "XTAL_N",
+        "XTAL_N",
+        "XTAL_N"
+      ],
+      "passed": true
+    },
+    {
+      "check": "Crystal ground pads",
+      "pins": [
+        "U1.41",
+        "Y1.2",
+        "Y1.4",
+        "C4.2",
+        "C5.2"
+      ],
+      "nets": [
+        "GND",
+        "GND",
+        "GND",
+        "GND",
+        "GND"
+      ],
+      "passed": true
+    },
+    {
+      "check": "CHIP_EN RC and reset",
+      "pins": [
+        "U1.4",
+        "R7.2",
+        "C21.1",
+        "SW1.1"
+      ],
+      "nets": [
+        "CHIP_EN",
+        "CHIP_EN",
+        "CHIP_EN",
+        "CHIP_EN"
+      ],
+      "passed": true
+    },
+    {
+      "check": "GPIO9 BOOT pull-up and switch",
+      "pins": [
+        "U1.15",
+        "R8.2",
+        "SW2.1"
+      ],
+      "nets": [
+        "GPIO9_BOOT",
+        "GPIO9_BOOT",
+        "GPIO9_BOOT"
+      ],
+      "passed": true
+    },
+    {
+      "check": "GPIO8 pull-up",
+      "pins": [
+        "U1.14",
+        "R9.2"
+      ],
+      "nets": [
+        "GPIO8",
+        "GPIO8"
+      ],
+      "passed": true
+    },
+    {
+      "check": "Pull-up supply",
+      "pins": [
+        "R7.1",
+        "R8.1",
+        "R9.1",
+        "U1.5"
+      ],
+      "nets": [
+        "+3V3",
+        "+3V3",
+        "+3V3",
+        "+3V3"
+      ],
+      "passed": true
+    },
+    {
+      "check": "USB D- MCU side",
+      "pins": [
+        "U1.18",
+        "R12.2",
+        "C27.1"
+      ],
+      "nets": [
+        "USB_MCU_D-",
+        "USB_MCU_D-",
+        "USB_MCU_D-"
+      ],
+      "passed": true
+    },
+    {
+      "check": "USB D- connector / TVS side",
+      "pins": [
+        "R12.1",
+        "J1.A7",
+        "J1.B7",
+        "D4.3",
+        "D4.4"
+      ],
+      "nets": [
+        "USB_D-",
+        "USB_D-",
+        "USB_D-",
+        "USB_D-",
+        "USB_D-"
+      ],
+      "passed": true
+    },
+    {
+      "check": "USB D+ MCU side",
+      "pins": [
+        "U1.19",
+        "R13.2",
+        "C28.1"
+      ],
+      "nets": [
+        "USB_MCU_D+",
+        "USB_MCU_D+",
+        "USB_MCU_D+"
+      ],
+      "passed": true
+    },
+    {
+      "check": "USB D+ connector / TVS side",
+      "pins": [
+        "R13.1",
+        "J1.A6",
+        "J1.B6",
+        "D4.1",
+        "D4.6"
+      ],
+      "nets": [
+        "USB_D+",
+        "USB_D+",
+        "USB_D+",
+        "USB_D+",
+        "USB_D+"
+      ],
+      "passed": true
+    },
+    {
+      "check": "UART TX damping",
+      "pins": [
+        "U1.29",
+        "R14.1"
+      ],
+      "nets": [
+        "U0TXD_MCU",
+        "U0TXD_MCU"
+      ],
+      "passed": true
+    },
+    {
+      "check": "UART TX header",
+      "pins": [
+        "R14.2",
+        "J3.6"
+      ],
+      "nets": [
+        "U0TXD",
+        "U0TXD"
+      ],
+      "passed": true
+    },
+    {
+      "check": "UART RX header",
+      "pins": [
+        "U1.30",
+        "J3.7"
+      ],
+      "nets": [
+        "U0RXD",
+        "U0RXD"
+      ],
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "source_sha256": {
+    "esp32-c6-pico.kicad_sch": "0c85ae774c04906390eefe39fea391914e609b669e754e5f587fd36f9a87c9c6",
+    "power-io.kicad_sch": "168a5ee37d2dc630f0cabac0c9884d32880e7434539a2eddb3fe46f7664037a6",
+    "esp32-c6-pico.kicad_pcb": "1cb9a4c9de86b4bedfd481f23dab1cc75387c9d12d9d2777e7867aeec623efaa",
+    "docs/esp32-c6-wroom-1_wroom-1u_datasheet_cn.pdf": "c4dc8a11b793503cc6a5d3e7c926bbfdd620b1efed9064fd3778938b35e0e4e0",
+    "docs/esp32-c6-devkitc-1-schematics_v1.4.pdf": "ac01136198f286f11a3628e1ca39d22714aa6ce059cba85bd0c39e641c415a8a"
+  },
+  "change": "Former L4 replaced with R18 = 0R, Resistor_SMD:R_0402_1005Metric; wire nets unchanged after reference mapping"
+}

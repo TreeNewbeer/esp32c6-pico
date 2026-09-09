@@ -43,3 +43,4 @@ R16,100k,GPIO21_LED / GND,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_100
 R15,330R,LED_DATA_5V / LED_DIN,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,
 C25,1uF,VBUS_USB / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,At RGB VDD
 C26,100nF,VBUS_USB / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,At LV1T125 VCC
+R18,0R,XTAL_P / XTAL_LOAD_P,Inductor_SMD:L_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,YES,Crystal series link; 0R per ESP32-C6-WROOM-1/1U v1.4 figs 8-1/8-2 (R4); former L4

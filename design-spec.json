@@ -511,9 +511,9 @@
     "note": "At U1 VDD_SPI pin"
   },
   {
-    "ref": "L4",
-    "value": "24nH",
-    "footprint": "Inductor_SMD:L_0402_1005Metric",
+    "ref": "R18",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
       "1": "XTAL_P",
       "2": "XTAL_LOAD_P"
@@ -522,8 +522,8 @@
     "sheet": "core",
     "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/f0cb3350-2c2f-5ce3-99ca-b77f21e1be56",
     "dnp": false,
-    "mpn": "24nH",
-    "note": "Crystal harmonic suppression; initial value"
+    "mpn": "0R",
+    "note": "Crystal series link; 0R per ESP32-C6-WROOM-1/1U v1.4 figs 8-1/8-2 (R4); former L4"
   },
   {
     "ref": "Y1",

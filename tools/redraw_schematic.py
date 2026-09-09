@@ -219,9 +219,9 @@ line('core','GPIO9_BOOT',P('R8',2),(175.26,281.94),P('U1',15));line('core','GPIO
 power('core','+3V3',P('R8',1));ground('core',P('SW2',2));glabel('core','GPIO9_BOOT',210.82,281.94,180)
 
 text('core','40 MHz crystal / local load capacitors',91.44,302.26,1.778)
-symbol('L4',193.04,309.88,270);symbol('Y1',160.02,320.04);symbol('C4',139.7,325.12);symbol('C5',187.96,335.28)
-line('core','XTAL_P',P('U1',39),P('L4',1));netlabel('core','XTAL_P',210.82,309.88)
-line('core','XTAL_LOAD_P',P('L4',2),(147.32,309.88),(147.32,320.04),P('Y1',1))
+symbol('R18',193.04,309.88,270);symbol('Y1',160.02,320.04);symbol('C4',139.7,325.12);symbol('C5',187.96,335.28)
+line('core','XTAL_P',P('U1',39),P('R18',1));netlabel('core','XTAL_P',210.82,309.88)
+line('core','XTAL_LOAD_P',P('R18',2),(147.32,309.88),(147.32,320.04),P('Y1',1))
 line('core','XTAL_LOAD_P',(147.32,320.04),(139.7,320.04),P('C4',1));netlabel('core','XTAL_LOAD_P',162.56,309.88)
 line('core','XTAL_N',P('U1',38),(177.8,330.2),(177.8,320.04),P('Y1',3));line('core','XTAL_N',(187.96,330.2),P('C5',1));netlabel('core','XTAL_N',210.82,330.2)
 ground('core',P('C4',2));ground('core',P('C5',2));ground('core',P('Y1',2));ground('core',P('U1',41))
