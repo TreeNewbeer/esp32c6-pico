@@ -4,11 +4,12 @@
     "value": "ESP32-C6",
     "footprint": "Pico:QFN40_ESP32_C6_Compact",
     "nets": {
-      "1": "RF_CHIP",
-      "2": "V3A",
-      "3": "V3A",
-      "4": "CHIP_EN",
+      "28": "+3V3",
+      "37": "+3V3",
+      "40": "+3V3",
       "5": "+3V3",
+      "4": "CHIP_EN",
+      "41": "GND",
       "6": "GPIO0",
       "7": "GPIO1",
       "8": "GPIO2",
@@ -21,30 +22,29 @@
       "15": "GPIO9_BOOT",
       "16": "GPIO10",
       "17": "GPIO11",
-      "18": "USB_MCU_D-",
-      "19": "USB_MCU_D+",
-      "20": "SPI_CS_MCU",
-      "21": "SPI_Q_MCU",
-      "22": "SPI_WP_MCU",
-      "23": "VDD_SPI",
-      "24": "SPI_HD_MCU",
-      "25": "SPI_CLK_MCU",
-      "26": "SPI_D_MCU",
       "27": "GPIO15",
-      "28": "+3V3",
-      "29": "U0TXD_MCU",
-      "30": "U0RXD",
       "31": "GPIO18",
       "32": "GPIO19",
       "33": "GPIO20",
-      "34": "GPIO21_LED",
+      "34": "unconnected-(U1-GPIO21-Pad34)",
       "35": "GPIO22",
       "36": "GPIO23",
-      "37": "+3V3",
+      "1": "RF_CHIP",
+      "25": "SPI_CLK_MCU",
+      "20": "SPI_CS_MCU",
+      "26": "SPI_D_MCU",
+      "24": "SPI_HD_MCU",
+      "21": "SPI_Q_MCU",
+      "22": "SPI_WP_MCU",
+      "30": "U0RXD",
+      "29": "U0TXD_MCU",
+      "19": "USB_D+",
+      "18": "USB_D-",
+      "2": "V3A",
+      "3": "V3A",
+      "23": "VDD_SPI",
       "38": "XTAL_N",
-      "39": "XTAL_P",
-      "40": "+3V3",
-      "41": "GND"
+      "39": "XTAL_P"
     },
     "uuid": "8bf8607d-e3f7-46ac-9ee3-499b7bbbb17e",
     "sheet": "core",
@@ -58,8 +58,8 @@
     "value": "1.5pF",
     "footprint": "Capacitor_SMD:C_0201_0603Metric",
     "nets": {
-      "1": "RF_CHIP",
-      "2": "GND"
+      "2": "GND",
+      "1": "RF_CHIP"
     },
     "uuid": "fe121819-547b-448b-b270-9feb496d187d",
     "sheet": "core",
@@ -88,8 +88,8 @@
     "value": "1.5pF",
     "footprint": "Capacitor_SMD:C_0201_0603Metric",
     "nets": {
-      "1": "RF_MID",
-      "2": "GND"
+      "2": "GND",
+      "1": "RF_MID"
     },
     "uuid": "7f30056b-9efd-43fd-bb94-ca5fdf4946cb",
     "sheet": "core",
@@ -103,8 +103,8 @@
     "value": "10pF",
     "footprint": "Capacitor_SMD:C_0201_0603Metric",
     "nets": {
-      "1": "RF_MID",
-      "2": "RF_50"
+      "2": "RF_50",
+      "1": "RF_MID"
     },
     "uuid": "84124424-6010-5b9d-8cec-178d711252f1",
     "sheet": "core",
@@ -118,8 +118,8 @@
     "value": "DNP",
     "footprint": "Inductor_SMD:L_0201_0603Metric",
     "nets": {
-      "1": "RF_50",
-      "2": "GND"
+      "2": "GND",
+      "1": "RF_50"
     },
     "uuid": "16b4735e-9cc3-5c28-a006-b7cd199ae095",
     "sheet": "core",
@@ -133,8 +133,8 @@
     "value": "DNP",
     "footprint": "Capacitor_SMD:C_0201_0603Metric",
     "nets": {
-      "1": "RF_50",
-      "2": "GND"
+      "2": "GND",
+      "1": "RF_50"
     },
     "uuid": "d1ce8f36-868c-5224-a80b-d422c4519e04",
     "sheet": "core",
@@ -148,8 +148,8 @@
     "value": "0R",
     "footprint": "Resistor_SMD:R_0201_0603Metric",
     "nets": {
-      "1": "RF_50",
-      "2": "ANT_FEED"
+      "2": "ANT_FEED",
+      "1": "RF_50"
     },
     "uuid": "ff9193e3-87b0-5eee-b954-ba650a3012f8",
     "sheet": "core",
@@ -179,7 +179,7 @@
     "footprint": "Walsin_Antenna:RFANT5220110A0T",
     "nets": {
       "1": "ANT_FEED",
-      "2": null
+      "2": "unconnected-(AE1-SOLDER-Pad2)"
     },
     "uuid": "c5287210-ef13-4efd-9e37-7930fcdc1c66",
     "sheet": "core",
@@ -193,8 +193,8 @@
     "value": "PESD5V0F1BL-Q",
     "footprint": "Diode_SMD:D_SOD-882",
     "nets": {
-      "1": "GND",
-      "2": "ANT_FEED"
+      "2": "ANT_FEED",
+      "1": "GND"
     },
     "uuid": "17c190a4-f267-4adb-8e04-a4241b21f050",
     "sheet": "core",
@@ -328,8 +328,8 @@
     "value": "1uF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "V3A",
-      "2": "GND"
+      "2": "GND",
+      "1": "V3A"
     },
     "uuid": "ef2fcd15-2db6-49ca-9618-330dd3d40460",
     "sheet": "core",
@@ -343,8 +343,8 @@
     "value": "10uF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "V3A",
-      "2": "GND"
+      "2": "GND",
+      "1": "V3A"
     },
     "uuid": "3160761b-f329-5e8e-b190-11fa959c0a52",
     "sheet": "core",
@@ -358,8 +358,8 @@
     "value": "10uF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "V3A",
-      "2": "GND"
+      "2": "GND",
+      "1": "V3A"
     },
     "uuid": "be7b7ca8-433a-5d62-a564-8483e1467361",
     "sheet": "core",
@@ -373,13 +373,13 @@
     "value": "W25Q32JVSNIQ",
     "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
     "nets": {
+      "4": "GND",
+      "6": "SPI_CLK",
       "1": "SPI_CS",
+      "5": "SPI_D",
+      "7": "SPI_HD",
       "2": "SPI_Q",
       "3": "SPI_WP",
-      "4": "GND",
-      "5": "SPI_D",
-      "6": "SPI_CLK",
-      "7": "SPI_HD",
       "8": "VDD_SPI"
     },
     "uuid": "11dd3793-e446-4d3b-bb90-c7cfe42ad248",
@@ -394,8 +394,8 @@
     "value": "0R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "SPI_CS_MCU",
-      "2": "SPI_CS"
+      "2": "SPI_CS",
+      "1": "SPI_CS_MCU"
     },
     "uuid": "9361a14c-2d3f-59dd-9486-ee25e7ccccc1",
     "sheet": "core",
@@ -409,8 +409,8 @@
     "value": "0R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "SPI_Q_MCU",
-      "2": "SPI_Q"
+      "2": "SPI_Q",
+      "1": "SPI_Q_MCU"
     },
     "uuid": "9868171c-e3dd-411d-b982-a15aedcb9c96",
     "sheet": "core",
@@ -424,8 +424,8 @@
     "value": "0R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "SPI_WP_MCU",
-      "2": "SPI_WP"
+      "2": "SPI_WP",
+      "1": "SPI_WP_MCU"
     },
     "uuid": "d5ef5f06-562e-4f5d-ae98-c67c05631d82",
     "sheet": "core",
@@ -439,8 +439,8 @@
     "value": "0R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "SPI_HD_MCU",
-      "2": "SPI_HD"
+      "2": "SPI_HD",
+      "1": "SPI_HD_MCU"
     },
     "uuid": "8dd25ad6-208e-41e1-86fe-b46c01c36e0f",
     "sheet": "core",
@@ -454,8 +454,8 @@
     "value": "0R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "SPI_CLK_MCU",
-      "2": "SPI_CLK"
+      "2": "SPI_CLK",
+      "1": "SPI_CLK_MCU"
     },
     "uuid": "87dab85c-99f6-4dd6-ade7-ad710ba00316",
     "sheet": "core",
@@ -469,8 +469,8 @@
     "value": "0R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "SPI_D_MCU",
-      "2": "SPI_D"
+      "2": "SPI_D",
+      "1": "SPI_D_MCU"
     },
     "uuid": "f94147b5-6e1c-4abb-ab17-b16c4ee88e99",
     "sheet": "core",
@@ -484,8 +484,8 @@
     "value": "100nF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "VDD_SPI",
-      "2": "GND"
+      "2": "GND",
+      "1": "VDD_SPI"
     },
     "uuid": "c1419592-f638-4f08-b060-66bd08918164",
     "sheet": "core",
@@ -499,8 +499,8 @@
     "value": "1uF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "VDD_SPI",
-      "2": "GND"
+      "2": "GND",
+      "1": "VDD_SPI"
     },
     "uuid": "36834f2e-b00b-4ab5-a075-c721b8ccbe80",
     "sheet": "core",
@@ -514,8 +514,8 @@
     "value": "0R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "XTAL_P",
-      "2": "XTAL_LOAD_P"
+      "2": "XTAL_LOAD_P",
+      "1": "XTAL_P"
     },
     "uuid": "f0cb3350-2c2f-5ce3-99ca-b77f21e1be56",
     "sheet": "core",
@@ -529,10 +529,10 @@
     "value": "40MHz / CL=8pF",
     "footprint": "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm",
     "nets": {
-      "1": "XTAL_LOAD_P",
       "2": "GND",
-      "3": "XTAL_N",
-      "4": "GND"
+      "4": "GND",
+      "1": "XTAL_LOAD_P",
+      "3": "XTAL_N"
     },
     "uuid": "3414b06f-7c01-4540-8c85-87146061a56c",
     "sheet": "core",
@@ -546,8 +546,8 @@
     "value": "12pF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "XTAL_LOAD_P",
-      "2": "GND"
+      "2": "GND",
+      "1": "XTAL_LOAD_P"
     },
     "uuid": "4832c35a-0426-47fa-95bf-9ea99299fa9d",
     "sheet": "core",
@@ -561,8 +561,8 @@
     "value": "12pF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "XTAL_N",
-      "2": "GND"
+      "2": "GND",
+      "1": "XTAL_N"
     },
     "uuid": "f2663418-c785-4313-b74b-e0529cb49584",
     "sheet": "core",
@@ -576,23 +576,23 @@
     "value": "USB4105-GF-A",
     "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal",
     "nets": {
-      "A4": "VBUS_USB",
-      "A9": "VBUS_USB",
-      "B4": "VBUS_USB",
-      "B9": "VBUS_USB",
+      "A5": "CC1",
+      "B5": "CC2",
       "A1": "GND",
       "A12": "GND",
       "B1": "GND",
       "B12": "GND",
       "SH": "GND",
-      "A5": "CC1",
-      "B5": "CC2",
       "A6": "USB_D+",
       "B6": "USB_D+",
       "A7": "USB_D-",
       "B7": "USB_D-",
-      "A8": null,
-      "B8": null
+      "A4": "VBUS_USB",
+      "A9": "VBUS_USB",
+      "B4": "VBUS_USB",
+      "B9": "VBUS_USB",
+      "A8": "unconnected-(J1-SBU1-PadA8)",
+      "B8": "unconnected-(J1-SBU2-PadB8)"
     },
     "uuid": "02b232a8-807d-5357-be68-6944a72beadc",
     "sheet": "io",
@@ -636,12 +636,12 @@
     "value": "USBLC6-2SC6",
     "footprint": "Package_TO_SOT_SMD:SOT-23-6",
     "nets": {
-      "1": "USB_D+",
       "2": "GND",
+      "1": "USB_D+",
+      "6": "USB_D+",
       "3": "USB_D-",
       "4": "USB_D-",
-      "5": "VBUS_USB",
-      "6": "USB_D+"
+      "5": "VBUS_USB"
     },
     "uuid": "e23770ad-4d35-5758-8c0a-51e9669daa67",
     "sheet": "io",
@@ -649,66 +649,6 @@
     "dnp": false,
     "mpn": "USBLC6-2SC6",
     "note": ""
-  },
-  {
-    "ref": "R12",
-    "value": "22R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
-    "nets": {
-      "1": "USB_D-",
-      "2": "USB_MCU_D-"
-    },
-    "uuid": "22f2e7a6-60f8-57ba-acb8-8e0fca233bdd",
-    "sheet": "core",
-    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/22f2e7a6-60f8-57ba-acb8-8e0fca233bdd",
-    "dnp": false,
-    "mpn": "22R",
-    "note": ""
-  },
-  {
-    "ref": "R13",
-    "value": "22R",
-    "footprint": "Resistor_SMD:R_0402_1005Metric",
-    "nets": {
-      "1": "USB_D+",
-      "2": "USB_MCU_D+"
-    },
-    "uuid": "a5281d7b-6202-5c99-896a-fb973c2bfb9e",
-    "sheet": "core",
-    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/a5281d7b-6202-5c99-896a-fb973c2bfb9e",
-    "dnp": false,
-    "mpn": "22R",
-    "note": ""
-  },
-  {
-    "ref": "C27",
-    "value": "DNP",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
-    "nets": {
-      "1": "USB_MCU_D-",
-      "2": "GND"
-    },
-    "uuid": "e4a651e4-1d7b-55be-8b4f-981a7a4f9ed3",
-    "sheet": "core",
-    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/e4a651e4-1d7b-55be-8b4f-981a7a4f9ed3",
-    "dnp": true,
-    "mpn": "DNP",
-    "note": "EMI tuning option; leave open"
-  },
-  {
-    "ref": "C28",
-    "value": "DNP",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
-    "nets": {
-      "1": "USB_MCU_D+",
-      "2": "GND"
-    },
-    "uuid": "40d08fed-b48a-5115-baf8-61cd6784dbdd",
-    "sheet": "core",
-    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/40d08fed-b48a-5115-baf8-61cd6784dbdd",
-    "dnp": true,
-    "mpn": "DNP",
-    "note": "EMI tuning option; leave open"
   },
   {
     "ref": "D3",
@@ -745,11 +685,11 @@
     "value": "AP2112K-3.3",
     "footprint": "Package_TO_SOT_SMD:SOT-23-5",
     "nets": {
+      "5": "+3V3",
       "1": "+5V",
-      "2": "GND",
       "3": "+5V",
-      "4": null,
-      "5": "+3V3"
+      "2": "GND",
+      "4": "unconnected-(U2-NC-Pad4)"
     },
     "uuid": "1eabb228-a751-58d2-8ac5-c9a3915703d3",
     "sheet": "io",
@@ -793,8 +733,8 @@
     "value": "100nF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "VBUS_USB",
-      "2": "GND"
+      "2": "GND",
+      "1": "VBUS_USB"
     },
     "uuid": "af366a2a-d733-5bb2-8355-67ec7bd114ab",
     "sheet": "io",
@@ -868,8 +808,8 @@
     "value": "BOOT",
     "footprint": "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2",
     "nets": {
-      "1": "GPIO9_BOOT",
-      "2": "GND"
+      "2": "GND",
+      "1": "GPIO9_BOOT"
     },
     "uuid": "01117767-438d-56d6-82f5-c0f687f75905",
     "sheet": "core",
@@ -880,7 +820,7 @@
   },
   {
     "ref": "R9",
-    "value": "10k",
+    "value": "3.3k",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
       "1": "+3V3",
@@ -890,16 +830,16 @@
     "sheet": "core",
     "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/bd326c40-bf59-5fe6-860e-3e68009e8c6a",
     "dnp": false,
-    "mpn": "10k",
-    "note": ""
+    "mpn": "3.3k",
+    "note": "GPIO8 strapping pull-up; 3.3k to 3V3 per DevKitC-1 v1.4 R6"
   },
   {
     "ref": "R14",
     "value": "499R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "U0TXD_MCU",
-      "2": "U0TXD"
+      "2": "U0TXD",
+      "1": "U0TXD_MCU"
     },
     "uuid": "4191c86d-c261-50dd-a34a-10aa9a0e1adc",
     "sheet": "core",
@@ -913,18 +853,18 @@
     "value": "J2 GPIO / 2.00mm",
     "footprint": "Pico:PinHeader_1x12_P2.00mm_Compact",
     "nets": {
-      "1": "GND",
-      "2": "+3V3",
-      "3": "GPIO0",
-      "4": "GPIO1",
-      "5": "GPIO2",
-      "6": "GPIO3",
-      "7": "GPIO4",
-      "8": "GPIO5",
-      "9": "GPIO6",
-      "10": "GPIO7",
-      "11": "GPIO8",
-      "12": "GPIO9_BOOT"
+      "11": "+3V3",
+      "12": "GND",
+      "1": "GPIO2",
+      "2": "GPIO3",
+      "3": "GPIO4",
+      "4": "GPIO5",
+      "5": "GPIO6",
+      "6": "GPIO7",
+      "7": "GPIO8",
+      "8": "GPIO9_BOOT",
+      "9": "GPIO10",
+      "10": "GPIO11"
     },
     "uuid": "c2c23966-6c97-5604-ad42-9652a8e0d317",
     "sheet": "io",
@@ -938,18 +878,18 @@
     "value": "J3 GPIO / 2.00mm",
     "footprint": "Pico:PinHeader_1x12_P2.00mm_Compact",
     "nets": {
-      "1": "+5V",
-      "2": "GND",
-      "3": "GPIO10",
-      "4": "GPIO11",
-      "5": "GPIO15",
-      "6": "U0TXD",
-      "7": "U0RXD",
-      "8": "GPIO18",
-      "9": "GPIO19",
-      "10": "GPIO20",
-      "11": "GPIO22",
-      "12": "GPIO23"
+      "11": "+5V",
+      "12": "GND",
+      "2": "GPIO0",
+      "1": "GPIO1",
+      "3": "GPIO23",
+      "6": "GPIO19",
+      "7": "GPIO18",
+      "8": "U0TXD",
+      "9": "U0RXD",
+      "10": "GPIO15",
+      "5": "GPIO20",
+      "4": "GPIO22"
     },
     "uuid": "216401e0-be0f-5c4d-9e01-62c6185429aa",
     "sheet": "io",
@@ -959,41 +899,38 @@
     "note": ""
   },
   {
-    "ref": "U4",
-    "value": "SN74LV1T125",
-    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "ref": "D6",
+    "value": "1N4148WS",
+    "footprint": "Diode_SMD:D_SOD-323",
     "nets": {
-      "1": "GND",
-      "2": "GPIO21_LED",
-      "3": "GND",
-      "4": "LED_DATA_5V",
-      "5": "VBUS_USB"
+      "1": "GPIO8",
+      "2": "LED_DATA_5V"
     },
-    "uuid": "70f0be28-5501-5c4a-8311-5ff86561bd4a",
+    "uuid": "346fd8d4-e0bf-5bba-b649-5e847c6e1261",
     "sheet": "core",
-    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/70f0be28-5501-5c4a-8311-5ff86561bd4a",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/346fd8d4-e0bf-5bba-b649-5e847c6e1261",
     "dnp": false,
-    "mpn": "SN74LV1T125DBVR",
-    "note": ""
+    "mpn": "1N4148WS-7-F",
+    "note": "Silicon switching diode level shift: cathode to GPIO8, anode to the pulled-up WS2812B data node"
   },
   {
-    "ref": "R16",
-    "value": "100k",
+    "ref": "R19",
+    "value": "10k",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
-      "1": "GPIO21_LED",
-      "2": "GND"
+      "1": "VBUS_USB",
+      "2": "LED_DATA_5V"
     },
-    "uuid": "8baddcbc-e99f-5241-bf04-490b6cf56b14",
+    "uuid": "9939d7f4-0f14-507e-aae0-523a04fc4ec8",
     "sheet": "core",
-    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/8baddcbc-e99f-5241-bf04-490b6cf56b14",
+    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/9939d7f4-0f14-507e-aae0-523a04fc4ec8",
     "dnp": false,
-    "mpn": "100k",
-    "note": "Keep LED data low at reset"
+    "mpn": "10k",
+    "note": "WS2812B data pull-up to the USB 5 V rail"
   },
   {
     "ref": "R15",
-    "value": "330R",
+    "value": "0R",
     "footprint": "Resistor_SMD:R_0402_1005Metric",
     "nets": {
       "1": "LED_DATA_5V",
@@ -1003,18 +940,18 @@
     "sheet": "core",
     "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/7a09205f-ce48-5673-8685-91667730c61e",
     "dnp": false,
-    "mpn": "330R",
-    "note": ""
+    "mpn": "0R",
+    "note": "RGB data series link; 0R per DevKitC-1 v1.4 R17"
   },
   {
     "ref": "D2",
     "value": "WS2812B-2020",
-    "footprint": "Pico:WS2812B_2020_Compact",
+    "footprint": "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
     "nets": {
-      "1": null,
       "2": "GND",
       "3": "LED_DIN",
-      "4": "VBUS_USB"
+      "4": "VBUS_USB",
+      "1": "unconnected-(D2-DOUT-Pad1)"
     },
     "uuid": "f8e3faca-c211-41df-b6a4-850553b50ce5",
     "sheet": "core",
@@ -1028,8 +965,8 @@
     "value": "1uF",
     "footprint": "Capacitor_SMD:C_0402_1005Metric",
     "nets": {
-      "1": "VBUS_USB",
-      "2": "GND"
+      "2": "GND",
+      "1": "VBUS_USB"
     },
     "uuid": "8a5913d4-7a06-5baa-bca2-7ea3c1f567ba",
     "sheet": "core",
@@ -1037,20 +974,5 @@
     "dnp": false,
     "mpn": "1uF",
     "note": "At RGB VDD"
-  },
-  {
-    "ref": "C26",
-    "value": "100nF",
-    "footprint": "Capacitor_SMD:C_0402_1005Metric",
-    "nets": {
-      "1": "VBUS_USB",
-      "2": "GND"
-    },
-    "uuid": "854ec2fe-458a-51d2-affa-b00ab81672ce",
-    "sheet": "core",
-    "path": "/d29d372c-7a4c-447f-ba6c-21fb60482be4/854ec2fe-458a-51d2-affa-b00ab81672ce",
-    "dnp": false,
-    "mpn": "100nF",
-    "note": "At LV1T125 VCC"
   }
 ]

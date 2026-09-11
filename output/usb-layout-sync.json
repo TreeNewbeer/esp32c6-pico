@@ -1,0 +1,334 @@
+{
+  "date": "2026-09-10",
+  "description": "Synchronize the user-deleted USB resistors and capacitors with the PCB and route the data lines directly to the MCU.",
+  "input_backup": "tmp/usb-sync-20260910-143609/before",
+  "experiment_logs": "tmp/usb-sync-20260910-143609",
+  "scope": {
+    "retained_components": 60,
+    "retained_footprint_geometry_unchanged": true,
+    "removed_components": [
+      "C27",
+      "C28",
+      "R12",
+      "R13"
+    ],
+    "protected_non_usb_copper_items": 863,
+    "protected_copper_geometry_unchanged": true,
+    "outline_logos_and_zone_settings_unchanged": true,
+    "schematic_change_only_removes_two_obsolete_labels": true,
+    "no_signal_on_In1_Cu": true,
+    "tracks_vias_before": 937,
+    "tracks_vias_after": 919,
+    "vias_before": 123,
+    "vias_after": 122
+  },
+  "routing_changes": {
+    "removed_components": [
+      "C27",
+      "C28",
+      "R12",
+      "R13"
+    ],
+    "removed_track_uuids": [
+      "01464f6a-2b4e-4b2d-add4-74f0e48eee4b",
+      "7006a3f9-d3ed-4ea8-a529-6e38ae6372f8",
+      "df6ebff8-5f7b-48ea-8a83-82fc3bebe6c9",
+      "57b8d990-806c-43f5-b6c0-810c1cb81e19",
+      "736e62a2-5427-4e97-8296-3ec8ff69b07a",
+      "7935afb7-021f-40b0-bde2-a1ecc8ca9849",
+      "bef72e18-4061-4111-b4bd-2a58bda34049",
+      "c8db3440-bdbe-4dda-9808-aab6a2134275",
+      "f118f418-0c0d-4a43-a7ec-1e6fb75ebc6d",
+      "f1cf0aa6-0720-4345-b754-0ba6de91fd63",
+      "f53320e5-5ce8-481d-8bc2-cd0f219077fb",
+      "2938542f-7b6a-4cf0-bddd-db4ed9b88aea",
+      "17176e43-79b2-46c5-8303-442486c48291",
+      "48f2fc9e-8d07-4208-9d39-bbb67c0fc510",
+      "6044d5f3-b324-4e01-9388-3c6c5c0ca188",
+      "37af6d7c-36b1-4228-ad87-088adcc8d08b",
+      "54e6bc05-3239-4837-b55d-a0dabbc6d34b",
+      "77e5958d-fbeb-49d0-8267-db3aeee8269a",
+      "b9ba052b-943f-4eea-b5d1-99f0ee3e49e2",
+      "f479547b-67af-469e-9bbb-16d92130814c",
+      "7e5d63ff-4848-4eb6-8699-33d089686237",
+      "b049b0eb-5a7e-4c76-8f26-9ff7a9545fca",
+      "b8e274e3-041b-4a8f-90ce-3ab382b20e0f",
+      "faad3698-ee5e-411d-b670-b97f42464586",
+      "7f404bdb-7604-403f-800d-c9e4cc7ed799",
+      "010be757-7a62-46bb-8b7b-41cef0a31d9c",
+      "11fa60a4-695a-4ca9-b2fa-1a647572cb8c",
+      "48dd222c-dc2f-49ac-80ad-654e4c064b33",
+      "8ca3c7b8-e8b5-4a56-89bf-f95b61758caa"
+    ],
+    "new_front_paths_mm": {
+      "USB_D-": [
+        [
+          106.5625,
+          118.0
+        ],
+        [
+          104.37,
+          118.0
+        ],
+        [
+          103.51,
+          118.86
+        ],
+        [
+          103.51,
+          122.72
+        ],
+        [
+          103.420581,
+          122.809419
+        ],
+        [
+          103.420581,
+          122.968737
+        ]
+      ],
+      "USB_D+": [
+        [
+          106.5625,
+          118.4
+        ],
+        [
+          104.48,
+          118.4
+        ],
+        [
+          103.76,
+          119.12
+        ],
+        [
+          103.76,
+          123.03
+        ]
+      ]
+    }
+  },
+  "additional_repairs": {
+    "restored_symbol_paths": [
+      "C10",
+      "L1",
+      "R11",
+      "J1",
+      "C5",
+      "C11",
+      "C9",
+      "R10",
+      "C14",
+      "R6",
+      "C4",
+      "Y1",
+      "C20",
+      "AE1",
+      "D1",
+      "SW2",
+      "C19",
+      "C2",
+      "C3",
+      "L3",
+      "C17",
+      "C13",
+      "C16",
+      "R9",
+      "R16",
+      "C15",
+      "D2",
+      "R18",
+      "C18",
+      "SW1",
+      "C7",
+      "R15",
+      "C26",
+      "C23",
+      "U1",
+      "D3",
+      "U4",
+      "L2",
+      "U2",
+      "R7",
+      "D5",
+      "C6",
+      "U3",
+      "R3",
+      "R1",
+      "C8",
+      "R8",
+      "R14",
+      "J2",
+      "C21",
+      "R2",
+      "C24",
+      "C22",
+      "C12",
+      "R4",
+      "R17",
+      "C25",
+      "D4",
+      "J3",
+      "R5"
+    ],
+    "explicit_tenting": [
+      {
+        "uuid": "5474e0aa-49f0-430f-bfcb-5aecccf615c8",
+        "position_mm": [
+          102.24,
+          112.82
+        ]
+      },
+      {
+        "uuid": "6e59aae6-cef1-4521-bd32-c59aacef71f1",
+        "position_mm": [
+          104.58,
+          119.52
+        ]
+      },
+      {
+        "uuid": "566edc9b-17c6-40d9-aa23-babd27d897b6",
+        "position_mm": [
+          106.5,
+          125.01
+        ]
+      },
+      {
+        "uuid": "e2fee235-a983-4af4-b331-14710ea718ca",
+        "position_mm": [
+          106.5,
+          123.89
+        ]
+      }
+    ],
+    "ground_stitch": {
+      "position_mm": [
+        105.175,
+        122.495
+      ],
+      "pad": "U3.4",
+      "path_mm": [
+        [
+          105.125,
+          122.995
+        ],
+        [
+          105.175,
+          122.945
+        ],
+        [
+          105.175,
+          122.495
+        ]
+      ]
+    }
+  },
+  "preserved_input_files": [
+    "power-io.kicad_sch",
+    "esp32-c6-pico.kicad_pro",
+    "esp32-c6-pico.kicad_dru",
+    "output/power-passives.csv"
+  ],
+  "baseline_after_refill": {
+    "erc_violations": 2,
+    "drc_violations": 0,
+    "unconnected_items": 1,
+    "schematic_parity_issues": 6,
+    "qa_passed": 40,
+    "qa_total": 52,
+    "qa_uses_input_checks_before_usb_topology_update": true,
+    "report": "tmp/usb-sync-20260910-143609/baseline/output"
+  },
+  "final": {
+    "erc_violations": 0,
+    "drc_violations": 0,
+    "unconnected_items": 0,
+    "schematic_parity_issues": 0,
+    "footprints": 60,
+    "populated": 56,
+    "qa_passed": 48,
+    "qa_total": 52,
+    "qa_all_passed": false,
+    "remaining_checks": [
+      {
+        "check": "At least nine ground vias under the MCU EPAD",
+        "passed": false,
+        "detail": 7
+      },
+      {
+        "check": "Antenna-side series components share a straight axis",
+        "passed": false,
+        "detail": [
+          113.28,
+          115.48,
+          116.12
+        ]
+      },
+      {
+        "check": "Antenna-to-crystal body gap meets the 8.5 mm project target",
+        "passed": false,
+        "detail": 5.07
+      },
+      {
+        "check": "Only the nine MCU filled/capped thermal vias remain in SMD pads",
+        "passed": false,
+        "detail": 7
+      }
+    ],
+    "new_failed_checks": []
+  },
+  "usb_path_lengths": {
+    "A": {
+      "D+_mm": 25.8019,
+      "D-_mm": 26.2279,
+      "skew_mm": 0.426
+    },
+    "B": {
+      "D+_mm": 24.4736,
+      "D-_mm": 23.1515,
+      "skew_mm": 1.3221
+    }
+  },
+  "usb_length_method": "Copper centerline plus nominal via barrel; excludes device internals and cable",
+  "usb_vias_per_data_net": 2,
+  "removed_capacitor_branch_vias": 2,
+  "added_ground_stitch_vias": 1,
+  "current_input_differs_from_previous_handoff": true,
+  "schematic_template_updated_without_regenerating_schematic": true,
+  "physical_usb_and_rf_tests_performed": false,
+  "hashes": {
+    "esp32-c6-pico.kicad_pcb": "f307e750384d8b2474840aaa13b66eed2a0e5847684028080cc02f2f2ceac2aa",
+    "esp32-c6-pico.kicad_sch": "ffa0dbd94bc785acbf40cd80b0f98cd9214cc0f892f9bdb19aa37197bcdaa943",
+    "power-io.kicad_sch": "41cc053138c1837bda3e9897935ff452f72a95e8f9b5691cd83eeba6f4ee9766",
+    "esp32-c6-pico.kicad_pro": "6af5aef094140fde2ddd7dcb2117a0f6aa4f4cd631c565d857e1fc88aabfc4ef",
+    "esp32-c6-pico.kicad_dru": "0a899caf5014df4439119ce969edeeac7c1f1df3d60aa6657820cf0b78e6ae9a",
+    "design-spec.json": "e4d44cc3363c8dcc834e745a3cad0536fd8e0c3f97a75928fe29928e60533c97",
+    "output/netlist.xml": "634cbe7e9442dc7d89bd56bcf329298daea08c56042f78b199c6ffa991f29606",
+    "output/erc.json": "38e6ba3e05af4d5ff8525b736a0c3dca990f305292cd33d878bd70f4f46ec615",
+    "output/drc-final.json": "0f0821d92a25e62044b0317434d6585ccd121c9e20c71a22c573c07384d84dbc",
+    "output/qa.json": "ac7c432edc838e5d602e64e626da0b6a5d6c4550e852192ce77ef4966be7291f",
+    "output/bom.csv": "cce74ea4d142fcf7c851befe6d2080ff541681513484fbd394f828b2a16ad705",
+    "output/placement.csv": "d549b8d219571998f2c25c2043c671170005d185db4231ab559713acf796fd21",
+    "output/passive-packages.csv": "c1c98128e759319600e001b1f069060bc2025a9dc8d801fb14393493832d512d",
+    "tools/verify_design.py": "e21a8b08bea605c929bfb752338df9634a1e02acf36e1c6ec183a3bc3cb1e51d",
+    "tools/verify_schematic_wiring.py": "9e23415137d1eebf73cf3a3853a9b741822b7c6bb486910641c8a74c4a215953",
+    "tools/redraw_schematic.py": "eea9cd5378b0a76fb020c221ea549ed79375188b702fff4f0f4667d4d17ef40a"
+  },
+  "preview_files": [
+    "output/pcb-front.png",
+    "output/pcb-back.png",
+    "output/assembly-front.png",
+    "output/assembly-back.png",
+    "output/board-3d-top.png",
+    "output/board-3d-bottom.png"
+  ],
+  "artifact_validation": {
+    "bom_count": 60,
+    "placement_count": 56,
+    "passive_count": 41,
+    "valid_svg_files": 6,
+    "valid_png_files": 8,
+    "document_links_valid": true,
+    "pcb_hash_matches_qa": true,
+    "preview_visual_review": "Front copper, bottom 3D and main schematic reviewed after export."
+  }
+}

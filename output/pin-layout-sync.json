@@ -1,0 +1,203 @@
+{
+  "date": "2026-09-10",
+  "description": "Synchronize all 24 header pins with the user-edited schematic and finish local routing without moving components.",
+  "input_backup": "tmp/pin-sync-20260910-132338/before",
+  "experiment_logs": "tmp/pin-sync-20260910-132338",
+  "scope": {
+    "footprints_preserved": 64,
+    "footprint_changes": [],
+    "protected_copper_items_preserved": 377,
+    "protected_net_names": [
+      "ANT_FEED",
+      "CC1",
+      "CC2",
+      "CHIP_EN",
+      "GPIO21_LED",
+      "LED_DATA_5V",
+      "LED_DIN",
+      "RF_50",
+      "RF_CHIP",
+      "RF_MID",
+      "SPI_CLK",
+      "SPI_CLK_MCU",
+      "SPI_CS",
+      "SPI_CS_MCU",
+      "SPI_D",
+      "SPI_D_MCU",
+      "SPI_HD",
+      "SPI_HD_MCU",
+      "SPI_Q",
+      "SPI_Q_MCU",
+      "SPI_WP",
+      "SPI_WP_MCU",
+      "U0TXD_MCU",
+      "USB_D+",
+      "USB_D-",
+      "USB_MCU_D+",
+      "USB_MCU_D-",
+      "V3A",
+      "VBUS_USB",
+      "VDD_SPI",
+      "XTAL_LOAD_P",
+      "XTAL_N",
+      "XTAL_P"
+    ],
+    "zones_and_keepouts_unchanged": true,
+    "outline_and_logo_graphics_unchanged": true,
+    "no_signal_on_In1_Cu": true,
+    "tracks_vias_before": 1101,
+    "tracks_vias_after": 1011,
+    "vias_before": 122,
+    "vias_after": 130,
+    "changed_copper_net_names": [
+      "+3V3",
+      "+5V",
+      "GND",
+      "GPIO0",
+      "GPIO1",
+      "GPIO10",
+      "GPIO11",
+      "GPIO15",
+      "GPIO18",
+      "GPIO19",
+      "GPIO2",
+      "GPIO20",
+      "GPIO22",
+      "GPIO23",
+      "GPIO3",
+      "GPIO4",
+      "GPIO5",
+      "GPIO6",
+      "GPIO7",
+      "GPIO8",
+      "GPIO9_BOOT",
+      "U0RXD",
+      "U0TXD"
+    ]
+  },
+  "schematic_project_rules_bom_unchanged": [
+    "esp32-c6-pico.kicad_sch",
+    "power-io.kicad_sch",
+    "esp32-c6-pico.kicad_pro",
+    "esp32-c6-pico.kicad_dru",
+    "output/bom.csv"
+  ],
+  "placement_csv_refreshed": true,
+  "header_pins": {
+    "J2": {
+      "1": "GPIO2",
+      "2": "GPIO3",
+      "3": "GPIO4",
+      "4": "GPIO5",
+      "5": "GPIO6",
+      "6": "GPIO7",
+      "7": "GPIO8",
+      "8": "GPIO9_BOOT",
+      "9": "GPIO10",
+      "10": "GPIO11",
+      "11": "+3V3",
+      "12": "GND"
+    },
+    "J3": {
+      "1": "GPIO1",
+      "2": "GPIO0",
+      "3": "GPIO15",
+      "4": "U0TXD",
+      "5": "U0RXD",
+      "6": "GPIO18",
+      "7": "GPIO19",
+      "8": "GPIO20",
+      "9": "GPIO22",
+      "10": "GPIO23",
+      "11": "+5V",
+      "12": "GND"
+    }
+  },
+  "gpio5": {
+    "from": "U1.11",
+    "to": "J2.4",
+    "connected": true,
+    "trace_width_mm": 0.15
+  },
+  "baseline_after_refill": {
+    "drc_violations": 1,
+    "unconnected_items": 5,
+    "schematic_parity_issues": 24,
+    "qa_passed": 41,
+    "qa_total": 52,
+    "report": "tmp/pin-sync-20260910-132338/baseline/output"
+  },
+  "final": {
+    "erc_violations": 0,
+    "drc_violations": 0,
+    "unconnected_items": 0,
+    "schematic_parity_issues": 0,
+    "qa_passed": 48,
+    "qa_total": 52,
+    "qa_all_passed": false,
+    "remaining_checks": [
+      {
+        "check": "At least nine ground vias under the MCU EPAD",
+        "passed": false,
+        "detail": 7
+      },
+      {
+        "check": "Antenna-side series components share a straight axis",
+        "passed": false,
+        "detail": [
+          113.28,
+          115.48,
+          116.12
+        ]
+      },
+      {
+        "check": "Antenna-to-crystal body gap meets the 8.5 mm project target",
+        "passed": false,
+        "detail": 5.07
+      },
+      {
+        "check": "Only the nine MCU filled/capped thermal vias remain in SMD pads",
+        "passed": false,
+        "detail": 7
+      }
+    ],
+    "new_failed_checks": []
+  },
+  "additional_repairs": [
+    "Reconnected the already-open C8/C9/C10 3V3 branch.",
+    "Restored 64 empty PCB symbol paths from the latest schematic.",
+    "Added four ground stitching vias for surface ground regions at D2.2, C14.2, Y1.2 and U4.3.",
+    "Set the existing VBUS_USB via at (113.825, 121.780854) mm explicitly tented on both faces."
+  ],
+  "hashes": {
+    "esp32-c6-pico.kicad_pcb": "428d4e0ee14f8b8d46eccb039e26dfb52c0f56b515fcff9128c103aa4112c6d8",
+    "esp32-c6-pico.kicad_pro": "6af5aef094140fde2ddd7dcb2117a0f6aa4f4cd631c565d857e1fc88aabfc4ef",
+    "esp32-c6-pico.kicad_sch": "aa6a81456e2bfe91571facd4e438a14f784fbefba8647c0946d9550d8a359943",
+    "power-io.kicad_sch": "41cc053138c1837bda3e9897935ff452f72a95e8f9b5691cd83eeba6f4ee9766",
+    "esp32-c6-pico.kicad_dru": "0a899caf5014df4439119ce969edeeac7c1f1df3d60aa6657820cf0b78e6ae9a",
+    "design-spec.json": "e5e086e84c92c94cc04ae38cdda18b40d5e21504391ac80c42f8e22381266073",
+    "output/netlist.xml": "32a1d543c8b07af91337d9d2bc5dc6247097f07795adfad9adb720a927f65493",
+    "output/erc.json": "4320fd2bf3792a841ea170df8dec9b8eafd676ffdfe170df6fc9ac5a137831f4",
+    "output/drc-final.json": "23fb922d6f2b6d9c0f40deb2cb999d2d8c71a63e9aad16e77ec68029eb63c80d",
+    "output/qa.json": "c34996145a1c4420d313f3faeb25e6aa27c41b71877e492dd107747c61cf1bd1"
+  },
+  "placement_export_catches_preexisting_input_moves": [
+    "C9",
+    "C10"
+  ],
+  "final_artifact_checks": {
+    "schematic_inputs_preserved": true,
+    "pcb_hash_matches_qa": true,
+    "current_document_links_valid": true,
+    "svg_files_valid": 6,
+    "png_files_crc_and_data_valid": 8,
+    "placement_count": 58,
+    "bom_unchanged": true
+  },
+  "preview_files": [
+    "output/pcb-front.png",
+    "output/pcb-back.png",
+    "output/board-3d-top.png",
+    "output/board-3d-bottom.png"
+  ]
+}

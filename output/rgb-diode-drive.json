@@ -1,0 +1,248 @@
+{
+  "date": "2026-09-10",
+  "description": "Replace the SN74LV1T125 RGB buffer with the Espressif DevKitC-1 diode plus 5 V pull-up level shift.",
+  "requested_by": "User: match the official schematic, which drives the WS2812B with a 1N4148W and a 5 V pull-up.",
+  "reference": {
+    "schematic": "docs/esp32-c6-devkitc-1-schematics_v1.4.pdf page 2",
+    "official_parts": {
+      "diode": "D11 1N4148W",
+      "pull_up": "R29 10 kohm to VCC_5V",
+      "series": "R17 0 ohm"
+    },
+    "diode_datasheet": "https://www.diodes.com/assets/Datasheets/1N4148WS_BAV16WS.pdf"
+  },
+  "input_backup": "esp32-c6-pico-backups/esp32-c6-pico-2026-09-10_173145-pre-rgb-diode.zip",
+  "experiment_logs": "tmp/led-diode",
+  "scope": {
+    "removed_components": [
+      "U4 (SN74LV1T125, SOT-23-5)",
+      "R16 (100k GPIO21 pull-down)",
+      "C26 (100nF buffer VCC decoupling)"
+    ],
+    "added_components": [
+      "D6 (1N4148WS, Diode_SMD:D_SOD-323)",
+      "R19 (10k, Resistor_SMD:R_0402_1005Metric)"
+    ],
+    "moved_components": [
+      "R15 330R front side, 111.00/122.75 mm -> 116.12/122.15 mm, next to the D2 DIN pad"
+    ],
+    "unchanged_components": [
+      "D2 WS2812B-2020",
+      "C25 1uF at the LED supply",
+      "all other footprints keep position, angle and side"
+    ],
+    "net_names_unchanged": [
+      "GPIO21_LED",
+      "LED_DATA_5V",
+      "LED_DIN",
+      "VBUS_USB"
+    ],
+    "footprints_before": 60,
+    "footprints_after": 59,
+    "populated_before": 56,
+    "populated_after": 55,
+    "tracks_before": 613,
+    "tracks_after": 591,
+    "vias_before": 96,
+    "vias_after": 95,
+    "courtyard_area_freed_mm2": 10.01,
+    "board_outline_unchanged": true,
+    "zone_settings_unchanged": true,
+    "stackup_unchanged": true
+  },
+  "topology": {
+    "chain": "U1.34 (GPIO21) -> D6 cathode; D6 anode = LED_DATA_5V; R19 10k from LED_DATA_5V to VBUS_USB; R15 330R to LED_DIN; D2.3 DIN",
+    "led_supply": "VBUS_USB (raw USB 5 V, ahead of the D5 backfeed diode) as before",
+    "data_node_members": 3,
+    "placement": {
+      "D6": {
+        "side": "B.Cu",
+        "position_mm": [
+          113.9434,
+          119.4
+        ],
+        "rotation_deg": 0.0,
+        "pads": {
+          "1": [
+            112.8934,
+            119.4,
+            "GPIO21_LED"
+          ],
+          "2": [
+            114.9934,
+            119.4,
+            "LED_DATA_5V"
+          ]
+        }
+      },
+      "R19": {
+        "side": "F.Cu",
+        "position_mm": [
+          115.65,
+          120.6
+        ],
+        "rotation_deg": 90.0,
+        "pads": {
+          "1": [
+            115.65,
+            121.11,
+            "VBUS_USB"
+          ],
+          "2": [
+            115.65,
+            120.09,
+            "LED_DATA_5V"
+          ]
+        }
+      },
+      "R15": {
+        "side": "F.Cu",
+        "position_mm": [
+          116.12,
+          122.15
+        ],
+        "rotation_deg": 180.0,
+        "pads": {
+          "1": [
+            116.63,
+            122.15,
+            "LED_DATA_5V"
+          ],
+          "2": [
+            115.61,
+            122.15,
+            "LED_DIN"
+          ]
+        }
+      },
+      "D2": {
+        "side": "F.Cu",
+        "position_mm": [
+          113.5,
+          121.8
+        ],
+        "rotation_deg": 0.0,
+        "pads": {
+          "1": [
+            112.585,
+            121.25,
+            "unconnected-(D2-DOUT-Pad1)"
+          ],
+          "2": [
+            112.585,
+            122.35,
+            "GND"
+          ],
+          "3": [
+            114.415,
+            122.35,
+            "LED_DIN"
+          ],
+          "4": [
+            114.415,
+            121.25,
+            "VBUS_USB"
+          ]
+        }
+      }
+    }
+  },
+  "signal_levels": {
+    "method": "Hand calculation from the 1N4148WS datasheet limits and the WS2812B 0.7/0.3 x VDD thresholds; not measured on hardware.",
+    "high_level_v": "GPIO 3.3 V + VF(about 0.55-0.65 V at roughly 0.11 mA) = about 3.85-3.95 V versus VIH 3.5 V at VDD 5.0 V",
+    "low_level_v": "VOL(about 0.1 V) + VF(about 0.6 V) = about 0.7 V versus VIL 1.5 V at VDD 5.0 V",
+    "pull_up_current_ma": 0.44,
+    "rise_time_estimate_ns": "about 105 ns to cross VIH with 10 kohm and roughly 10 pF",
+    "gpio_clamp_note": "With GPIO21 high impedance the pull-up drives the node through the ESP32 ESD clamp at about 50 uA, the same as the official board.",
+    "not_verified": [
+      "No powered board test",
+      "No oscilloscope capture of the WS2812B timing",
+      "No thermal or RF measurement"
+    ]
+  },
+  "baseline_after_refill": {
+    "note": "Committed board with zones refilled, before the RGB change",
+    "drc_violations": 5,
+    "unconnected_items": 9,
+    "schematic_parity_issues": 0,
+    "qa_passed": 44,
+    "qa_total": 52,
+    "failed_checks": [
+      "Antenna-side series components share a straight axis",
+      "Antenna-to-crystal body gap meets the 8.5 mm project target",
+      "At least nine ground vias under the MCU EPAD",
+      "Crystal and load-capacitor ground pads have a ground via within 1 mm",
+      "KiCad DRC has no violations",
+      "KiCad PCB has no unconnected items",
+      "Only the nine MCU filled/capped thermal vias remain in SMD pads",
+      "Ordinary vias explicitly specify tenting on both sides"
+    ],
+    "report": "tmp/led-diode/base/out"
+  },
+  "final": {
+    "erc_violations": 0,
+    "drc_violations": 5,
+    "unconnected_items": 9,
+    "schematic_parity_issues": 0,
+    "qa_passed": 45,
+    "qa_total": 53,
+    "qa_all_passed": false,
+    "failed_checks": [
+      "Antenna-side series components share a straight axis",
+      "Antenna-to-crystal body gap meets the 8.5 mm project target",
+      "At least nine ground vias under the MCU EPAD",
+      "Crystal and load-capacitor ground pads have a ground via within 1 mm",
+      "KiCad DRC has no violations",
+      "KiCad PCB has no unconnected items",
+      "Only the nine MCU filled/capped thermal vias remain in SMD pads",
+      "Ordinary vias explicitly specify tenting on both sides"
+    ],
+    "new_failed_checks": [],
+    "new_drc_violations": 0,
+    "new_unconnected_items": 0,
+    "remaining_items_belong_to": "The unfinished J3 header rerouting already present in the committed board (7 header nets, 3 untented vias, one +3V3 clearance pair) plus the four long-standing geometry targets."
+  },
+  "artifact_validation": {
+    "bom_count": 59,
+    "placement_count": 55,
+    "passive_count": 40,
+    "power_passive_count": 23,
+    "previews_regenerated": [
+      "output/pcb-front.svg",
+      "output/pcb-front.png",
+      "output/pcb-back.svg",
+      "output/pcb-back.png",
+      "output/assembly-front.svg",
+      "output/assembly-front.png",
+      "output/assembly-back.svg",
+      "output/assembly-back.png",
+      "output/board-3d-top.png",
+      "output/board-3d-bottom.png"
+    ],
+    "comparison_figure": [
+      "output/rgb-diode-comparison.png",
+      "output/rgb-diode-comparison.svg"
+    ],
+    "placement_csv_was_stale": "The committed placement.csv predated the user C13/R9/R14 moves; it is regenerated from the current PCB.",
+    "preview_visual_review": "Front and back copper, both assembly views, the bottom 3D render and the main schematic page were reviewed after export."
+  },
+  "hashes": {
+    "esp32-c6-pico.kicad_pcb": "bc061044d59642e468ef7e59b64e9c8f5425d0f8b0af6f89200c4a0a3cc83957",
+    "esp32-c6-pico.kicad_sch": "3a936e404f3848b8928c10a6708219f2e0721e1e93b5f6a0d61d01f39229a139",
+    "power-io.kicad_sch": "41cc053138c1837bda3e9897935ff452f72a95e8f9b5691cd83eeba6f4ee9766",
+    "esp32-c6-pico.kicad_pro": "6af5aef094140fde2ddd7dcb2117a0f6aa4f4cd631c565d857e1fc88aabfc4ef",
+    "esp32-c6-pico.kicad_dru": "0a899caf5014df4439119ce969edeeac7c1f1df3d60aa6657820cf0b78e6ae9a",
+    "design-spec.json": "8d893ba0e023385bda4e4ba2e8e2d225bb7789548ddecf34477801d27dadcfe6",
+    "libs/Pico_Design.kicad_sym": "3273eef9871108d8f26cd4fd99fc094d228ef7b5ed5046c49bc31f9623b292ba",
+    "output/netlist.xml": "8574463e3565d700d348bd22f880d76996cfc9567386e866c2ac78d498055f27",
+    "output/erc.json": "a7219eb166c6f0b178f5bf8d83dd4bb37e923579cdd75531a9fd33a2788b36d6",
+    "output/drc-final.json": "0bdc4339a0d449d356ee397d2fab0b1566651b5b7e567efd214c551139f9e1f4",
+    "output/qa.json": "016fc499778108153b3e254483143b54cad77ad14a6b4d33d03293984fc7a4db",
+    "output/bom.csv": "25a40130090fa41554ad92cf7d8cbba35258f2b0a61aa28a975f691a51634603",
+    "output/placement.csv": "9b70c046c697f274efb19f720fcff11da106d7b5c8e8f23004ab3ea9aea08f67",
+    "output/passive-packages.csv": "f82be48535cdbab538a312a9d983f2dd21da7e5ebe37a6b255d021e51cb0907b",
+    "output/power-passives.csv": "05d5c0bbdfcd5071a8ce61cf716509157fdd281b836e73d9b8888e8f84a2aefd",
+    "tools/verify_design.py": "17644f40e51fe063879253e5c19794dc5144ea255c78f6cce496f9301667bbbc",
+    "tools/verify_schematic_wiring.py": "784ccb00187a4e0a40017d21ca48e80c3ce705812f6cc6850d686924e8f9e1c3"
+  }
+}

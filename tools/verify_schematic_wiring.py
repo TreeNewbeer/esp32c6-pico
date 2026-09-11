@@ -20,6 +20,9 @@ def audit(root):
     for wire in children(doc,'wire'):
         a,b=[point(q[1:]) for q in children(child(wire,'pts'),'xy')]
         wires.append((a,b));points.update((a,b))
+    usb_labels={net:[point(child(label,'at')[1:3]) for label in children(doc,'global_label')
+                     if label[1]==net] for net in ['USB_D-','USB_D+']}
+    for locations in usb_labels.values():points.update(locations)
     def find(q):
         parents.setdefault(q,q)
         if parents[q]!=q:parents[q]=find(parents[q])
@@ -36,12 +39,16 @@ def audit(root):
               ('R8','2','U1','15'),('SW2','1','U1','15'),('R9','2','U1','14'),
               ('C7','1','U1','23'),('U3','8','U1','23'),('C6','1','U3','8'),
               ('Y1','1','R18','2'),('Y1','3','U1','38'),('R18','1','U1','39'),('C5','1','U1','38'),
-              ('R12','2','U1','18'),('C27','1','U1','18'),('R13','2','U1','19'),('C28','1','U1','19'),
-              ('R14','1','U1','29'),('R16','1','U1','34'),('U4','2','U1','34'),('R15','2','D2','3'),('R15','1','U4','4'),
+              ('R14','1','U1','29'),('D6','1','U1','14'),('R19','2','D6','2'),('R15','1','D6','2'),('R15','2','D2','3'),
               ('C3','1','U1','1'),('L1','1','U1','1')]
     for ref,mcu,flash in [('R17','20','1'),('R1','21','2'),('R2','22','3'),('R3','24','7'),('R4','25','6'),('R5','26','5')]:
         required.extend([(ref,'1','U1',mcu),(ref,'2','U3',flash)])
     checks=[dict(from_pin=f'{r}.{n}',to_pin=f'{s}.{m}',connected=(r,n) in pins and (s,m) in pins and find(pins[r,n])==find(pins[s,m])) for r,n,s,m in required]
+    # A cross-sheet label is an endpoint; matching label names never add graph edges.
+    for pin,net in [('18','USB_D-'),('19','USB_D+')]:
+        checks.append(dict(from_pin=f'U1.{pin}',to_label=net,
+            connected=('U1',pin) in pins and bool(usb_labels[net])
+            and all(find(pins['U1',pin])==find(q) for q in usb_labels[net])))
     return dict(all_passed=all(c['connected'] for c in checks),connections=checks,
                 method='Visible wires only; labels and power-symbol aliases are not electrical edges')
 

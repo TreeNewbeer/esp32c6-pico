@@ -77,10 +77,10 @@ def reshape(ref,center,box,positions,aliases=None):
     sym.extend([graphics,unit])
 
 MC=(260.35,223.52);MB=(223.52,97.79,297.18,349.25)
-mp={str(n):(218.44,y,0) for n,y in [(2,121.92),(3,132.08),(5,157.48),(28,177.8),(37,198.12),(40,218.44),(4,241.3),(14,261.62),(15,281.94),(39,309.88),(38,330.2)]}
+mp={str(n):(218.44,y,0) for n,y in [(2,121.92),(3,132.08),(5,157.48),(28,177.8),(37,198.12),(40,218.44),(4,241.3),(34,261.62),(15,281.94),(39,309.88),(38,330.2)]}
 spi=[('R17','20','1','CS'),('R1','21','2','Q'),('R2','22','3','WP'),('R3','24','7','HD'),('R4','25','6','CLK'),('R5','26','5','D')]
 for i,(_,n,_,_) in enumerate(spi):mp[n]=(302.26,114.3+i*5.08,180)
-for n,y in [(18,165.1),(19,185.42),(29,213.36),(30,223.52),(34,241.3)]:mp[str(n)]=(302.26,y,180)
+for n,y in [(18,165.1),(19,185.42),(29,213.36),(30,223.52),(14,241.3)]:mp[str(n)]=(302.26,y,180)
 gpio=[6,7,8,9,10,11,12,13,16,17,27,31,32,33,35,36]
 for i,n in enumerate(gpio):mp[str(n)]=(302.26,266.7+i*5.08,180)
 mp.update({'1':(241.3,92.71,270),'23':(279.4,92.71,270),'41':(260.35,354.33,90)})
@@ -96,9 +96,6 @@ reshape('U3',(440.69,127),(419.1,102.87,462.28,151.13),fp,
 reshape('D4',(134.62,87.63),(125.73,77.47,144.78,97.79),
         {'1':(120.65,90.17,0),'6':(120.65,90.17,0),'3':(120.65,82.55,0),'4':(120.65,82.55,0),'5':(137.16,72.39,270),'2':(137.16,102.87,90)},
         {'1':'D+ (1,6)','6':'D+','3':'D- (3,4)','4':'D-'})
-reshape('U4',(416.56,241.3),(408.94,233.68,424.18,248.92),
-        {'1':(419.1,254,90),'2':(403.86,241.3,0),'3':(414.02,254,90),'4':(429.26,241.3,180),'5':(416.56,228.6,270)},
-        {'1':'~{OE}','2':'A','3':'GND','4':'Y','5':'VCC'})
 
 def symbol(ref,x,y,angle=0,sheet='core'):
     assert ref not in PLACED,ref
@@ -212,7 +209,7 @@ text('core','EN delay and RESET',96.52,226.06,1.778)
 symbol('R7',175.26,233.68);symbol('C21',187.96,248.92);symbol('SW1',154.94,248.92,270)
 line('core','CHIP_EN',P('U1',4),(154.94,241.3),P('SW1',1));line('core','CHIP_EN',P('R7',2),(175.26,241.3));line('core','CHIP_EN',(187.96,241.3),P('C21',1))
 power('core','+3V3',P('R7',1));ground('core',P('C21',2));ground('core',P('SW1',2));netlabel('core','CHIP_EN',207.01,241.3)
-symbol('R9',207.01,254);line('core','GPIO8',P('R9',2),(207.01,261.62),P('U1',14));power('core','+3V3',P('R9',1));glabel('core','GPIO8',210.82,261.62,180)
+nc('core',P('U1',34))  # GPIO21 is unused; GPIO8 drives RGB on the right.
 text('core','BOOT: GPIO8 high, GPIO9 low at reset',96.52,269.24,1.524)
 symbol('R8',175.26,274.32);symbol('SW2',187.96,289.56,270)
 line('core','GPIO9_BOOT',P('R8',2),(175.26,281.94),P('U1',15));line('core','GPIO9_BOOT',(187.96,281.94),P('SW2',1))
@@ -240,21 +237,19 @@ for ref in ['C6','C7']:ground('core',P(ref,2))
 line('core','GND',P('U3',4),(438.15,161.29),(440.69,161.29));ground('core',(440.69,161.29))
 
 text('core','Native USB Serial/JTAG / connector and TVS on sheet 2',327.66,154.94,1.778)
-for r,c,n,y,net in [('R12','C27',18,165.1,'USB_D-'),('R13','C28',19,185.42,'USB_D+')]:
-    symbol(r,370.84,y,270);symbol(c,342.9,y+5.08)
-    m='USB_MCU_D'+net[-1];line('core',m,P('U1',n),P(r,2));line('core',m,(342.9,y),P(c,1));ground('core',P(c,2))
-    line('core',net,P(r,1),(400.05,y));glabel('core',net,400.05,y,0);glabel('core',m,322.58,y,180)
+for n,y,x,net in [(18,165.1,336.55,'USB_D-'),(19,185.42,335.28,'USB_D+')]:
+    line('core',net,P('U1',n),(x,y));glabel('core',net,x,y,0)
 symbol('R14',370.84,213.36,90);line('core','U0TXD_MCU',P('U1',29),P('R14',1));line('core','U0TXD',P('R14',2),(400.05,213.36));glabel('core','U0TXD',400.05,213.36,0);glabel('core','U0TXD_MCU',322.58,213.36,180)
 line('core','U0RXD',P('U1',30),(400.05,223.52));glabel('core','U0RXD',400.05,223.52,0)
-symbol('R16',342.9,248.92);symbol('U4',416.56,241.3);symbol('R15',457.2,241.3,90);symbol('D2',502.92,241.3)
-symbol('C26',441.96,228.6);symbol('C25',528.32,228.6)
-line('core','GPIO21_LED',P('U1',34),P('U4',2));line('core','GPIO21_LED',(342.9,241.3),P('R16',1));ground('core',P('R16',2));glabel('core','GPIO21_LED',322.58,241.3,180)
-line('core','LED_DATA_5V',P('U4',4),P('R15',1));glabel('core','LED_DATA_5V',433.07,241.3,180)
+symbol('R9',391.16,231.14);symbol('D6',416.56,241.3);symbol('R15',457.2,241.3,90);symbol('D2',502.92,241.3)
+symbol('R19',441.96,228.6);symbol('C25',528.32,228.6)
+line('core','GPIO8',P('U1',14),P('D6',1));glabel('core','GPIO8',322.58,241.3,180)
+line('core','GPIO8',P('R9',2),(391.16,241.3));power('core','+3V3',P('R9',1))
+line('core','LED_DATA_5V',P('D6',2),P('R15',1));line('core','LED_DATA_5V',P('R19',2),(441.96,241.3));glabel('core','LED_DATA_5V',433.07,241.3,180)
 line('core','LED_DIN',P('R15',2),P('D2',3));glabel('core','LED_DIN',482.6,241.3,0)
-line('core','VBUS_USB',(416.56,220.98),(528.32,220.98),P('C25',1));line('core','VBUS_USB',(416.56,220.98),P('U4',5))
-line('core','VBUS_USB',(441.96,220.98),P('C26',1));line('core','VBUS_USB',(502.92,220.98),P('D2',4));power('core','VBUS_USB',(416.56,220.98))
-for ref in ['C25','C26']:ground('core',P(ref,2))
-line('core','GND',P('U4',1),(419.1,259.08),(414.02,259.08),P('U4',3));ground('core',(416.56,259.08));ground('core',P('D2',2))
+line('core','VBUS_USB',(416.56,220.98),(528.32,220.98),P('C25',1))
+line('core','VBUS_USB',(441.96,220.98),P('R19',1));line('core','VBUS_USB',(502.92,220.98),P('D2',4));power('core','VBUS_USB',(416.56,220.98))
+ground('core',P('C25',2));ground('core',P('D2',2))
 for pin in gpio:
     q=P('U1',pin);net=PARTS['U1']['nets'][str(pin)];line('core',net,q,(345.44,q[1]));glabel('core',net,345.44,q[1],0)
 text('core','GPIO headers and USB power input are on sheet 2.\nAll GPIO signals are 3.3 V.\nRF values are initial values; verify matching on the assembled board.',396.24,292.1,1.524)

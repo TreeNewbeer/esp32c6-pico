@@ -1,0 +1,379 @@
+{
+  "date": "2026-09-10",
+  "scope": "Schematic only; PCB layout remains with the user",
+  "status": "Complete: GPIO8 control and resistor values aligned with DevKitC-1 v1.4; both pull-ups retained as confirmed by the user",
+  "official_reference": "https://dl.espressif.com/dl/schematics/esp32-c6-devkitc-1-schematics_v1.4.pdf",
+  "official_page": 2,
+  "official_pullups": {
+    "R6": "GPIO8 to 3V3, 3.3k",
+    "R29": "diode anode/data node to 5V, 10k"
+  },
+  "official_series": {
+    "R17": "0R"
+  },
+  "current_parts": {
+    "R9": {
+      "value": "3.3k",
+      "pins": {
+        "1": "+3V3",
+        "2": "GPIO8"
+      }
+    },
+    "D6": {
+      "value": "1N4148WS",
+      "pins": {
+        "1": "GPIO8",
+        "2": "LED_DATA_5V"
+      }
+    },
+    "R19": {
+      "value": "10k",
+      "pins": {
+        "2": "LED_DATA_5V",
+        "1": "VBUS_USB"
+      }
+    },
+    "R15": {
+      "value": "0R",
+      "pins": {
+        "1": "LED_DATA_5V",
+        "2": "LED_DIN"
+      }
+    },
+    "D2": {
+      "value": "WS2812B-2020",
+      "pins": {
+        "2": "GND",
+        "3": "LED_DIN",
+        "4": "VBUS_USB",
+        "1": "unconnected-(D2-DOUT-Pad1)"
+      }
+    }
+  },
+  "changed_pins": [
+    {
+      "reference": "D6",
+      "pin": "1",
+      "before": "GPIO21_LED",
+      "after": "GPIO8"
+    },
+    {
+      "reference": "U1",
+      "pin": "34",
+      "before": "GPIO21_LED",
+      "after": "unconnected-(U1-GPIO21-Pad34)"
+    }
+  ],
+  "changed_values": [
+    {
+      "reference": "R9",
+      "before": "10k",
+      "after": "3.3k"
+    },
+    {
+      "reference": "R15",
+      "before": "330R",
+      "after": "0R"
+    }
+  ],
+  "official_value_checks": {
+    "R9": "3.3k",
+    "R15": "0R",
+    "R19": "10k"
+  },
+  "component_count": 59,
+  "populated_count": 55,
+  "erc_violations": 0,
+  "visible_wire_audit": {
+    "all_passed": true,
+    "connections": [
+      {
+        "from_pin": "C19.1",
+        "to_pin": "U1.2",
+        "connected": true
+      },
+      {
+        "from_pin": "C20.1",
+        "to_pin": "U1.3",
+        "connected": true
+      },
+      {
+        "from_pin": "C11.1",
+        "to_pin": "U1.2",
+        "connected": true
+      },
+      {
+        "from_pin": "L2.2",
+        "to_pin": "U1.2",
+        "connected": true
+      },
+      {
+        "from_pin": "C12.1",
+        "to_pin": "U1.5",
+        "connected": true
+      },
+      {
+        "from_pin": "C13.1",
+        "to_pin": "U1.28",
+        "connected": true
+      },
+      {
+        "from_pin": "C14.1",
+        "to_pin": "U1.37",
+        "connected": true
+      },
+      {
+        "from_pin": "C15.1",
+        "to_pin": "U1.40",
+        "connected": true
+      },
+      {
+        "from_pin": "R7.2",
+        "to_pin": "U1.4",
+        "connected": true
+      },
+      {
+        "from_pin": "C21.1",
+        "to_pin": "U1.4",
+        "connected": true
+      },
+      {
+        "from_pin": "SW1.1",
+        "to_pin": "U1.4",
+        "connected": true
+      },
+      {
+        "from_pin": "R8.2",
+        "to_pin": "U1.15",
+        "connected": true
+      },
+      {
+        "from_pin": "SW2.1",
+        "to_pin": "U1.15",
+        "connected": true
+      },
+      {
+        "from_pin": "R9.2",
+        "to_pin": "U1.14",
+        "connected": true
+      },
+      {
+        "from_pin": "C7.1",
+        "to_pin": "U1.23",
+        "connected": true
+      },
+      {
+        "from_pin": "U3.8",
+        "to_pin": "U1.23",
+        "connected": true
+      },
+      {
+        "from_pin": "C6.1",
+        "to_pin": "U3.8",
+        "connected": true
+      },
+      {
+        "from_pin": "Y1.1",
+        "to_pin": "R18.2",
+        "connected": true
+      },
+      {
+        "from_pin": "Y1.3",
+        "to_pin": "U1.38",
+        "connected": true
+      },
+      {
+        "from_pin": "R18.1",
+        "to_pin": "U1.39",
+        "connected": true
+      },
+      {
+        "from_pin": "C5.1",
+        "to_pin": "U1.38",
+        "connected": true
+      },
+      {
+        "from_pin": "R14.1",
+        "to_pin": "U1.29",
+        "connected": true
+      },
+      {
+        "from_pin": "D6.1",
+        "to_pin": "U1.14",
+        "connected": true
+      },
+      {
+        "from_pin": "R19.2",
+        "to_pin": "D6.2",
+        "connected": true
+      },
+      {
+        "from_pin": "R15.1",
+        "to_pin": "D6.2",
+        "connected": true
+      },
+      {
+        "from_pin": "R15.2",
+        "to_pin": "D2.3",
+        "connected": true
+      },
+      {
+        "from_pin": "C3.1",
+        "to_pin": "U1.1",
+        "connected": true
+      },
+      {
+        "from_pin": "L1.1",
+        "to_pin": "U1.1",
+        "connected": true
+      },
+      {
+        "from_pin": "R17.1",
+        "to_pin": "U1.20",
+        "connected": true
+      },
+      {
+        "from_pin": "R17.2",
+        "to_pin": "U3.1",
+        "connected": true
+      },
+      {
+        "from_pin": "R1.1",
+        "to_pin": "U1.21",
+        "connected": true
+      },
+      {
+        "from_pin": "R1.2",
+        "to_pin": "U3.2",
+        "connected": true
+      },
+      {
+        "from_pin": "R2.1",
+        "to_pin": "U1.22",
+        "connected": true
+      },
+      {
+        "from_pin": "R2.2",
+        "to_pin": "U3.3",
+        "connected": true
+      },
+      {
+        "from_pin": "R3.1",
+        "to_pin": "U1.24",
+        "connected": true
+      },
+      {
+        "from_pin": "R3.2",
+        "to_pin": "U3.7",
+        "connected": true
+      },
+      {
+        "from_pin": "R4.1",
+        "to_pin": "U1.25",
+        "connected": true
+      },
+      {
+        "from_pin": "R4.2",
+        "to_pin": "U3.6",
+        "connected": true
+      },
+      {
+        "from_pin": "R5.1",
+        "to_pin": "U1.26",
+        "connected": true
+      },
+      {
+        "from_pin": "R5.2",
+        "to_pin": "U3.5",
+        "connected": true
+      },
+      {
+        "from_pin": "U1.18",
+        "to_label": "USB_D-",
+        "connected": true
+      },
+      {
+        "from_pin": "U1.19",
+        "to_label": "USB_D+",
+        "connected": true
+      }
+    ],
+    "method": "Visible wires only; labels and power-symbol aliases are not electrical edges"
+  },
+  "protected_file_sha256": {
+    "esp32-c6-pico.kicad_pcb": "02ce5e87152071903281b3ccd13e66b67a6bd35eb889e77da7887381c05f022f",
+    "power-io.kicad_sch": "bbfc76335467d5c3b7ebcabaf2162c241bc8a75c7dd4bcd99f92b749b1dea54a",
+    "esp32-c6-pico.kicad_pro": "6af5aef094140fde2ddd7dcb2117a0f6aa4f4cd631c565d857e1fc88aabfc4ef",
+    "esp32-c6-pico.kicad_dru": "0a899caf5014df4439119ce969edeeac7c1f1df3d60aa6657820cf0b78e6ae9a"
+  },
+  "pcb_modified": false,
+  "pcb_drc_qa_rerun": false,
+  "pcb_sync_pending": true,
+  "final_file_sha256": {
+    "esp32-c6-pico.kicad_sch": "349f94611d7433d395fcd04f26d647261d98d07fd651f2d8d9615b653ef038ab",
+    "libs/Pico_Design.kicad_sym": "c4e4cffea017e80bac5712432800c9ca6fe564b8e7038b936fb59b80ba756e10",
+    "output/netlist.xml": "76cba99f43bd1729380c0150790adf5a84177f5b920defc774430c4ec9638cf6",
+    "output/erc.json": "b8fe2c014e66e7109eb5197e2ce9dc08c58e56479515b36a5ee82d74942ec408",
+    "design-spec.json": "ff76ceb65d01fa5c61c7e490fe52f531b3aad542913ae9ad4e5627d4daca3696",
+    "output/bom.csv": "5378686c1c3628ad84077822264d4b757678614d0ecd675387fcf15ba66026c9"
+  },
+  "inherited_spec_pin_corrections": [
+    {
+      "reference": "J3",
+      "pin": "3",
+      "stale_spec": "GPIO15",
+      "input_schematic": "GPIO23"
+    },
+    {
+      "reference": "J3",
+      "pin": "6",
+      "stale_spec": "GPIO18",
+      "input_schematic": "GPIO19"
+    },
+    {
+      "reference": "J3",
+      "pin": "7",
+      "stale_spec": "GPIO19",
+      "input_schematic": "GPIO18"
+    },
+    {
+      "reference": "J3",
+      "pin": "8",
+      "stale_spec": "GPIO20",
+      "input_schematic": "U0TXD"
+    },
+    {
+      "reference": "J3",
+      "pin": "9",
+      "stale_spec": "GPIO22",
+      "input_schematic": "U0RXD"
+    },
+    {
+      "reference": "J3",
+      "pin": "10",
+      "stale_spec": "GPIO23",
+      "input_schematic": "GPIO15"
+    },
+    {
+      "reference": "J3",
+      "pin": "5",
+      "stale_spec": "U0RXD",
+      "input_schematic": "GPIO20"
+    },
+    {
+      "reference": "J3",
+      "pin": "4",
+      "stale_spec": "U0TXD",
+      "input_schematic": "GPIO22"
+    }
+  ],
+  "inherited_metadata_correction": "D2 footprint in design-spec and BOM now matches the input schematic LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm; no footprint was changed in the schematic or PCB.",
+  "backup_directory": "tmp\\rgb-gpio8-20260910\\before",
+  "commands": [
+    "& 'C:/Program Files/KiCad/10.0/bin/kicad-cli.exe' sch export netlist --format kicadxml -o output/netlist.xml esp32-c6-pico.kicad_sch",
+    "& 'C:/Program Files/KiCad/10.0/bin/kicad-cli.exe' sch erc --format json --exit-code-violations -o output/erc.json esp32-c6-pico.kicad_sch",
+    "& 'C:/Program Files/KiCad/10.0/bin/kicad-cli.exe' sch export svg -o output/schematic/ esp32-c6-pico.kicad_sch",
+    "python tools/verify_schematic_wiring.py",
+    "py -3.12 tmp/rgb-gpio8-20260910/finalize.py"
+  ]
+}

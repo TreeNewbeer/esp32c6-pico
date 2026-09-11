@@ -38,10 +38,6 @@ J1,USB4105-GF-A,USB4105-GF-A,Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P
 R10,5.1k,5.1k,Resistor_SMD:R_0402_1005Metric,YES,1%; one Rd per CC pin
 R11,5.1k,5.1k,Resistor_SMD:R_0402_1005Metric,YES,"1%; USB-C sink, no PD"
 D4,USBLC6-2SC6,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,YES,
-R12,22R,22R,Resistor_SMD:R_0402_1005Metric,YES,
-R13,22R,22R,Resistor_SMD:R_0402_1005Metric,YES,
-C27,DNP,DNP,Capacitor_SMD:C_0402_1005Metric,NO,EMI tuning option; leave open
-C28,DNP,DNP,Capacitor_SMD:C_0402_1005Metric,NO,EMI tuning option; leave open
 D3,ESD9B5.0ST5G,ESD9B5.0ST5G,Diode_SMD:D_SOD-923,YES,Move original 15 pF TVS to USB power rail
 D5,BAT760-7,BAT760-7,Diode_SMD:D_SOD-323,YES,"Same part/package as at820_tiga D9/D10; 30 V, 1 A with datasheet thermal derating; blocks USB backfeed"
 U2,AP2112K-3.3,AP2112K-3.3TRG1,Package_TO_SOT_SMD:SOT-23-5,YES,600 mA peak rating; continuous load limited by SOT25 dissipation
@@ -53,13 +49,12 @@ C21,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,
 SW1,RESET,KMR221GLFS,Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2,YES,
 R8,10k,10k,Resistor_SMD:R_0402_1005Metric,YES,
 SW2,BOOT,KMR221GLFS,Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2,YES,
-R9,10k,10k,Resistor_SMD:R_0402_1005Metric,YES,
+R9,3.3k,3.3k,Resistor_SMD:R_0402_1005Metric,YES,GPIO8 strapping pull-up; 3.3k to 3V3 per DevKitC-1 v1.4 R6
 R14,499R,499R,Resistor_SMD:R_0402_1005Metric,YES,UART0 harmonic damping at U1
 J2,J2 GPIO / 2.00mm,1x12 P2.00 vertical header,Pico:PinHeader_1x12_P2.00mm_Compact,YES,
 J3,J3 GPIO / 2.00mm,1x12 P2.00 vertical header,Pico:PinHeader_1x12_P2.00mm_Compact,YES,
-U4,SN74LV1T125,SN74LV1T125DBVR,Package_TO_SOT_SMD:SOT-23-5,YES,
-R16,100k,100k,Resistor_SMD:R_0402_1005Metric,YES,Keep LED data low at reset
-R15,330R,330R,Resistor_SMD:R_0402_1005Metric,YES,
-D2,WS2812B-2020,WS2812B-2020,Pico:WS2812B_2020_Compact,YES,
+D6,1N4148WS,1N4148WS-7-F,Diode_SMD:D_SOD-323,YES,"Silicon switching diode level shift: cathode to GPIO8, anode to the pulled-up WS2812B data node"
+R19,10k,10k,Resistor_SMD:R_0402_1005Metric,YES,WS2812B data pull-up to the USB 5 V rail
+R15,0R,0R,Resistor_SMD:R_0402_1005Metric,YES,RGB data series link; 0R per DevKitC-1 v1.4 R17
+D2,WS2812B-2020,WS2812B-2020,LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm,YES,
 C25,1uF,1uF,Capacitor_SMD:C_0402_1005Metric,YES,At RGB VDD
-C26,100nF,100nF,Capacitor_SMD:C_0402_1005Metric,YES,At LV1T125 VCC

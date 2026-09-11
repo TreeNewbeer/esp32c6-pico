@@ -48,6 +48,25 @@ check('Flash uses the 150 mil SOIC-8 pinout without an exposed pad',
       and fps['U3'].GetValue()=='W25Q32JVSNIQ'
       and {p.GetNumber() for p in fps['U3'].Pads()}==set('12345678')
       and ('U3','9') not in expected)
+# The RGB data level shift follows the Espressif DevKitC-1 diode + 5 V pull-up block.
+check('WS2812B data is level shifted by the diode and 5 V pull-up without the removed buffer',
+      'U4' not in fps and 'U4' not in components and 'R16' not in fps and 'C26' not in fps
+      and fps['D6'].GetFPID().GetUniStringLibId()=='Diode_SMD:D_SOD-323'
+      and fps['D6'].GetValue()=='1N4148WS' and not fps['D6'].IsDNP()
+      and components.get('R19') is not None and components['R19'].findtext('value')=='10k'
+      and components.get('R9') is not None and components['R9'].findtext('value')=='3.3k'
+      and components.get('R15') is not None and components['R15'].findtext('value')=='0R'
+      and expected.get(('R9','1'))=='+3V3'
+      and expected.get(('D6','1'))==expected.get(('U1','14'))==expected.get(('R9','2'))=='GPIO8'
+      and expected.get(('J2','7'))=='GPIO8'
+      and expected.get(('U1','34'),'').startswith('unconnected-')
+      and 'GPIO21_LED' not in expected.values()
+      and expected.get(('D6','2'))==expected.get(('R19','2'))==expected.get(('R15','1'))=='LED_DATA_5V'
+      and expected.get(('R19','1'))==expected.get(('D2','4'))=='VBUS_USB'
+      and expected.get(('R15','2'))==expected.get(('D2','3'))=='LED_DIN'
+      and sum(net=='LED_DATA_5V' for net in expected.values())==3,
+      {'D6':expected.get(('D6','1')),'pull_up':expected.get(('R19','1')),
+       'data_node':sorted(k for k,v in expected.items() if v=='LED_DATA_5V')})
 check('USB supply bypasses the removed fuse through the SOD-323 blocking diode',
       fps['D5'].GetFPID().GetUniStringLibId()=='Diode_SMD:D_SOD-323'
       and fps['D5'].GetValue()=='BAT760-7'
@@ -77,8 +96,8 @@ power_passive_footprints={ref:passive_footprints[ref] for ref in power_passives}
 package_errors=[[ref,fps[ref].GetFPID().GetUniStringLibId(),expected_fp]
                 for ref,expected_fp in sorted(passive_footprints.items())
                 if fps[ref].GetFPID().GetUniStringLibId()!=expected_fp]
-check('Six RF resistors/capacitors remain 0201; all 39 non-RF resistors/capacitors are 0402',
-      len(rc_passives)==45 and rf_passives<=rc_passives and not package_errors,package_errors)
+check('Six RF resistors/capacitors remain 0201; all 34 non-RF resistors/capacitors are 0402',
+      len(rc_passives)==40 and rf_passives<=rc_passives and not package_errors,package_errors)
 # The WROOM module diagram uses R4 = 0R at XTAL_P; its local reference is R18.
 crystal_series=components.get('R18')
 check('XTAL_P uses a populated 0R resistor matching the WROOM module reference',
@@ -142,7 +161,7 @@ platebox=endplate.GetBoundingBox()
 end_copper=dict(plate_size_board_axes_mm=[pcb.ToMM(platebox.GetWidth()),pcb.ToMM(platebox.GetHeight())],
                 plate_area_mm2=round(pcb.ToMM(endplate.GetSize().x)*pcb.ToMM(endplate.GetSize().y),6),
                 RF_status='Geometric starting point; not tuned or proven RF-equivalent to the reference')
-check('PCB outline is 20 x 29 mm',dimensions==[20,29],dimensions)
+check('PCB outline is 18 x 29 mm',dimensions==[18,29],dimensions)
 check('Flash and USB TVS are on the back; both buttons are on the front',
       all(fps[r].GetLayer()==pcb.B_Cu for r in ['U3','D4']) and
       all(fps[r].GetLayer()==pcb.F_Cu for r in ['SW1','SW2']))
@@ -157,7 +176,7 @@ check('Headers are mounted on the back with pin 1 toward the antenna and 2 mm pi
                   for a,c in zip(d['numbered_pad_positions_mm'],d['numbered_pad_positions_mm'][1:]))
           for ref,d in header_geometry.items()),header_geometry)
 header_column_spacing=point(fps['J3'].GetPosition())[0]-point(fps['J2'].GetPosition())[0]
-check('Header column center spacing is 17.5 mm',math.isclose(header_column_spacing,17.5,abs_tol=.001),header_column_spacing)
+check('Header column center spacing is 15.5 mm',math.isclose(header_column_spacing,15.5,abs_tol=.001),header_column_spacing)
 header_edge_clearances={}
 for ref in ['J2','J3']:
     x=point(fps[ref].GetPosition())[0]
@@ -181,8 +200,8 @@ usb_vias={name:[v for v in vias if v.GetNetname()==name] for name in ['USB_D+','
 check('Each USB data net has two matched front/back transitions',all(len(v)==2 for v in usb_vias.values()),{n:len(v) for n,v in usb_vias.items()})
 check('USB routing uses only the two outer layers',all(isinstance(t,pcb.PCB_VIA) or t.GetLayer() in [pcb.F_Cu,pcb.B_Cu] for t in b.GetTracks() if t.GetNetname().startswith('USB_')))
 check('Antenna is mounted horizontally',math.isclose(fps['AE1'].GetOrientationDegrees()%180,90,abs_tol=.001))
-check('Prototype antenna clearance is 20 x 3.8 mm on all copper layers',
-      antenna_clearance==[20,3.8] and antenna_zone.GetDoNotAllowZoneFills()
+check('Prototype antenna clearance is 18 x 3.8 mm on all copper layers',
+      antenna_clearance==[18,3.8] and antenna_zone.GetDoNotAllowZoneFills()
       and all(antenna_zone.IsOnLayer(layer) for layer in [pcb.F_Cu,pcb.In1_Cu,pcb.In2_Cu,pcb.B_Cu]),antenna_clearance)
 check('No vias in the antenna clearance',not any(antenna_zone.Outline().Contains(v.GetPosition()) for v in vias))
 
@@ -317,7 +336,7 @@ graph={}
 def key(x,y,net,layer):return (round(x,3),round(y,3),net,layer)
 def edge(a,c,w):
     graph.setdefault(a,[]).append((c,w));graph.setdefault(c,[]).append((a,w))
-all_usb=['USB_D+','USB_D-','USB_MCU_D+','USB_MCU_D-']
+all_usb=['USB_D+','USB_D-']
 for net in all_usb+['V3A']:
     net_vias=[v for v in vias if v.GetNetname()==net]
     for layer in [pcb.F_Cu,pcb.B_Cu]:
@@ -342,9 +361,6 @@ for net in all_usb+['V3A']:
     for v in net_vias:
         q=point(v.GetPosition())
         edge(key(*q,net,pcb.F_Cu),key(*q,net,pcb.B_Cu),pcb.ToMM(b.GetDesignSettings().GetBoardThickness()))
-for ref in ['R12','R13']:
-    ps={p.GetNumber():p for p in fps[ref].Pads() if p.GetNumber()}
-    edge((ref,'1'),(ref,'2'),math.dist(point(ps['1'].GetPosition()),point(ps['2'].GetPosition())))
 def shortest(a,c):
     serial=itertools.count();q=[(0,next(serial),a)];cost={a:0}
     while q:
@@ -359,7 +375,14 @@ usb={side:{'D+_mm':shortest(('U1','19'),('J1',side+'6')),
            'D-_mm':shortest(('U1','18'),('J1',side+'7'))} for side in ['A','B']}
 for values in usb.values():
     values['skew_mm']=round(abs(values['D+_mm']-values['D-_mm']),4) if all(v is not None for v in values.values()) else None
-check('Both USB-C orientations have continuous data paths through their series resistors',all(v is not None for values in usb.values() for v in values.values()),usb)
+usb_direct = all(expected.get(('U1',pin))==net and fps['U1'].FindPadByNumber(pin).GetNetname()==net
+                 for pin,net in [('18','USB_D-'),('19','USB_D+')])
+usb_removed = {'R12','R13','C27','C28'}.isdisjoint(set(fps)|set(components))
+usb_old_nets_absent = all(not name.startswith('USB_MCU_') for name in expected.values()) and all(
+    not t.GetNetname().startswith('USB_MCU_') for t in b.GetTracks())
+check('Both USB-C orientations connect directly to the MCU without the removed USB R/C parts',
+      usb_direct and usb_removed and usb_old_nets_absent
+      and all(v is not None for values in usb.values() for v in values.values()),usb)
 rf_supply_paths={ref+'.'+pin:shortest(('L2','2'),(ref,pin))
                  for ref,pin in [('U1','2'),('U1','3'),('C11','1'),('C19','1'),('C20','1')]}
 rf_supply_filter=dict(side=pcb.LayerName(fps['L2'].GetLayer()),position_mm=point(fps['L2'].GetPosition()),
@@ -383,12 +406,12 @@ result=dict(checks=checks,all_passed=all(x['passed']for x in checks),footprints=
             antenna_clearance_mm=antenna_clearance,antenna_orientation_degrees=fps['AE1'].GetOrientationDegrees(),
             antenna_end_copper=end_copper,
             crystal_isolation=crystal_isolation,silkscreen_logos=silkscreen_logos,
-            component_sides={r:pcb.LayerName(fps[r].GetLayer()) for r in ['L2','U3','D4','SW1','SW2','J2','J3','Y1','C4','C5','C26']},
+            component_sides={r:pcb.LayerName(fps[r].GetLayer()) for r in ['L2','U3','D4','SW1','SW2','J2','J3','Y1','C4','C5','D6','R19','R15']},
             rf_supply_filter=rf_supply_filter,
             header_geometry=header_geometry,header_column_spacing_mm=round(header_column_spacing,6),
             header_edge_clearances_mm=header_edge_clearances,
             antenna_center_x_mm=point(fps['AE1'].GetPosition())[0],
-            usb_length_method='Copper centerline plus resistor pad spacing and nominal via barrel; excludes device internals and cable',
+            usb_length_method='Copper centerline plus nominal via barrel; excludes device internals and cable',
             copper_layers=4,usb_path_lengths=usb,fabrication_rules=rules,track_width_policy=width_policy,power_passive_references=sorted(power_passives),
             power_passive_footprints=power_passive_footprints,
             resistor_capacitor_footprints=passive_footprints,schematic_wiring=wiring_audit,
@@ -397,7 +420,7 @@ result=dict(checks=checks,all_passed=all(x['passed']for x in checks),footprints=
             custom_rules_sha256=hashlib.sha256(BOARD_FILE.with_suffix('.kicad_dru').read_bytes()).hexdigest(),
             nonthermal_hole_to_mask_minimum_mm=.1,retained_filled_capped_vias=len(retained_thermal),
             erc_kicad_version=erc.get('kicad_version'),drc_kicad_version=drc.get('kicad_version'),
-            limitations=['Axial end copper and 20 x 3.8 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured',
+            limitations=['Axial end copper and 18 x 3.8 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured',
                          'RF matching values and antenna efficiency require hardware tuning',
                          'Nominal RF/USB impedance requires manufacturer stackup confirmation',
                          'The nine MCU thermal vias require filling and copper capping; SOIC-8 flash has no exposed pad; dual-sided SMT assembly required; no physical power or thermal tests performed'])

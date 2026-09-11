@@ -2,8 +2,21 @@
   "checks": [
     {
       "check": "Every PCB copper pad matches the schematic netlist",
-      "passed": true,
-      "detail": []
+      "passed": false,
+      "detail": [
+        [
+          "AE1",
+          "2",
+          "unconnected-(AE1-SOLDER-Pad2)",
+          "unconnected-(AE1-SOLDER-Pad2)_1"
+        ],
+        [
+          "AE1",
+          "2",
+          "unconnected-(AE1-SOLDER-Pad2)",
+          "unconnected-(AE1-SOLDER-Pad2)_2"
+        ]
+      ]
     },
     {
       "check": "Schematic and PCB component references match",
@@ -21,6 +34,28 @@
       "detail": null
     },
     {
+      "check": "WS2812B data is level shifted by the diode and 5 V pull-up without the removed buffer",
+      "passed": false,
+      "detail": {
+        "D6": "GPIO8",
+        "pull_up": "VBUS_USB",
+        "data_node": [
+          [
+            "D6",
+            "2"
+          ],
+          [
+            "R15",
+            "1"
+          ],
+          [
+            "R19",
+            "2"
+          ]
+        ]
+      }
+    },
+    {
       "check": "USB supply bypasses the removed fuse through the SOD-323 blocking diode",
       "passed": true,
       "detail": null
@@ -31,7 +66,7 @@
       "detail": []
     },
     {
-      "check": "Six RF resistors/capacitors remain 0201; all 39 non-RF resistors/capacitors are 0402",
+      "check": "Six RF resistors/capacitors remain 0201; all 34 non-RF resistors/capacitors are 0402",
       "passed": true,
       "detail": []
     },
@@ -152,48 +187,28 @@
             "connected": true
           },
           {
-            "from_pin": "R12.2",
-            "to_pin": "U1.18",
-            "connected": true
-          },
-          {
-            "from_pin": "C27.1",
-            "to_pin": "U1.18",
-            "connected": true
-          },
-          {
-            "from_pin": "R13.2",
-            "to_pin": "U1.19",
-            "connected": true
-          },
-          {
-            "from_pin": "C28.1",
-            "to_pin": "U1.19",
-            "connected": true
-          },
-          {
             "from_pin": "R14.1",
             "to_pin": "U1.29",
             "connected": true
           },
           {
-            "from_pin": "R16.1",
-            "to_pin": "U1.34",
+            "from_pin": "D6.1",
+            "to_pin": "U1.14",
             "connected": true
           },
           {
-            "from_pin": "U4.2",
-            "to_pin": "U1.34",
+            "from_pin": "R19.2",
+            "to_pin": "D6.2",
+            "connected": true
+          },
+          {
+            "from_pin": "R15.1",
+            "to_pin": "D6.2",
             "connected": true
           },
           {
             "from_pin": "R15.2",
             "to_pin": "D2.3",
-            "connected": true
-          },
-          {
-            "from_pin": "R15.1",
-            "to_pin": "U4.4",
             "connected": true
           },
           {
@@ -265,6 +280,16 @@
             "from_pin": "R5.2",
             "to_pin": "U3.5",
             "connected": true
+          },
+          {
+            "from_pin": "U1.18",
+            "to_label": "USB_D-",
+            "connected": true
+          },
+          {
+            "from_pin": "U1.19",
+            "to_label": "USB_D+",
+            "connected": true
           }
         ],
         "method": "Visible wires only; labels and power-symbol aliases are not electrical edges"
@@ -272,8 +297,304 @@
     },
     {
       "check": "PCB symbol paths match the reorganized schematic sheets",
-      "passed": true,
-      "detail": []
+      "passed": false,
+      "detail": [
+        [
+          "C10",
+          "/09362add-1a4b-46ac-ba69-1a06f856de30",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/09362add-1a4b-46ac-ba69-1a06f856de30"
+        ],
+        [
+          "L1",
+          "/b6c23b7f-0edd-4e17-8966-43735c804a0c",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/b6c23b7f-0edd-4e17-8966-43735c804a0c"
+        ],
+        [
+          "R11",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/3200b8bc-f450-5836-90ad-8129b5dd712a",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/3200b8bc-f450-5836-90ad-8129b5dd712a"
+        ],
+        [
+          "J1",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/02b232a8-807d-5357-be68-6944a72beadc",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/02b232a8-807d-5357-be68-6944a72beadc"
+        ],
+        [
+          "C5",
+          "/f2663418-c785-4313-b74b-e0529cb49584",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/f2663418-c785-4313-b74b-e0529cb49584"
+        ],
+        [
+          "C11",
+          "/ef2fcd15-2db6-49ca-9618-330dd3d40460",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/ef2fcd15-2db6-49ca-9618-330dd3d40460"
+        ],
+        [
+          "C9",
+          "/27daa0f7-5cf0-45b9-8762-7fef5c0ae202",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/27daa0f7-5cf0-45b9-8762-7fef5c0ae202"
+        ],
+        [
+          "R10",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/d6afc9fe-166b-5fd7-a2ab-eea10f88ffc7",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/d6afc9fe-166b-5fd7-a2ab-eea10f88ffc7"
+        ],
+        [
+          "C14",
+          "/a8736ec6-a534-4855-b837-41c9b266e288",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/a8736ec6-a534-4855-b837-41c9b266e288"
+        ],
+        [
+          "R6",
+          "/ff9193e3-87b0-5eee-b954-ba650a3012f8",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/ff9193e3-87b0-5eee-b954-ba650a3012f8"
+        ],
+        [
+          "C4",
+          "/4832c35a-0426-47fa-95bf-9ea99299fa9d",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/4832c35a-0426-47fa-95bf-9ea99299fa9d"
+        ],
+        [
+          "Y1",
+          "/3414b06f-7c01-4540-8c85-87146061a56c",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/3414b06f-7c01-4540-8c85-87146061a56c"
+        ],
+        [
+          "C20",
+          "/be7b7ca8-433a-5d62-a564-8483e1467361",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/be7b7ca8-433a-5d62-a564-8483e1467361"
+        ],
+        [
+          "AE1",
+          "/c5287210-ef13-4efd-9e37-7930fcdc1c66",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/c5287210-ef13-4efd-9e37-7930fcdc1c66"
+        ],
+        [
+          "D1",
+          "/17c190a4-f267-4adb-8e04-a4241b21f050",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/17c190a4-f267-4adb-8e04-a4241b21f050"
+        ],
+        [
+          "SW2",
+          "/01117767-438d-56d6-82f5-c0f687f75905",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/01117767-438d-56d6-82f5-c0f687f75905"
+        ],
+        [
+          "C19",
+          "/3160761b-f329-5e8e-b190-11fa959c0a52",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/3160761b-f329-5e8e-b190-11fa959c0a52"
+        ],
+        [
+          "C2",
+          "/7f30056b-9efd-43fd-bb94-ca5fdf4946cb",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/7f30056b-9efd-43fd-bb94-ca5fdf4946cb"
+        ],
+        [
+          "C3",
+          "/fe121819-547b-448b-b270-9feb496d187d",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/fe121819-547b-448b-b270-9feb496d187d"
+        ],
+        [
+          "L3",
+          "/16b4735e-9cc3-5c28-a006-b7cd199ae095",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/16b4735e-9cc3-5c28-a006-b7cd199ae095"
+        ],
+        [
+          "C17",
+          "/d1ce8f36-868c-5224-a80b-d422c4519e04",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/d1ce8f36-868c-5224-a80b-d422c4519e04"
+        ],
+        [
+          "R14",
+          "/4191c86d-c261-50dd-a34a-10aa9a0e1adc",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/4191c86d-c261-50dd-a34a-10aa9a0e1adc"
+        ],
+        [
+          "C13",
+          "/e6b7d767-38dd-4919-be00-cc69ea782971",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/e6b7d767-38dd-4919-be00-cc69ea782971"
+        ],
+        [
+          "C16",
+          "/84124424-6010-5b9d-8cec-178d711252f1",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/84124424-6010-5b9d-8cec-178d711252f1"
+        ],
+        [
+          "R9",
+          "/bd326c40-bf59-5fe6-860e-3e68009e8c6a",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/bd326c40-bf59-5fe6-860e-3e68009e8c6a"
+        ],
+        [
+          "R19",
+          "/9939d7f4-0f14-507e-aae0-523a04fc4ec8",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/9939d7f4-0f14-507e-aae0-523a04fc4ec8"
+        ],
+        [
+          "C15",
+          "/cdc0c944-2bd7-4bd8-8ebc-d4058327db04",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/cdc0c944-2bd7-4bd8-8ebc-d4058327db04"
+        ],
+        [
+          "D2",
+          "/f8e3faca-c211-41df-b6a4-850553b50ce5",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/f8e3faca-c211-41df-b6a4-850553b50ce5"
+        ],
+        [
+          "R18",
+          "/f0cb3350-2c2f-5ce3-99ca-b77f21e1be56",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/f0cb3350-2c2f-5ce3-99ca-b77f21e1be56"
+        ],
+        [
+          "C18",
+          "/87b7d10c-5209-5776-94b2-3d36798fe884",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/87b7d10c-5209-5776-94b2-3d36798fe884"
+        ],
+        [
+          "SW1",
+          "/a7491cc9-fa88-5f19-be12-9b3e71b01cfa",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/a7491cc9-fa88-5f19-be12-9b3e71b01cfa"
+        ],
+        [
+          "C7",
+          "/36834f2e-b00b-4ab5-a075-c721b8ccbe80",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/36834f2e-b00b-4ab5-a075-c721b8ccbe80"
+        ],
+        [
+          "R15",
+          "/7a09205f-ce48-5673-8685-91667730c61e",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/7a09205f-ce48-5673-8685-91667730c61e"
+        ],
+        [
+          "C23",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/2c26ada8-78ca-5cd9-b3b2-b1e3fd5cdcfe",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/2c26ada8-78ca-5cd9-b3b2-b1e3fd5cdcfe"
+        ],
+        [
+          "U1",
+          "/8bf8607d-e3f7-46ac-9ee3-499b7bbbb17e",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/8bf8607d-e3f7-46ac-9ee3-499b7bbbb17e"
+        ],
+        [
+          "D3",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/af8ff58f-2621-5a2e-a686-5d1cc6df2cfc",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/af8ff58f-2621-5a2e-a686-5d1cc6df2cfc"
+        ],
+        [
+          "L2",
+          "/4bb8e07f-80b3-4fa0-926f-599a49652bbc",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/4bb8e07f-80b3-4fa0-926f-599a49652bbc"
+        ],
+        [
+          "U2",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/1eabb228-a751-58d2-8ac5-c9a3915703d3",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/1eabb228-a751-58d2-8ac5-c9a3915703d3"
+        ],
+        [
+          "R7",
+          "/0da5498e-25e4-5a1f-a2ec-8e7d4a71fd50",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/0da5498e-25e4-5a1f-a2ec-8e7d4a71fd50"
+        ],
+        [
+          "D5",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/506f9a74-e380-5367-9605-0b307764d30d",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/506f9a74-e380-5367-9605-0b307764d30d"
+        ],
+        [
+          "C6",
+          "/c1419592-f638-4f08-b060-66bd08918164",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/c1419592-f638-4f08-b060-66bd08918164"
+        ],
+        [
+          "U3",
+          "/11dd3793-e446-4d3b-bb90-c7cfe42ad248",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/11dd3793-e446-4d3b-bb90-c7cfe42ad248"
+        ],
+        [
+          "R3",
+          "/8dd25ad6-208e-41e1-86fe-b46c01c36e0f",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/8dd25ad6-208e-41e1-86fe-b46c01c36e0f"
+        ],
+        [
+          "R1",
+          "/9868171c-e3dd-411d-b982-a15aedcb9c96",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/9868171c-e3dd-411d-b982-a15aedcb9c96"
+        ],
+        [
+          "C8",
+          "/81884599-b362-4a44-aea5-7101f7ab1632",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/81884599-b362-4a44-aea5-7101f7ab1632"
+        ],
+        [
+          "R8",
+          "/0049f830-36b4-5830-9ca0-886d561a5954",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/0049f830-36b4-5830-9ca0-886d561a5954"
+        ],
+        [
+          "D6",
+          "/346fd8d4-e0bf-5bba-b649-5e847c6e1261",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/346fd8d4-e0bf-5bba-b649-5e847c6e1261"
+        ],
+        [
+          "J2",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/c2c23966-6c97-5604-ad42-9652a8e0d317",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/c2c23966-6c97-5604-ad42-9652a8e0d317"
+        ],
+        [
+          "C21",
+          "/a2a528cb-4490-5ea3-ac7a-fb0ac1600e55",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/a2a528cb-4490-5ea3-ac7a-fb0ac1600e55"
+        ],
+        [
+          "R2",
+          "/d5ef5f06-562e-4f5d-ae98-c67c05631d82",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/d5ef5f06-562e-4f5d-ae98-c67c05631d82"
+        ],
+        [
+          "C24",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/af366a2a-d733-5bb2-8355-67ec7bd114ab",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/af366a2a-d733-5bb2-8355-67ec7bd114ab"
+        ],
+        [
+          "C22",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/e38c553c-5d45-5b31-b6f8-4f85036bdb43",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/e38c553c-5d45-5b31-b6f8-4f85036bdb43"
+        ],
+        [
+          "C12",
+          "/3cf2fc15-0e92-4730-a26e-584e479fd513",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/3cf2fc15-0e92-4730-a26e-584e479fd513"
+        ],
+        [
+          "R4",
+          "/87dab85c-99f6-4dd6-ade7-ad710ba00316",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/87dab85c-99f6-4dd6-ade7-ad710ba00316"
+        ],
+        [
+          "R17",
+          "/9361a14c-2d3f-59dd-9486-ee25e7ccccc1",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/9361a14c-2d3f-59dd-9486-ee25e7ccccc1"
+        ],
+        [
+          "C25",
+          "/8a5913d4-7a06-5baa-bca2-7ea3c1f567ba",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/8a5913d4-7a06-5baa-bca2-7ea3c1f567ba"
+        ],
+        [
+          "D4",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/e23770ad-4d35-5758-8c0a-51e9669daa67",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/e23770ad-4d35-5758-8c0a-51e9669daa67"
+        ],
+        [
+          "J3",
+          "/13033aea-e4f8-548e-9e40-21ec019685cb/216401e0-be0f-5c4d-9e01-62c6185429aa",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/13033aea-e4f8-548e-9e40-21ec019685cb/216401e0-be0f-5c4d-9e01-62c6185429aa"
+        ],
+        [
+          "R5",
+          "/f94147b5-6e1c-4abb-ab17-b16c4ee88e99",
+          "/d29d372c-7a4c-447f-ba6c-21fb60482be4/f94147b5-6e1c-4abb-ab17-b16c4ee88e99"
+        ]
+      ]
     },
     {
       "check": "Every signal track and arc is exactly 0.15 mm",
@@ -321,10 +642,10 @@
       "detail": null
     },
     {
-      "check": "PCB outline is 20 x 29 mm",
+      "check": "PCB outline is 18 x 29 mm",
       "passed": true,
       "detail": [
-        20.0,
+        18.0,
         29.0
       ]
     },
@@ -341,51 +662,51 @@
           "side": "B.Cu",
           "numbered_pad_positions_mm": [
             [
-              100.25,
+              102.25,
               114.0
             ],
             [
-              100.25,
+              102.25,
               116.0
             ],
             [
-              100.25,
+              102.25,
               118.0
             ],
             [
-              100.25,
+              102.25,
               120.0
             ],
             [
-              100.25,
+              102.25,
               122.0
             ],
             [
-              100.25,
+              102.25,
               124.0
             ],
             [
-              100.25,
+              102.25,
               126.0
             ],
             [
-              100.25,
+              102.25,
               128.0
             ],
             [
-              100.25,
+              102.25,
               130.0
             ],
             [
-              100.25,
+              102.25,
               132.0
             ],
             [
-              100.25,
+              102.25,
               134.0
             ],
             [
-              100.25,
+              102.25,
               136.0
             ]
           ]
@@ -446,9 +767,9 @@
       }
     },
     {
-      "check": "Header column center spacing is 17.5 mm",
+      "check": "Header column center spacing is 15.5 mm",
       "passed": true,
-      "detail": 17.5
+      "detail": 15.5
     },
     {
       "check": "Header nominal bodies and copper pads clear both side edges by 0.25 and 0.575 mm",
@@ -499,10 +820,10 @@
       "detail": null
     },
     {
-      "check": "Prototype antenna clearance is 20 x 3.8 mm on all copper layers",
+      "check": "Prototype antenna clearance is 18 x 3.8 mm on all copper layers",
       "passed": true,
       "detail": [
-        20.0,
+        18.0,
         3.8
       ]
     },
@@ -513,26 +834,26 @@
     },
     {
       "check": "Codex and personal logos are native graphics on front and back silkscreen respectively",
-      "passed": true,
+      "passed": false,
       "detail": {
         "LOGO_CODEX": {
           "layer": "F.Silkscreen",
           "shapes": 1,
           "bounds_mm": [
-            101.5514,
-            108.949908,
-            103.650047,
-            111.05
+            116.883271,
+            109.190066,
+            118.752716,
+            111.060796
           ]
         },
         "LOGO_KZL": {
           "layer": "B.Silkscreen",
           "shapes": 358,
           "bounds_mm": [
-            107.288001,
-            108.935848,
-            110.732,
-            113.264153
+            102.232178,
+            108.620745,
+            105.378433,
+            112.574851
           ]
         }
       }
@@ -544,18 +865,18 @@
     },
     {
       "check": "Both logos keep at least 0.25 mm from the board edge",
-      "passed": true,
+      "passed": false,
       "detail": null
     },
     {
       "check": "Antenna-to-crystal body gap meets the 8.5 mm project target",
       "passed": false,
-      "detail": 5.07
+      "detail": 5.1
     },
     {
       "check": "Crystal body clears MCU clock-pin land edges by at least 2.4 mm",
-      "passed": true,
-      "detail": 2.43
+      "passed": false,
+      "detail": 2.31
     },
     {
       "check": "Crystal and load capacitors are on the front beside the MCU",
@@ -564,22 +885,22 @@
     },
     {
       "check": "Crystal underside excludes routing and pads on the back and both inner layers",
-      "passed": true,
+      "passed": false,
       "detail": [
-        114.45,
-        115.65,
-        116.85,
-        118.15
+        113.967172,
+        115.85,
+        116.367172,
+        117.95
       ]
     },
     {
       "check": "Crystal and load-capacitor ground pads have a ground via within 1 mm",
       "passed": false,
       "detail": {
-        "Y1.2": 2.55,
-        "Y1.4": 0.885889,
-        "C4.2": 0.86093,
-        "C5.2": 0.764199
+        "Y1.2": 3.809278,
+        "Y1.4": 4.482365,
+        "C4.2": 2.952694,
+        "C5.2": 4.603618
       }
     },
     {
@@ -617,10 +938,136 @@
       "passed": false,
       "detail": [
         {
-          "uuid": "356d90c4-f852-4988-88d2-eacef5067b6c",
+          "uuid": "efaf7852-a2cc-4e15-b767-d25d6e97940d",
           "position_mm": [
-            113.825,
-            121.780854
+            113.586107,
+            119.264999
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "557ccb1b-848b-4f27-9336-0d3552888ca6",
+          "position_mm": [
+            105.05,
+            119.8
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "672cac48-dc8c-45e5-b2c6-21e8741486e6",
+          "position_mm": [
+            111.9,
+            119.55
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "d0f4fa0f-bd4f-4c3a-87eb-b2d5a5e87675",
+          "position_mm": [
+            111.65,
+            122.45
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "6db23d9c-7ac4-4555-85dc-d0d0424b7927",
+          "position_mm": [
+            106.173933,
+            127.828887
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "74869ed8-cc2c-497d-9111-053efb8e79da",
+          "position_mm": [
+            105.677157,
+            127.592843
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "fbc42700-0a00-45d4-ad67-6021c6856531",
+          "position_mm": [
+            112.1,
+            120.6
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "86d0bb86-80f7-4485-acde-971f6fcbecf6",
+          "position_mm": [
+            105.192157,
+            116.942157
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "59c1e14c-6685-428c-b213-85c1c6d5effc",
+          "position_mm": [
+            107.91,
+            124.67
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "73463e04-6be1-4372-af9a-eebd951a6ae8",
+          "position_mm": [
+            110.95,
+            122.4
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "4b3f3126-eea6-4c34-ae7a-942689a29741",
+          "position_mm": [
+            112.25,
+            118.8
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "af87050e-b2ee-422e-9b71-eb7b4f7dbc50",
+          "position_mm": [
+            112.5,
+            118.45
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "9e0dab66-e8ad-46fe-9c76-a5008fb1d5b3",
+          "position_mm": [
+            112.42,
+            118.02
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "24389b66-0057-4025-b2c2-4fc620c48b40",
+          "position_mm": [
+            112.350234,
+            117.601875
+          ],
+          "front_mode": 0,
+          "back_mode": 0
+        },
+        {
+          "uuid": "4be3558c-ffa0-4a20-a52b-5f857948217b",
+          "position_mm": [
+            112.3,
+            117.2
           ],
           "front_mode": 0,
           "back_mode": 0
@@ -628,18 +1075,18 @@
       ]
     },
     {
-      "check": "Both USB-C orientations have continuous data paths through their series resistors",
+      "check": "Both USB-C orientations connect directly to the MCU without the removed USB R/C parts",
       "passed": true,
       "detail": {
         "A": {
-          "D+_mm": 25.8808,
-          "D-_mm": 27.1609,
-          "skew_mm": 1.2801
+          "D+_mm": 23.0427,
+          "D-_mm": 25.3876,
+          "skew_mm": 2.3449
         },
         "B": {
-          "D+_mm": 24.5526,
-          "D-_mm": 24.0845,
-          "skew_mm": 0.4681
+          "D+_mm": 22.2068,
+          "D-_mm": 22.4562,
+          "skew_mm": 0.2494
         }
       }
     },
@@ -670,8 +1117,8 @@
     },
     {
       "check": "KiCad DRC has no violations",
-      "passed": true,
-      "detail": 0
+      "passed": false,
+      "detail": 1
     },
     {
       "check": "KiCad PCB has no unconnected items",
@@ -685,18 +1132,18 @@
     }
   ],
   "all_passed": false,
-  "footprints": 64,
-  "populated": 58,
-  "tracks": 884,
-  "vias": 125,
+  "footprints": 59,
+  "populated": 55,
+  "tracks": 602,
+  "vias": 89,
   "via_in_pad_entries": 7,
   "dimensions_mm": [
-    20.0,
+    18.0,
     29.0
   ],
   "nominal_thickness_mm": 0.8,
   "antenna_clearance_mm": [
-    20.0,
+    18.0,
     3.8
   ],
   "antenna_orientation_degrees": -90.0,
@@ -716,28 +1163,28 @@
       111.0
     ],
     "crystal_body_bounds_mm": [
-      114.28,
-      116.07000000000001,
-      116.28,
-      117.67
+      114.16,
+      116.10000000000001,
+      116.16,
+      117.7
     ],
-    "body_clearance_mm": 5.07,
-    "clock_pin_land_to_body_mm": 2.43,
+    "body_clearance_mm": 5.1,
+    "clock_pin_land_to_body_mm": 2.31,
     "reference_area_bounds_mm": [
-      114.45,
-      115.65,
-      116.85,
-      118.15
+      113.967172,
+      115.85,
+      116.367172,
+      117.95
     ],
     "nearest_ground_via_distances_mm": {
-      "Y1.2": 2.55,
-      "Y1.4": 0.885889,
-      "C4.2": 0.86093,
-      "C5.2": 0.764199
+      "Y1.2": 3.809278,
+      "Y1.4": 4.482365,
+      "C4.2": 2.952694,
+      "C5.2": 4.603618
     },
     "l2_uncovered_reference_mm2": 0.0,
     "l2_uncovered_crystal_mm2": 0.0,
-    "clock_copper_total_mm": 10.062372,
+    "clock_copper_total_mm": 10.187834,
     "body_clearance_target_mm": 8.5,
     "target_note": "The 8.5 mm antenna separation target is a project choice, not a manufacturer guarantee"
   },
@@ -746,20 +1193,20 @@
       "layer": "F.Silkscreen",
       "shapes": 1,
       "bounds_mm": [
-        101.5514,
-        108.949908,
-        103.650047,
-        111.05
+        116.883271,
+        109.190066,
+        118.752716,
+        111.060796
       ]
     },
     "LOGO_KZL": {
       "layer": "B.Silkscreen",
       "shapes": 358,
       "bounds_mm": [
-        107.288001,
-        108.935848,
-        110.732,
-        113.264153
+        102.232178,
+        108.620745,
+        105.378433,
+        112.574851
       ]
     }
   },
@@ -774,7 +1221,9 @@
     "Y1": "F.Cu",
     "C4": "F.Cu",
     "C5": "F.Cu",
-    "C26": "F.Cu"
+    "D6": "B.Cu",
+    "R19": "F.Cu",
+    "R15": "F.Cu"
   },
   "rf_supply_filter": {
     "side": "B.Cu",
@@ -797,51 +1246,51 @@
       "side": "B.Cu",
       "numbered_pad_positions_mm": [
         [
-          100.25,
+          102.25,
           114.0
         ],
         [
-          100.25,
+          102.25,
           116.0
         ],
         [
-          100.25,
+          102.25,
           118.0
         ],
         [
-          100.25,
+          102.25,
           120.0
         ],
         [
-          100.25,
+          102.25,
           122.0
         ],
         [
-          100.25,
+          102.25,
           124.0
         ],
         [
-          100.25,
+          102.25,
           126.0
         ],
         [
-          100.25,
+          102.25,
           128.0
         ],
         [
-          100.25,
+          102.25,
           130.0
         ],
         [
-          100.25,
+          102.25,
           132.0
         ],
         [
-          100.25,
+          102.25,
           134.0
         ],
         [
-          100.25,
+          102.25,
           136.0
         ]
       ]
@@ -900,7 +1349,7 @@
       ]
     }
   },
-  "header_column_spacing_mm": 17.5,
+  "header_column_spacing_mm": 15.5,
   "header_edge_clearances_mm": {
     "J2": {
       "center_to_side_mm": 1.25,
@@ -914,18 +1363,18 @@
     }
   },
   "antenna_center_x_mm": 113.42,
-  "usb_length_method": "Copper centerline plus resistor pad spacing and nominal via barrel; excludes device internals and cable",
+  "usb_length_method": "Copper centerline plus nominal via barrel; excludes device internals and cable",
   "copper_layers": 4,
   "usb_path_lengths": {
     "A": {
-      "D+_mm": 25.8808,
-      "D-_mm": 27.1609,
-      "skew_mm": 1.2801
+      "D+_mm": 23.0427,
+      "D-_mm": 25.3876,
+      "skew_mm": 2.3449
     },
     "B": {
-      "D+_mm": 24.5526,
-      "D-_mm": 24.0845,
-      "skew_mm": 0.4681
+      "D+_mm": 22.2068,
+      "D-_mm": 22.4562,
+      "skew_mm": 0.2494
     }
   },
   "fabrication_rules": {
@@ -962,10 +1411,10 @@
     "ground": "Existing widths retained; excluded from the exact-width rules",
     "widths_by_net": {
       "+3V3": {
-        "0.2": 112
+        "0.2": 85
       },
       "+5V": {
-        "0.2": 30
+        "0.2": 19
       },
       "ANT_FEED": {
         "0.15": 5
@@ -974,78 +1423,78 @@
         "0.15": 5
       },
       "CC2": {
-        "0.15": 4
+        "0.15": 7
       },
       "CHIP_EN": {
-        "0.15": 31
+        "0.15": 35
       },
       "GND": {
-        "0.15": 11,
-        "0.2": 38,
+        "0.15": 10,
+        "0.2": 23,
         "0.3": 3
       },
       "GPIO0": {
-        "0.15": 25
+        "0.15": 11
       },
       "GPIO1": {
-        "0.15": 14
+        "0.15": 12
       },
       "GPIO10": {
-        "0.15": 19
+        "0.15": 4
       },
       "GPIO11": {
-        "0.15": 18
+        "0.15": 4
       },
       "GPIO15": {
-        "0.15": 16
+        "0.15": 6
       },
       "GPIO18": {
-        "0.15": 15
+        "0.15": 5
       },
       "GPIO19": {
-        "0.15": 21
+        "0.15": 9
       },
       "GPIO2": {
-        "0.15": 14
+        "0.15": 13
       },
       "GPIO20": {
-        "0.15": 21
+        "0.15": 7
       },
-      "GPIO21_LED": {
-        "0.15": 20
+      "GPIO21": {
+        "0.15": 6
       },
       "GPIO22": {
-        "0.15": 23
+        "0.15": 5
       },
       "GPIO23": {
-        "0.15": 17
+        "0.15": 4
       },
       "GPIO3": {
-        "0.15": 13
+        "0.15": 11
       },
       "GPIO4": {
-        "0.15": 13
+        "0.15": 6
       },
       "GPIO5": {
-        "0.15": 16
+        "0.15": 5
       },
       "GPIO6": {
-        "0.15": 17
-      },
-      "GPIO7": {
-        "0.15": 18
-      },
-      "GPIO8": {
-        "0.15": 21
-      },
-      "GPIO9_BOOT": {
-        "0.15": 26
-      },
-      "LED_DATA_5V": {
         "0.15": 10
       },
-      "LED_DIN": {
+      "GPIO7": {
+        "0.15": 11
+      },
+      "GPIO8": {
+        "0.15": 16
+      },
+      "GPIO9_BOOT": {
+        "0.15": 29
+      },
+      "LED_DATA_5V": {
         "0.15": 6
+      },
+      "LED_DIN": {
+        "0.15": 2
       },
       "RF_50": {
         "0.15": 6
@@ -1057,13 +1506,13 @@
         "0.15": 5
       },
       "SPI_CLK": {
-        "0.15": 8
+        "0.15": 4
       },
       "SPI_CLK_MCU": {
         "0.15": 5
       },
       "SPI_CS": {
-        "0.15": 9
+        "0.15": 7
       },
       "SPI_CS_MCU": {
         "0.15": 6
@@ -1072,64 +1521,58 @@
         "0.15": 2
       },
       "SPI_D_MCU": {
-        "0.15": 10
+        "0.15": 8
       },
       "SPI_HD": {
-        "0.15": 8
+        "0.15": 3
       },
       "SPI_HD_MCU": {
         "0.15": 4
       },
       "SPI_Q": {
-        "0.15": 10
+        "0.15": 8
       },
       "SPI_Q_MCU": {
-        "0.15": 4
+        "0.15": 5
       },
       "SPI_WP": {
-        "0.15": 4
+        "0.15": 3
       },
       "SPI_WP_MCU": {
         "0.15": 4
       },
       "U0RXD": {
-        "0.15": 13
+        "0.15": 9
       },
       "U0TXD": {
         "0.15": 6
       },
       "U0TXD_MCU": {
-        "0.15": 12
+        "0.15": 2
       },
       "USB_D+": {
-        "0.15": 23
+        "0.15": 25
       },
       "USB_D-": {
-        "0.15": 23
-      },
-      "USB_MCU_D+": {
-        "0.15": 12
-      },
-      "USB_MCU_D-": {
-        "0.15": 8
+        "0.15": 27
       },
       "V3A": {
         "0.2": 11
       },
       "VBUS_USB": {
-        "0.2": 62
+        "0.2": 51
       },
       "VDD_SPI": {
-        "0.2": 14
+        "0.2": 10
       },
       "XTAL_LOAD_P": {
         "0.15": 3
       },
       "XTAL_N": {
-        "0.15": 4
+        "0.15": 5
       },
       "XTAL_P": {
-        "0.15": 3
+        "0.15": 6
       }
     }
   },
@@ -1147,88 +1590,83 @@
     "C23",
     "C24",
     "C25",
-    "C26",
     "C6",
     "C7",
     "C8",
     "C9",
     "R10",
     "R11",
+    "R19",
     "R7",
     "R8",
     "R9"
   ],
   "power_passive_footprints": {
-    "C11": "Capacitor_SMD:C_0402_1005Metric",
-    "C21": "Capacitor_SMD:C_0402_1005Metric",
-    "R7": "Resistor_SMD:R_0402_1005Metric",
-    "C7": "Capacitor_SMD:C_0402_1005Metric",
-    "R9": "Resistor_SMD:R_0402_1005Metric",
-    "C19": "Capacitor_SMD:C_0402_1005Metric",
-    "C6": "Capacitor_SMD:C_0402_1005Metric",
-    "C15": "Capacitor_SMD:C_0402_1005Metric",
+    "R19": "Resistor_SMD:R_0402_1005Metric",
     "C14": "Capacitor_SMD:C_0402_1005Metric",
-    "C22": "Capacitor_SMD:C_0402_1005Metric",
-    "C23": "Capacitor_SMD:C_0402_1005Metric",
-    "C8": "Capacitor_SMD:C_0402_1005Metric",
-    "R10": "Resistor_SMD:R_0402_1005Metric",
-    "R11": "Resistor_SMD:R_0402_1005Metric",
-    "C13": "Capacitor_SMD:C_0402_1005Metric",
+    "C24": "Capacitor_SMD:C_0402_1005Metric",
+    "C19": "Capacitor_SMD:C_0402_1005Metric",
     "C20": "Capacitor_SMD:C_0402_1005Metric",
-    "R8": "Resistor_SMD:R_0402_1005Metric",
-    "C9": "Capacitor_SMD:C_0402_1005Metric",
-    "C26": "Capacitor_SMD:C_0402_1005Metric",
+    "C7": "Capacitor_SMD:C_0402_1005Metric",
+    "R7": "Resistor_SMD:R_0402_1005Metric",
+    "C21": "Capacitor_SMD:C_0402_1005Metric",
     "C25": "Capacitor_SMD:C_0402_1005Metric",
     "C12": "Capacitor_SMD:C_0402_1005Metric",
-    "C24": "Capacitor_SMD:C_0402_1005Metric",
-    "C10": "Capacitor_SMD:C_0402_1005Metric"
+    "C22": "Capacitor_SMD:C_0402_1005Metric",
+    "C11": "Capacitor_SMD:C_0402_1005Metric",
+    "R10": "Resistor_SMD:R_0402_1005Metric",
+    "C9": "Capacitor_SMD:C_0402_1005Metric",
+    "C13": "Capacitor_SMD:C_0402_1005Metric",
+    "C6": "Capacitor_SMD:C_0402_1005Metric",
+    "R11": "Resistor_SMD:R_0402_1005Metric",
+    "C23": "Capacitor_SMD:C_0402_1005Metric",
+    "C10": "Capacitor_SMD:C_0402_1005Metric",
+    "R8": "Resistor_SMD:R_0402_1005Metric",
+    "C8": "Capacitor_SMD:C_0402_1005Metric",
+    "R9": "Resistor_SMD:R_0402_1005Metric",
+    "C15": "Capacitor_SMD:C_0402_1005Metric"
   },
   "resistor_capacitor_footprints": {
-    "C11": "Capacitor_SMD:C_0402_1005Metric",
-    "C21": "Capacitor_SMD:C_0402_1005Metric",
-    "R7": "Resistor_SMD:R_0402_1005Metric",
-    "C18": "Capacitor_SMD:C_0201_0603Metric",
-    "C28": "Capacitor_SMD:C_0402_1005Metric",
-    "C7": "Capacitor_SMD:C_0402_1005Metric",
-    "R4": "Resistor_SMD:R_0402_1005Metric",
-    "R6": "Resistor_SMD:R_0201_0603Metric",
+    "C24": "Capacitor_SMD:C_0402_1005Metric",
     "C2": "Capacitor_SMD:C_0201_0603Metric",
-    "R9": "Resistor_SMD:R_0402_1005Metric",
-    "C15": "Capacitor_SMD:C_0402_1005Metric",
-    "C4": "Capacitor_SMD:C_0402_1005Metric",
-    "C14": "Capacitor_SMD:C_0402_1005Metric",
-    "C3": "Capacitor_SMD:C_0201_0603Metric",
-    "C22": "Capacitor_SMD:C_0402_1005Metric",
+    "R14": "Resistor_SMD:R_0402_1005Metric",
+    "R4": "Resistor_SMD:R_0402_1005Metric",
+    "R2": "Resistor_SMD:R_0402_1005Metric",
+    "C18": "Capacitor_SMD:C_0201_0603Metric",
+    "C12": "Capacitor_SMD:C_0402_1005Metric",
+    "C5": "Capacitor_SMD:C_0402_1005Metric",
+    "C11": "Capacitor_SMD:C_0402_1005Metric",
     "R10": "Resistor_SMD:R_0402_1005Metric",
+    "C22": "Capacitor_SMD:C_0402_1005Metric",
+    "R6": "Resistor_SMD:R_0201_0603Metric",
+    "C13": "Capacitor_SMD:C_0402_1005Metric",
     "R11": "Resistor_SMD:R_0402_1005Metric",
     "C23": "Capacitor_SMD:C_0402_1005Metric",
-    "C13": "Capacitor_SMD:C_0402_1005Metric",
-    "R8": "Resistor_SMD:R_0402_1005Metric",
-    "C26": "Capacitor_SMD:C_0402_1005Metric",
-    "R18": "Resistor_SMD:R_0402_1005Metric",
-    "C24": "Capacitor_SMD:C_0402_1005Metric",
-    "R13": "Resistor_SMD:R_0402_1005Metric",
     "C10": "Capacitor_SMD:C_0402_1005Metric",
-    "R17": "Resistor_SMD:R_0402_1005Metric",
-    "C17": "Capacitor_SMD:C_0201_0603Metric",
+    "C3": "Capacitor_SMD:C_0201_0603Metric",
+    "R8": "Resistor_SMD:R_0402_1005Metric",
+    "R19": "Resistor_SMD:R_0402_1005Metric",
+    "C14": "Capacitor_SMD:C_0402_1005Metric",
     "R1": "Resistor_SMD:R_0402_1005Metric",
-    "C27": "Capacitor_SMD:C_0402_1005Metric",
-    "R14": "Resistor_SMD:R_0402_1005Metric",
-    "R15": "Resistor_SMD:R_0402_1005Metric",
-    "C5": "Capacitor_SMD:C_0402_1005Metric",
-    "C19": "Capacitor_SMD:C_0402_1005Metric",
-    "C6": "Capacitor_SMD:C_0402_1005Metric",
-    "R16": "Resistor_SMD:R_0402_1005Metric",
-    "C8": "Capacitor_SMD:C_0402_1005Metric",
     "R5": "Resistor_SMD:R_0402_1005Metric",
-    "R3": "Resistor_SMD:R_0402_1005Metric",
+    "C19": "Capacitor_SMD:C_0402_1005Metric",
+    "C16": "Capacitor_SMD:C_0201_0603Metric",
+    "R18": "Resistor_SMD:R_0402_1005Metric",
+    "R15": "Resistor_SMD:R_0402_1005Metric",
+    "C4": "Capacitor_SMD:C_0402_1005Metric",
     "C20": "Capacitor_SMD:C_0402_1005Metric",
-    "C9": "Capacitor_SMD:C_0402_1005Metric",
-    "R12": "Resistor_SMD:R_0402_1005Metric",
+    "C7": "Capacitor_SMD:C_0402_1005Metric",
+    "R7": "Resistor_SMD:R_0402_1005Metric",
+    "C21": "Capacitor_SMD:C_0402_1005Metric",
     "C25": "Capacitor_SMD:C_0402_1005Metric",
-    "C12": "Capacitor_SMD:C_0402_1005Metric",
-    "R2": "Resistor_SMD:R_0402_1005Metric",
-    "C16": "Capacitor_SMD:C_0201_0603Metric"
+    "R3": "Resistor_SMD:R_0402_1005Metric",
+    "C17": "Capacitor_SMD:C_0201_0603Metric",
+    "C9": "Capacitor_SMD:C_0402_1005Metric",
+    "C6": "Capacitor_SMD:C_0402_1005Metric",
+    "C8": "Capacitor_SMD:C_0402_1005Metric",
+    "R17": "Resistor_SMD:R_0402_1005Metric",
+    "R9": "Resistor_SMD:R_0402_1005Metric",
+    "C15": "Capacitor_SMD:C_0402_1005Metric"
   },
   "schematic_wiring": {
     "all_passed": true,
@@ -1339,48 +1777,28 @@
         "connected": true
       },
       {
-        "from_pin": "R12.2",
-        "to_pin": "U1.18",
-        "connected": true
-      },
-      {
-        "from_pin": "C27.1",
-        "to_pin": "U1.18",
-        "connected": true
-      },
-      {
-        "from_pin": "R13.2",
-        "to_pin": "U1.19",
-        "connected": true
-      },
-      {
-        "from_pin": "C28.1",
-        "to_pin": "U1.19",
-        "connected": true
-      },
-      {
         "from_pin": "R14.1",
         "to_pin": "U1.29",
         "connected": true
       },
       {
-        "from_pin": "R16.1",
-        "to_pin": "U1.34",
+        "from_pin": "D6.1",
+        "to_pin": "U1.14",
         "connected": true
       },
       {
-        "from_pin": "U4.2",
-        "to_pin": "U1.34",
+        "from_pin": "R19.2",
+        "to_pin": "D6.2",
+        "connected": true
+      },
+      {
+        "from_pin": "R15.1",
+        "to_pin": "D6.2",
         "connected": true
       },
       {
         "from_pin": "R15.2",
         "to_pin": "D2.3",
-        "connected": true
-      },
-      {
-        "from_pin": "R15.1",
-        "to_pin": "U4.4",
         "connected": true
       },
       {
@@ -1452,19 +1870,29 @@
         "from_pin": "R5.2",
         "to_pin": "U3.5",
         "connected": true
+      },
+      {
+        "from_pin": "U1.18",
+        "to_label": "USB_D-",
+        "connected": true
+      },
+      {
+        "from_pin": "U1.19",
+        "to_label": "USB_D+",
+        "connected": true
       }
     ],
     "method": "Visible wires only; labels and power-symbol aliases are not electrical edges"
   },
-  "board_sha256": "d4d1aab17f2eb046445f057c07bf70fa4d3f235ee5a89987f6359327a3ca8047",
-  "project_sha256": "9a02d260275be72de855acb3cf06b460336b5f766b7d5b4829ca20ce67a451ac",
+  "board_sha256": "130c5bdfc78dd4dcb882b9c648242febe346cbd86d418a7a3c781292cfcd896f",
+  "project_sha256": "6af5aef094140fde2ddd7dcb2117a0f6aa4f4cd631c565d857e1fc88aabfc4ef",
   "custom_rules_sha256": "0a899caf5014df4439119ce969edeeac7c1f1df3d60aa6657820cf0b78e6ae9a",
   "nonthermal_hole_to_mask_minimum_mm": 0.1,
   "retained_filled_capped_vias": 7,
   "erc_kicad_version": "10.0.4",
   "drc_kicad_version": "10.0.4",
   "limitations": [
-    "Axial end copper and 20 x 3.8 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured",
+    "Axial end copper and 18 x 3.8 mm antenna clearance deviate from the manufacturer reference; RF performance is unmeasured",
     "RF matching values and antenna efficiency require hardware tuning",
     "Nominal RF/USB impedance requires manufacturer stackup confirmation",
     "The nine MCU thermal vias require filling and copper capping; SOIC-8 flash has no exposed pad; dual-sided SMT assembly required; no physical power or thermal tests performed"

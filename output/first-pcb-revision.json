@@ -1,0 +1,75 @@
+{
+  "date": "2026-09-11",
+  "commit_message": "Complete first PCB revision",
+  "input_backup": "tmp/revision1-commit-20260911/input.kicad_pcb",
+  "input_sha256": "130c5bdfc78dd4dcb882b9c648242febe346cbd86d418a7a3c781292cfcd896f",
+  "board_sha256": "130c5bdfc78dd4dcb882b9c648242febe346cbd86d418a7a3c781292cfcd896f",
+  "scope": "Preserve the current first-revision layout, including the user edits after USB/button centering; refill copper and refresh current verification, placement, and 2D previews before committing.",
+  "current_positions_mm": {
+    "J1": [
+      110.0,
+      134.225
+    ],
+    "SW1": [
+      107.15,
+      125.1
+    ],
+    "SW2": [
+      112.85,
+      125.1
+    ],
+    "D4": [
+      109.0,
+      130.049999
+    ],
+    "R19": [
+      115.7,
+      120.4
+    ],
+    "R15": [
+      115.7,
+      122.36
+    ]
+  },
+  "erc_violations": 0,
+  "drc": {
+    "errors": 0,
+    "warnings": 1,
+    "unconnected": 0,
+    "schematic_parity": 0
+  },
+  "qa": {
+    "passed": 39,
+    "total": 53,
+    "failed_checks": [
+      "Every PCB copper pad matches the schematic netlist",
+      "WS2812B data is level shifted by the diode and 5 V pull-up without the removed buffer",
+      "PCB symbol paths match the reorganized schematic sheets",
+      "At least nine ground vias under the MCU EPAD",
+      "Antenna-side series components share a straight axis",
+      "Codex and personal logos are native graphics on front and back silkscreen respectively",
+      "Both logos keep at least 0.25 mm from the board edge",
+      "Antenna-to-crystal body gap meets the 8.5 mm project target",
+      "Crystal body clears MCU clock-pin land edges by at least 2.4 mm",
+      "Crystal underside excludes routing and pads on the back and both inner layers",
+      "Crystal and load-capacitor ground pads have a ground via within 1 mm",
+      "Only the nine MCU filled/capped thermal vias remain in SMD pads",
+      "Ordinary vias explicitly specify tenting on both sides",
+      "KiCad DRC has no violations"
+    ]
+  },
+  "historical_centering_record": "output/usb-buttons-centered.json",
+  "historical_previews": [
+    "output/usb-buttons-centered-comparison.png",
+    "output/board-3d-top.png",
+    "output/board-3d-bottom.png"
+  ],
+  "evidence_sha256": {
+    "netlist.xml": "998353253ce73c4bd14440828e65e19d87a6f5c4a773dcca8e78d34dae978986",
+    "erc.json": "2bde8dcdd08b19c41ef2d8e440696b8df59f1557cc73f8987fbf5b8242dcce27",
+    "drc-final.json": "8798489268467ce50e40245515697a2b9d4dacf976b70647cd97f4b660d762be",
+    "qa.json": "116d537fc4927c75430aa34858128bb421bb98ff2181fe4da6c0b041b1b742b0",
+    "placement.csv": "0aa4274017173c5422980f04bb15ad03a9eb79820b49a7fe8649370f59a7696c",
+    "bom.csv": "5378686c1c3628ad84077822264d4b757678614d0ecd675387fcf15ba66026c9"
+  }
+}

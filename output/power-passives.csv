@@ -19,6 +19,6 @@ C24,100nF,VBUS_USB / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_10
 R7,10k,+3V3 / CHIP_EN,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,
 C21,1uF,CHIP_EN / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,
 R8,10k,+3V3 / GPIO9_BOOT,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,
-R9,10k,+3V3 / GPIO8,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,
+R9,3.3k,+3V3 / GPIO8,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,GPIO8 strapping pull-up; 3.3k to 3V3 per DevKitC-1 v1.4 R6
 C25,1uF,VBUS_USB / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,At RGB VDD
-C26,100nF,VBUS_USB / GND,Capacitor_SMD:C_0402_1005Metric,Capacitor_SMD:C_0402_1005Metric,NO,At LV1T125 VCC
+R19,10k,VBUS_USB / LED_DATA_5V,Resistor_SMD:R_0402_1005Metric,Resistor_SMD:R_0402_1005Metric,NO,"New pull-up added with the diode level shift; 0402, 5 % is sufficient"

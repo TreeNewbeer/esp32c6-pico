@@ -240,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "A"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -566,6 +566,7 @@
       "netlist": "",
       "plot": "",
       "specctra_dsn": "",
+      "step": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -719,6 +720,10 @@
     [
       "d29d372c-7a4c-447f-ba6c-21fb60482be4",
       "根目录"
+    ],
+    [
+      "13033aea-e4f8-548e-9e40-21ec019685cb",
+      "Power, USB and interfaces"
     ]
   ],
   "text_variables": {},

@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>D:\Colin\projects\pcbs\esp32-c6-pico\esp32-c6-pico\esp32-c6-pico.kicad_sch</source>
-    <date>2026-09-09T21:06:10</date>
+    <date>2026-09-10T22:53:25</date>
     <tool>Eeschema 10.0.4</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -660,92 +660,6 @@
         </unit>
       </units>
     </comp>
-    <comp ref="C26">
-      <value>100nF</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
-      <fields>
-        <field name="MPN">100nF</field>
-        <field name="AssemblyNote">At LV1T125 VCC</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
-      <property name="MPN" value="100nF"/>
-      <property name="AssemblyNote" value="At LV1T125 VCC"/>
-      <property name="Sheetname" value="根目录"/>
-      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>854ec2fe-458a-51d2-affa-b00ab81672ce</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="C27">
-      <value>DNP</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
-      <fields>
-        <field name="MPN">DNP</field>
-        <field name="AssemblyNote">EMI tuning option; leave open</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
-      <property name="MPN" value="DNP"/>
-      <property name="AssemblyNote" value="EMI tuning option; leave open"/>
-      <property name="Sheetname" value="根目录"/>
-      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
-      <property name="dnp"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>e4a651e4-1d7b-55be-8b4f-981a7a4f9ed3</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="C28">
-      <value>DNP</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
-      <fields>
-        <field name="MPN">DNP</field>
-        <field name="AssemblyNote">EMI tuning option; leave open</field>
-        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Pico_Design" part="Device__C_Small" description="Unpolarized capacitor, small symbol"/>
-      <property name="MPN" value="DNP"/>
-      <property name="AssemblyNote" value="EMI tuning option; leave open"/>
-      <property name="Sheetname" value="根目录"/>
-      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
-      <property name="dnp"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>40d08fed-b48a-5115-baf8-61cd6784dbdd</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
     <comp ref="D1">
       <value>PESD5V0F1BL-Q</value>
       <footprint>Diode_SMD:D_SOD-882</footprint>
@@ -778,12 +692,12 @@
     </comp>
     <comp ref="D2">
       <value>WS2812B-2020</value>
-      <footprint>Pico:WS2812B_2020_Compact</footprint>
+      <footprint>LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm</footprint>
       <datasheet>https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf</datasheet>
       <fields>
         <field name="MPN">WS2812B-2020</field>
         <field name="AssemblyNote"/>
-        <field name="Footprint">Pico:WS2812B_2020_Compact</field>
+        <field name="Footprint">LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm</field>
         <field name="Datasheet">https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf</field>
         <field name="Description"/>
       </fields>
@@ -803,6 +717,35 @@
             <pin num="4"/>
             <pin num="2"/>
             <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D6">
+      <value>1N4148WS</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <datasheet>https://www.diodes.com/assets/Datasheets/1N4148WS_BAV16WS.pdf</datasheet>
+      <fields>
+        <field name="MPN">1N4148WS-7-F</field>
+        <field name="AssemblyNote">Silicon switching diode level shift: cathode to GPIO8, anode to the pulled-up WS2812B data node</field>
+        <field name="Footprint">Diode_SMD:D_SOD-323</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/1N4148WS_BAV16WS.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__D" description="Diode"/>
+      <property name="MPN" value="1N4148WS-7-F"/>
+      <property name="AssemblyNote" value="Silicon switching diode level shift: cathode to GPIO8, anode to the pulled-up WS2812B data node"/>
+      <property name="Sheetname" value="根目录"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="diode"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>346fd8d4-e0bf-5bba-b649-5e847c6e1261</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
           </pins>
         </unit>
       </units>
@@ -1117,80 +1060,24 @@
       </units>
     </comp>
     <comp ref="R9">
-      <value>10k</value>
+      <value>3.3k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="MPN">10k</field>
-        <field name="AssemblyNote"/>
+        <field name="MPN">3.3k</field>
+        <field name="AssemblyNote">GPIO8 strapping pull-up; 3.3k to 3V3 per DevKitC-1 v1.4 R6</field>
         <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
-      <property name="MPN" value="10k"/>
-      <property name="AssemblyNote" value=""/>
+      <property name="MPN" value="3.3k"/>
+      <property name="AssemblyNote" value="GPIO8 strapping pull-up; 3.3k to 3V3 per DevKitC-1 v1.4 R6"/>
       <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>bd326c40-bf59-5fe6-860e-3e68009e8c6a</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R12">
-      <value>22R</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
-      <fields>
-        <field name="MPN">22R</field>
-        <field name="AssemblyNote"/>
-        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
-      <property name="MPN" value="22R"/>
-      <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value="根目录"/>
-      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
-      <property name="ki_keywords" value="R resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>22f2e7a6-60f8-57ba-acb8-8e0fca233bdd</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R13">
-      <value>22R</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
-      <fields>
-        <field name="MPN">22R</field>
-        <field name="AssemblyNote"/>
-        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
-      <property name="MPN" value="22R"/>
-      <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value="根目录"/>
-      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
-      <property name="ki_keywords" value="R resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>a5281d7b-6202-5c99-896a-fb973c2bfb9e</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1229,52 +1116,24 @@
       </units>
     </comp>
     <comp ref="R15">
-      <value>330R</value>
+      <value>0R</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="MPN">330R</field>
-        <field name="AssemblyNote"/>
+        <field name="MPN">0R</field>
+        <field name="AssemblyNote">RGB data series link; 0R per DevKitC-1 v1.4 R17</field>
         <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
-      <property name="MPN" value="330R"/>
-      <property name="AssemblyNote" value=""/>
+      <property name="MPN" value="0R"/>
+      <property name="AssemblyNote" value="RGB data series link; 0R per DevKitC-1 v1.4 R17"/>
       <property name="Sheetname" value="根目录"/>
       <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
       <property name="ki_keywords" value="R resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>7a09205f-ce48-5673-8685-91667730c61e</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="1"/>
-            <pin num="2"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="R16">
-      <value>100k</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
-      <fields>
-        <field name="MPN">100k</field>
-        <field name="AssemblyNote">Keep LED data low at reset</field>
-        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
-      <property name="MPN" value="100k"/>
-      <property name="AssemblyNote" value="Keep LED data low at reset"/>
-      <property name="Sheetname" value="根目录"/>
-      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
-      <property name="ki_keywords" value="R resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8baddcbc-e99f-5241-bf04-490b6cf56b14</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1331,6 +1190,34 @@
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>f0cb3350-2c2f-5ce3-99ca-b77f21e1be56</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R19">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="MPN">10k</field>
+        <field name="AssemblyNote">WS2812B data pull-up to the USB 5 V rail</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Pico_Design" part="Device__R_Small" description="Resistor, small symbol"/>
+      <property name="MPN" value="10k"/>
+      <property name="AssemblyNote" value="WS2812B data pull-up to the USB 5 V rail"/>
+      <property name="Sheetname" value="根目录"/>
+      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
+      <property name="ki_keywords" value="R resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9939d7f4-0f14-507e-aae0-523a04fc4ec8</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1424,7 +1311,7 @@
             <pin num="37"/>
             <pin num="40"/>
             <pin num="4"/>
-            <pin num="14"/>
+            <pin num="34"/>
             <pin num="15"/>
             <pin num="39"/>
             <pin num="38"/>
@@ -1441,7 +1328,7 @@
             <pin num="19"/>
             <pin num="29"/>
             <pin num="30"/>
-            <pin num="34"/>
+            <pin num="14"/>
             <pin num="6"/>
             <pin num="7"/>
             <pin num="8"/>
@@ -1493,38 +1380,6 @@
             <pin num="5"/>
             <pin num="4"/>
             <pin num="8"/>
-          </pins>
-        </unit>
-      </units>
-    </comp>
-    <comp ref="U4">
-      <value>SN74LV1T125</value>
-      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
-      <datasheet>https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</datasheet>
-      <fields>
-        <field name="MPN">SN74LV1T125DBVR</field>
-        <field name="AssemblyNote"/>
-        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
-        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Pico_Design" part="Pico_Custom__SN74LV1T125" description="Single-supply logic-level translating buffer, active-low OE, 1.6-5.5 V supply"/>
-      <property name="MPN" value="SN74LV1T125DBVR"/>
-      <property name="AssemblyNote" value=""/>
-      <property name="Sheetname" value="根目录"/>
-      <property name="Sheetfile" value="esp32-c6-pico.kicad_sch"/>
-      <property name="ki_keywords" value="Single Gate Buff Tri-State LVC CMOS"/>
-      <property name="ki_fp_filters" value="SOT* SG-*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>70f0be28-5501-5c4a-8311-5ff86561bd4a</tstamps>
-      <units>
-        <unit name="A">
-          <pins>
-            <pin num="2"/>
-            <pin num="3"/>
-            <pin num="5"/>
-            <pin num="1"/>
-            <pin num="4"/>
           </pins>
         </unit>
       </units>
@@ -2043,6 +1898,26 @@
         <pin num="4" name="G" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Pico_Design" part="Device__D">
+      <description>Diode</description>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description">Diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Pico_Design" part="Device__D_Schottky">
       <description>Schottky diode</description>
       <footprints>
@@ -2160,28 +2035,6 @@
         <pin num="6" name="CLK" type="input"/>
         <pin num="7" name="~{HOLD}_/_IO3" type="bidirectional"/>
         <pin num="8" name="VCC" type="power_in"/>
-      </pins>
-    </libpart>
-    <libpart lib="Pico_Design" part="Pico_Custom__SN74LV1T125">
-      <description>Single-supply logic-level translating buffer, active-low OE, 1.6-5.5 V supply</description>
-      <docs>https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</docs>
-      <footprints>
-        <fp>SOT*</fp>
-        <fp>SG-*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">SN74LV1T125</field>
-        <field name="Footprint"/>
-        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/sn74lv1t125.pdf</field>
-        <field name="Description">Single-supply logic-level translating buffer, active-low OE, 1.6-5.5 V supply</field>
-      </fields>
-      <pins>
-        <pin num="1" name="~{OE}" type="input"/>
-        <pin num="2" name="A" type="input"/>
-        <pin num="3" name="GND" type="power_in"/>
-        <pin num="4" name="Y" type="tri_state"/>
-        <pin num="5" name="VCC" type="power_in"/>
       </pins>
     </libpart>
     <libpart lib="Pico_Design" part="Power_Protection__USBLC6-2SC6">
@@ -2331,7 +2184,7 @@
       <node ref="C23" pin="1" pintype="passive"/>
       <node ref="C8" pin="1" pintype="passive"/>
       <node ref="C9" pin="1" pintype="passive"/>
-      <node ref="J2" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="J2" pin="11" pinfunction="Pin_11_11" pintype="passive"/>
       <node ref="L2" pin="1" pintype="passive"/>
       <node ref="R7" pin="1" pintype="passive"/>
       <node ref="R8" pin="1" pintype="passive"/>
@@ -2345,7 +2198,7 @@
     <net code="2" name="+5V" class="Power">
       <node ref="C22" pin="1" pintype="passive"/>
       <node ref="D5" pin="1" pinfunction="K_1" pintype="passive"/>
-      <node ref="J3" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
+      <node ref="J3" pin="11" pinfunction="Pin_11_11" pintype="passive"/>
       <node ref="U2" pin="1" pinfunction="VIN_1" pintype="power_in"/>
       <node ref="U2" pin="3" pinfunction="EN_3" pintype="input"/>
     </net>
@@ -2386,9 +2239,6 @@
       <node ref="C23" pin="2" pintype="passive"/>
       <node ref="C24" pin="2" pintype="passive"/>
       <node ref="C25" pin="2" pintype="passive"/>
-      <node ref="C26" pin="2" pintype="passive"/>
-      <node ref="C27" pin="2" pintype="passive"/>
-      <node ref="C28" pin="2" pintype="passive"/>
       <node ref="C3" pin="2" pintype="passive"/>
       <node ref="C4" pin="2" pintype="passive"/>
       <node ref="C5" pin="2" pintype="passive"/>
@@ -2405,105 +2255,102 @@
       <node ref="J1" pin="B1" pinfunction="GND_B1" pintype="passive"/>
       <node ref="J1" pin="B12" pinfunction="GND_B12" pintype="passive"/>
       <node ref="J1" pin="SH" pinfunction="SHIELD_SH" pintype="passive"/>
-      <node ref="J2" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
-      <node ref="J3" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
+      <node ref="J2" pin="12" pinfunction="Pin_12_12" pintype="passive"/>
+      <node ref="J3" pin="12" pinfunction="Pin_12_12" pintype="passive"/>
       <node ref="L3" pin="2" pintype="passive"/>
       <node ref="R10" pin="2" pintype="passive"/>
       <node ref="R11" pin="2" pintype="passive"/>
-      <node ref="R16" pin="2" pintype="passive"/>
       <node ref="SW1" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="SW2" pin="2" pinfunction="2_2" pintype="passive"/>
       <node ref="U1" pin="41" pinfunction="GND_41" pintype="power_in"/>
       <node ref="U2" pin="2" pinfunction="GND_2" pintype="power_in"/>
       <node ref="U3" pin="4" pinfunction="GND_4" pintype="power_in"/>
-      <node ref="U4" pin="1" pinfunction="~{OE}_1" pintype="input"/>
-      <node ref="U4" pin="3" pinfunction="GND_3" pintype="power_in"/>
       <node ref="Y1" pin="2" pinfunction="G_2" pintype="passive"/>
       <node ref="Y1" pin="4" pinfunction="G_4" pintype="passive"/>
     </net>
     <net code="8" name="GPIO0" class="Default">
-      <node ref="J2" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
       <node ref="U1" pin="6" pinfunction="GPIO0_6" pintype="bidirectional"/>
     </net>
     <net code="9" name="GPIO1" class="Default">
-      <node ref="J2" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1_1" pintype="passive"/>
       <node ref="U1" pin="7" pinfunction="GPIO1_7" pintype="bidirectional"/>
     </net>
     <net code="10" name="GPIO2" class="Default">
-      <node ref="J2" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
       <node ref="U1" pin="8" pinfunction="GPIO2_8" pintype="bidirectional"/>
     </net>
     <net code="11" name="GPIO3" class="Default">
-      <node ref="J2" pin="6" pinfunction="Pin_6_6" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
       <node ref="U1" pin="9" pinfunction="GPIO3_9" pintype="bidirectional"/>
     </net>
     <net code="12" name="GPIO4" class="Default">
-      <node ref="J2" pin="7" pinfunction="Pin_7_7" pintype="passive"/>
+      <node ref="J2" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
       <node ref="U1" pin="10" pinfunction="MTMS/GPIO4_10" pintype="bidirectional"/>
     </net>
     <net code="13" name="GPIO5" class="Default">
-      <node ref="J2" pin="8" pinfunction="Pin_8_8" pintype="passive"/>
+      <node ref="J2" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
       <node ref="U1" pin="11" pinfunction="MTDI/GPIO5_11" pintype="bidirectional"/>
     </net>
     <net code="14" name="GPIO6" class="Default">
-      <node ref="J2" pin="9" pinfunction="Pin_9_9" pintype="passive"/>
+      <node ref="J2" pin="6" pinfunction="Pin_6_6" pintype="passive"/>
       <node ref="U1" pin="12" pinfunction="MTCK/GPIO6_12" pintype="bidirectional"/>
     </net>
     <net code="15" name="GPIO7" class="Default">
-      <node ref="J2" pin="10" pinfunction="Pin_10_10" pintype="passive"/>
+      <node ref="J2" pin="7" pinfunction="Pin_7_7" pintype="passive"/>
       <node ref="U1" pin="13" pinfunction="MTDO/GPIO7_13" pintype="bidirectional"/>
     </net>
     <net code="16" name="GPIO8" class="Default">
-      <node ref="J2" pin="11" pinfunction="Pin_11_11" pintype="passive"/>
+      <node ref="D6" pin="1" pinfunction="K_1" pintype="passive"/>
       <node ref="R9" pin="2" pintype="passive"/>
       <node ref="U1" pin="14" pinfunction="GPIO8_14" pintype="bidirectional"/>
     </net>
     <net code="17" name="GPIO9_BOOT" class="Default">
-      <node ref="J2" pin="12" pinfunction="Pin_12_12" pintype="passive"/>
+      <node ref="J2" pin="8" pinfunction="Pin_8_8" pintype="passive"/>
       <node ref="R8" pin="2" pintype="passive"/>
       <node ref="SW2" pin="1" pinfunction="1_1" pintype="passive"/>
       <node ref="U1" pin="15" pinfunction="GPIO9_15" pintype="bidirectional"/>
     </net>
     <net code="18" name="GPIO10" class="Default">
-      <node ref="J3" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
+      <node ref="J2" pin="9" pinfunction="Pin_9_9" pintype="passive"/>
       <node ref="U1" pin="16" pinfunction="GPIO10_16" pintype="bidirectional"/>
     </net>
     <net code="19" name="GPIO11" class="Default">
-      <node ref="J3" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
+      <node ref="J2" pin="10" pinfunction="Pin_10_10" pintype="passive"/>
       <node ref="U1" pin="17" pinfunction="GPIO11_17" pintype="bidirectional"/>
     </net>
     <net code="20" name="GPIO15" class="Default">
-      <node ref="J3" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
+      <node ref="J3" pin="10" pinfunction="Pin_10_10" pintype="passive"/>
       <node ref="U1" pin="27" pinfunction="GPIO15_27" pintype="bidirectional"/>
     </net>
     <net code="21" name="GPIO18" class="Default">
-      <node ref="J3" pin="8" pinfunction="Pin_8_8" pintype="passive"/>
+      <node ref="J3" pin="7" pinfunction="Pin_7_7" pintype="passive"/>
       <node ref="U1" pin="31" pinfunction="GPIO18_31" pintype="bidirectional"/>
     </net>
     <net code="22" name="GPIO19" class="Default">
-      <node ref="J3" pin="9" pinfunction="Pin_9_9" pintype="passive"/>
+      <node ref="J3" pin="6" pinfunction="Pin_6_6" pintype="passive"/>
       <node ref="U1" pin="32" pinfunction="GPIO19_32" pintype="bidirectional"/>
     </net>
     <net code="23" name="GPIO20" class="Default">
-      <node ref="J3" pin="10" pinfunction="Pin_10_10" pintype="passive"/>
+      <node ref="J3" pin="5" pinfunction="Pin_5_5" pintype="passive"/>
       <node ref="U1" pin="33" pinfunction="GPIO20_33" pintype="bidirectional"/>
     </net>
-    <net code="24" name="GPIO21_LED" class="Default">
-      <node ref="R16" pin="1" pintype="passive"/>
+    <net code="24" name="GPIO21" class="Default">
+      <node ref="J3" pin="4" pinfunction="Pin_4_4" pintype="passive"/>
       <node ref="U1" pin="34" pinfunction="GPIO21_34" pintype="bidirectional"/>
-      <node ref="U4" pin="2" pinfunction="A_2" pintype="input"/>
     </net>
     <net code="25" name="GPIO22" class="Default">
-      <node ref="J3" pin="11" pinfunction="Pin_11_11" pintype="passive"/>
+      <node ref="J3" pin="3" pinfunction="Pin_3_3" pintype="passive"/>
       <node ref="U1" pin="35" pinfunction="GPIO22_35" pintype="bidirectional"/>
     </net>
     <net code="26" name="GPIO23" class="Default">
-      <node ref="J3" pin="12" pinfunction="Pin_12_12" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2_2" pintype="passive"/>
       <node ref="U1" pin="36" pinfunction="GPIO23_36" pintype="bidirectional"/>
     </net>
     <net code="27" name="LED_DATA_5V" class="Default">
+      <node ref="D6" pin="2" pinfunction="A_2" pintype="passive"/>
       <node ref="R15" pin="1" pintype="passive"/>
-      <node ref="U4" pin="4" pinfunction="Y_4" pintype="tri_state"/>
+      <node ref="R19" pin="2" pintype="passive"/>
     </net>
     <net code="28" name="LED_DIN" class="Default">
       <node ref="D2" pin="3" pinfunction="DIN_3" pintype="input"/>
@@ -2574,11 +2421,11 @@
       <node ref="U1" pin="22" pinfunction="SPIWP/GPIO26_22" pintype="bidirectional"/>
     </net>
     <net code="44" name="U0RXD" class="Default">
-      <node ref="J3" pin="7" pinfunction="Pin_7_7" pintype="passive"/>
+      <node ref="J3" pin="9" pinfunction="Pin_9_9" pintype="passive"/>
       <node ref="U1" pin="30" pinfunction="U0RXD/GPIO17_30" pintype="bidirectional"/>
     </net>
     <net code="45" name="U0TXD" class="Default">
-      <node ref="J3" pin="6" pinfunction="Pin_6_6" pintype="passive"/>
+      <node ref="J3" pin="8" pinfunction="Pin_8_8" pintype="passive"/>
       <node ref="R14" pin="2" pintype="passive"/>
     </net>
     <net code="46" name="U0TXD_MCU" class="Default">
@@ -2590,26 +2437,16 @@
       <node ref="D4" pin="6" pinfunction="D+_6" pintype="passive"/>
       <node ref="J1" pin="A6" pinfunction="D+_A6" pintype="bidirectional"/>
       <node ref="J1" pin="B6" pinfunction="D+_B6" pintype="bidirectional"/>
-      <node ref="R13" pin="1" pintype="passive"/>
+      <node ref="U1" pin="19" pinfunction="GPIO13_/_USB_D+_19" pintype="bidirectional"/>
     </net>
     <net code="48" name="USB_D-" class="Default">
       <node ref="D4" pin="3" pinfunction="D-_(3,4)_3" pintype="passive"/>
       <node ref="D4" pin="4" pinfunction="D-_4" pintype="passive"/>
       <node ref="J1" pin="A7" pinfunction="D-_A7" pintype="bidirectional"/>
       <node ref="J1" pin="B7" pinfunction="D-_B7" pintype="bidirectional"/>
-      <node ref="R12" pin="1" pintype="passive"/>
-    </net>
-    <net code="49" name="USB_MCU_D+" class="Default">
-      <node ref="C28" pin="1" pintype="passive"/>
-      <node ref="R13" pin="2" pintype="passive"/>
-      <node ref="U1" pin="19" pinfunction="GPIO13_/_USB_D+_19" pintype="bidirectional"/>
-    </net>
-    <net code="50" name="USB_MCU_D-" class="Default">
-      <node ref="C27" pin="1" pintype="passive"/>
-      <node ref="R12" pin="2" pintype="passive"/>
       <node ref="U1" pin="18" pinfunction="GPIO12_/_USB_D-_18" pintype="bidirectional"/>
     </net>
-    <net code="51" name="V3A" class="Power">
+    <net code="49" name="V3A" class="Power">
       <node ref="C11" pin="1" pintype="passive"/>
       <node ref="C19" pin="1" pintype="passive"/>
       <node ref="C20" pin="1" pintype="passive"/>
@@ -2617,10 +2454,9 @@
       <node ref="U1" pin="2" pinfunction="VDDA3P3_2" pintype="power_in"/>
       <node ref="U1" pin="3" pinfunction="VDDA3P3_3" pintype="passive"/>
     </net>
-    <net code="52" name="VBUS_USB" class="Power">
+    <net code="50" name="VBUS_USB" class="Power">
       <node ref="C24" pin="1" pintype="passive"/>
       <node ref="C25" pin="1" pintype="passive"/>
-      <node ref="C26" pin="1" pintype="passive"/>
       <node ref="D2" pin="4" pinfunction="VDD_4" pintype="power_in"/>
       <node ref="D3" pin="2" pinfunction="A2_2" pintype="passive"/>
       <node ref="D4" pin="5" pinfunction="VBUS_5" pintype="passive"/>
@@ -2629,41 +2465,41 @@
       <node ref="J1" pin="A9" pinfunction="VBUS_A9" pintype="passive"/>
       <node ref="J1" pin="B4" pinfunction="VBUS_B4" pintype="passive"/>
       <node ref="J1" pin="B9" pinfunction="VBUS_B9" pintype="passive"/>
-      <node ref="U4" pin="5" pinfunction="VCC_5" pintype="power_in"/>
+      <node ref="R19" pin="1" pintype="passive"/>
     </net>
-    <net code="53" name="VDD_SPI" class="Power">
+    <net code="51" name="VDD_SPI" class="Power">
       <node ref="C6" pin="1" pintype="passive"/>
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="U1" pin="23" pinfunction="VDD_SPI_23" pintype="power_out"/>
       <node ref="U3" pin="8" pinfunction="VCC_8" pintype="power_in"/>
     </net>
-    <net code="54" name="XTAL_LOAD_P" class="Default">
+    <net code="52" name="XTAL_LOAD_P" class="Default">
       <node ref="C4" pin="1" pintype="passive"/>
       <node ref="R18" pin="2" pintype="passive"/>
       <node ref="Y1" pin="1" pinfunction="1_1" pintype="passive"/>
     </net>
-    <net code="55" name="XTAL_N" class="Default">
+    <net code="53" name="XTAL_N" class="Default">
       <node ref="C5" pin="1" pintype="passive"/>
       <node ref="U1" pin="38" pinfunction="XTAL_N_38" pintype="output"/>
       <node ref="Y1" pin="3" pinfunction="3_3" pintype="passive"/>
     </net>
-    <net code="56" name="XTAL_P" class="Default">
+    <net code="54" name="XTAL_P" class="Default">
       <node ref="R18" pin="1" pintype="passive"/>
       <node ref="U1" pin="39" pinfunction="XTAL_P_39" pintype="input"/>
     </net>
-    <net code="57" name="unconnected-(AE1-SOLDER-Pad2)" class="Default">
+    <net code="55" name="unconnected-(AE1-SOLDER-Pad2)" class="Default">
       <node ref="AE1" pin="2" pinfunction="SOLDER_2" pintype="passive+no_connect"/>
     </net>
-    <net code="58" name="unconnected-(D2-DOUT-Pad1)" class="Default">
+    <net code="56" name="unconnected-(D2-DOUT-Pad1)" class="Default">
       <node ref="D2" pin="1" pinfunction="DOUT_1" pintype="output+no_connect"/>
     </net>
-    <net code="59" name="unconnected-(J1-SBU1-PadA8)" class="Default">
+    <net code="57" name="unconnected-(J1-SBU1-PadA8)" class="Default">
       <node ref="J1" pin="A8" pinfunction="SBU1_A8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="60" name="unconnected-(J1-SBU2-PadB8)" class="Default">
+    <net code="58" name="unconnected-(J1-SBU2-PadB8)" class="Default">
       <node ref="J1" pin="B8" pinfunction="SBU2_B8" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="61" name="unconnected-(U2-NC-Pad4)" class="Default">
+    <net code="59" name="unconnected-(U2-NC-Pad4)" class="Default">
       <node ref="U2" pin="4" pinfunction="NC_4" pintype="no_connect"/>
     </net>
   </nets>
